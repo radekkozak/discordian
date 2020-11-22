@@ -1,0 +1,68 @@
+/*----------------------------------------------------------------
+
+SYNTAX HIGHLIGHTER COLORS */
+
+.theme-dark {
+  --syntax-default: rgb(191, 193, 194);
+  --syntax-red: rgb(224, 108, 117);
+  --syntax-green: rgb(152, 195, 121);
+  --syntax-yellow: rgb(209, 154, 102);
+  --syntax-blue: rgb(86, 156, 214);
+  --syntax-teal: rgb(86, 182, 194);
+  --syntax-purple: rgb(198, 120, 221);
+  --syntax-grey: rgb(112, 128, 144);
+}
+
+.theme-dark .token.property,
+.theme-dark .token.tag,
+.theme-dark .token.constant,
+.theme-dark .token.symbol,
+.theme-dark .token.deleted {
+  color: var(--syntax-red);
+}
+
+.theme-dark .token.selector,
+.theme-dark .token.attr-name,
+.theme-dark .token.string,
+.theme-dark .token.char,
+.theme-dark .token.builtin,
+.theme-dark .token.inserted {
+  color: var(--syntax-green);
+}
+
+.theme-dark .token.atrule,
+.theme-dark .token.attr-value,
+.theme-dark .token.function,
+.theme-dark .token.class-name {
+  color: var(--syntax-yellow);
+}
+
+.theme-dark .token.punctuation {
+  color: var(--text-normal);
+}
+
+.theme-dark .token.keyword {
+  color: var(--syntax-blue);
+}
+
+.theme-dark .token.operator,
+.theme-dark .token.entity,
+.theme-dark .token.url,
+.theme-dark .language-css .token.string,
+.theme-dark .style .token.string,
+.theme-dark .token.variable {
+  color: var(--syntax-teal);
+}
+
+.theme-dark .token.boolean,
+.theme-dark .token.number,
+.theme-dark .language-css .token.unit {
+  color: var(--syntax-purple); /*#ae81ff;*/
+}
+
+.theme-dark .token.comment,
+.theme-dark .token.prolog,
+.theme-dark .token.doctype,
+.theme-dark .token.cdata {
+  color: var(--syntax-grey);
+}

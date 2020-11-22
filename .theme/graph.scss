@@ -1,0 +1,60 @@
+/*----------------------------------------------------------------
+
+GRAPH CONTROLS */
+
+.theme-dark {
+  --graph-line: rgba(189, 189, 189, 0.2);
+  --graph-line-highlight: rgba(189, 189, 189, 0.6);
+
+  --graph-circle-outline: transparent;
+  --graph-circle-fill: #fcf601;
+  --graph-circle-fill-highlight: #fcf601;
+  --graph-circle-fill-unresolved: rgb(116, 190, 247);
+
+  --graph-fill-tag: #ff9640ba; /*#5dbcd2;*/
+  --graph-fill-attachment: #d669bc;
+  --graph-arrow: #d669bc;
+}
+
+.theme-dark .graph-controls {
+  background-color: var(--background-secondary-alt);
+}
+
+.theme-dark .graph-view.color-line {
+  color: var(--graph-line);
+}
+
+.theme-dark .graph-view.color-line-highlight {
+  color: var(--graph-line-highlight);
+}
+
+.theme-dark .graph-view.color-fill {
+  color: var(--graph-circle-fill);
+}
+
+.theme-dark .graph-view.color-fill-highlight {
+  color: var(--graph-circle-fill-highlight);
+}
+
+.theme-dark .graph-view.color-circle {
+  color: var(--graph-circle-outline);
+}
+
+/* for graph filters  */
+
+.theme-dark .graph-view.color-fill-tag {
+  color: var(--graph-fill-tag);
+}
+
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--graph-fill-attachment);
+}
+
+.theme-dark .graph-view.color-fill-unresolved {
+  color: var(--graph-circle-fill-unresolved);
+  opacity: 1;
+}
+
+.theme-dark .graph-view.color-arrow {
+  color: var(--graph-arrow);
+}

@@ -1,0 +1,31 @@
+/*----------------------------------------------------------------
+
+CUSTOM TEXT HIGHLIGHTS */
+
+mark {
+  background-color: var(--text-mark) !important;
+}
+
+mark.red {
+  background-color: var(--text-mark-red) !important;
+}
+
+mark.blue {
+  background-color: var(--text-mark-blue) !important;
+}
+
+mark.green {
+  background-color: var(--text-mark-green) !important;
+}
+
+mark.grey {
+  background-color: var(--text-mark-grey) !important;
+}
+
+.theme-dark mark,
+.theme-dark mark.red,
+.theme-dark mark.blue,
+.theme-dark mark.green,
+.theme-dark mark.grey {
+  color: #101111 !important;
+}
