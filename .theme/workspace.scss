@@ -1,0 +1,345 @@
+/*----------------------------------------------------------------
+WORKSPACE
+----------------------------------------------------------------*/
+
+.workspace-tab-header {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+}
+
+.workspace-tab-header:hover {
+  color: var(--text-normal) !important;
+}
+
+.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
+.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+  background-color: var(--interactive-accent-alt);
+  color: var(--text-on-accent);
+}
+
+/*----------------------------------------------------------------
+resize handlers */
+
+.workspace-leaf-resize-handle {
+  background-color: var(--background-secondary-alt);
+  margin: 0;
+}
+
+.workspace-leaf-resize-handle:hover {
+  background-color: var(--interactive-accent-rgb);
+}
+
+/*----------------------------------------------------------------
+split mode */
+
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  width: 2px !important;
+}
+
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  height: 2px;
+}
+
+/*----------------------------------------------------------------
+view actions */
+
+.view-action {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+}
+
+.view-action:hover,
+.view-action.is-active {
+  color: var(--text-normal) !important;
+}
+
+/* icons at top of panes */
+
+.file-view-actions a {
+  color: var(--text-muted) !important;
+}
+
+.file-view-actions a:hover {
+  color: var(--text-muted) !important;
+}
+
+/*----------------------------------------------------------------
+side dock */
+
+.side-dock-panels-container {
+  background-color: var(--background-secondary-alt) !important;
+  color: var(background-secondary-alt);
+}
+
+.side-dock-ribbon-action {
+  color: var(--text-muted) !important;
+}
+
+.side-dock-ribbon-action:hover {
+  color: var(--text-normal) !important;
+}
+
+/* .side-dock-ribbon-tab,
+.side-dock-ribbon-action {} */
+
+.side-dock-ribbon-tab.is-active {
+  color: var(--interactive-accent) !important;
+}
+
+.side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner:hover {
+  color: #6272a4 !important;
+  background-color: var(--background-secondary);
+}
+
+/* side dock text, like file names and backlink context */
+
+.side-dock-panels-container {
+  font-size: 13px !important;
+}
+
+/* side dock titles at top */
+
+.side-dock-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+.side-dock-collapsible-section-header {
+  font-size: 14px;
+  margin: 4px;
+}
+
+/* hover actions on side dock navigation */
+
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-tab-inner:hover,
+.side-dock-ribbon-action:hover,
+.side-dock-ribbon-action.is-active:hover,
+.nav-action-button:hover,
+.side-dock-collapse-btn:hover {
+  color: var(--text-normal);
+}
+
+/*----------------------------------------------------------------
+ navigation */
+
+.nav-file-title {
+  font-size: 15px;
+  color: var(--text-muted) !important;
+  background-color: var(--background-secondary);
+}
+
+.nav-folder-title {
+  font-size: 15px;
+  color: var(--text-normal) !important;
+  background-color: var(--background-secondary);
+}
+
+.nav-file-title:hover {
+  color: var(--text-normal) !important;
+}
+
+.nav-folder-title:hover {
+  color: var(--text-normal) !important;
+}
+
+/* .nav-file-tag {
+color: #59a2c5;
+} /* for the PNG text, but can't specifically target "PNG", just all of those filetype tags. */
+
+.nav-file.is-active .nav-file-tag {
+  color: var(--text-normal);
+}
+
+/*----------------------------------------------------------------
+search */
+
+.search-result-file-title {
+  color: var(--text-a) !important;
+  background-color: var(--background-secondary);
+  font-weight: 400;
+  padding: 4px 40px 4px 20px;
+}
+
+.search-result-file-title:hover {
+  background-color: var(--background-secondary);
+}
+
+.search-result-file-matches {
+  font-size: 13px;
+  line-height: 16px;
+  margin-right: 5px;
+  margin-top: 8px;
+  border-bottom: 0;
+}
+
+.search-result-file-match {
+  /*padding: 0 5px 0 10px;*/
+  line-height: normal !important;
+  word-break: keep-all;
+  left: 0;
+  width: 100%;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.search-result-file-match:hover {
+  background-color: var(--background-tertiary);
+  /*color: var(--text-on-accent);*/
+  /*padding: 10px;*/
+}
+
+.search-result-file-matched-text {
+  /*color: var(--text-link) !important;*/
+  /*background-color: var(--background-secondary);*/
+  background-color: var(--text-selection);
+}
+
+.search-result-collapse-indicator {
+  top: -5px !important;
+}
+
+.search-result-file-match-replace-button {
+/*  background-color: var(--interactive-accent);
+  color: #fff;
+  top: 3px;
+  right: 8px;
+  opacity: 0.8;
+  padding: 2px 8px;
+  font-size: 11px;*/
+
+  color: #fff;
+  top: 3px;
+  right: 8px;
+  opacity: 0.8;
+  font-size: .625rem;
+  text-transform: uppercase;
+  background-color: #7289da !important;
+  height: .9375rem;
+  padding: 0 .275rem;
+  margin-top: .075em;
+  border-radius: .1875rem;
+}
+
+.search-result-file-match-replace-button:hover {
+}
+
+/* search count boxes */
+
+.search-result-count {
+  font-family: var(--font-monospace);
+}
+
+.pane-list-item-ending-flair {
+  top: 6px;
+  padding-top: 2px;
+  right: 5px;
+}
+
+.pane-list-item:hover .pane-list-item-ending-flair {
+  background-color: var(--discord-blue);
+  color: #fff;
+}
+
+.search-result-file-title .pane-list-item-ending-flair {
+  position: absolute;
+  top: 1px;
+  font-size: 12px;
+  background-color: var(--background-secondary-alt);
+  line-height: 12px;
+  border-radius: 3px;
+}
+
+
+/*----------------------------------------------------------------
+navigation */
+
+
+/* condense line spacing on file explorer title list. also avoids character-level word breaks */
+.nav-file-title-content,
+.search-result-file-title { /*.search-result-file-match*/
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: normal !important;
+  word-break: keep-all;
+}
+
+/* file explorer : smaller & bold vault title */
+.nav-folder.mod-root > .nav-folder-title {
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: bolder;
+  top: -6px; /* higher */
+  cursor: default;
+}
+
+/* clean up side bar empty state (e.g. unlinked mentions) */
+.search-empty-state {
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: normal;
+}
+
+/*----------------------------------------------------------------
+file explorer */
+
+.nav-file-title,
+.nav-folder-title {
+  padding: 0 14px 0 20px;
+}
+
+.nav-file.is-active > .nav-file-title,
+.nav-file.is-active > .nav-file-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 4px;
+  /*font-weight: bold;*/
+  color: var(--text-accent);
+  border-left: 3px solid var(--text-accent);
+  /*transition: all 0.2s ease;*/
+}
+
+.nav-file.is-active > .nav-file-title {
+  padding-left: 14px;
+  margin-left: 3px;
+  /* margin-left: 5px; */
+  color: var(--text-normal) !important;
+}
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 2px;
+  /*transition: all 0.2s ease;*/
+}
+
+.nav-folder-collapse-indicator {
+  background-color: transparent !important;
+}
+
+.nav-file-tag {
+  background-color: var(--background-secondary-alt);
+  top: -1px;
+}
+
+/*----------------------------------------------------------------
+status bar */
+
+.status-bar {
+  background-color: var(--background-secondary-alt) !important;
+}
+
+.status-bar-item {
+  font-size: 13px;
+}
+
+/* clean up side bar empty state (e.g. unlinked mentions) */
+
+.search-empty-state {
+  width: auto;
+  padding-left: 10px;
+  padding-right: 5px;
+  line-height: normal;
+}

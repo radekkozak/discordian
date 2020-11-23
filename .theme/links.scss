@@ -1,0 +1,77 @@
+/*----------------------------------------------------------------
+LINKS & BRACKETS
+----------------------------------------------------------------*/
+
+a,
+.internal-link,
+.cm-hmd-internal-link,
+.cm-link,
+.cm-url,
+.cm-formatting-link,
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+  color: var(--text-a);
+  text-decoration: none;
+  font-family: var(--default-font-alt);
+}
+
+a:hover,
+.internal-link:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover,
+.cm-url:hover,
+.cm-formatting-link:hover {
+  color: var(--text-a-hover);
+  text-decoration: none;
+}
+
+.cm-s-obsidian span.cm-formatting-link {
+  color: var(--text-a-hover);
+  padding: 0 2px;
+}
+
+.cm-s-obsidian span.cm-link:hover,
+.cm-s-obsidian span.cm-hmd-internal-link:hover {
+  color: var(--text-a);
+  text-decoration: none;
+}
+
+/* regular urls in editor */
+.cm-s-obsidian span.cm-url {
+  /*text-decoration: none;*/
+}
+
+/* preview */
+.markdown-preview-view .internal-link {
+  text-decoration: none;
+}
+
+.markdown-preview-view .internal-link.is-unresolved {
+  opacity: 1;
+}
+
+.external-link {
+  background-image: unset;
+}
+
+.markdown-preview-view .external-link {
+  color: var(--text-link);
+}
+
+/* make external links italics to differentiate */
+
+a:not(.internal-link) {
+  /*font-style: italic;*/
+  color: var(--text-link);
+}
+
+a:not(.internal-link):hover {
+  /*font-style: italic;*/
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+a:not(.internal-link).footnote-link {
+  color: var(--text-a);
+  text-decoration: none;
+}
