@@ -116,7 +116,7 @@
 
 /* Editor font: make thicker so it is like in Preview */
 /* If you remove this - change editor font to regular Catamaran */
-.cm-s-obsidian .CodeMirror-line * {
+.cm-s-obsidian  { /*.CodeMirror-line * */
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
@@ -158,26 +158,6 @@ input[type='number'] {
 
 .search-input-container {
   width: calc(100% - 18px);
-}
-
-/* Translucent modals - from: Nosedive-Obsidian */
-/* Modify modal, omnibar, open looks */
-input.prompt-input, input.prompt-input:active, input.prompt-input:focus {
-  border-radius: 3px;
-  border: 2px solid rgba(38, 38, 59, 0.5); /* in the original code this is var(--text-muted) */
-  background-color: transparent;
-  box-sizing: border-box;
-  border-collapse: collapse;
-}
-
-.modal-bg {
-  background-color: var(--background-modifier-cover);
-}
-
-/* Make legible background for menus since we overrode the background */
-div.popover.hover-popover, .menu, .suggestion-container {
-  background-color: var(--background-primary);
-  border: none;
 }
 
 .is-selected {
@@ -329,24 +309,7 @@ img {
 
 /*----------------------------------------------------------------
 
-TABLES */
 
-th {
-  font-weight: 800 !important;
-}
-
-thead {
-  border-bottom: 4px solid var(--background-modifier-border);
-}
-
-.table {
-  background-color: var(--background-secondary-alt);
-  border: 1px solid var(--background-modifier-border);
-  padding: 4px;
-  line-height: normal;
-  display: block;
-  border-radius: 4px;
-}
 
 .cm-s-obsidian .hmd-fold-html-stub,
 .cm-s-obsidian .hmd-fold-code-stub,
@@ -580,19 +543,7 @@ mark > strong {
   font-family: var(--default-font-alt);
 }
 
-/* COLLAPSED RIBBONS */
 
-.workspace-ribbon.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
-}
-
-.workspace-ribbon.mod-right.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
-}
-
-.workspace-ribbon.mod-left.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
-}
 
 /* POPUP NOTIFICATION*/
 
@@ -723,100 +674,6 @@ mark > strong {
   background-color: var(--background-modifier-form-field-highlighted);
 }
 
-/* Settings */
-
-.modal {
-  background-color: var(--background-secondary);
-  border: 1px solid var(--background-secondary);
-}
-
-.horizontal-tab-content,
-.vertical-tab-content {
-  background-color: var(--background-secondary);
-}
-
-/* Left settings pane */
-
-.vertical-tab-header {
-  background-color: var(--background-secondary-alt);
-}
-
-.horizontal-tab-nav-item.is-active,
-.vertical-tab-nav-item.is-active {
-  color: var(--interactiver-active);
-}
-
-.horizontal-tab-nav-item:hover,
-.vertical-tab-nav-item:hover {
-  color: var(--interactive-hover);
-}
-
-.horizontal-tab-nav-item,
-.vertical-tab-nav-item {
-  background-color: var(--background-secondary-alt);
-  letter-spacing: 0;
-  padding: 6px 6px 6px 24px;
-  /*margin: 2px 0;*/
-  color: var(--interactive-normal);
-}
-
-/* Change colour of buttons in Obsidian settings */
-/* .modal.mod-settings */
-
-.setting-item {
-  border-top: thin solid var(--background-modifier-accent);
-}
-
-.setting-editor-extra-setting-button {
-  margin-top: 8px;
-}
-
-button {
-  margin: 0;
-}
-
-button.mod-cta {
-  background-color: var(--discord-blue);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: var(--default-font-alt);
-}
-
-button.mod-cta:hover {
-  background-color: var(--discord-blue-hover);
-}
-
-.modal button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--background-modifier-form-field); /* background-secondary-alt */
-  color: var(--text-on-accent);
-}
-
-.modal button:not(.mod-cta):not(.mod-warning):hover {
-  background-color: var(--background-modifier-form-field-highlighted); /* background-primary-alt */
-}
-
-.community-theme-container button {
-  margin-right: 8px;
-}
-
-.community-theme a {
-  vertical-align: middle;
-}
-
-/*.modal.mod-settings button:not(.mod-cta) {
-    background-color: var(--background-secondary-alt);
-}*/
-
-/*button.community-theme-preview-button {
-    margin-right: 12px;
-    background-color: var(--background-secondary-alt) !important;
-}
-
-button.community-theme-preview-button + button {
-    margin-right: 12px;
-    background-color: var(--background-secondary-alt) !important;
-}*/
 
 /* --------------- */
 
@@ -831,351 +688,28 @@ button.community-theme-preview-button + button {
   color: inherit;
 }
 
-/* dashes in bullets */
 
-.cm-formatting-list {
-  font-weight: 700;
-}
-
-.cm-formatting
-  /* This is the color of header hashtags. Don't change. */
-.cm-formatting-list-ul .cm-list-1
-  /* This is the color of text in lists. Don't change. */
-  /* Subtler code folding arrows */
-.CodeMirror-foldgutter-folded:after,
-.CodeMirror-foldgutter-open:after {
-  opacity: 0.5;
-  font-size: 60%;
-  color: var(--text-link);
-}
-
-.CodeMirror-foldgutter-folded:hover:after,
-.CodeMirror-foldgutter-open:hover:after {
-  opacity: 1;
-  font-size: 60%;
-  color: var(--text-link);
-}
-
-.CodeMirror-foldgutter-folded:after {
-  content: "\25BA";
-  font-size: 60%;
-  color: var(--text-link);
-}
-
-.CodeMirror-foldgutter-open:after {
-  content: "\25BC";
-}
-
-/* Bullet Point Relationship Lines */
-
-.cm-hmd-list-indent .cm-tab,
-ul ul {
-  position: relative;
-}
-
-.cm-hmd-list-indent .cm-tab::before,
-ul ul::before {
-  content: "";
-  border-left: 1px solid;
-  color: #92CDD6;
-  position: absolute;
-}
-
-.cm-hmd-list-indent .cm-tab::before {
-  left: 0;
-  top: -5px;
-  bottom: -4px;
-}
-
-ul ul::before {
-  left: 0px;
-  top: 0;
-  bottom: 0;
-}
-
-/* ul, li & ol colors in editor */
-
-.cm-s-obsidian span.cm-formatting-list {
-  color: #8abeb7;
-}
-
-ol {
-  display: block;
-  list-style-type: decimal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
 
 .suggestion-highlight {
   color: var(--interactive-accent) !important;
 }
 
-/* PLUGINS & CUSTOMS */
-
-/* Window frame */
-
-.titlebar {
-  background: var(--background-primary);
-  /*border-bottom: 1px solid var(--background-modifier-border);*/
-}
-
-.hider-frameless .titlebar {
-  border-bottom: none;
-}
-
-.titlebar-text {
-  display: none;
-  color: var(--text-faint);
-  letter-spacing: inherit;
-}
-
-.titlebar-button {
-  opacity: 1;
-  cursor: var(--cursor);
-}
-
-.titlebar-button svg path {
-  fill: var(--text-muted) !important;
-  stroke: var(--text-muted) !important;
-}
-
-.titlebar-button:hover svg path {
-  fill: var(--text-normal) !important;
-  stroke: var(--text-normal) !important;
-}
-
-/* Status bar */
-
-.status-bar {
-  border-top: 0px solid var(--background-modifier-border); /* flat */
-  background-color: var(--background-secondary);
-  color: var(--text-faint);
-  padding: 0 4em 0 0;
-}
-
-.status-bar-item {
-  padding: 0 5px;
-}
-
-.status-bar-item-segment {
-  margin-right: 10px;
-}
-
-/* NOTE TITLE BAR */
-
-.workspace-tabs {
-  background-color: var(--background-secondary);
-  overflow: hidden;
-  padding: 0 0 2rem 0;
-  /* padding: 0 4px 30px 0; */
-  position: relative;
-}
-.workspace-split.mod-root {
-  background-color: transparent !important;
-}
-
-/* no animation for left and right panels - feels more snappier */
-.workspace-split.mod-left-split, .workspace-split.mod-right-split {
-  transition: none !important;
-}
-
-.workspace-split.mod-left-split {
-  /*margin-left: 26px;*/
-}
-
-.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
-  border-bottom: 1px solid var(--background-secondary-alt);
-  background-color: var(--background-tertiary);
-
-  /*border-bottom: 1px solid var(--interactive-accent);
-  background-color: var(--background-secondary);*/
-}
-
-.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content {
-  padding-right: 0;
-}
-
-.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content {
-  padding-right: 2px;
-}
-
-.workspace-split.mod-vertical > .workspace-leaf {
-  padding-right: 0;
-}
-
-/* straight corners */
-.workspace-leaf-content {
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-}
-
-.view-header {
-  height: 30px !important;
-  border-top: 1px solid var(--background-secondary-alt);
-  /*border-bottom: 2px solid var(--background-secondary-alt);*/
-  background-color: var(--background-tertiary);
-}
-
-/* Change the colour or the font-weight of the note title in a pane */
-.view-header-title {
-  font-size: 15px;
-  line-height: 27px;
-}
-
-.view-header-title-container {
-  height: 27px;
-  line-height: 22px;
-  position: relative;
-}
-
-.view-action {
-  top: 0;
-}
-
-.view-actions {
-  padding: 5px 10px;
-  margin-left: auto;
-}
-
-/*.mod-close-leaf {
-    margin-top: 1px;
-}*/
-
-.workspace-leaf.mod-active .view-header {
-  background-color: var(--background-tertiary);
-  border-bottom: 1px solid var(--interactive-accent);
-}
-
-/* Change color of note title active pane - Obsidianite */
-.workspace-leaf.mod-active .view-header-title {
-  color: var(--text-normal);
-}
-
-/* fix the long-title-obscuring shadows */
-.view-header-title-container:after {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 26px;
-  background: linear-gradient(to right, transparent, var(--background-tertiary)) !important;
-}
-
-/* Change icon above vert. note title on title spine - from Obsidianite */
-.view-header-icon {
-  top: 0px !important;
-  /*color: var(--text-muted);*/
-  /* PB changed from var(--text-accent) */
-}
-
-.workspace-leaf.mod-active .view-header-icon {
-  color: var(--text-normal);
-}
-
-/* Change color of line next to note title in Andy Mode - Obsidianite
-   Change to border-bottom in non-AM */
-/*.workspace-leaf.mod-active .view-header {
-    border-right: #ff0000 !important;
-}*/
-
-
-
 /* flashing and selections when searching */
-
 .is-flashing {
   /*background-color: unset;*/
   background-color: var(--text-highlight-bg);
   transition: all 0.5s ease-in !important;
 }
 
-/* Clean up secondary scrollbar*/
+/*----------------------------------------------------------------
+PLUGINS & CUSTOM SNIPPETS
+----------------------------------------------------------------*/
 
-.CodeMirror-scroll::-webkit-scrollbar {
-  display: none !important;
-}
 
-/* Frameless mode on macOS only */
 
-/*.hider-frameless .workspace-split.mod-right-split > .workspace-tabs,
-.hider-frameless .workspace-split.mod-root .view-header {
-	padding-top:2px;
-}
-.hider-frameless .workspace-split.mod-left-split > .workspace-tabs {
-	padding-top:24px;
-}
-.hider-frameless .workspace-split.mod-right-split > .workspace-tabs ~  .workspace-tabs,
-.hider-frameless .workspace-split.mod-left-split > .workspace-tabs ~  .workspace-tabs {
-	padding-top:0px;
-}
-.hider-frameless.is-fullscreen .workspace-split.mod-left-split > .workspace-tabs,
-.hider-frameless.is-fullscreen .workspace-split.mod-root .view-header {
-	padding-top:0px;
-}*/
 
-/* ANDY MATUSCHAK MODE*/
 
-/* V2! for 0.7.0! (2.7?) */
 
-/*.mod-root.workspace-split.mod-vertical {
-	overflow-x: auto;
-	--header-width: 36px;
-	!* <- 36px is the header height in the default theme *!
-}
 
-.mod-root.workspace-split.mod-vertical > div {
-	min-width: calc(700px + var(--header-width));
-	!* <-- 700px is the default theme's "readable" max-width *!
-	box-shadow: 0px 0px 20px 20px #202225;
-	position: sticky;
-	left: 0;
-}*/
 
-/* shift sticky position, so titles will stack up to the left */
 
-/* This will currently stack to a maximum of 10 before resetting */
-/*
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-8) {
-	left: calc(var(--header-width) * 0);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-7) {
-	left: calc(var(--header-width) * 1);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-6) {
-	left: calc(var(--header-width) * 2);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-5) {
-	left: calc(var(--header-width) * 3);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-4) {
-	left: calc(var(--header-width) * 4);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-3) {
-	left: calc(var(--header-width) * 5);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-2) {
-	left: calc(var(--header-width) * 6);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n-1) {
-	left: calc(var(--header-width) * 7);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n + 0) {
-	left: calc(var(--header-width) * 8);
-}
-
-.mod-root.workspace-split.mod-vertical > div:nth-child(10n + 1) {
-	left: calc(var(--header-width) * 9);
-}
-*/

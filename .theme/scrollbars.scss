@@ -2,6 +2,9 @@
 SCROLLBARS
 ----------------------------------------------------------------*/
 
+/*----------------------------------------------------------------
+theme default thin scrollbars */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -23,6 +26,14 @@ SCROLLBARS
 ::-webkit-scrollbar-corner {
   background-color: transparent;
 }
+
+/* Clean up secondary scrollbar*/
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+/*----------------------------------------------------------------
+scrollbars in editor & preview */
 
 .mod-root {
   scrollbar-width: auto;

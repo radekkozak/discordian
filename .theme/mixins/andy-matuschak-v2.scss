@@ -66,3 +66,72 @@ body.plugin-sliding-panes .CodeMirror,
 body.plugin-sliding-panes .markdown-preview-section {
   margin-left: 35px;
 }
+
+/* ANDY MATUSCHAK MODE*/
+
+/* V2! for 0.7.0! (2.7?) */
+
+/*.mod-root.workspace-split.mod-vertical {
+	overflow-x: auto;
+	--header-width: 36px;
+	<- 36px is the header height in the default theme
+}
+
+.mod-root.workspace-split.mod-vertical > div {
+	min-width: calc(700px + var(--header-width));
+	!* <-- 700px is the default theme's "readable" max-width *!
+	box-shadow: 0px 0px 20px 20px #202225;
+	position: sticky;
+	left: 0;
+}*/
+
+/* shift sticky position, so titles will stack up to the left */
+
+/* This will currently stack to a maximum of 10 before resetting */
+
+/*
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-8) {
+	left: calc(var(--header-width) * 0);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-7) {
+	left: calc(var(--header-width) * 1);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-6) {
+	left: calc(var(--header-width) * 2);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-5) {
+	left: calc(var(--header-width) * 3);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-4) {
+	left: calc(var(--header-width) * 4);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-3) {
+	left: calc(var(--header-width) * 5);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-2) {
+	left: calc(var(--header-width) * 6);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-1) {
+	left: calc(var(--header-width) * 7);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n + 0) {
+	left: calc(var(--header-width) * 8);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n + 1) {
+	left: calc(var(--header-width) * 9);
+}*/
+
+/* Change color of line next to note title in Andy Mode - Obsidianite
+   Change to border-bottom in non-AM */
+/*.workspace-leaf.mod-active .view-header {
+    border-right: #ff0000 !important;
+}*/

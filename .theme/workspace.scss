@@ -2,6 +2,44 @@
 WORKSPACE
 ----------------------------------------------------------------*/
 
+.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
+.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+  background-color: var(--interactive-accent-alt);
+  color: var(--text-on-accent);
+}
+
+/* straight corners */
+.workspace-leaf-content {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/*----------------------------------------------------------------
+Collapsed Ribbons */
+
+.workspace-ribbon.is-collapsed {
+  background-color: var(--background-secondary-alt) !important;
+}
+
+.workspace-ribbon.mod-right.is-collapsed {
+  background-color: var(--background-secondary-alt) !important;
+}
+
+.workspace-ribbon.mod-left.is-collapsed {
+  background-color: var(--background-secondary-alt) !important;
+}
+
+/*----------------------------------------------------------------
+Tabs */
+
+.workspace-tabs {
+  background-color: var(--background-secondary);
+  overflow: hidden;
+  padding: 0 0 2rem 0;
+  /* padding: 0 4px 30px 0; */
+  position: relative;
+}
+
 .workspace-tab-header {
   color: var(--text-muted) !important;
   text-decoration: none !important;
@@ -11,14 +49,8 @@ WORKSPACE
   color: var(--text-normal) !important;
 }
 
-.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
-.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
-  background-color: var(--interactive-accent-alt);
-  color: var(--text-on-accent);
-}
-
 /*----------------------------------------------------------------
-resize handlers */
+Resize Handlers */
 
 .workspace-leaf-resize-handle {
   background-color: var(--background-secondary-alt);
@@ -30,7 +62,7 @@ resize handlers */
 }
 
 /*----------------------------------------------------------------
-split mode */
+Split Mode */
 
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
@@ -42,8 +74,33 @@ split mode */
   height: 2px;
 }
 
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content {
+  padding-right: 0;
+}
+
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content {
+  padding-right: 2px;
+}
+
+.workspace-split.mod-vertical > .workspace-leaf {
+  padding-right: 0;
+}
+
+.workspace-split.mod-root {
+  background-color: transparent !important;
+}
+
+/* no animation for left and right panels - feels more snappier */
+.workspace-split.mod-left-split, .workspace-split.mod-right-split {
+  transition: none !important;
+}
+
+.workspace-split.mod-left-split {
+  /*margin-left: 26px;*/
+}
+
 /*----------------------------------------------------------------
-view actions */
+View Actions */
 
 .view-action {
   color: var(--text-muted) !important;
@@ -56,7 +113,6 @@ view actions */
 }
 
 /* icons at top of panes */
-
 .file-view-actions a {
   color: var(--text-muted) !important;
 }
@@ -66,7 +122,7 @@ view actions */
 }
 
 /*----------------------------------------------------------------
-side dock */
+Side Dock */
 
 .side-dock-panels-container {
   background-color: var(--background-secondary-alt) !important;
@@ -94,13 +150,11 @@ side dock */
 }
 
 /* side dock text, like file names and backlink context */
-
 .side-dock-panels-container {
   font-size: 13px !important;
 }
 
 /* side dock titles at top */
-
 .side-dock-title {
   font-size: 20px !important;
   font-weight: 800 !important;
@@ -112,7 +166,6 @@ side dock */
 }
 
 /* hover actions on side dock navigation */
-
 .side-dock-ribbon-tab:hover,
 .side-dock-ribbon-tab-inner:hover,
 .side-dock-ribbon-action:hover,
@@ -123,7 +176,7 @@ side dock */
 }
 
 /*----------------------------------------------------------------
- navigation */
+Navigation */
 
 .nav-file-title {
   font-size: 15px;
@@ -153,8 +206,77 @@ color: #59a2c5;
   color: var(--text-normal);
 }
 
+/* condense line spacing on file explorer title list. also avoids character-level word breaks */
+.nav-file-title-content,
+.search-result-file-title { /*.search-result-file-match*/
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: normal !important;
+  word-break: keep-all;
+}
+
+/* file explorer : smaller & bold vault title */
+.nav-folder.mod-root > .nav-folder-title {
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: bolder;
+  top: -6px; /* higher */
+  cursor: default;
+}
+
 /*----------------------------------------------------------------
-search */
+File Explorer */
+
+.nav-file-title,
+.nav-folder-title {
+  padding: 0 14px 0 20px;
+}
+
+.nav-file.is-active > .nav-file-title,
+.nav-file.is-active > .nav-file-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 4px;
+  /*font-weight: bold;*/
+  color: var(--text-accent);
+  border-left: 3px solid var(--text-accent);
+  /*transition: all 0.2s ease;*/
+}
+
+.nav-file.is-active > .nav-file-title {
+  padding-left: 14px;
+  margin-left: 3px;
+  /* margin-left: 5px; */
+  color: var(--text-normal) !important;
+}
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 2px;
+  /*transition: all 0.2s ease;*/
+}
+
+.nav-folder-collapse-indicator {
+  background-color: transparent !important;
+}
+
+.nav-file-tag {
+  background-color: var(--background-secondary-alt);
+  top: -1px;
+}
+
+/* clean up side bar empty state (e.g. unlinked mentions) */
+.search-empty-state {
+  width: auto;
+  /*padding-left: 10px;
+  padding-right: 5px;*/
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: normal;
+}
+
+/*----------------------------------------------------------------
+Search */
 
 .search-result-file-title {
   color: var(--text-a) !important;
@@ -227,7 +349,6 @@ search */
 }
 
 /* search count boxes */
-
 .search-result-count {
   font-family: var(--font-monospace);
 }
@@ -252,80 +373,8 @@ search */
   border-radius: 3px;
 }
 
-
 /*----------------------------------------------------------------
-navigation */
-
-
-/* condense line spacing on file explorer title list. also avoids character-level word breaks */
-.nav-file-title-content,
-.search-result-file-title { /*.search-result-file-match*/
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  line-height: normal !important;
-  word-break: keep-all;
-}
-
-/* file explorer : smaller & bold vault title */
-.nav-folder.mod-root > .nav-folder-title {
-  padding-left: 6px;
-  font-size: 14px;
-  font-weight: bolder;
-  top: -6px; /* higher */
-  cursor: default;
-}
-
-/* clean up side bar empty state (e.g. unlinked mentions) */
-.search-empty-state {
-  width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  line-height: normal;
-}
-
-/*----------------------------------------------------------------
-file explorer */
-
-.nav-file-title,
-.nav-folder-title {
-  padding: 0 14px 0 20px;
-}
-
-.nav-file.is-active > .nav-file-title,
-.nav-file.is-active > .nav-file-title:hover {
-  background-color: var(--background-primary);
-  border-radius: 4px;
-  /*font-weight: bold;*/
-  color: var(--text-accent);
-  border-left: 3px solid var(--text-accent);
-  /*transition: all 0.2s ease;*/
-}
-
-.nav-file.is-active > .nav-file-title {
-  padding-left: 14px;
-  margin-left: 3px;
-  /* margin-left: 5px; */
-  color: var(--text-normal) !important;
-}
-
-body:not(.is-grabbing) .nav-file-title:hover,
-body:not(.is-grabbing) .nav-folder-title:hover {
-  background-color: var(--background-primary);
-  border-radius: 2px;
-  /*transition: all 0.2s ease;*/
-}
-
-.nav-folder-collapse-indicator {
-  background-color: transparent !important;
-}
-
-.nav-file-tag {
-  background-color: var(--background-secondary-alt);
-  top: -1px;
-}
-
-/*----------------------------------------------------------------
-status bar */
+Status Bar */
 
 .status-bar {
   background-color: var(--background-secondary-alt) !important;
@@ -335,11 +384,129 @@ status bar */
   font-size: 13px;
 }
 
-/* clean up side bar empty state (e.g. unlinked mentions) */
+/*----------------------------------------------------------------
+Header */
 
-.search-empty-state {
-  width: auto;
-  padding-left: 10px;
-  padding-right: 5px;
-  line-height: normal;
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+  border-bottom: 1px solid var(--background-secondary-alt);
+  background-color: var(--background-tertiary);
+
+  /*border-bottom: 1px solid var(--interactive-accent);
+  background-color: var(--background-secondary);*/
+}
+
+
+.view-header {
+  height: 30px !important;
+  border-top: 1px solid var(--background-secondary-alt);
+  /*border-bottom: 2px solid var(--background-secondary-alt);*/
+  background-color: var(--background-tertiary);
+}
+
+/* change the colour or the font-weight of the note title in a pane */
+.view-header-title {
+  font-size: 15px;
+  line-height: 27px;
+}
+
+.view-header-title-container {
+  height: 27px;
+  line-height: 22px;
+  position: relative;
+}
+
+.view-action {
+  top: 0;
+}
+
+.view-actions {
+  padding: 5px 10px;
+  margin-left: auto;
+}
+
+/*.mod-close-leaf {
+    margin-top: 1px;
+}*/
+
+.workspace-leaf.mod-active .view-header {
+  background-color: var(--background-tertiary);
+  border-bottom: 1px solid var(--interactive-accent);
+}
+
+/* Change color of note title active pane - Obsidianite */
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--text-normal);
+}
+
+/* fix the long-title-obscuring shadows */
+.view-header-title-container:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 26px;
+  background: linear-gradient(to right, transparent, var(--background-tertiary)) !important;
+}
+
+/* Change icon above vert. note title on title spine */
+.view-header-icon {
+  top: 0 !important;
+  /*color: var(--text-muted);*/
+  /* PB changed from var(--text-accent) */
+}
+
+.workspace-leaf.mod-active .view-header-icon {
+  color: var(--text-normal);
+}
+
+/*----------------------------------------------------------------
+Top Window Frame */
+
+.titlebar {
+  background: var(--background-primary);
+  /*border-bottom: 1px solid var(--background-modifier-border);*/
+}
+
+.hider-frameless .titlebar {
+  border-bottom: none;
+}
+
+.titlebar-text {
+  display: none;
+  color: var(--text-faint);
+  letter-spacing: inherit;
+}
+
+.titlebar-button {
+  opacity: 1;
+  cursor: var(--cursor);
+}
+
+.titlebar-button svg path {
+  fill: var(--text-muted) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.titlebar-button:hover svg path {
+  fill: var(--text-normal) !important;
+  stroke: var(--text-normal) !important;
+}
+
+/*----------------------------------------------------------------
+Status Bar */
+
+.status-bar {
+  border-top: 0px solid var(--background-modifier-border); /* flat */
+  background-color: var(--background-secondary);
+  color: var(--text-faint);
+  padding: 0 4em 0 0;
+}
+
+.status-bar-item {
+  padding: 0 5px;
+}
+
+.status-bar-item-segment {
+  margin-right: 10px;
 }
