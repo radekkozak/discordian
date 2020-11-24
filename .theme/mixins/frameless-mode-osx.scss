@@ -1,0 +1,22 @@
+/*----------------------------------------------------------------
+FRAMELESS MODE (on macOS only)
+----------------------------------------------------------------*/
+
+.hider-frameless .workspace-split.mod-right-split > .workspace-tabs,
+.hider-frameless .workspace-split.mod-root .view-header {
+	padding-top:2px;
+}
+
+.hider-frameless .workspace-split.mod-left-split > .workspace-tabs {
+	padding-top:24px;
+}
+
+.hider-frameless .workspace-split.mod-right-split > .workspace-tabs ~  .workspace-tabs,
+.hider-frameless .workspace-split.mod-left-split > .workspace-tabs ~  .workspace-tabs {
+	padding-top:0;
+}
+
+.hider-frameless.is-fullscreen .workspace-split.mod-left-split > .workspace-tabs,
+.hider-frameless.is-fullscreen .workspace-split.mod-root .view-header {
+	padding-top:0;
+}
