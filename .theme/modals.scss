@@ -1,0 +1,127 @@
+/*----------------------------------------------------------------
+MODALS
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+Translucent modals e.g. omnibar, open, commands
+(credit: Nosedive-Obsidian) */
+
+input.prompt-input, input.prompt-input:active, input.prompt-input:focus {
+  border-radius: 3px;
+  border: 2px solid rgba(38, 38, 59, 0.5); /* in the original code this is var(--text-muted) */
+  background-color: transparent;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+.modal {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-secondary);
+}
+
+.modal-bg {
+  background-color: var(--background-modifier-cover);
+}
+
+/* Make legible background for menus since we overrode the background */
+div.popover.hover-popover, .menu, .suggestion-container {
+  background-color: var(--background-primary);
+  border: none;
+}
+
+/*----------------------------------------------------------------
+Settings Modal */
+
+.horizontal-tab-content,
+.vertical-tab-content {
+  background-color: var(--background-secondary);
+}
+
+/* Left settings pane */
+
+.vertical-tab-header {
+  background-color: var(--background-secondary-alt);
+}
+
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active {
+  color: var(--interactiver-active);
+}
+
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+  color: var(--interactive-hover);
+}
+
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item {
+  background-color: var(--background-secondary-alt);
+  letter-spacing: 0;
+  padding: 6px 6px 6px 24px;
+  /*margin: 2px 0;*/
+  color: var(--interactive-normal);
+}
+
+/* Change colour of buttons in Obsidian settings */
+/* .modal.mod-settings */
+
+.setting-item {
+  border-top: thin solid var(--background-modifier-accent);
+}
+
+.setting-editor-extra-setting-button {
+  margin-top: 8px;
+}
+
+/*----------------------------------------------------------------
+Buttons */
+
+button {
+  margin: 0;
+}
+
+button.mod-cta {
+  background-color: var(--discord-blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--default-font-alt);
+}
+
+button.mod-cta:hover {
+  background-color: var(--discord-blue-hover);
+}
+
+.modal button:not(.mod-cta):not(.mod-warning) {
+  background-color: var(--background-modifier-form-field); /* background-secondary-alt */
+  color: var(--text-on-accent);
+}
+
+.modal button:not(.mod-cta):not(.mod-warning):hover {
+  background-color: var(--background-modifier-form-field-highlighted); /* background-primary-alt */
+}
+
+/*----------------------------------------------------------------
+Communnity Themes Panel */
+
+.community-theme-container button {
+  margin-right: 8px;
+}
+
+.community-theme a {
+  vertical-align: middle;
+}
+
+/*.modal.mod-settings button:not(.mod-cta) {
+    background-color: var(--background-secondary-alt);
+}*/
+
+/*button.community-theme-preview-button {
+    margin-right: 12px;
+    background-color: var(--background-secondary-alt) !important;
+}
+
+button.community-theme-preview-button + button {
+    margin-right: 12px;
+    background-color: var(--background-secondary-alt) !important;
+}*/

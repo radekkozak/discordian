@@ -1,0 +1,97 @@
+/*----------------------------------------------------------------
+TASK LISTS
+----------------------------------------------------------------*/
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--background-primary);
+}
+
+input[type=checkbox]:focus, input[type=checkbox]:hover {
+  outline: 0;
+  border-color: var(--text-faint);
+}
+
+/* this is Obsidian default - modify if needed */
+/*.cm-s-obsidian pre.HyperMD-list-line {
+  padding-top: 0.3em;
+  min-height: 1.5em;
+}*/
+
+.cm-s-obsidian span.cm-formatting-list {
+  margin: 0 0 0 -0.2rem;
+}
+
+.cm-s-obsidian pre.HyperMD-list-line {
+  padding-bottom: 0.1rem;
+}
+
+.cm-s-obsidian span.cm-formatting-task {
+  font-size: 60%;
+  white-space: pre;
+  line-height: 1.75rem;
+  text-align: center;
+  color: transparent;
+  margin-top: -0.2rem !important;
+  background-color: var(--background-primary);
+}
+
+input[type=checkbox], .cm-formatting-task {
+  border: 1px solid var(--text-faint);
+  border-radius: 3px;
+  padding: 0;
+}
+
+/* HACK: makes unchecked task same size as checked one */
+.cm-s-obsidian span.cm-formatting-task::after {
+  content: '....';
+  color: transparent;
+}
+
+input[type=checkbox]:checked, .cm-formatting-task.cm-property {
+  background-color: var(--discord-green) !important;
+  border: 1px solid var(--discord-green);
+}
+
+.cm-formatting-task.cm-property::after {
+  content: '\0020\0020' !important;
+  color: transparent !important;
+}
+
+.cm-formatting-task + span {
+  vertical-align: text-bottom;
+}
+
+/*----------------------------------------------------------------
+Preview Mode */
+
+.markdown-preview-view .task-list-item-checkbox {
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  margin-left: -0.2em;
+  margin-right: 0.5rem;
+  filter: none;
+}
+
+input[type=checkbox]:checked {
+  background-color: var(--discord-green);
+  border: 1px solid var(--discord-green);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cpath d='M0 11l2-2l5 5L18 3l2 2L7 18z' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+ul.contains-task-list li > div.list-collapse-indicator {
+  margin-left: -3.5rem;
+  margin-top: 0.5rem;
+}
+
+.CodeMirror-gutter-elt {
+  top: 0.25rem;
+  margin-left: -0.1rem;
+}

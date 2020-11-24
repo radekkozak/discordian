@@ -1,0 +1,49 @@
+/*----------------------------------------------------------------
+LISTS
+----------------------------------------------------------------*/
+
+ul {
+  padding-inline-start:2em;
+  list-style:none;
+}
+
+ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
+  list-style:none;
+}
+
+ul > li:not(.task-list-item)::before {
+  content:"\2022";
+  color:var(--text-faint);
+  font-weight:400;
+  display:inline-block;
+  width:1em;
+  margin-left:-1em;
+}
+
+ul li p, ol li p {
+  display:inline;
+}
+
+ol {
+  padding-inline-start:1em;
+  margin-left:1em;
+  list-style:none;
+  counter-reset:counter;
+  position:relative;
+}
+
+ol > li {
+  counter-increment:counter;
+  margin: 0.3rem 0 0.3rem 0;
+}
+
+ol > li::before {
+  content: counter(counter) ". ";
+  color: var(--text-faint);
+  position: absolute;
+  text-align: left;
+  left: 0;
+  width: 1em;
+}
+
+

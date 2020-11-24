@@ -1,0 +1,56 @@
+/*----------------------------------------------------------------
+TABLES
+----------------------------------------------------------------*/
+
+th {
+  font-weight: 800;
+}
+
+thead {
+  /*border-bottom: 2px solid var(--background-code-border);*/
+}
+
+table {
+  background-color: transparent;
+  /*border: 2px solid var(--background-tertiary);*/
+  /*padding: 4px;*/
+}
+
+.markdown-preview-view td {
+  border-left: 1px solid var(--background-accent);
+  /*border-right: 1px solid var(--background-accent);*/
+}
+
+.markdown-preview-view tr { /*.markdown-preview-view th, */
+  border-top: 1px solid var(--background-accent);
+}
+
+.markdown-preview-view th {
+  font-family: var(--default-font-alt);
+  font-weight: bold;
+
+}
+
+tr > th {
+  border-left: 1px solid var(--background-accent);
+}
+
+tr > td:first-of-type, tr > th:first-of-type {
+  border-left: 0;
+}
+
+thead > tr {
+  border-top: 0 !important;
+}
+
+/* Editor Mode Tables */
+
+.CodeMirror pre.HyperMD-table-row {
+  font-family:var(--font-monospace);
+  font-size: 14px;
+  /*font-size:calc(var(--font-normal) - 1px);*/
+}
+
+.cm-s-obsidian pre.HyperMD-table-row.HyperMD-table-row-0 {
+  margin-top: 0.15rem;
+}
