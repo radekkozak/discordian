@@ -1,0 +1,54 @@
+/*----------------------------------------------------------------
+TAGS
+----------------------------------------------------------------*/
+
+a.tag {
+  border-radius: 3px;
+  padding: 0 4px !important;
+  font-weight: 400;
+  unicode-bidi: -moz-plaintext;
+  unicode-bidi: plaintext;
+  color: var(--discord-blue);
+  background: rgba(114, 137, 218, 0.1);
+  position: relative;
+
+  -webkit-transition: background-color .15s ease-out,color .15s ease-out;
+  transition: background-color .15s ease-out,color .15s ease-out;
+}
+
+a.tag:hover {
+  text-decoration: none !important;
+  color: var(--interactive-active);
+  background-color: rgba(114, 137, 218, 1);
+}
+
+h1 a.tag,
+h2 a.tag,
+h3 a.tag,
+h4 a.tag,
+h5 a.tag,
+h6 a.tag {
+  background: unset;
+  font-style: italic;
+  color: unset;
+  filter: invert(30%);
+}
+
+h1 a.tag:hover,
+h2 a.tag:hover,
+h3 a.tag:hover,
+h4 a.tag:hover,
+h5 a.tag:hover,
+h6 a.tag:hover {
+  background: unset;
+  color: unset;
+  /*background: rgba(114, 137, 218, 0.1);*/
+  /*color: var(--text-title-h1);*/
+  /*color: var(--discord-blue-hover);*/
+}
+
+/* editor .cm-s-obsidian span.cm-hashtag  */
+
+.cm-hashtag {
+  text-decoration: none !important;
+}

@@ -1,0 +1,98 @@
+/*----------------------------------------------------------------
+HEADINGS
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+Preview */
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: Avenir Next, serif !important;
+  font-weight: 400;
+}
+
+.markdown-preview-view h1 {
+  font-size: 28px;
+  color: var(--text-title-h1);
+
+  /*color: rgb(126,109,216) !important;*/
+}
+
+.markdown-preview-view h2 {
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--text-title-h2);
+}
+
+.markdown-preview-view h3 {
+  font-weight: 500;
+  font-size: 23px;
+  color: var(--text-title-h3);
+}
+
+.markdown-preview-view h4 {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--text-title-h4);
+}
+
+.markdown-preview-view h5 {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--text-title-h5);
+}
+
+.markdown-preview-view h6 {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-title-h6);
+}
+
+/*----------------------------------------------------------------
+Editor */
+
+.cm-header-1 {
+  font-weight: 500;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-title-h1);
+}
+
+.cm-header-2 {
+  font-weight: 500;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--text-title-h2);
+}
+
+.cm-header-3 {
+  font-weight: 500;
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--text-title-h3);
+}
+
+.cm-header-4 {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-title-h4);
+}
+
+.cm-header-5 {
+  font-weight: 500;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-title-h5);
+}
+
+.cm-header-6 {
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-title-h6);
+}

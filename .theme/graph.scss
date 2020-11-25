@@ -3,15 +3,15 @@
 GRAPH CONTROLS */
 
 .theme-dark {
-  --graph-line: rgba(189, 189, 189, 0.2);
-  --graph-line-highlight: rgba(189, 189, 189, 0.6);
+  --graph-line: #26798c; /* rgba(189, 189, 189, 0.2); */
+  --graph-line-highlight: #5dbcd2; /*rgba(189, 189, 189, 0.6); */
 
   --graph-circle-outline: transparent;
-  --graph-circle-fill: #fcf601;
-  --graph-circle-fill-highlight: #fcf601;
+  --graph-circle-fill: #fcf601; /*#fcf601;*/
+  --graph-circle-fill-highlight: #fcf601; /*#fcf601;*/
   --graph-circle-fill-unresolved: rgb(116, 190, 247);
 
-  --graph-fill-tag: #ff9640ba; /*#5dbcd2;*/
+  --graph-fill-tag: #9e8aff; /* ff9640ba #5dbcd2;*/
   --graph-fill-attachment: #d669bc;
   --graph-arrow: #d669bc;
 }
@@ -22,6 +22,7 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-view.color-line {
   color: var(--graph-line);
+  opacity: 0.7;
 }
 
 .theme-dark .graph-view.color-line-highlight {
@@ -30,6 +31,7 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-view.color-fill {
   color: var(--graph-circle-fill);
+  opacity: 0.9;
 }
 
 .theme-dark .graph-view.color-fill-highlight {

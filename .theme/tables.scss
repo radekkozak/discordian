@@ -7,46 +7,52 @@ th {
 }
 
 thead {
-  /*border-bottom: 2px solid var(--background-code-border);*/
+  border-top: 2px solid var(--discord-yellow); /*ff8a00*/
+  /*border-bottom: 2px solid var(--discord-blue);*/
 }
 
 table {
-  background-color: transparent;
-  /*border: 2px solid var(--background-tertiary);*/
-  /*padding: 4px;*/
+  border-collapse: collapse;
 }
 
-.markdown-preview-view td {
-  border-left: 1px solid var(--background-accent);
-  /*border-right: 1px solid var(--background-accent);*/
+/*----------------------------------------------------------------
+Preview Mode */
+
+.markdown-preview-view table {
+  margin: 2rem 0;
 }
 
-.markdown-preview-view tr { /*.markdown-preview-view th, */
-  border-top: 1px solid var(--background-accent);
+.markdown-preview-view td, .markdown-preview-view th {
+  border: none;
 }
 
 .markdown-preview-view th {
-  font-family: var(--default-font-alt);
+  font-family: var(--default-font);
   font-weight: bold;
-
 }
 
-tr > th {
-  border-left: 1px solid var(--background-accent);
-}
-
-tr > td:first-of-type, tr > th:first-of-type {
-  border-left: 0;
-}
-
-thead > tr {
+.markdown-preview-view thead > tr {
   border-top: 0 !important;
 }
 
-/* Editor Mode Tables */
+.markdown-preview-view tr {
+  border-top: 1px solid var(--background-accent);
+}
+
+.markdown-preview-view td,
+.markdown-preview-view tr > th {
+  border-left: 1px solid var(--background-accent);
+}
+
+.markdown-preview-view tr > td:first-of-type, tr > th:first-of-type {
+  border-left: 0;
+}
+
+/*----------------------------------------------------------------
+Editor Mode */
 
 .CodeMirror pre.HyperMD-table-row {
-  font-family:var(--font-monospace);
+  font-family: var(--font-monospace);
   font-size: 14px;
   /*font-size:calc(var(--font-normal) - 1px);*/
 }

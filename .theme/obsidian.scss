@@ -1,14 +1,18 @@
 @import "obsidian-base";
 @import "workspace";
 @import "scrollbars";
+@import "headings";
 @import "lists";
 @import "task-list";
 @import "links";
+@import "tags";
+@import "toggle-switches";
 @import "tables";
 @import "codeblocks";
 @import "modals";
 @import "graph";
 
+@import "folding";
 @import "mixins/bullet-point-relationship";
 @import "mixins/syntax-highlighter-colors";
 @import "mixins/marker-highlights";

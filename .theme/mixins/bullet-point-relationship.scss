@@ -1,4 +1,6 @@
-/* Bullet Point Relationship Lines */
+/*----------------------------------------------------------------
+BULLET POINT RELATIONSHIP LINES
+----------------------------------------------------------------*/
 
 .cm-hmd-list-indent .cm-tab,
 ul ul {
@@ -8,35 +10,29 @@ ul ul {
 .cm-hmd-list-indent .cm-tab::before,
 ul ul::before {
   content: "";
-  border-left: 1px solid;
-  color: #92CDD6;
+  border-left: 1px solid var(--text-muted);
+  /*color: #92CDD6;*/
   position: absolute;
-}
-
-.cm-hmd-list-indent .cm-tab::before {
-  left: 0;
-  top: -5px;
-  bottom: -4px;
+  margin-left: -0.92rem;
 }
 
 ul ul::before {
-  left: 0px;
+  left: 0;
   top: 0;
   bottom: 0;
 }
 
-/* ul, li & ol colors in editor */
-
-.cm-s-obsidian span.cm-formatting-list {
-  color: #8abeb7;
+ul.contains-task-list ul::before {
+  left: -0.05rem;
+  top: 0.3rem;
+  bottom: -0.15rem;
 }
 
-ol {
-  display: block;
-  list-style-type: decimal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
+/*
+.cm-hmd-list-indent .cm-tab::before {
+  left: 0;
+  top: -5px;
+  bottom: -4px;
+}*/
+
+

@@ -1,33 +1,33 @@
 /*----------------------------------------------------------------
 SUBTLER CODEFOLDING
 ----------------------------------------------------------------*/
-
-/*.CodeMirror-foldgutter-folded,
-.CodeMirror-foldgutter-open {
-  margin-top: 6px;
-}*/
-/*
-.CodeMirror-foldgutter-folded:after,
-.CodeMirror-foldgutter-open:after {
-  opacity: 1;
-  font-size: 60%;
-  color: var(--text-link);
+/* preview */
+.markdown-preview-view .collapse-indicator,
+.markdown-preview-view .collapse-indicator:hover {
+  color: var(--text-faint)
 }
 
-.CodeMirror-foldgutter-folded:hover:after,
-.CodeMirror-foldgutter-open:hover:after {
-  opacity: 1;
-  font-size: 60%;
-  color: var(--text-link);
+/* subtler folding gutter arrows */
+.CodeMirror-foldgutter-folded:after,
+.CodeMirror-foldgutter-open:after {
+  font-size: 50%;
+  width: 22px;
+  height: 10px;
+  color: var(--text-faint);
 }
 
 .CodeMirror-foldgutter-folded:after {
-  content: "\25BA";
-  font-size: 60%;
-  color: var(--text-link);
+  content: "\25C0";
+  position: absolute;
+  right: 0;
+  top: 11px;
+  left: -13px;
+  transform: rotate(180deg);
 }
 
 .CodeMirror-foldgutter-open:after {
-  content: "\25BC";
-}*/
-
+  content: "\25C0";
+  position: absolute;
+  right: 0;
+  transform: rotate(-90deg);
+}

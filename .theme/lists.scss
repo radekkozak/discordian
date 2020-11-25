@@ -46,4 +46,10 @@ ol > li::before {
   width: 1em;
 }
 
+/*----------------------------------------------------------------
+ul, li & ol colors in editor */
+
+.cm-s-obsidian span.cm-formatting-list {
+  /*color: var(--text-muted);*/
+}
 

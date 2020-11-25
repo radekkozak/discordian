@@ -58,7 +58,7 @@ Resize Handlers */
 }
 
 .workspace-leaf-resize-handle:hover {
-  background-color: var(--interactive-accent-rgb);
+  background-color: var(--discord-light-yellow);
 }
 
 /*----------------------------------------------------------------
@@ -179,7 +179,8 @@ Side Dock */
 Navigation */
 
 .nav-file-title {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 20px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
 }
@@ -215,36 +216,52 @@ color: #59a2c5;
   word-break: keep-all;
 }
 
-/* file explorer : smaller & bold vault title */
-.nav-folder.mod-root > .nav-folder-title {
-  padding-left: 6px;
-  font-size: 14px;
-  font-weight: bolder;
-  top: -6px; /* higher */
-  cursor: default;
-}
+
 
 /*----------------------------------------------------------------
 File Explorer */
+
+.nav-folder.mod-root > .nav-folder-title::before {
+}
+
+/* smaller & bold vault title */
+.nav-folder.mod-root > .nav-folder-title {
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  top: 0; /* higher */
+  cursor: default;
+  color: #af88e7 !important;
+}
+
+.nav-file-title {
+  font-family: var(--font-editor);
+  font-size: 13px;
+  line-height: 20px;
+}
 
 .nav-file-title,
 .nav-folder-title {
   padding: 0 14px 0 20px;
 }
 
+.nav-folder-children .nav-folder {
+  color: #ff0000 !important;
+}
+
 .nav-file.is-active > .nav-file-title,
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
-  border-radius: 4px;
+  border-radius: 2px;
   /*font-weight: bold;*/
   color: var(--text-accent);
-  border-left: 3px solid var(--text-accent);
+  border-left: 2px solid var(--text-accent);
   /*transition: all 0.2s ease;*/
 }
 
 .nav-file.is-active > .nav-file-title {
-  padding-left: 14px;
-  margin-left: 3px;
+  padding-left: 17px;
+  margin-left: 2px;
   /* margin-left: 5px; */
   color: var(--text-normal) !important;
 }

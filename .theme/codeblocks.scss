@@ -42,27 +42,10 @@ editor */
   padding: 0.2rem 0;
 }
 
-/* Editor CodeBlock TEXT Appearance - */
-/*.cm-s-obsidian .cm-inline-code {
-    background-color: var(--background-code-preview) !important;
-    border: 0px solid var(--border-inline-code);
-    padding: 4px 4px;
-    font-weight: 500;
-}
-
-.cm-s-obsidian pre.HyperMD-codeblock {
-    !*color: var(--markup-code) !important;*!
-    color: var(--color-yellow) !important;
-    font-size: 14px !important;
-    !*background-color: var(--color-yellow-bg);*!
-    background-color: var(--background-code-preview) !important;
-}*/
-
 /* Code Block Markdown */
 .cm-s-obsidian pre.HyperMD-codeblock {
   color: var(--text-normal);
-  /*font-size: 1rem;
-  line-height: 1rem;*/
+  font-size: 0.85rem;
   white-space: pre-wrap;
   background-clip: border-box;
   background: var(--background-code-preview);
@@ -72,11 +55,9 @@ editor */
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
   /*background-color: var(--background-tertiary);*/
-
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-begin {
-  /*border-top: 1px solid var(--background-tertiary);*/ /* --background-code-border */
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
@@ -128,15 +109,23 @@ span.cm-formatting-code.cm-inline-code
   border-radius: 0 4px 4px 0;
 }
 
+
+/*.cm-hmd-frontmatter {
+  color: var(--text-muted);
+  font-size: ;
+}*/
+
 /*----------------------------------------------------------------
 preview */
 
-.theme-dark :not(pre) > code[class*="language-"], .theme-dark pre[class*="language-"] {
+.theme-dark :not(pre) > code[class*="language-"],
+.theme-dark pre[class*="language-"] {
   background-color: var(--background-code-preview);
   text-shadow: unset !important;
   /*color: var(--text-normal) !important;*/
   padding: 6px 10px;
   margin: 1.5rem 0;
+  font-size: 1rem;
 }
 
 .markdown-preview-view pre {
@@ -148,6 +137,7 @@ preview */
   text-shadow: unset !important;
   color: var(--markup-code) !important;
   background-color: var(--discord-yellow-bg);
+  font-size: 0.85rem;
 }
 
 .markdown-preview-view pre code {
@@ -161,8 +151,9 @@ pre.frontmatter[class*="language-"] {
   color: var(--text-normal) !important;
   padding: 0;
   margin: 0 0 1.5rem 0;
-  line-height: 16px;
+  line-height: 20px;
 }
+
 
 /*code.language-yaml .token.atrule {
   color: var(--syntax-grey) !important;

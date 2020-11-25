@@ -27,6 +27,8 @@ input.prompt-input, input.prompt-input:active, input.prompt-input:focus {
 div.popover.hover-popover, .menu, .suggestion-container {
   background-color: var(--background-primary);
   border: none;
+  font-family: var(--font-editor);
+  font-size: 20px !important;
 }
 
 /*----------------------------------------------------------------
@@ -45,7 +47,7 @@ Settings Modal */
 
 .horizontal-tab-nav-item.is-active,
 .vertical-tab-nav-item.is-active {
-  color: var(--interactiver-active);
+  color: var(--interactive-active);
 }
 
 .horizontal-tab-nav-item:hover,
@@ -85,7 +87,7 @@ button.mod-cta {
   color: #fff;
   font-size: 14px;
   font-weight: 400;
-  font-family: var(--default-font-alt);
+  font-family: var(--default-font);
 }
 
 button.mod-cta:hover {
@@ -102,7 +104,7 @@ button.mod-cta:hover {
 }
 
 /*----------------------------------------------------------------
-Communnity Themes Panel */
+Community Themes Panel */
 
 .community-theme-container button {
   margin-right: 8px;

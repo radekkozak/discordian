@@ -12,7 +12,7 @@ a,
 .cm-s-obsidian span.cm-hmd-internal-link {
   color: var(--text-a);
   text-decoration: none;
-  font-family: var(--default-font-alt);
+  font-family: var(--font-editor);
 }
 
 a:hover,
@@ -27,7 +27,7 @@ a:hover,
 
 .cm-s-obsidian span.cm-formatting-link {
   color: var(--text-a-hover);
-  padding: 0 2px;
+  padding: 0 1px;
 }
 
 .cm-s-obsidian span.cm-link:hover,

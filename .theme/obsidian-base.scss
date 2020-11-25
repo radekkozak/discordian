@@ -1,8 +1,8 @@
 :root {
-  --default-font: Catamaran Light, Source Sans Pro, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-editor: Catamaran Light, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --default-font: Catamaran, Source Sans Pro, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-editor: Gill Sans Light, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, Menlo, SFMono-Regular, Consolas, "Roboto Mono", iA Writer Mono S, Jetbrains Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
-  --default-font-alt: Source Sans Pro, Whitney SSm, Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+  /*--default-font: Avenir, Whitney SSm, Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;*/
 
   /* discord colors */
   --discord-green: #43b581; /* discord accent */
@@ -16,6 +16,8 @@
   --discord-grey-hover: #68727f;
   --discord-dark: rgba(32, 34, 37, 1);
   --discord-dark-hover: rgba(32, 34, 37, 0.7);
+
+  --discord-light-yellow: rgb(244,208,66); /* rgb(233,211,76); */
 }
 
 .theme-dark {
@@ -34,16 +36,16 @@
 
   --text-normal: rgb(191, 193, 194); /*#dcddde;*/
   --text-muted: #72767d;
-  --text-link: #00b0f4;
-  --text-accent: #bd93f9;
+  --text-link: #00b0f4; /*#59a2c5;*/
+  --text-accent: #af88e7;
   --text-on-accent: #dcddde;
   --text-selection: rgba(98, 135, 178, 0.5);
   --text-highlight-bg: rgb(98, 135, 178); /*#f7ff99; #f1fa8c*/
 
-  --text-strong: #87556f; /* #834c69; rgb(179, 153, 255, 0.95); */
+  --text-strong: #d783b6; /*  rgb(179, 153, 255, 0.95); */
   --text-em: #b78b60; /* #b8b894; */
 
-  --text-title-h1: #bd93f9; /* a79645 */
+  --text-title-h1: #a79645; /*#bd93f9;  a79645 */
   --text-title-h2: #939bd6;
   --text-title-h3: #939bd6; /* ba6ea0 */
   --text-title-h4: #b78b60;
@@ -51,8 +53,11 @@
 
   --markup-code: #f4a742; /*#ffb86c;*/
   --text-tag: #ff9640ba; /*#50fa7b;*/
+
   --text-a: #ff79c6;
   --text-a-hover: #ff8bca;
+  --text-a: #e073b8; /* #00b0f4 rgba(52,152,219,1) in hex #3498db */
+  --text-a-hover: #ff79c6; /* #49a3df */
 
   --text-mark: #d79921; /* #f1fa8c; */
   --interactive-accent: var(--discord-green); /*#f1fa8c; #7F6DF2;*/
@@ -98,13 +103,12 @@
 .app-container, body {
   font-size: 16px;
   line-height: 22px !important;
-  font-family: var(--default-font-alt);
+  font-family: var(--default-font);
   color: var(--text-normal);
-  font-weight: 400;
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
   vertical-align: baseline;
-  letter-spacing: 0.025rem;
+  /*letter-spacing: 0.025rem;*/
 
   -webkit-font-feature-settings: "tnum";
   -moz-font-feature-settings: "tnum";
@@ -131,7 +135,7 @@ input[type='search'],
 .dropdown,
 .setting-hotkey,
 .suggestion-hotkey {
-  font-family: var(--default-font-alt) !important;
+  font-family: var(--default-font) !important;
   border-color: var(--background-primary) !important;
   letter-spacing: -0.01rem;
 }
@@ -307,9 +311,7 @@ img {
   margin-right: auto;
 }
 
-/*----------------------------------------------------------------
-
-
+/*----------------------------------------------------------------*/
 
 .cm-s-obsidian .hmd-fold-html-stub,
 .cm-s-obsidian .hmd-fold-code-stub,
@@ -328,7 +330,8 @@ img {
   font-family: var(--font-monospace);
   font-weight: normal;
   color: var(--text-muted);
-  font-size: 0.8125rem;
+  /*font-size: 0.8125rem;*/
+  font-size: 0.85rem;
 }
 
 /* NORMAL TEXT OUTSIDE OF HEADINGS AND CODE */
@@ -339,8 +342,9 @@ img {
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  line-height: 24px !important;
-  letter-spacing: 0.025rem;
+  font-size: 14px;
+  line-height: 23px !important;
+  /*letter-spacing: 0.025rem;*/
 
   padding-left: 8% !important;
   padding-right: 4% !important;
@@ -350,8 +354,8 @@ img {
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  line-height: 24px !important;
-  letter-spacing: 0.025rem;
+  font-size: 14px;
+  line-height: 23px !important;
 
   padding-left: 10% !important;
   padding-right: 10% !important;
@@ -363,130 +367,11 @@ img {
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  line-height: 22px !important;
+  font-size: 14px;
+  line-height: 23px !important;
+
   padding-left: 8% !important;
   padding-right: 4% !important;
-  letter-spacing: 0.025rem;
-}
-
-/* HEADINGS */
-
-/* preview */
-
-.markdown-preview-view h1 {
-  font-weight: 500;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--text-title-h1);
-}
-
-.markdown-preview-view h2 {
-  font-weight: 500;
-  font-size: 26px;
-  font-weight: bold;
-  color: var(--text-title-h2);
-}
-
-.markdown-preview-view h3 {
-  font-weight: 500;
-  font-size: 23px;
-  font-weight: bold;
-  color: var(--text-title-h3);
-}
-
-.markdown-preview-view h4 {
-  font-weight: 500;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--text-title-h4);
-}
-
-.markdown-preview-view h5 {
-  font-weight: 500;
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--text-title-h5);
-}
-
-.markdown-preview-view h6 {
-  font-weight: 500;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--text-title-h6);
-}
-
-/* editor */
-
-.cm-header-1 {
-  font-weight: 500;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--text-title-h1);
-}
-
-.cm-header-2 {
-  font-weight: 500;
-  font-size: 26px;
-  font-weight: bold;
-  color: var(--text-title-h2);
-}
-
-.cm-header-3 {
-  font-weight: 500;
-  font-size: 23px;
-  font-weight: bold;
-  color: var(--text-title-h3);
-}
-
-.cm-header-4 {
-  font-weight: 500;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--text-title-h4);
-}
-
-.cm-header-5 {
-  font-weight: 500;
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--text-title-h5);
-}
-
-.cm-header-6 {
-  font-weight: 500;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--text-title-h6);
-}
-
-/* TAGS */
-
-/* preview */
-
-a.tag {
-  /*color: var(--text-tag) !important;*/
-
-  /* below test*/
-  border-radius: 3px;
-  padding: 0 2px !important;
-  font-weight: 400;
-  unicode-bidi: -moz-plaintext;
-  unicode-bidi: plaintext;
-  color: var(--discord-blue) !important;
-  background: rgba(114, 137, 218, 0.1);
-  position: relative;
-}
-
-a.tag:hover {
-  text-decoration: none !important;
-}
-
-/* editor .cm-s-obsidian span.cm-hashtag  */
-
-.cm-hashtag {
-  /*color: var(--text-muted) !important;*/
-  text-decoration: none !important;
-
 }
 
 /* BOLD */
@@ -494,14 +379,13 @@ a.tag:hover {
 /* preview */
 
 strong {
-  color: var(--markup-code);
-  font-weight: 700;
+  color: var(--text-strong);
 }
 
 /* editor */
 
 .cm-strong {
-  color: var(--markup-code);
+  color: var(--text-strong);
 }
 
 /* ITALICS */
@@ -538,9 +422,9 @@ mark {
 
 mark > strong {
   color: #101111 !important;
-  font-weight: 400;
+  font-weight: 600;
   padding: 0px 2px;
-  font-family: var(--default-font-alt);
+/*  font-family: var(--default-font);*/
 }
 
 
@@ -583,64 +467,7 @@ mark > strong {
   top: 0px;
 }*/
 
-/* Toggle switches */
 
-.checkbox-container {
-  background-color: var(--text-faint);
-  border: none;
-  box-shadow: none;
-  /*cursor:var(--cursor);*/
-  width: 40px;
-  height: 24px;
-  -webkit-transition: all .17s;
-  transition: all .17s ease;
-}
-
-.checkbox-container.is-enabled {
-  background-color: var(--interactive-accent);
-}
-
-.checkbox-container:before, .checkbox-container:after {
-  color: var(--text-muted);
-}
-
-.checkbox-container:before {
-  content: '\2A2f';
-  font-size: 26px;
-  font-weight: 200;
-  display: block;
-  position: absolute;
-  opacity: 0.8;
-  z-index: 1;
-  transform: translate3d(-21px, -3px, 0)
-}
-
-.checkbox-container.is-enabled:before {
-  content: '\2143';
-  color: var(--interactive-accent);
-  font-size: 13px;
-  font-weight: 600;
-  transform: translate3d(-7px, -9px, 0) rotate(38deg);
-}
-
-.checkbox-container.is-enabled:after {
-  transform: translate3d(15px, 0, 0);
-}
-
-.checkbox-container:after {
-  box-shadow: none !important;
-  width: 18px;
-  height: 18px;
-  transform: translate3d(1px, 0, 0);
-}
-
-.community-theme-container .checkbox-container.is-enabled:before {
-  transform: translate3d(18px, 10px, 0) rotate(38deg);
-}
-
-.community-theme-container .checkbox-container:before {
-  transform: translate3d(7px, -2px, 0);
-}
 
 /* Dropdown */
 
