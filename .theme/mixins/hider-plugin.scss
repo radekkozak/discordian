@@ -1,0 +1,42 @@
+.hider-frameless .mod-left-split .workspace-tab-header-container {
+  padding-left: 1.25rem;
+}
+
+.hider-frameless.hider-ribbon .mod-left-split .workspace-tab-header-container {
+  padding-left: 3rem;
+}
+
+.hider-frameless .workspace-split.mod-left-split > .workspace-tabs {
+  padding-top: 0;
+}
+
+.workspace-leaf:first-of-type:last-of-type .view-header {
+  padding-left: 0;
+  /*transition: padding-left 0.25s ease-in-out;*/
+}
+
+.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 36px !important;
+  transition: padding-left 0.15s ease-in-out;
+}
+
+.hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 72px !important;
+  transition: padding-left 0.15s ease-in-out;
+}
+
+/* hide right ribbon */
+.hider-ribbon .workspace-ribbon.mod-right {
+  /*right: -30px !important;*/
+  /*display: none;*/
+}
+
+/* when no ribbons add slight animation for left and right panels */
+.hider-ribbon .workspace-split.mod-left-split, .hider-ribbon .workspace-split.mod-right-split {
+  /*transition: none !important ;*/
+  transition: width 50ms ease;
+}
+
+.hider-ribbon .workspace-split.mod-right-split {
+  margin-right: 0;
+}

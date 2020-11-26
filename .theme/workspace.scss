@@ -38,6 +38,7 @@ Tabs */
   padding: 0 0 2rem 0;
   /* padding: 0 4px 30px 0; */
   position: relative;
+  margin-right: 30px;
 }
 
 .workspace-tab-header {
@@ -90,9 +91,9 @@ Split Mode */
   background-color: transparent !important;
 }
 
-/* no animation for left and right panels - feels more snappier */
+/* default no animation for panels - feels more snappier */
 .workspace-split.mod-left-split, .workspace-split.mod-right-split {
-  transition: none !important;
+  transition: none;
 }
 
 .workspace-split.mod-left-split {
