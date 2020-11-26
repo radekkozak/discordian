@@ -5,7 +5,7 @@
   /*--default-font: Avenir, Whitney SSm, Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;*/
 
   /* discord colors */
-  --discord-green: #43b581; /* discord accent */
+  --discord-green: #43b581; /* discord accent rgb(63,179,130) */
   --discord-yellow: #faa61a; /* discord ghost pill */
   --discord-yellow-bg: rgba(250, 166, 26, .1); /* discord ghost pill bg */
   --discord-orange: rgb(235, 100, 32);
@@ -17,7 +17,12 @@
   --discord-dark: rgba(32, 34, 37, 1);
   --discord-dark-hover: rgba(32, 34, 37, 0.7);
 
-  --discord-light-yellow: rgb(244,208,66); /* rgb(233,211,76); */
+  --discord-light-yellow: #ae9d47; /*rgb(244,208,66)      rgb(233,211,76); */
+
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 }
 
 .theme-dark {
@@ -36,28 +41,28 @@
 
   --text-normal: rgb(191, 193, 194); /*#dcddde;*/
   --text-muted: #72767d;
-  --text-link: #00b0f4; /*#59a2c5;*/
+  --text-link: #03aaea; /*00b0f4  rgb(70,155,189) #59a2c5;*/
   --text-accent: #af88e7;
   --text-on-accent: #dcddde;
   --text-selection: rgba(98, 135, 178, 0.5);
   --text-highlight-bg: rgb(98, 135, 178); /*#f7ff99; #f1fa8c*/
 
-  --text-strong: #d783b6; /*  rgb(179, 153, 255, 0.95); */
-  --text-em: #b78b60; /* #b8b894; */
+  --text-strong: rgb(206, 177, 56); /* rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
+  --text-em: rgb(185,187,125); /*rgb(185,187,125)     #f58942      #b78b60   #b8b894; */
 
-  --text-title-h1: #a79645; /*#bd93f9;  a79645 */
+  --text-title-h1: hsl(44, 48%, 48%);  /*#ae9d47;    a79645     #a79645;    #bd93f9;  a79645 */
   --text-title-h2: #939bd6;
   --text-title-h3: #939bd6; /* ba6ea0 */
   --text-title-h4: #b78b60;
-  --text-title-h5: #859679;
+  --text-title-h5: hsl(95, 20%, 50%); /* #859679; */
 
   --markup-code: #f4a742; /*#ffb86c;*/
   --text-tag: #ff9640ba; /*#50fa7b;*/
 
   --text-a: #ff79c6;
   --text-a-hover: #ff8bca;
-  --text-a: #e073b8; /* #00b0f4 rgba(52,152,219,1) in hex #3498db */
-  --text-a-hover: #ff79c6; /* #49a3df */
+  --text-a: rgb(228, 128,191);  /* rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
+  --text-a-hover: #ff8bca;  /*#ff79c6; rgb(220,140,178) #49a3df */
 
   --text-mark: #d79921; /* #f1fa8c; */
   --interactive-accent: var(--discord-green); /*#f1fa8c; #7F6DF2;*/
@@ -91,11 +96,22 @@
   --cursor: pointer;
   --opacity-translucency: 1;
 
-
-
   --background-code: rgb(41, 44, 46); /*#242524; */
   --background-code-preview: rgb(41, 44, 46); /*#1d1d1e;*/
   --background-code-border: rgb(41, 41, 41);
+}
+
+/* simplistic styling of audio control */
+
+audio {
+  height: 30px;
+}
+
+audio::-webkit-media-controls-enclosure {
+  filter: sepia(10%) contrast(90%) invert(90%);
+  opacity: 0.8;
+  border-radius: 6px;
+  height: 20px;
 }
 
 /* font for everything outside of editor/preview panes */
@@ -155,9 +171,13 @@ input[type='number'] {
   border-radius: 3px;
 }
 
+p.mod-warning {
+  color: var(--discord-red);
+}
+
 .search-info-container {
   /*font-size: 10px !important;*/
-  display: none;
+  /*display: none;*/
 }
 
 .search-input-container {
@@ -270,6 +290,7 @@ BLOCKQUOTES */
 /* preview */
 
 blockquote {
+
   color: var(--interactive-accent) !important;
   /*font-style: italic;*/
   border: none;
@@ -433,7 +454,7 @@ mark > strong {
 
 .notice {
   color: var(--text-on-accent) !important;
-  background-color: var(--discord-blue) !important;
+  background-color: var(--background-primary-alt) !important;
 }
 
 /* UL, OL, BULLETS, CHECKBOXES & FOLDING ARROWS */
@@ -525,7 +546,7 @@ mark > strong {
 .is-flashing {
   /*background-color: unset;*/
   background-color: var(--text-highlight-bg);
-  transition: all 0.5s ease-in !important;
+  transition: all 0.7s ease-in !important;
 }
 
 /*----------------------------------------------------------------

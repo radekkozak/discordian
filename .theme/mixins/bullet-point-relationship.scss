@@ -13,7 +13,7 @@ ul ul::before {
   border-left: 1px solid var(--text-muted);
   /*color: #92CDD6;*/
   position: absolute;
-  margin-left: -0.92rem;
+  margin-left: -0.75rem;
 }
 
 ul ul::before {
@@ -23,7 +23,7 @@ ul ul::before {
 }
 
 ul.contains-task-list ul::before {
-  left: -0.05rem;
+  left: -0.1rem;
   top: 0.3rem;
   bottom: -0.15rem;
 }

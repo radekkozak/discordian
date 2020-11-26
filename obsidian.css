@@ -6,7 +6,7 @@
   /*--default-font: Avenir, Whitney SSm, Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;*/
   /* discord colors */
   --discord-green: #43b581;
-  /* discord accent */
+  /* discord accent rgb(63,179,130) */
   --discord-yellow: #faa61a;
   /* discord ghost pill */
   --discord-yellow-bg: rgba(250, 166, 26, .1);
@@ -20,8 +20,12 @@
   --discord-grey-hover: #68727f;
   --discord-dark: rgba(32, 34, 37, 1);
   --discord-dark-hover: rgba(32, 34, 37, 0.7);
-  --discord-light-yellow: rgb(244,208,66);
-  /* rgb(233,211,76); */
+  --discord-light-yellow: #ae9d47;
+  /*rgb(244,208,66)      rgb(233,211,76); */
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 }
 
 .theme-dark {
@@ -43,34 +47,35 @@
   --text-normal: rgb(191, 193, 194);
   /*#dcddde;*/
   --text-muted: #72767d;
-  --text-link: #00b0f4;
-  /*#59a2c5;*/
+  --text-link: #03aaea;
+  /*00b0f4  rgb(70,155,189) #59a2c5;*/
   --text-accent: #af88e7;
   --text-on-accent: #dcddde;
   --text-selection: rgba(98, 135, 178, 0.5);
   --text-highlight-bg: rgb(98, 135, 178);
   /*#f7ff99; #f1fa8c*/
-  --text-strong: #d783b6;
-  /*  rgb(179, 153, 255, 0.95); */
-  --text-em: #b78b60;
-  /* #b8b894; */
-  --text-title-h1: #a79645;
-  /*#bd93f9;  a79645 */
+  --text-strong: rgb(206, 177, 56);
+  /* rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
+  --text-em: rgb(185,187,125);
+  /*rgb(185,187,125)     #f58942      #b78b60   #b8b894; */
+  --text-title-h1: hsl(44, 48%, 48%);
+  /*#ae9d47;    a79645     #a79645;    #bd93f9;  a79645 */
   --text-title-h2: #939bd6;
   --text-title-h3: #939bd6;
   /* ba6ea0 */
   --text-title-h4: #b78b60;
-  --text-title-h5: #859679;
+  --text-title-h5: hsl(95, 20%, 50%);
+  /* #859679; */
   --markup-code: #f4a742;
   /*#ffb86c;*/
   --text-tag: #ff9640ba;
   /*#50fa7b;*/
   --text-a: #ff79c6;
   --text-a-hover: #ff8bca;
-  --text-a: #e073b8;
-  /* #00b0f4 rgba(52,152,219,1) in hex #3498db */
-  --text-a-hover: #ff79c6;
-  /* #49a3df */
+  --text-a: rgb(228, 128,191);
+  /* rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
+  --text-a-hover: #ff8bca;
+  /*#ff79c6; rgb(220,140,178) #49a3df */
   --text-mark: #d79921;
   /* #f1fa8c; */
   --interactive-accent: var(--discord-green);
@@ -105,6 +110,18 @@
   --background-code-preview: rgb(41, 44, 46);
   /*#1d1d1e;*/
   --background-code-border: rgb(41, 41, 41);
+}
+
+/* simplistic styling of audio control */
+audio {
+  height: 30px;
+}
+
+audio::-webkit-media-controls-enclosure {
+  filter: sepia(10%) contrast(90%) invert(90%);
+  opacity: 0.8;
+  border-radius: 6px;
+  height: 20px;
 }
 
 /* font for everything outside of editor/preview panes */
@@ -163,9 +180,13 @@ input[type='number'] {
   border-radius: 3px;
 }
 
+p.mod-warning {
+  color: var(--discord-red);
+}
+
 .search-info-container {
   /*font-size: 10px !important;*/
-  display: none;
+  /*display: none;*/
 }
 
 .search-input-container {
@@ -411,7 +432,7 @@ mark > strong {
 /* POPUP NOTIFICATION*/
 .notice {
   color: var(--text-on-accent) !important;
-  background-color: var(--discord-blue) !important;
+  background-color: var(--background-primary-alt) !important;
 }
 
 /* UL, OL, BULLETS, CHECKBOXES & FOLDING ARROWS */
@@ -489,7 +510,7 @@ mark > strong {
 .is-flashing {
   /*background-color: unset;*/
   background-color: var(--text-highlight-bg);
-  transition: all 0.5s ease-in !important;
+  transition: all 0.7s ease-in !important;
 }
 
 /*----------------------------------------------------------------
@@ -546,7 +567,8 @@ Tabs */
 /*----------------------------------------------------------------
 Resize Handlers */
 .workspace-leaf-resize-handle {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary);
+  /*--background-secondary-alt*/
   margin: 0;
 }
 
@@ -651,7 +673,7 @@ Side Dock */
 
 .side-dock-collapsible-section-header {
   font-size: 14px;
-  margin: 4px;
+  /*margin: 4px;*/
 }
 
 /* hover actions on side dock navigation */
@@ -666,6 +688,10 @@ Side Dock */
 
 /*----------------------------------------------------------------
 Navigation */
+.nav-header {
+  padding: 12px 20px 4px 20px;
+}
+
 .nav-file-title {
   font-size: 14px;
   line-height: 20px;
@@ -765,18 +791,12 @@ body:not(.is-grabbing) .nav-folder-title:hover {
   top: -1px;
 }
 
-/* clean up side bar empty state (e.g. unlinked mentions) */
-.search-empty-state {
-  width: auto;
-  /*padding-left: 10px;
-  padding-right: 5px;*/
-  padding-left: 15px;
-  padding-right: 15px;
-  line-height: normal;
-}
-
 /*----------------------------------------------------------------
 Search */
+.search-result {
+  margin-bottom: 0;
+}
+
 .search-result-file-title {
   color: var(--text-a) !important;
   background-color: var(--background-secondary);
@@ -792,8 +812,16 @@ Search */
   font-size: 13px;
   line-height: 16px;
   margin-right: 5px;
-  margin-top: 8px;
+  /*margin-top: 8px;*/
   border-bottom: 0;
+}
+
+.search-result-file-match:before {
+  display: none;
+}
+
+.search-result-file-match:not(:first-child) {
+  margin-top: 0;
 }
 
 .search-result-file-match {
@@ -868,6 +896,16 @@ Search */
   border-radius: 3px;
 }
 
+/* clean up side bar empty state (e.g. unlinked mentions) */
+.search-empty-state {
+  width: auto;
+  /*padding-left: 10px;
+  padding-right: 5px;*/
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: normal;
+}
+
 /*----------------------------------------------------------------
 Status Bar */
 .status-bar {
@@ -881,28 +919,44 @@ Status Bar */
 /*----------------------------------------------------------------
 Header */
 .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
-  border-bottom: 1px solid var(--background-secondary-alt);
-  background-color: var(--background-tertiary);
+  border-bottom: 0px solid var(--background-tertiary);
+  /* --background-secondary-alt */
+  background-color: var(--background-primary);
+  /* --background-tertiary */
   /*border-bottom: 1px solid var(--interactive-accent);
   background-color: var(--background-secondary);*/
 }
 
 .view-header {
   height: 30px !important;
-  border-top: 1px solid var(--background-secondary-alt);
+  border-top: 1px solid var(--background-tertiary);
   /*border-bottom: 2px solid var(--background-secondary-alt);*/
-  background-color: var(--background-tertiary);
+  border-bottom: 0px solid var(--background-tertiary);
+  background-color: var(--background-primary);
+}
+
+.view-header::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: 28px;
+  -webkit-box-shadow: var(--elevation-low) !important;
+  box-shadow: var(--elevation-low) !important;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* change the colour or the font-weight of the note title in a pane */
 .view-header-title {
   font-size: 15px;
-  line-height: 27px;
+  line-height: 30px;
 }
 
 .view-header-title-container {
-  height: 27px;
-  line-height: 22px;
+  height: 28px;
   position: relative;
 }
 
@@ -919,13 +973,34 @@ Header */
     margin-top: 1px;
 }*/
 .workspace-leaf.mod-active .view-header {
-  background-color: var(--background-tertiary);
-  border-bottom: 1px solid var(--interactive-accent);
+  background-color: var(--background-primary);
+  /*border-bottom: 1px solid var(--interactive-accent);*/
+  border-bottom: 0;
+}
+
+.workspace-leaf.mod-active .view-header::before {
+  content: '';
+  border-bottom: 2px solid var(--discord-light-yellow);
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 28px;
+  height: 1px;
+  z-index: 1;
+}
+
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header::before {
+  border-bottom: 0;
 }
 
 /* Change color of note title active pane - Obsidianite */
 .workspace-leaf.mod-active .view-header-title {
   color: var(--text-normal);
+}
+
+.workspace-leaf-content .view-content, .workspace-leaf-content[data-type='tag'] {
+  padding: 10px;
 }
 
 /* fix the long-title-obscuring shadows */
@@ -936,7 +1011,7 @@ Header */
   right: 0;
   width: 30px;
   height: 26px;
-  background: linear-gradient(to right, transparent, var(--background-tertiary)) !important;
+  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
 /* Change icon above vert. note title on title spine */
@@ -985,7 +1060,7 @@ Top Window Frame */
 /*----------------------------------------------------------------
 Status Bar */
 .status-bar {
-  border-top: 0px solid var(--background-modifier-border);
+  border-top: 0 solid var(--background-modifier-border);
   /* flat */
   background-color: var(--background-secondary);
   color: var(--text-faint);
@@ -1091,16 +1166,6 @@ HEADINGS
 ----------------------------------------------------------------*/
 /*----------------------------------------------------------------
 Preview */
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
-  font-family: Avenir Next, serif !important;
-  font-weight: 400;
-}
-
 .markdown-preview-view h1 {
   font-size: 28px;
   color: var(--text-title-h1);
@@ -1349,6 +1414,7 @@ input[type=checkbox]:checked, .cm-formatting-task.cm-property {
 
 .cm-formatting-task + span {
   padding-left: 0.3rem;
+  vertical-align: middle;
 }
 
 /* adjust second level task list when folded */
@@ -1384,13 +1450,13 @@ a:hover,
 }
 
 .cm-s-obsidian span.cm-formatting-link {
-  color: var(--text-a-hover);
+  color: var(--text-a);
   padding: 0 1px;
 }
 
 .cm-s-obsidian span.cm-link:hover,
 .cm-s-obsidian span.cm-hmd-internal-link:hover {
-  color: var(--text-a);
+  color: var(--text-a-hover);
   text-decoration: none;
 }
 
@@ -1438,7 +1504,7 @@ TAGS
 ----------------------------------------------------------------*/
 a.tag {
   border-radius: 3px;
-  padding: 0 4px !important;
+  padding: 1px 4px !important;
   font-weight: 400;
   unicode-bidi: -moz-plaintext;
   unicode-bidi: plaintext;
@@ -1451,8 +1517,9 @@ a.tag {
 
 a.tag:hover {
   text-decoration: none !important;
-  color: var(--interactive-active);
-  background-color: #7289da;
+  /*color: var(--interactive-active);*/
+  color: var(--discord-blue);
+  background-color: rgba(114, 137, 218, 0.2);
 }
 
 h1 a.tag,
@@ -1650,13 +1717,13 @@ editor */
   font-size: 0.85rem;
   white-space: pre-wrap;
   background-clip: border-box;
-  background: var(--background-code-preview);
+  /*background-color: var(--background-code-preview);*/
   /*  border-left: 1px solid var(--background-tertiary);
     border-right: 1px solid var(--background-tertiary);*/
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
-  /*background-color: var(--background-tertiary);*/
+  background-color: var(--background-code-preview);
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-begin {
@@ -1842,7 +1909,7 @@ button.mod-cta {
   color: #fff;
   font-size: 14px;
   font-weight: 400;
-  font-family: var(--default-font);
+  letter-spacing: -0.01rem;
 }
 
 button.mod-cta:hover {
@@ -1946,6 +2013,7 @@ GRAPH CONTROLS */
   color: var(--graph-arrow);
 }
 
+/*@import "audio";*/
 /*----------------------------------------------------------------
 SUBTLER CODEFOLDING
 ----------------------------------------------------------------*/
@@ -1994,7 +2062,7 @@ ul ul::before {
   border-left: 1px solid var(--text-muted);
   /*color: #92CDD6;*/
   position: absolute;
-  margin-left: -0.92rem;
+  margin-left: -0.75rem;
 }
 
 ul ul::before {
@@ -2004,7 +2072,7 @@ ul ul::before {
 }
 
 ul.contains-task-list ul::before {
-  left: -0.05rem;
+  left: -0.1rem;
   top: 0.3rem;
   bottom: -0.15rem;
 }

@@ -118,6 +118,7 @@ input[type=checkbox]:checked, .cm-formatting-task.cm-property {
 
 .cm-formatting-task + span {
   padding-left: 0.3rem;
+  vertical-align: middle;
 }
 
 /* adjust second level task list when folded */

@@ -48,13 +48,13 @@ editor */
   font-size: 0.85rem;
   white-space: pre-wrap;
   background-clip: border-box;
-  background: var(--background-code-preview);
+  /*background-color: var(--background-code-preview);*/
 /*  border-left: 1px solid var(--background-tertiary);
   border-right: 1px solid var(--background-tertiary);*/
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
-  /*background-color: var(--background-tertiary);*/
+  background-color: var(--background-code-preview);
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-begin {

@@ -26,13 +26,13 @@ a:hover,
 }
 
 .cm-s-obsidian span.cm-formatting-link {
-  color: var(--text-a-hover);
+  color: var(--text-a);
   padding: 0 1px;
 }
 
 .cm-s-obsidian span.cm-link:hover,
 .cm-s-obsidian span.cm-hmd-internal-link:hover {
-  color: var(--text-a);
+  color: var(--text-a-hover);
   text-decoration: none;
 }
 

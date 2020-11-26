@@ -4,7 +4,7 @@ TAGS
 
 a.tag {
   border-radius: 3px;
-  padding: 0 4px !important;
+  padding: 1px 4px !important;
   font-weight: 400;
   unicode-bidi: -moz-plaintext;
   unicode-bidi: plaintext;
@@ -18,8 +18,9 @@ a.tag {
 
 a.tag:hover {
   text-decoration: none !important;
-  color: var(--interactive-active);
-  background-color: rgba(114, 137, 218, 1);
+  /*color: var(--interactive-active);*/
+  color: var(--discord-blue);
+  background-color: rgba(114, 137, 218, 0.2);
 }
 
 h1 a.tag,
