@@ -53,12 +53,16 @@ Tabs */
 /*----------------------------------------------------------------
 Resize Handlers */
 
-.workspace-leaf-resize-handle {
+body.is-translucent {
+  background-color: var(--background-primary);
+}
+
+.workspace-leaf-resize-handle, .is-translucent .workspace-leaf-resize-handle {
   background-color: var(--background-secondary); /*--background-secondary-alt*/
   margin: 0;
 }
 
-.workspace-leaf-resize-handle:hover {
+.workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
   background-color: var(--discord-light-yellow);
 }
 
