@@ -226,6 +226,11 @@ color: #59a2c5;
 /*----------------------------------------------------------------
 File Explorer */
 
+.nav-files-container {
+  overflow-x:hidden !important;
+  padding-bottom:25px;
+}
+
 .nav-folder.mod-root > .nav-folder-title::before {
 }
 
