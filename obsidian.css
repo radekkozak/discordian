@@ -44,18 +44,23 @@
   --background-modifier-active: rgba(79, 84, 92, 0.24);
   --background-modifier-selected: rgba(79, 84, 92, 0.32);
   --background-modifier-accent: hsla(0, 0%, 100%, 0.06);
+  --background-modifier-error: var(--discord-red);
+  --background-modifier-form-field: rgba(0,0,0,0.2);
+  --background-modifier-form-field-highlighted: rgba(0,0,0,0.2);
+  --background-modifier-border: var(--background-secondary-alt);
   --text-normal: hsl(200, 2.4%, 75.5%);
   /* = rgb(191, 193, 194);   #dcddde;*/
   --text-muted: #72767d;
   --text-link: #03aaea;
   /*00b0f4  rgb(70,155,189) #59a2c5;*/
   --text-accent: #af88e7;
+  /* rgb(145,146,194) */
   --text-on-accent: #dcddde;
   --text-selection: rgba(98, 135, 178, 0.5);
   --text-highlight-bg: rgb(98, 135, 178);
   /*#f7ff99; #f1fa8c*/
-  --text-strong: hsl(44, 48%, 48%);
-  /*hsl(45, 70%, 46%) rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
+  --text-strong: rgb(211, 164, 89);
+  /* rgb(207, 128, 12)     rgb(244, 167, 54)     hsl(44, 48%, 48%)      hsl(45, 70%, 46%) rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
   --text-em: rgb(185,187,125);
   /*rgb(185,187,125)     #f58942      #b78b60   #b8b894; */
   --text-title-h1: hsl(44, 48%, 48%);
@@ -70,15 +75,15 @@
   /*#ffb86c;*/
   --text-tag: #ff9640ba;
   /*#50fa7b;*/
-  --text-a: #ff79c6;
-  --text-a-hover: #ff8bca;
-  --text-a: rgb(228, 128,191);
-  /* rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
+  --text-a: #E480BF;
+  /*ff79c6 rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
   --text-a-hover: #ff8bca;
   /*#ff79c6; rgb(220,140,178) #49a3df */
   --text-mark: #d79921;
   /* #f1fa8c; */
   --interactive-accent: var(--discord-green);
+  /*#f1fa8c; #7F6DF2;*/
+  --interactive-accent-hover: #2cae72;
   /*#f1fa8c; #7F6DF2;*/
   --interactive-accent-rgb: #f1fa8c;
   /*241,250,140*/
@@ -86,10 +91,8 @@
   --interactive-hover: #dcddde;
   --interactive-muted: #4f545c;
   --interactive-normal: #b9bbbe;
-  --interactive-hover: #dcddde;
   --interactive-active: #fff;
   --blockquote-border: #b294bb;
-  /*#b294bb;*/
   --blockquote-bg: rgba(4,4,5,0.07);
   /*--text-input-bg: rgba(0, 0, 0, 0.1);
   --text-input-border: rgba(0, 0, 0, 0.3);
@@ -110,6 +113,15 @@
   --background-code-preview: rgb(41, 44, 46);
   /*#1d1d1e;*/
   --background-code-border: rgb(41, 41, 41);
+}
+
+/* Hides the name of the root folder */
+/*.nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
+  display:none;
+}*/
+/* smaller action buttons */
+.nav-action-button svg {
+  width: 15px;
 }
 
 /* simplistic styling of audio control */
@@ -161,7 +173,7 @@ input[type='search'],
 .setting-hotkey,
 .suggestion-hotkey {
   font-family: var(--default-font) !important;
-  border-color: var(--background-primary) !important;
+  border-color: var(--background-secondary-alt) !important;
   letter-spacing: -0.01rem;
 }
 
@@ -176,8 +188,22 @@ input[type='email'],
 input[type='password'],
 input[type='number'] {
   font-size: 14px;
+  color: var(--text-muted);
+  border-radius: 4px;
+  background-color: var(--discord-dark) !important;
+}
+
+input[type='text']:focus-within,
+input[type='search']:focus-within,
+input[type='email']:focus-within,
+input[type='password']:focus-within,
+input[type='number']:focus-within {
   color: var(--text-normal);
-  border-radius: 3px;
+}
+
+p {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 
 p.mod-warning {
@@ -210,12 +236,19 @@ p.mod-warning {
 
 /* FOOTNOTES */
 sup {
+  font-size: 13px;
+  letter-spacing: 0.0rem;
+  padding-left: 0.2rem;
+}
+
+.cm-s-obsidian span.cm-footref {
   font-size: unset;
-  letter-spacing: 0.1rem;
+  /*vertical-align: super;*/
 }
 
 .cm-s-obsidian pre.HyperMD-footnote {
   font-size: 15px;
+  padding-bottom: 0.5rem;
 }
 
 /*.cm-hmd-barelink,
@@ -479,7 +512,7 @@ mark > strong {
 }
 
 .dropdown:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--background-modifier-form-field);
   /*    background-color: var(--background-modifier-form-field-highlighted); --background-modifier-form-field*/
 }
 
@@ -551,7 +584,6 @@ Tabs */
   background-color: var(--background-secondary);
   overflow: hidden;
   padding: 0 0 2rem 0;
-  /* padding: 0 4px 30px 0; */
   position: relative;
   margin-right: 30px;
 }
@@ -567,13 +599,17 @@ Tabs */
 
 /*----------------------------------------------------------------
 Resize Handlers */
-.workspace-leaf-resize-handle {
+body.is-translucent {
+  background-color: var(--background-primary);
+}
+
+.workspace-leaf-resize-handle, .is-translucent .workspace-leaf-resize-handle {
   background-color: var(--background-secondary);
   /*--background-secondary-alt*/
   margin: 0;
 }
 
-.workspace-leaf-resize-handle:hover {
+.workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
   background-color: var(--discord-light-yellow);
 }
 
@@ -605,13 +641,9 @@ Split Mode */
   background-color: transparent !important;
 }
 
-/* default no animation for panels - feels more snappier */
+/* no animation for panels - feels more snappier */
 .workspace-split.mod-left-split, .workspace-split.mod-right-split {
   transition: none;
-}
-
-.workspace-split.mod-left-split {
-  /*margin-left: 26px;*/
 }
 
 /*----------------------------------------------------------------
@@ -650,8 +682,6 @@ Side Dock */
   color: var(--text-normal) !important;
 }
 
-/* .side-dock-ribbon-tab,
-.side-dock-ribbon-action {} */
 .side-dock-ribbon-tab.is-active {
   color: var(--interactive-accent) !important;
 }
@@ -674,7 +704,6 @@ Side Dock */
 
 .side-dock-collapsible-section-header {
   font-size: 14px;
-  /*margin: 4px;*/
 }
 
 /* hover actions on side dock navigation */
@@ -714,17 +743,16 @@ Navigation */
   color: var(--text-normal) !important;
 }
 
-/* .nav-file-tag {
-color: #59a2c5;
-} /* for the PNG text, but can't specifically target "PNG", just all of those filetype tags. */
 .nav-file.is-active .nav-file-tag {
   color: var(--text-normal);
 }
 
-/* condense line spacing on file explorer title list. also avoids character-level word breaks */
+/*
+ Condense line spacing on file explorer title list.
+ Avoid character-level word breaks
+*/
 .nav-file-title-content,
 .search-result-file-title {
-  /*.search-result-file-match*/
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   line-height: normal !important;
@@ -733,13 +761,17 @@ color: #59a2c5;
 
 /*----------------------------------------------------------------
 File Explorer */
+.nav-files-container {
+  overflow-x: hidden !important;
+  padding-bottom: 25px;
+}
+
 /* smaller & bold vault title */
 .nav-folder.mod-root > .nav-folder-title {
   padding-left: 6px;
   font-size: 14px;
   font-weight: 600;
   top: 0;
-  /* higher */
   cursor: default;
   color: #af88e7 !important;
 }
@@ -763,7 +795,6 @@ File Explorer */
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
   border-radius: 2px;
-  /*font-weight: bold;*/
   color: var(--text-accent);
   border-left: 2px solid var(--text-accent);
   /*transition: all 0.2s ease;*/
@@ -772,7 +803,6 @@ File Explorer */
 .nav-file.is-active > .nav-file-title {
   padding-left: 17px;
   margin-left: 2px;
-  /* margin-left: 5px; */
   color: var(--text-normal) !important;
 }
 
@@ -813,7 +843,6 @@ Search */
   font-size: 13px;
   line-height: 16px;
   margin-right: 5px;
-  /*margin-top: 8px;*/
   border-bottom: 0;
 }
 
@@ -826,7 +855,6 @@ Search */
 }
 
 .search-result-file-match {
-  /*padding: 0 5px 0 10px;*/
   line-height: normal !important;
   word-break: keep-all;
   left: 0;
@@ -837,13 +865,9 @@ Search */
 
 .search-result-file-match:hover {
   background-color: var(--background-tertiary);
-  /*color: var(--text-on-accent);*/
-  /*padding: 10px;*/
 }
 
 .search-result-file-matched-text {
-  /*color: var(--text-link) !important;*/
-  /*background-color: var(--background-secondary);*/
   background-color: var(--text-selection);
 }
 
@@ -852,13 +876,6 @@ Search */
 }
 
 .search-result-file-match-replace-button {
-  /*  background-color: var(--interactive-accent);
-    color: #fff;
-    top: 3px;
-    right: 8px;
-    opacity: 0.8;
-    padding: 2px 8px;
-    font-size: 11px;*/
   color: #fff;
   top: 3px;
   right: 8px;
@@ -908,31 +925,16 @@ Search */
 }
 
 /*----------------------------------------------------------------
-Status Bar */
-.status-bar {
-  background-color: var(--background-secondary-alt) !important;
-}
-
-.status-bar-item {
-  font-size: 13px;
-}
-
-/*----------------------------------------------------------------
 Header */
 .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
-  border-bottom: 0px solid var(--background-tertiary);
-  /* --background-secondary-alt */
+  border-bottom: 0;
   background-color: var(--background-primary);
-  /* --background-tertiary */
-  /*border-bottom: 1px solid var(--interactive-accent);
-  background-color: var(--background-secondary);*/
 }
 
 .view-header {
-  height: 30px !important;
+  height: 32px;
   border-top: 1px solid var(--background-tertiary);
-  /*border-bottom: 2px solid var(--background-secondary-alt);*/
-  border-bottom: 0px solid var(--background-tertiary);
+  border-bottom: 0;
   background-color: var(--background-primary);
 }
 
@@ -942,22 +944,20 @@ Header */
   display: block;
   left: 0;
   right: 0;
-  height: 1px;
   top: 28px;
+  height: 1px;
   -webkit-box-shadow: var(--elevation-low) !important;
   box-shadow: var(--elevation-low) !important;
   z-index: 1;
   pointer-events: none;
 }
 
-/* change the colour or the font-weight of the note title in a pane */
 .view-header-title {
   font-size: 15px;
   line-height: 30px;
 }
 
 .view-header-title-container {
-  height: 28px;
   position: relative;
 }
 
@@ -970,29 +970,26 @@ Header */
   margin-left: auto;
 }
 
-/*.mod-close-leaf {
-    margin-top: 1px;
-}*/
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary);
-  /*border-bottom: 1px solid var(--interactive-accent);*/
+  /*rgb(51,53,59) */
   border-bottom: 0;
 }
 
-.workspace-leaf.mod-active .view-header::before {
-  content: '';
-  border-bottom: 2px solid var(--discord-light-yellow);
+/* fix the long-title-obscuring shadows */
+.workspace-leaf.mod-active .view-header-title-container:after,
+.view-header-title-container:after {
+  content: ' ';
   position: absolute;
-  display: block;
-  left: 0;
+  top: 0;
   right: 0;
-  top: 28px;
-  height: 1px;
-  z-index: 1;
+  height: 28px;
+  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
+  /* rgb(51,53,59) */
 }
 
-.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header::before {
-  border-bottom: 0;
+.view-header-title-container:after {
+  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
 /* Change color of note title active pane - Obsidianite */
@@ -1004,37 +1001,24 @@ Header */
   padding: 10px;
 }
 
-/* fix the long-title-obscuring shadows */
-.view-header-title-container:after {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 26px;
-  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
-}
-
-/* Change icon above vert. note title on title spine */
 .view-header-icon {
   top: 0 !important;
-  /*color: var(--text-muted);*/
-  /* PB changed from var(--text-accent) */
 }
 
-.workspace-leaf.mod-active .view-header-icon {
+/*.workspace-leaf.mod-active .view-header-icon {
   color: var(--text-normal);
+}*/
+/*.view-actions {
+  opacity: 0.2;
 }
 
+.view-actions:hover {
+  opacity: 1;
+}*/
 /*----------------------------------------------------------------
 Top Window Frame */
 .titlebar {
   background: var(--background-primary);
-  /*border-bottom: 1px solid var(--background-modifier-border);*/
-}
-
-.hider-frameless .titlebar {
-  border-bottom: none;
 }
 
 .titlebar-text {
@@ -1061,28 +1045,29 @@ Top Window Frame */
 /*----------------------------------------------------------------
 Status Bar */
 .status-bar {
-  border-top: 0 solid var(--background-modifier-border);
-  /* flat */
-  background-color: var(--background-secondary);
+  border-top: 0;
+  background-color: var(--background-secondary-alt) !important;
   color: var(--text-faint);
   padding: 0 4em 0 0;
 }
 
 .status-bar-item {
   padding: 0 5px;
+  font-size: 13px;
 }
 
 .status-bar-item-segment {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 /*----------------------------------------------------------------
 SCROLLBARS
 ----------------------------------------------------------------*/
 /*----------------------------------------------------------------
-theme default thin scrollbars */
+theme-default thin scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -1145,6 +1130,32 @@ scrollbars in editor & preview */
 }
 
 /*----------------------------------------------------------------
+graph controls scrollbars */
+.mod-root .graph-controls::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-track {
+  border-color: var(--background-secondary-alt) !important;
+  background-color: var(--background-primary) !important;
+  border: 0px solid var(--scrollbar-thin-track) !important;
+  border-radius: 0px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-thumb {
+  background-clip: padding-box !important;
+  border: 2px solid transparent !important;
+  border-radius: 0px !important;
+  background-color: var(--scrollbar-thin-thumb);
+  min-height: 40px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-corner {
+  background-color: transparent !important;
+}
+
+/*----------------------------------------------------------------
 codeblocks - scrollable content without horizontal scrollbar */
 .markdown-preview-section > pre {
   overflow-x: scroll;
@@ -1170,37 +1181,48 @@ Preview */
 .markdown-preview-view h1 {
   font-size: 28px;
   color: var(--text-title-h1);
+  margin-block-end: 1em;
   /*color: rgb(126,109,216) !important;*/
 }
 
 .markdown-preview-view h2 {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 25px;
   color: var(--text-title-h2);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h3 {
   font-weight: 500;
   font-size: 23px;
   color: var(--text-title-h3);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h4 {
   font-weight: 500;
   font-size: 20px;
   color: var(--text-title-h4);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h5 {
   font-weight: 500;
   font-size: 18px;
   color: var(--text-title-h5);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h6 {
   font-weight: 500;
   font-size: 16px;
   color: var(--text-title-h6);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 /*----------------------------------------------------------------
@@ -1860,43 +1882,128 @@ div.popover.hover-popover, .menu, .suggestion-container {
 
 /*----------------------------------------------------------------
 Settings Modal */
-.horizontal-tab-content,
-.vertical-tab-content {
-  background-color: var(--background-secondary);
+.modal.mod-settings,
+.modal.mod-settings .vertical-tab-content-container,
+.modal.mod-settings .vertical-tab-header {
+  height: 100vh;
 }
 
-/* Left settings pane */
+.modal.mod-settings .modal-close-button {
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 36px;
+  flex: 0 0 36px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding-top: 2px;
+  top: 3.5rem;
+  right: 9rem;
+}
+
+.modal.mod-settings .modal-close-button:hover {
+  background-color: rgba(114, 118, 125, 0.3);
+}
+
+.modal.mod-settings .modal-close-button:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.modal.mod-settings .modal-close-button:after {
+  position: absolute;
+  content: 'ESC';
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+  width: 36px;
+  height: 36px;
+  margin-top: 4.75rem;
+  margin-left: -1rem;
+  cursor: default;
+  pointer-events: none;
+}
+
+.horizontal-tab-content,
+.vertical-tab-content {
+  background-color: var(--background-primary);
+  /* secondary */
+}
+
+.vertical-tabs-container {
+  padding: 0 0 0 7.5rem;
+}
+
+.modal.mod-settings .vertical-tab-header {
+  padding-top: 2.5rem;
+  flex: 0 0 14.25rem;
+}
+
+.modal.mod-settings .vertical-tab-content-container {
+  padding: 3.25rem 13rem 0 1.25rem;
+}
+
 .vertical-tab-header {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary);
+  /*-alt*/
 }
 
 .horizontal-tab-nav-item.is-active,
 .vertical-tab-nav-item.is-active {
   color: var(--interactive-active);
+  background-color: var(--background-modifier-active);
 }
 
 .horizontal-tab-nav-item:hover,
 .vertical-tab-nav-item:hover {
   color: var(--interactive-hover);
+  background-color: var(--background-modifier-hover);
 }
 
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary);
+  /* -alt */
   letter-spacing: 0;
   padding: 6px 6px 6px 24px;
   /*margin: 2px 0;*/
+  margin: 0 10px;
   color: var(--interactive-normal);
+  border-radius: 3px;
 }
 
-/* Change colour of buttons in Obsidian settings */
-/* .modal.mod-settings */
 .setting-item {
   border-top: thin solid var(--background-modifier-accent);
 }
 
 .setting-editor-extra-setting-button {
   margin-top: 8px;
+}
+
+.setting-hotkey {
+  min-height: unset;
+}
+
+.setting-delete-hotkey {
+  line-height: unset;
+  top: 0;
+  right: 0;
+  height: unset;
+}
+
+.hotkey-list-container {
+  padding-left: 2px;
+}
+
+.community-theme-filters-container, .hotkey-search-container {
+  padding: 0 10px 30px 0;
 }
 
 /*----------------------------------------------------------------
@@ -1972,6 +2079,7 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-controls {
   background-color: var(--background-secondary-alt);
+  border: none;
 }
 
 .theme-dark .graph-view.color-line {
@@ -2012,6 +2120,21 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-view.color-arrow {
   color: var(--graph-arrow);
+}
+
+/* graph controls */
+.graph-control-search-button {
+  background-color: transparent !important;
+  opacity: 0.7;
+}
+
+.graph-control-search-button:hover {
+  opacity: 1;
+}
+
+.mod-root .graph-controls {
+  top: 20px;
+  left: 30px;
 }
 
 /*----------------------------------------------------------------
@@ -2152,51 +2275,12 @@ SYNTAX HIGHLIGHTER COLORS */
   color: var(--syntax-grey);
 }
 
-/*----------------------------------------------------------------
-
-CUSTOM TEXT HIGHLIGHTS */
-.theme-dark {
-  --text-mark: RGBA(254, 204, 102, 0.8);
-  --text-mark-green: RGBA(153, 204, 102, 0.8);
-  --text-mark-blue: RGBA(153, 204, 255, 0.7);
-  --text-mark-red: RGBA(255, 170, 190, 0.7);
-  --text-mark-grey: RGBA(189, 189, 189, 0.9);
-}
-
-mark {
-  background-color: var(--text-mark) !important;
-}
-
-mark.red {
-  background-color: var(--text-mark-red) !important;
-}
-
-mark.blue {
-  background-color: var(--text-mark-blue) !important;
-}
-
-mark.green {
-  background-color: var(--text-mark-green) !important;
-}
-
-mark.grey {
-  background-color: var(--text-mark-grey) !important;
-}
-
-.theme-dark mark,
-.theme-dark mark.red,
-.theme-dark mark.blue,
-.theme-dark mark.green,
-.theme-dark mark.grey {
-  color: #101111 !important;
-}
-
-.hider-frameless .mod-left-split .workspace-tab-header-container {
-  padding-left: 1.25rem;
+.hider-frameless:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container {
+  padding-left: 24px;
 }
 
 .hider-frameless.hider-ribbon .mod-left-split .workspace-tab-header-container {
-  padding-left: 3rem;
+  padding-left: 54px;
 }
 
 .hider-frameless .workspace-split.mod-left-split > .workspace-tabs {
@@ -2205,31 +2289,178 @@ mark.grey {
 
 .workspace-leaf:first-of-type:last-of-type .view-header {
   padding-left: 0;
-  /*transition: padding-left 0.25s ease-in-out;*/
 }
 
 .hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
-  padding-left: 36px !important;
-  transition: padding-left 0.15s ease-in-out;
+  padding-left: 30px !important;
+  transition: padding-left .50s ease;
 }
 
 .hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
-  padding-left: 72px !important;
-  transition: padding-left 0.15s ease-in-out;
+  padding-left: 62px !important;
+  transition: padding-left .50s ease;
 }
 
-/* hide right ribbon */
-.hider-ribbon .workspace-ribbon.mod-right {
-  /*right: -30px !important;*/
-  /*display: none;*/
+.hider-frameless .titlebar {
+  border-bottom: none;
 }
 
 /* when no ribbons add slight animation for left and right panels */
 .hider-ribbon .workspace-split.mod-left-split, .hider-ribbon .workspace-split.mod-right-split {
-  /*transition: none !important ;*/
   transition: width 50ms ease;
 }
 
-.hider-ribbon .workspace-split.mod-right-split {
-  margin-right: 0;
+/* fullscreen mode on macOS */
+.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
+  padding-left: 0;
+}
+
+/*----------------------------------------------------------------
+Andy's Mode Sliding Panes (death_au's plugin)
+----------------------------------------------------------------*/
+/* fill title container for better visual separation */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  background-color: var(--background-secondary);
+}
+
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .app-container {
+  border-top: solid 1px var(--background-tertiary) !important;
+}
+
+body.plugin-sliding-panes .app-container::before {
+  content: none;
+}
+
+/* ---- separators in andy mode */
+/*body.plugin-sliding-panes .workspace-leaf-content > .view-header {
+  border-left: 1px solid var(--background-tertiary) !important;
+}*/
+/*---- */
+body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  border-left: 0;
+  /*border-right: 1px solid var(--background-tertiary) !important;*/
+}
+
+body.plugin-sliding-panes .view-header::before,
+body.plugin-sliding-panes .workspace-leaf.mod-active .view-header::before {
+  display: none;
+}
+
+body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  box-shadow: none !important;
+  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
+}
+
+/* remove long-title-obscuring gradient in normal mode */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+  content: none;
+}
+
+/* fix the long-title-obscuring gradient for andy mode */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::after,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100px !important;
+  top: unset;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(to bottom, transparent, var(--background-secondary)) !important;
+}
+
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
+  box-shadow: var(--background-tertiary) -1px 0 !important;
+}
+
+/* Comment out to bring back original elevation shadow of title container */
+/*body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
+  box-shadow: var(--background-modifier-border) 0 0 !important;
+}*/
+body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
+  box-shadow: none !important;
+}
+
+.workspace-split.mod-left-split {
+  border-right: 1px solid var(--background-tertiary);
+}
+
+.workspace-split.mod-right-split {
+  border-left: 1px solid var(--background-tertiary);
+}
+
+/* ---- */
+body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+  border-right: none;
+}
+
+body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+  border-bottom: 2px solid var(--discord-light-yellow);
+}
+
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+  border-right: 2px solid var(--discord-light-yellow) !important;
+}
+
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active:first-of-type:last-of-type > .workspace-leaf-content > .view-header {
+  border-right: 0 !important;
+}
+
+body.plugin-sliding-panes .view-header::after {
+  content: none;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  border-right: 0;
+}
+
+body.plugin-sliding-panes.hider-frameless:not(.is-fullscreen) .workspace-split.is-collapsed ~ .workspace-split.mod-root .view-header {
+  padding-top: 16px;
+  transition: padding 100ms ease;
+}
+
+body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 0 !important;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header-title-container,
+body.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt .workspace > .mod-root .view-header-title {
+  margin-top: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header-title-container {
+  margin-left: 0;
+  padding-top: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .view-header-title-container {
+  position: static;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-actions {
+  padding-left: 0;
+  padding-bottom: 20px;
+  margin-left: 0;
+  bottom: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .view-header-icon {
+  margin-left: -2px !important;
+}
+
+body.plugin-sliding-panes.is-fullscreen .view-header-icon {
+  padding-top: 8px;
+}
+
+/*body.plugin-sliding-panes .mod-root .graph-controls {
+  top: 20px;
+  left: 30px;
+}*/
+body.plugin-sliding-panes .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+body.plugin-sliding-panes .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body.plugin-sliding-panes .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  display: none;
 }

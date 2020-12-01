@@ -11,11 +11,9 @@
 @import "codeblocks";
 @import "modals";
 @import "graph";
-
 @import "folding";
+
 @import "mixins/bullet-point-relationship";
 @import "mixins/syntax-highlighter-colors";
-@import "mixins/marker-highlights";
-
 @import "mixins/hider-plugin";
-
+@import "mixins/andy-matuschak-mode";
