@@ -34,38 +34,98 @@ div.popover.hover-popover, .menu, .suggestion-container {
 /*----------------------------------------------------------------
 Settings Modal */
 
-.horizontal-tab-content,
-.vertical-tab-content {
-  background-color: var(--background-secondary);
+.modal.mod-settings,
+.modal.mod-settings .vertical-tab-content-container,
+.modal.mod-settings .vertical-tab-header {
+  height: 100vh;
 }
 
-/* Left settings pane */
+.modal.mod-settings .modal-close-button {
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 36px;
+  flex: 0 0 36px;
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding-top: 2px;
+  top: 3.5rem;
+  right: 9rem;
+}
+.modal.mod-settings .modal-close-button:hover {
+  background-color: rgba(114,118,125,.3);
+}
+
+.modal.mod-settings .modal-close-button:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.modal.mod-settings .modal-close-button:after {
+  position: absolute;
+  content: 'ESC';
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+  width:36px;
+  height: 36px;
+  margin-top: 4.75rem;
+  margin-left: -1rem;
+  cursor: default;
+  pointer-events: none;
+}
+
+.horizontal-tab-content,
+.vertical-tab-content {
+  background-color: var(--background-primary); /* secondary */
+}
+
+.vertical-tabs-container {
+  padding: 0 0 0 7.5rem;
+}
+
+.modal.mod-settings .vertical-tab-header {
+  padding-top: 2.5rem;
+  flex: 0 0 14.25rem;
+}
+.modal.mod-settings .vertical-tab-content-container {
+  padding: 3.25rem 13rem 0 1.25rem;
+}
 
 .vertical-tab-header {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary); /*-alt*/
 }
 
 .horizontal-tab-nav-item.is-active,
 .vertical-tab-nav-item.is-active {
   color: var(--interactive-active);
+  background-color: var(--background-modifier-active);
 }
 
 .horizontal-tab-nav-item:hover,
 .vertical-tab-nav-item:hover {
   color: var(--interactive-hover);
+  background-color: var(--background-modifier-hover);
 }
 
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-secondary); /* -alt */
   letter-spacing: 0;
   padding: 6px 6px 6px 24px;
   /*margin: 2px 0;*/
+  margin: 0 10px;
   color: var(--interactive-normal);
+  border-radius: 3px;
 }
-
-/* Change colour of buttons in Obsidian settings */
-/* .modal.mod-settings */
 
 .setting-item {
   border-top: thin solid var(--background-modifier-accent);
@@ -73,6 +133,25 @@ Settings Modal */
 
 .setting-editor-extra-setting-button {
   margin-top: 8px;
+}
+
+.setting-hotkey {
+  min-height: unset;
+}
+
+.setting-delete-hotkey {
+  line-height: unset;
+  top: 0;
+  right: 0;
+  height: unset;
+}
+
+.hotkey-list-container {
+  padding-left: 2px;
+}
+
+.community-theme-filters-container, .hotkey-search-container {
+  padding: 0 10px 30px 0;
 }
 
 /*----------------------------------------------------------------
