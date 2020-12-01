@@ -15,13 +15,17 @@
 }
 
 .hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
-  padding-left: 36px !important;
+  padding-left: 30px !important;
   transition: padding-left .50s ease;
 }
 
 .hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
-  padding-left: 72px !important;
+  padding-left: 62px !important;
   transition: padding-left .50s ease;
+}
+
+.hider-frameless .titlebar {
+  border-bottom: none;
 }
 
 /* when no ribbons add slight animation for left and right panels */
