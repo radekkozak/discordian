@@ -1,0 +1,157 @@
+/*----------------------------------------------------------------
+Andy's Mode Sliding Panes (death_au's plugin)
+----------------------------------------------------------------*/
+
+/* fill title container for better visual separation */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  background-color: var(--background-secondary);
+}
+
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .app-container {
+  border-top: solid 1px var(--background-tertiary) !important;
+}
+
+body.plugin-sliding-panes .app-container::before {
+  content: none;
+}
+
+/* ---- separators in andy mode */
+/*body.plugin-sliding-panes .workspace-leaf-content > .view-header {
+  border-left: 1px solid var(--background-tertiary) !important;
+}*/
+
+/*---- */
+
+body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  border-left: 0;
+  /*border-right: 1px solid var(--background-tertiary) !important;*/
+}
+
+body.plugin-sliding-panes .view-header::before,
+body.plugin-sliding-panes .workspace-leaf.mod-active .view-header::before {
+  display: none;
+}
+
+body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  box-shadow: none !important;
+  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
+}
+
+/* remove long-title-obscuring gradient in normal mode */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+  content: none;
+}
+
+/* fix the long-title-obscuring gradient for andy mode */
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::after,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100px !important;
+  top: unset;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(to bottom, transparent, var(--background-secondary)) !important;
+}
+
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
+  box-shadow: var(--background-tertiary) -1px 0 !important;
+}
+
+/* Comment out to bring back original elevation shadow of title container */
+/*body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
+  box-shadow: var(--background-modifier-border) 0 0 !important;
+}*/
+
+body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
+  box-shadow: none !important;
+}
+
+.workspace-split.mod-left-split {
+  border-right: 1px solid var(--background-tertiary);
+}
+
+.workspace-split.mod-right-split {
+  border-left: 1px solid var(--background-tertiary);
+}
+
+
+/* ---- */
+body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+ border-right: none;
+}
+
+body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+  border-bottom: 2px solid var(--discord-light-yellow);
+}
+
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+  border-right: 2px solid var(--discord-light-yellow) !important;
+}
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active:first-of-type:last-of-type > .workspace-leaf-content > .view-header {
+  border-right: 0 !important;
+}
+
+body.plugin-sliding-panes .view-header::after {
+  content: none;
+}
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  border-right: 0;
+}
+
+body.plugin-sliding-panes.hider-frameless:not(.is-fullscreen) .workspace-split.is-collapsed ~ .workspace-split.mod-root .view-header {
+  padding-top: 16px;
+  transition: padding 100ms ease;
+}
+
+body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 0 !important;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header-title-container,
+body.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt .workspace > .mod-root .view-header-title {
+  margin-top: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header-title-container {
+  margin-left: 0;
+  padding-top: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .view-header-title-container {
+  position: static;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-actions {
+  padding-left: 0;
+  padding-bottom: 20px;
+  margin-left: 0;
+  bottom: 0;
+}
+
+body.plugin-sliding-panes-rotate-header .view-header-icon {
+  margin-left: -2px !important;
+}
+
+body.plugin-sliding-panes.is-fullscreen .view-header-icon {
+  padding-top: 8px;
+}
+
+/*body.plugin-sliding-panes .mod-root .graph-controls {
+  top: 20px;
+  left: 30px;
+}*/
+
+body.plugin-sliding-panes .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+body.plugin-sliding-panes .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body.plugin-sliding-panes .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  display: none;
+}
+
+
+
+
