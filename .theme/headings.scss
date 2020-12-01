@@ -16,38 +16,49 @@ Preview */
 .markdown-preview-view h1 {
   font-size: 28px;
   color: var(--text-title-h1);
-
+  margin-block-end: 1em;
   /*color: rgb(126,109,216) !important;*/
 }
 
 .markdown-preview-view h2 {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 25px;
   color: var(--text-title-h2);
+
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h3 {
   font-weight: 500;
   font-size: 23px;
   color: var(--text-title-h3);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h4 {
   font-weight: 500;
   font-size: 20px;
   color: var(--text-title-h4);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h5 {
   font-weight: 500;
   font-size: 18px;
   color: var(--text-title-h5);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .markdown-preview-view h6 {
   font-weight: 500;
   font-size: 16px;
   color: var(--text-title-h6);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 /*----------------------------------------------------------------

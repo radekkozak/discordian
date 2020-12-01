@@ -36,7 +36,6 @@ Tabs */
   background-color: var(--background-secondary);
   overflow: hidden;
   padding: 0 0 2rem 0;
-  /* padding: 0 4px 30px 0; */
   position: relative;
   margin-right: 30px;
 }
@@ -95,13 +94,9 @@ Split Mode */
   background-color: transparent !important;
 }
 
-/* default no animation for panels - feels more snappier */
+/* no animation for panels - feels more snappier */
 .workspace-split.mod-left-split, .workspace-split.mod-right-split {
   transition: none;
-}
-
-.workspace-split.mod-left-split {
-  /*margin-left: 26px;*/
 }
 
 /*----------------------------------------------------------------
@@ -142,9 +137,6 @@ Side Dock */
   color: var(--text-normal) !important;
 }
 
-/* .side-dock-ribbon-tab,
-.side-dock-ribbon-action {} */
-
 .side-dock-ribbon-tab.is-active {
   color: var(--interactive-accent) !important;
 }
@@ -167,7 +159,6 @@ Side Dock */
 
 .side-dock-collapsible-section-header {
   font-size: 14px;
-  /*margin: 4px;*/
 }
 
 /* hover actions on side dock navigation */
@@ -208,34 +199,28 @@ Navigation */
   color: var(--text-normal) !important;
 }
 
-/* .nav-file-tag {
-color: #59a2c5;
-} /* for the PNG text, but can't specifically target "PNG", just all of those filetype tags. */
-
 .nav-file.is-active .nav-file-tag {
   color: var(--text-normal);
 }
 
-/* condense line spacing on file explorer title list. also avoids character-level word breaks */
+/*
+ Condense line spacing on file explorer title list.
+ Avoid character-level word breaks
+*/
 .nav-file-title-content,
-.search-result-file-title { /*.search-result-file-match*/
+.search-result-file-title {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   line-height: normal !important;
   word-break: keep-all;
 }
 
-
-
 /*----------------------------------------------------------------
 File Explorer */
 
 .nav-files-container {
-  overflow-x:hidden !important;
-  padding-bottom:25px;
-}
-
-.nav-folder.mod-root > .nav-folder-title::before {
+  overflow-x: hidden !important;
+  padding-bottom: 25px;
 }
 
 /* smaller & bold vault title */
@@ -243,7 +228,7 @@ File Explorer */
   padding-left: 6px;
   font-size: 14px;
   font-weight: 600;
-  top: 0; /* higher */
+  top: 0;
   cursor: default;
   color: #af88e7 !important;
 }
@@ -267,7 +252,6 @@ File Explorer */
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
   border-radius: 2px;
-  /*font-weight: bold;*/
   color: var(--text-accent);
   border-left: 2px solid var(--text-accent);
   /*transition: all 0.2s ease;*/
@@ -276,7 +260,6 @@ File Explorer */
 .nav-file.is-active > .nav-file-title {
   padding-left: 17px;
   margin-left: 2px;
-  /* margin-left: 5px; */
   color: var(--text-normal) !important;
 }
 
@@ -295,8 +278,6 @@ body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-secondary-alt);
   top: -1px;
 }
-
-
 
 /*----------------------------------------------------------------
 Search */
@@ -320,7 +301,6 @@ Search */
   font-size: 13px;
   line-height: 16px;
   margin-right: 5px;
-  /*margin-top: 8px;*/
   border-bottom: 0;
 }
 
@@ -333,7 +313,6 @@ Search */
 }
 
 .search-result-file-match {
-  /*padding: 0 5px 0 10px;*/
   line-height: normal !important;
   word-break: keep-all;
   left: 0;
@@ -344,13 +323,9 @@ Search */
 
 .search-result-file-match:hover {
   background-color: var(--background-tertiary);
-  /*color: var(--text-on-accent);*/
-  /*padding: 10px;*/
 }
 
 .search-result-file-matched-text {
-  /*color: var(--text-link) !important;*/
-  /*background-color: var(--background-secondary);*/
   background-color: var(--text-selection);
 }
 
@@ -359,14 +334,6 @@ Search */
 }
 
 .search-result-file-match-replace-button {
-/*  background-color: var(--interactive-accent);
-  color: #fff;
-  top: 3px;
-  right: 8px;
-  opacity: 0.8;
-  padding: 2px 8px;
-  font-size: 11px;*/
-
   color: #fff;
   top: 3px;
   right: 8px;
@@ -378,9 +345,6 @@ Search */
   padding: 0 .275rem;
   margin-top: .075em;
   border-radius: .1875rem;
-}
-
-.search-result-file-match-replace-button:hover {
 }
 
 /* search count boxes */
@@ -419,32 +383,17 @@ Search */
 }
 
 /*----------------------------------------------------------------
-Status Bar */
-
-.status-bar {
-  background-color: var(--background-secondary-alt) !important;
-}
-
-.status-bar-item {
-  font-size: 13px;
-}
-
-/*----------------------------------------------------------------
 Header */
 
 .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
-  border-bottom: 0px solid var(--background-tertiary); /* --background-secondary-alt */
-  background-color: var(--background-primary); /* --background-tertiary */
-
-  /*border-bottom: 1px solid var(--interactive-accent);
-  background-color: var(--background-secondary);*/
+  border-bottom: 0;
+  background-color: var(--background-primary);
 }
 
 .view-header {
-  height: 30px !important;
+  height: 32px;
   border-top: 1px solid var(--background-tertiary);
-  /*border-bottom: 2px solid var(--background-secondary-alt);*/
-  border-bottom: 0px solid var(--background-tertiary);
+  border-bottom: 0;
   background-color: var(--background-primary);
 }
 
@@ -454,22 +403,20 @@ Header */
   display: block;
   left: 0;
   right: 0;
-  height: 1px;
   top: 28px;
+  height: 1px;
   -webkit-box-shadow: var(--elevation-low) !important;
   box-shadow: var(--elevation-low) !important;
   z-index: 1;
   pointer-events: none;
 }
 
-/* change the colour or the font-weight of the note title in a pane */
 .view-header-title {
   font-size: 15px;
   line-height: 30px;
 }
 
 .view-header-title-container {
-  height: 28px;
   position: relative;
 }
 
@@ -482,30 +429,24 @@ Header */
   margin-left: auto;
 }
 
-/*.mod-close-leaf {
-    margin-top: 1px;
-}*/
-
 .workspace-leaf.mod-active .view-header {
-  background-color: var(--background-primary);
-  /*border-bottom: 1px solid var(--interactive-accent);*/
+  background-color: var(--background-primary); /*rgb(51,53,59) */
   border-bottom: 0;
 }
 
-.workspace-leaf.mod-active .view-header::before {
-  content: '';
-  border-bottom: 2px solid var(--discord-light-yellow);
+/* fix the long-title-obscuring shadows */
+.workspace-leaf.mod-active .view-header-title-container:after,
+.view-header-title-container:after {
+  content: ' ';
   position: absolute;
-  display: block;
-  left: 0;
+  top: 0;
   right: 0;
-  top: 28px;
-  height: 1px;
-  z-index: 1;
+  height: 28px;
+  background: linear-gradient(to right, transparent, var(--background-primary)) !important; /* rgb(51,53,59) */
 }
 
-.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header::before {
-  border-bottom: 0;
+.view-header-title-container:after {
+  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
 /* Change color of note title active pane - Obsidianite */
@@ -517,38 +458,27 @@ Header */
   padding: 10px;
 }
 
-/* fix the long-title-obscuring shadows */
-.view-header-title-container:after {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 26px;
-  background: linear-gradient(to right, transparent, var(--background-primary)) !important;
-}
-
-/* Change icon above vert. note title on title spine */
 .view-header-icon {
   top: 0 !important;
-  /*color: var(--text-muted);*/
-  /* PB changed from var(--text-accent) */
 }
 
-.workspace-leaf.mod-active .view-header-icon {
+/*.workspace-leaf.mod-active .view-header-icon {
   color: var(--text-normal);
+}*/
+
+/*.view-actions {
+  opacity: 0.2;
 }
+
+.view-actions:hover {
+  opacity: 1;
+}*/
 
 /*----------------------------------------------------------------
 Top Window Frame */
 
 .titlebar {
   background: var(--background-primary);
-  /*border-bottom: 1px solid var(--background-modifier-border);*/
-}
-
-.hider-frameless .titlebar {
-  border-bottom: none;
 }
 
 .titlebar-text {
@@ -576,16 +506,17 @@ Top Window Frame */
 Status Bar */
 
 .status-bar {
-  border-top: 0 solid var(--background-modifier-border); /* flat */
-  background-color: var(--background-secondary);
+  border-top: 0;
+  background-color: var(--background-secondary-alt) !important;
   color: var(--text-faint);
   padding: 0 4em 0 0;
 }
 
 .status-bar-item {
   padding: 0 5px;
+  font-size: 13px;
 }
 
 .status-bar-item-segment {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
