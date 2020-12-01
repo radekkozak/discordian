@@ -71,6 +71,33 @@ scrollbars in editor & preview */
 }
 
 /*----------------------------------------------------------------
+graph controls scrollbars */
+
+.mod-root .graph-controls::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-track {
+  border-color: var(--background-secondary-alt) !important;
+  background-color: var(--background-primary) !important;
+  border: 0px solid var(--scrollbar-thin-track) !important;
+  border-radius: 0px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-thumb {
+  background-clip: padding-box !important;
+  border: 2px solid transparent !important;
+  border-radius: 0px !important;
+  background-color: var(--scrollbar-thin-thumb);
+  min-height: 40px !important;
+}
+
+.mod-root .graph-controls::-webkit-scrollbar-corner {
+  background-color: transparent !important;
+}
+
+/*----------------------------------------------------------------
 codeblocks - scrollable content without horizontal scrollbar */
 
 .markdown-preview-section > pre {
