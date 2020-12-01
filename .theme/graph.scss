@@ -18,6 +18,7 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-controls {
   background-color: var(--background-secondary-alt);
+  border: none;
 }
 
 .theme-dark .graph-view.color-line {
@@ -59,4 +60,20 @@ GRAPH CONTROLS */
 
 .theme-dark .graph-view.color-arrow {
   color: var(--graph-arrow);
+}
+
+/* graph controls */
+
+.graph-control-search-button {
+  background-color: transparent !important;
+  opacity: 0.7;
+}
+
+.graph-control-search-button:hover {
+  opacity: 1;
+}
+
+.mod-root .graph-controls {
+  top: 20px;
+  left: 30px;
 }
