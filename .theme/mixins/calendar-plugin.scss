@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------
-CALENDAR PLUGIN
+CALENDAR PLUGIN v 1.4.2
 ----------------------------------------------------------------*/
 
 .workspace-leaf-content[data-type='calendar'] .view-content {
@@ -25,7 +25,7 @@ CALENDAR PLUGIN
   --interactive-accent-hover: var(--discord-blue-hover);
 }
 
-.table.svelte-1ocurao.svelte-1ocurao {
+#calendar-container .table {
   border-collapse: separate;
   table-layout: fixed;
 }
@@ -59,23 +59,20 @@ CALENDAR PLUGIN
   transition: none;
 }
 
-.day.svelte-1ynt2s5.svelte-1ynt2s5 {
-  cursor: var(--cursor);
-}
-
-.year.svelte-1mq3tzu.svelte-1mq3tzu {
+#calendar-container .year {
   color: var(--discord-green) !important;
 }
 
-.day.svelte-1ynt2s5.svelte-1ynt2s5 {
+#calendar-container .day {
   transition: none !important;
+  cursor: var(--cursor);
 }
 
-.arrow.svelte-1mq3tzu.svelte-1mq3tzu:hover > svg {
+#calendar-container .arrow:hover > svg {
   color: var(--color-arrow-hover) !important;
 }
 
-.reset-button.svelte-1mq3tzu.svelte-1mq3tzu:hover {
+#calendar-container .reset-button:hover {
   color: var(--color-text-title) !important;
 }
 
