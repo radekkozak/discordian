@@ -34,10 +34,19 @@ div.popover.hover-popover, .menu, .suggestion-container {
 /*----------------------------------------------------------------
 Settings Modal */
 
+.modal.mod-settings {
+  width: 100vw;
+  max-width: 100vw;
+}
+
 .modal.mod-settings,
 .modal.mod-settings .vertical-tab-content-container,
 .modal.mod-settings .vertical-tab-header {
   height: 100vh;
+}
+
+.modal.mod-settings .vertical-tab-content-container {
+  background-color: var(--background-primary);
 }
 
 .modal.mod-settings .modal-close-button {
