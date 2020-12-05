@@ -71,11 +71,11 @@ body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
 }
 
-.workspace-split.mod-left-split {
+body.plugin-sliding-panes .workspace-split.mod-left-split {
   border-right: 1px solid var(--background-tertiary);
 }
 
-.workspace-split.mod-right-split {
+body.plugin-sliding-panes .workspace-split.mod-right-split {
   border-left: 1px solid var(--background-tertiary);
 }
 
