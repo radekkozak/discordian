@@ -242,6 +242,7 @@ File Explorer */
 .nav-file-title,
 .nav-folder-title {
   padding: 0 14px 0 20px;
+  cursor: var(--cursor);
 }
 
 .nav-folder-children .nav-folder {
