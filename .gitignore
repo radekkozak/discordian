@@ -1,5 +1,13 @@
-.idea
+# Intellij
 *.iml
+.idea
+
 .DS_Store
 .sass-cache
+
 .obsidian
+config.json
+
+# npm
+node_modules
+package-lock.json

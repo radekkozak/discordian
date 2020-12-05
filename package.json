@@ -1,0 +1,33 @@
+{
+  "name": "discordian",
+  "version": "0.0.5",
+  "description": "Dark theme for Obsidian inspired by Discord",
+  "main": "gulpfile.js",
+  "config": {
+    "dest": "./"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radekkozak/discordian.git"
+  },
+  "keywords": [
+    "obsidian",
+    "css",
+    "theme"
+  ],
+  "author": "@radekkozak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radekkozak/discordian/issues"
+  },
+  "homepage": "https://github.com/radekkozak/discordian#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-env": "^0.4.0"
+  }
+}
