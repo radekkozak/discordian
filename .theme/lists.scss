@@ -53,3 +53,7 @@ ul, li & ol colors in editor */
   /*color: var(--text-muted);*/
 }
 
+.markdown-preview-section > ul.contains-task-list {
+  margin-block-end: 2rem;
+}
+
