@@ -37,3 +37,10 @@
 .is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 0;
 }
+
+/* Force-hide titlebar regardless of settings
+This is required to make modals truly fullscreen */
+body:not(.hider-frameless) .modal-container {
+  top: -22px !important;
+  height: 100vh !important;
+}
