@@ -32,8 +32,8 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked {
-  background-color: var(--discord-green) !important;
-  border: 1px solid var(--discord-green);
+  background-color: var(--discord-blue) !important;
+  border: 1px solid var(--discord-blue);
 }
 
 /*----------------------------------------------------------------
@@ -107,8 +107,8 @@ pre.HyperMD-list-line-2 {
 }
 
 input[type=checkbox]:checked, .cm-formatting-task.cm-property {
-  background-color: var(--discord-green) !important;
-  border: 1px solid var(--discord-green);
+  background-color: var(--discord-blue) !important;
+  border: 1px solid var(--discord-blue);
 }
 
 .cm-formatting-task.cm-property::after {
