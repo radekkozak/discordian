@@ -3,46 +3,40 @@ MODALS
 ----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------
-Translucent modals e.g. omnibar, open, commands
-(credit: Nosedive-Obsidian) */
-
-input.prompt-input, input.prompt-input:active, input.prompt-input:focus {
-  border-radius: 3px;
-  border: 2px solid rgba(38, 38, 59, 0.5); /* in the original code this is var(--text-muted) */
-  background-color: transparent;
-  box-sizing: border-box;
-  border-collapse: collapse;
-}
-
-.modal {
-  background-color: var(--background-secondary);
-  border: 1px solid var(--background-secondary);
-}
-
-.modal-bg {
-  background-color: var(--background-modifier-cover);
-}
-
-/* Make legible background for menus since we overrode the background */
-div.popover.hover-popover, .menu, .suggestion-container {
-  background-color: var(--background-primary);
-  border: none;
-  font-family: var(--font-editor);
-  font-size: 20px !important;
-}
-
-/*----------------------------------------------------------------
 Settings Modal */
 
 .modal.mod-settings {
   width: 100vw;
-  max-width: 100vw;
+  max-width: 100%;
+}
+
+.modal:not(.mod-settings) {
+  -webkit-box-shadow: var(--elevation-stroke),var(--elevation-high);
+  box-shadow: var(--elevation-stroke),var(--elevation-high);
+
+  padding: 0; /* default: 30px 50px */
+  border: 0 !important;
+}
+
+.modal:not(.mod-settings) .modal-content {
+  padding: 30px 50px;
+  margin-top: 0;
+}
+
+.modal:not(.mod-settings) .modal-title {
+  font-size: 22px;
+  line-height: 36px;
+  padding: 1rem 2rem;
+  background-color: var(--background-secondary-alt);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .modal.mod-settings,
 .modal.mod-settings .vertical-tab-content-container,
 .modal.mod-settings .vertical-tab-header {
   height: 100vh;
+  max-height: 100%;
 }
 
 .modal.mod-settings .vertical-tab-content-container {
@@ -67,9 +61,11 @@ Settings Modal */
   width: 36px;
   height: 36px;
   padding-top: 2px;
-  top: 3.5rem;
-  right: 9rem;
+  top: 3.75rem;
+  /*right: 21.5rem;*/
+  right: 11vw;
 }
+
 .modal.mod-settings .modal-close-button:hover {
   background-color: rgba(114,118,125,.3);
 }
@@ -95,18 +91,57 @@ Settings Modal */
 .horizontal-tab-content,
 .vertical-tab-content {
   background-color: var(--background-primary); /* secondary */
+  /*padding: 3.75rem 14.25rem 3.75rem 2.5rem;*/
+  padding: 3.75rem 0 5rem 2.5rem;
 }
 
 .vertical-tabs-container {
-  padding: 0 0 0 7.5rem;
+  /*padding: 0 0 0 7.5rem;*/
+  padding: 0;
 }
 
 .modal.mod-settings .vertical-tab-header {
   padding-top: 2.5rem;
-  flex: 0 0 14.25rem;
+  /*flex: 0 0 14.25rem;*/
+
+  --scrollbar-thin-thumb: transparent;
+
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-rows: min-content;
+
+  -webkit-box-flex: 1;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: end;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
+
+.modal.mod-settings .vertical-tab-header:hover {
+  --scrollbar-thin-thumb: unset;
+}
+
+.modal.mod-settings .vertical-tab-header-group {
+  /*width: 13.625rem;*/
+}
+
+.modal.mod-settings .setting-item {
+  /*margin-right: 26.5rem;*/
+  margin-right: 17vw;
+}
+
 .modal.mod-settings .vertical-tab-content-container {
-  padding: 3.25rem 13rem 0 1.25rem;
+  /*padding: 3.25rem 13rem 0 1.25rem;*/
+  /*padding: 0 0 0 1.25rem;*/
+  padding: 0;
+  flex: 1 1 50rem;
 }
 
 .vertical-tab-header {
@@ -141,7 +176,7 @@ Settings Modal */
 }
 
 .setting-editor-extra-setting-button {
-  margin-top: 8px;
+  /*margin-top: 8px;*/
 }
 
 .setting-hotkey {
@@ -153,6 +188,7 @@ Settings Modal */
   top: 0;
   right: 0;
   height: unset;
+  border-radius: 0;
 }
 
 .hotkey-list-container {
@@ -162,6 +198,253 @@ Settings Modal */
 .community-theme-filters-container, .hotkey-search-container {
   padding: 0 10px 30px 0;
 }
+
+/*----------------------------------------------------------------
+Prompts - Discord-like */
+
+.prompt {
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  padding: 20px 20px 0;
+}
+
+input.prompt-input::placeholder {
+  color: var(--text-normal);
+  font-weight: 400;
+}
+
+input.prompt-input::-webkit-input-placeholder {
+  color: #ffffff4d;
+  font-weight: 400;
+}
+
+input.prompt-input::-ms-input-placeholder {
+  color: var(--text-normal);
+  font-weight: 400;
+}
+
+input.prompt-input {
+  position: relative;
+  z-index: 1;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: block;
+  padding: 0 12px;
+  font-size: 21px;
+  border-radius: 5px;
+  border: none;
+  height: 70px;
+  line-height: 70px;
+  background-color: var(--text-muted) !important;
+  color: var(--text-on-accent);
+  -webkit-box-shadow: var(--elevation-high);
+  box-shadow: var(--elevation-high);
+}
+
+input.prompt-input:focus-within {
+  color: var(--text-on-accent);
+}
+
+.prompt-results {
+  margin-right: -12px;
+}
+
+/*.prompt-results .suggestion-hotkey:after {
+  content: ' ';
+  width: 1rem;
+  display: inline-block;
+}*/
+
+.prompt-results .suggestion-item {
+  color: var(--interactive-normal);
+  height: 2rem;
+  padding: 0 10px;
+  line-height: 2rem;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.prompt-results .suggestion-item.is-selected,
+.prompt-results .suggestion-item:hover {
+  background-color: var(--background-modifier-selected);
+  width: calc(100% - 12px);
+}
+
+.prompt-results .suggestion-hotkey {
+  border-color: transparent;
+  background-color: transparent;
+  border-radius: 0;
+  padding-right: 20px;
+}
+.prompt-results .suggestion-item.is-selected .suggestion-hotkey,
+.prompt-results .suggestion-item:hover .suggestion-hotkey {
+    margin-right: -12px;
+}
+
+.prompt-instructions {
+  padding: 0.625rem;
+  border-top: 1px solid var(--background-modifier-accent);
+  opacity: 1;
+  color: var(--text-on-accent);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.prompt-instruction span {
+  opacity: 0.6;
+}
+
+.prompt-instruction:first-of-type:before {
+  content: 'tips:';
+  text-transform: uppercase;
+  color: var(--interactive-accent);
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.prompt-instruction-command {
+  font-size: 11px;
+}
+
+/*----------------------------------------------------------------
+Community plugins panel */
+
+.community-plugin-search {
+  background-color: var(--background-secondary);
+  padding: 20px 0 0 0;
+}
+
+.modal-content.community-plugin {
+  padding: 0 0 50px 0 !important;
+}
+
+.community-plugin-readme {
+  overflow-x: hidden;
+}
+
+/*----------------------------------------------------------------
+Community themes panel */
+
+.community-theme-filters-container {
+  padding: 10px 30px 30px 0;
+  width: fit-content !important;
+}
+
+.community-theme {
+  padding: 10px 20px 20px 0;
+}
+
+.community-theme-search-container {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.community-theme-list {
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.community-theme-mode-toggle-label {
+  bottom:6px;
+}
+
+/*----------------------------------------------------------------
+Settings - Discord */
+
+/*
+.modal.mod-settings .vertical-tab-header {
+  display: grid;
+  grid-template-rows: min-content;
+  flex: 1 0 auto;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: end;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  -webkit-box-flex: 1;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+
+  padding: 3.5rem 0.5rem 3.75rem 1.25rem;
+}
+
+.modal.mod-settings .vertical-tab-header-group {
+  width: 13.625rem;
+  padding: 0;
+}
+
+.modal.mod-settings .vertical-tab-content-container {
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 50rem;
+  flex: 1 1 50rem;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  padding: 0;
+  overflow: auto;
+}
+
+.modal.mod-settings .vertical-tab-content.is-active .setting-item:first-of-type:before {
+  content: 'ESC';
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+  width:36px;
+  height: 36px;
+  cursor: default;
+  pointer-events: none;
+
+  margin-right: -4.5rem;
+  padding-left: 2.25rem;
+}
+
+.modal.mod-settings .vertical-tab-content-container:after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 36px;
+  flex: 0 0 36px;
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 30px;
+  margin-top: 18px;
+  padding-top: 6px;
+}
+
+.modal.mod-settings .modal-close-button {
+  right: 20rem;
+  display: none !important;
+}
+
+.modal.mod-settings .horizontal-tab-content,
+.modal.mod-settings .vertical-tab-content {
+  padding: 3.75rem 2.5rem 5rem;
+
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  max-width: 46rem;
+  min-width: 29rem;
+  min-height: 100%;
+}
+*/
 
 /*----------------------------------------------------------------
 Buttons */
@@ -183,12 +466,12 @@ button.mod-cta:hover {
 }
 
 .modal button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--background-modifier-form-field); /* background-secondary-alt */
-  color: var(--text-on-accent);
+  background-color: var(--discord-grey); /* background-secondary-alt */
+  color: white;
 }
 
 .modal button:not(.mod-cta):not(.mod-warning):hover {
-  background-color: var(--background-modifier-form-field-highlighted); /* background-primary-alt */
+  background-color: var(--discord-grey-hover); /* background-primary-alt */
 }
 
 /*----------------------------------------------------------------
