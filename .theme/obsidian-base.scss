@@ -2,7 +2,6 @@
   --default-font: Catamaran, Source Sans Pro, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-editor: Gill Sans Light, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, Menlo, SFMono-Regular, Consolas, "Roboto Mono", iA Writer Mono S, Jetbrains Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
-  /*--default-font: Avenir, Whitney SSm, Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;*/
 
   /* discord colors */
   --discord-green: #43b581; /* discord accent rgb(63,179,130) */
@@ -31,6 +30,7 @@
   --background-secondary: #2f3136; /*bg file explorera oraz paneli bocznych */
   --background-secondary-alt: #202225; /*obrabki paneli, ribbony z ikonami + status bar + bg kart w andy mode */
   --background-tertiary: #292b2f;
+
   --background-accent: #4f545c;
 
   --background-modifier-cover: #36393f;
@@ -80,13 +80,6 @@
   --blockquote-border: #b294bb;
   --blockquote-bg: rgba(4,4,5,0.07);
 
-  /*--text-input-bg: rgba(0, 0, 0, 0.1);
-  --text-input-border: rgba(0, 0, 0, 0.3);
-  --text-input-border-hover: #040405;
-  --text-input-border-disabled: #202225;
-  --text-input-prefix: #dcddde;*/
-
-  /* scroll bars */
   --scrollbar-thin-thumb: #202225;
   --scrollbar-thin-track: transparent;
   --scrollbar-auto-thumb: #202225;
@@ -118,7 +111,7 @@ audio {
   height: 30px;
 }
 
-//noinspection CssInvalidPseudoSelector
+/*noinspection CssInvalidPseudoSelector*/
 audio::-webkit-media-controls-enclosure {
   filter: sepia(10%) contrast(90%) invert(90%);
   opacity: 0.8;
@@ -135,7 +128,6 @@ audio::-webkit-media-controls-enclosure {
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
   vertical-align: baseline;
-  /*letter-spacing: 0.025rem;*/
 
   -webkit-font-feature-settings: "tnum";
   -moz-font-feature-settings: "tnum";
@@ -143,6 +135,8 @@ audio::-webkit-media-controls-enclosure {
   -webkit-font-variant-numeric: tabular-nums;
   -moz-font-variant-numeric: tabular-nums;
   font-variant-numeric: tabular-nums;
+
+  margin: 0 !important;
 }
 
 /* Editor font: make thicker so it is like in Preview */
@@ -241,11 +235,6 @@ sup {
   font-size: 15px;
   padding-bottom: 0.5rem;
 }
-
-/*.cm-hmd-barelink,
-.cm-footref {
-    color: var(--text-a);
-}*/
 
 .footnote-link {
   color: var(--text-a);
@@ -352,7 +341,6 @@ blockquote p {
 }
 
 /*----------------------------------------------------------------
-
 IMAGES */
 
 /* embedded */
@@ -568,8 +556,6 @@ mark > strong {
   color: inherit;
 }
 
-
-
 .suggestion-highlight {
   color: var(--interactive-accent) !important;
 }
@@ -582,9 +568,30 @@ mark > strong {
 }
 
 /*----------------------------------------------------------------
-PLUGINS & CUSTOM SNIPPETS
-----------------------------------------------------------------*/
+SUGGESTION POPUP */
 
+.suggestion-item, .suggestion-empty {
+  font-size: 15px;
+}
+
+.suggestion .suggestion-item.is-selected {
+  background-color: var(--background-modifier-form-field-highlighted);
+  color: var(--text-on-accent);
+}
+
+div.popover.hover-popover, .menu, .suggestion-container {
+  background-color: var(--background-secondary);
+
+  border-radius: 4px;
+  border: none !important;
+  min-width: 15rem;
+
+  font-family: var(--font-editor);
+  font-size: 15px !important;
+
+  -webkit-box-shadow: var(--elevation-stroke),var(--elevation-high);
+  box-shadow: var(--elevation-stroke),var(--elevation-high);
+}
 
 
 
