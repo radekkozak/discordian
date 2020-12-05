@@ -2,9 +2,8 @@
 TAGS
 ----------------------------------------------------------------*/
 
-a.tag {
-  border-radius: 3px;
-  padding: 1px 4px !important;
+a.tag,
+span:not(.cm-header).cm-hashtag {
   font-weight: 400;
   unicode-bidi: -moz-plaintext;
   unicode-bidi: plaintext;
@@ -16,9 +15,27 @@ a.tag {
   transition: background-color .15s ease-out,color .15s ease-out;
 }
 
+span:not(.cm-header).cm-hashtag-begin {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+span:not(.cm-header).cm-hashtag-end {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+a.tag {
+  padding: 1px 4px !important;
+  border-radius: 3px;
+}
+
+span:not(.cm-header).cm-hashtag {
+  text-decoration: none !important;
+}
+
 a.tag:hover {
   text-decoration: none !important;
-  /*color: var(--interactive-active);*/
   color: var(--discord-blue);
   background-color: rgba(114, 137, 218, 0.2);
 }
@@ -50,6 +67,6 @@ h6 a.tag:hover {
 
 /* editor .cm-s-obsidian span.cm-hashtag  */
 
-.cm-hashtag {
+span.cm-hashtag {
   text-decoration: none !important;
 }
