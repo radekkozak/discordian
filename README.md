@@ -57,16 +57,16 @@ To provide simple and clean UI that mimics Discord app Discordian theme hides to
 **You can however enable them and bring them back via accompanying** [Discordian plugin](https://github.com/radekkozak/discordian-plugin) 
 (this is preferred way) or if you decide to go solo by commenting appropriate parts of CSS.
 
-I could provide more user-controllable elements for hiding but to know reinvent the wheel i sincerely recommend
+I could provide more user-controllable elements for hiding if requested but to not reinvent the wheel i sincerely recommend
 excellent [Hider Plugin](https://github.com/kepano/obsidian-hider) by @kepano - i use it myself for simplifying UI
-even more. Discordian is of course fully compatible with it.
+even more. Discordian of course is, as mentioned before, fully compatible with it.
 
 ### Task lists
 
-The way the fancy task lists works in editor mode as well is via quite `hackish` means. Therefore it's mandatory 
+The way the fancy task lists works in editor mode as well is via quite `hackish` means. Therefore, it's mandatory 
 to have `Smart indent list` option enabled in Obsidian. From my own experience I would also recommend having 
 `Toggle checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze.
-I know I love it that way! If can also revert to default via plugin if needed.  
+I know I love it that way! If needed one can also revert to defaults via plugin.  
 
 ## Screenshots
 
