@@ -1,0 +1,71 @@
+name: Build Obsidian Theme
+
+on:
+  push:
+    tags:
+      - "*"
+
+env:
+  THEME_NAME: discordian
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Build
+        id: build
+        run: |
+          npm install
+          npm run build --if-present
+          mkdir ${{ env.THEME_NAME }}
+          cp obsidian.css ${{ env.THEME_NAME }}
+          zip -r ${{ env.THEME_NAME }}.zip ${{ env.THEME_NAME }}
+          ls
+          echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          VERSION: ${{ github.ref }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload zip file
+        id: upload-zip
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ env.THEME_NAME }}.zip
+          asset_name: ${{ env.THEME_NAME }}-${{ steps.build.outputs.tag_name }}.zip
+          asset_content_type: application/zip
+      - name: Upload obsidian.css
+        id: upload-css
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./obsidian.css
+          asset_name: obsidian.css
+          asset_content_type: text/css
+      - name: Upload fonts.zip
+        id: upload-fonts
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./media/fonts.zip
+          asset_name: fonts.zip
+          asset_content_type: application/zip
