@@ -1,5 +1,7 @@
 ![](media/discordian-logo.png)
 
+![GitHub release (latest SemVer)](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=6f5dc8&label=Release&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fradekkozak%2Fdiscordian%2Fmaster%2Fpackage.json%3Ftoken%3DAAU6DK7SNRKSVY6LXG7OLS274EOXA)
+
 ## beautiful Obsidian dark theme inspired by Discord 
 
 Discordian is a dark theme designed to give all [Obsidian](https://obsidian.md) power users visuals they recognize and appreciate 
@@ -10,10 +12,10 @@ to have the same visual experience extended to our beloved app ([see screenshots
 Discordian theme, apart from deriving its visuals from Discord app, strives to serve as solid dark theme. An honest default. 
 This means it offers an unobtrusive, minimal and easy on the eyes experience with a hint of subtle changes in 
 Discord's color palette like muting and pastelizing some colors. Theme uses free fonts that closely resemble those in 
-Discord app. **For best experience possible**, please [download the fonts](media/fonts.zip) and **install them in your 
-system before using the theme.**
+Discord app. **For best experience possible**, please [download the fonts](https://github.com/radekkozak/discordian/raw/master/media/fonts.zip) 
+and **install them in your system before using the theme.**
 
-Of course, it fully supports [popular Obsidian's community plugins](#plugin-support) but also has its own 
+Discordian, of course, fully supports [popular Obsidian's community plugins](#plugin-support) but also has its own 
 [Discordian Plugin](https://github.com/radekkozak/discordian-plugin) going on which is very much recommended. 
 If you like to have more fine-grained control over some aspects of the theme go ahead and download it. 
 You will be so much happier with the additions of Writer Mode, Paragraph Focus, Flat Andy's Mode, controllable 
@@ -65,7 +67,7 @@ even more. Discordian of course is, as mentioned before, fully compatible with i
 
 ### Task lists
 
-The way the fancy task lists works in editor mode as well is via quite `hackish` means. Therefore, it's mandatory 
+The way the fancy task lists works in editor mode is via quite `hackish` means. Therefore, it's mandatory 
 to have `Smart indent list` option enabled in Obsidian. From my own experience I would also recommend having 
 `Toggle checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze.
 I know I love it that way! If needed one can also revert to defaults via plugin.  
