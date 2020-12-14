@@ -66,7 +66,8 @@
   --text-a: #E480BF;  /*ff79c6 rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
   --text-a-hover: #ff8bca;  /*#ff79c6; rgb(220,140,178) #49a3df */
 
-  --text-mark: #d79921; /* #f1fa8c; */
+  --text-mark: RGBA(254, 204, 102, 0.8);
+  /*--text-mark: #724e03;*/ /* #f1fa8c; */
   --interactive-accent: var(--discord-green); /*#f1fa8c; #7F6DF2;*/
   --interactive-accent-hover: #2cae72; /*#f1fa8c; #7F6DF2;*/
   --interactive-accent-rgb: #f1fa8c; /*241,250,140*/
@@ -448,7 +449,7 @@ em {
 /* preview */
 
 mark {
-  color: var(--background-primary) !important;
+  color: var(--text-muted) !important;
   background-color: var(--text-mark) !important;
   padding: 1px 2px 0px 2px;
 }

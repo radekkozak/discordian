@@ -159,11 +159,38 @@ pre.frontmatter[class*="language-"] {
   color: var(--syntax-grey) !important;
 }*/
 
+/*----------------------------------------------------------------
+frontmatter */
+
 .markdown-preview-view pre code.language-yaml,
 .markdown-preview-view pre code.language-yaml span.token {
   color: var(--text-muted) !important;
 }
 
-pre.frontmatter[class*="language-"] .theme-dark .token.atrule {
-
+.frontmatter-container {
+  background-color: var(--background-secondary-alt);
+  border: 0;
 }
+
+.frontmatter-container .frontmatter-section-label {
+  text-transform: lowercase;
+  display: inline-flex;
+}
+
+.frontmatter-container .frontmatter-section-label:after {
+  content: ':';
+  display: inline-block;
+}
+
+.frontmatter-container .tag,
+.frontmatter-container .frontmatter-alias {
+  border-radius: 3px !important;
+}
+
+.frontmatter-container .frontmatter-alias {
+  padding: 1px 4px !important;
+}
+
+pre.frontmatter[class*="language-"] .theme-dark .token.atrule {
+}
+

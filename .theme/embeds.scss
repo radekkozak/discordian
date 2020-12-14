@@ -1,30 +1,72 @@
+/*----------------------------------------------------------------
+EMBEDS
+----------------------------------------------------------------*/
 
-/* NAKED EMBEDS*/
+/*----------------------------------------------------------------
+Seamless notes transclusions */
 
-/* But keeping Border and Scroll! */
+.markdown-preview-view .markdown-embed {
+  margin: 2rem 0 0 0 !important;
+  padding: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
 
-/*
-.markdown-embed-title {
+.markdown-preview-view .markdown-embed-content {
+  max-height: none !important;
+}
+
+/* Hide frontmatters in embeds */
+.markdown-preview-view .markdown-embed-content .frontmatter {
   display: none;
 }
 
-.markdown-preview-view .markdown-embed-content > :first-child {
-  margin-top: 0;
+.markdown-embed-title,
+.internal-embed .markdown-preview-section {
+  max-width: 100%;
 }
 
-.markdown-preview-view .markdown-embed-content > :last-child {
-  margin-bottom: 0;
+.markdown-embed-title {
+  display: none !important;
 }
 
-.markdown-embed {
-  background-color: var(--background-primary-alt) !important;
+.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
+  max-height: none !important;
 }
 
-.markdown-embed-link {
-  color: var(--text-a) !important;
-  right: 2px !important;
+.markdown-embed .markdown-preview-view {
+  padding: 0 !important;
 }
 
-.markdown-embed-link:hover {
-  color: var(--text-link) !important;
-}*/
+.file-embed-link svg,
+.markdown-embed-link svg {
+  width: 16px;
+  opacity: 0;
+}
+
+.markdown-embed:hover .file-embed-link svg,
+.markdown-embed:hover .markdown-embed-link svg {
+  opacity: 1;
+}
+
+/*----------------------------------------------------------------
+Audio embed */
+
+audio, .theme-dark audio {
+  filter: unset !important;
+}
+
+//noinspection ALL
+.theme-dark audio::-webkit-media-controls-enclosure {
+  filter: sepia(10%) contrast(90%) invert(90%) !important;
+  opacity: 0.8;
+  border-radius: 6px;
+  height: 20px;
+}
+
+audio::-webkit-media-controls-enclosure {
+  filter: sepia(10%) contrast(90%) invert(90%) !important;
+  opacity: 0.8;
+  border-radius: 6px;
+  height: 20px;
+}

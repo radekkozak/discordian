@@ -1,7 +1,7 @@
 :root {
-  --default-font: Catamaran, Source Sans Pro, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-editor: Gill Sans Light, Whitney SSm, Whitney Book, Catamaran Light, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-monospace: Source Code Pro, Menlo, SFMono-Regular, Consolas, "Roboto Mono", iA Writer Mono S, Jetbrains Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+  --default-font: Catamaran, Whitney SSm, Whitney Medium, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-editor: Gill Sans Light, Whitney SSm, Whitney Book, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-monospace: Source Code Pro, iA Writer Mono S, Jetbrains Mono, Menlo, SFMono-Regular, Consolas, "Roboto Mono", Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
 
   /* discord colors */
   --discord-green: #43b581; /* discord accent rgb(63,179,130) */
@@ -22,6 +22,8 @@
   --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
   --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
   --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+
+  --readable-line-length: 45rem;
 }
 
 .theme-dark {
@@ -51,7 +53,7 @@
   --text-selection: rgba(98, 135, 178, 0.5);
   --text-highlight-bg: rgb(98, 135, 178); /*#f7ff99; #f1fa8c*/
 
-  --text-strong: rgb(211, 164, 89); /* rgb(207, 128, 12)     rgb(244, 167, 54)     hsl(44, 48%, 48%)      hsl(45, 70%, 46%) rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
+  --text-strong: hsl(37, 65%, 59%); /* rgb(207, 128, 12)     rgb(244, 167, 54)     hsl(44, 48%, 48%)      hsl(45, 70%, 46%) rgb(227, 177, 20)      #faa61a;     #d783b6  rgb(179, 153, 255, 0.95); */
   --text-em: rgb(185,187,125); /*rgb(185,187,125)     #f58942      #b78b60   #b8b894; */
 
   --text-title-h1: hsl(44, 48%, 48%);  /*#ae9d47;    a79645     #a79645;    #bd93f9;  a79645 */
@@ -59,14 +61,17 @@
   --text-title-h3: #939bd6; /* ba6ea0 */
   --text-title-h4: #b78b60;
   --text-title-h5: hsl(95, 20%, 50%); /* #859679; */
+  --text-title-h6: hsl(95, 20%, 50%); /* #859679; */
 
   --markup-code: #f4a742; /*#ffb86c;*/
   --text-tag: #ff9640ba; /*#50fa7b;*/
 
-  --text-a: #E480BF;  /*ff79c6 rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
+  --text-a: #E480BF; /* github pink = rgb(219,97,162);  /  ff79c6 rgb(228, 128,191); #e073b8; rgb(220,140,178) #00b0f4 rgba(52,152,219,1) in hex #3498db */
   --text-a-hover: #ff8bca;  /*#ff79c6; rgb(220,140,178) #49a3df */
 
-  --text-mark: #d79921; /* #f1fa8c; */
+  --text-mark: #18191c; /*hsl(26.1, 51.6%, 43.7%)hsl(37, 58%, 59%) hsl(40, 60%, 60%) */;
+  --text-mark-text: #f4a742; /*#c7c4bb   hsl(217, 58%, 59%)*/
+  /*--text-mark: #d79921;*/ /* #f1fa8c; */
   --interactive-accent: var(--discord-green); /*#f1fa8c; #7F6DF2;*/
   --interactive-accent-hover: #2cae72; /*#f1fa8c; #7F6DF2;*/
   --interactive-accent-rgb: #f1fa8c; /*241,250,140*/
@@ -106,19 +111,6 @@
   width: 15px;
 }
 
-/* simplistic styling of audio control */
-audio {
-  height: 30px;
-}
-
-/*noinspection CssInvalidPseudoSelector*/
-audio::-webkit-media-controls-enclosure {
-  filter: sepia(10%) contrast(90%) invert(90%);
-  opacity: 0.8;
-  border-radius: 6px;
-  height: 20px;
-}
-
 /* font for everything outside of editor/preview panes */
 .app-container, body {
   font-size: 16px;
@@ -143,6 +135,18 @@ audio::-webkit-media-controls-enclosure {
 /* If you remove this - change editor font to regular Catamaran */
 .cm-s-obsidian  { /*.CodeMirror-line * */
   -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+.CodeMirror-sizer {
+  border-right: 0;
+}
+
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: var(--readable-line-length);
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: var(--readable-line-length);
 }
 
 /* Fix all font-family settings to use font variables */
@@ -214,8 +218,8 @@ p.mod-warning {
 }
 
 /* html tags in editor */
-.cm-tag {
-  color: var(--text-mark) !important;
+.cm-tag,.cm-attribute { /* .cm-string*/
+  color: var(--text-mark-text) !important;
 }
 
 /* FOOTNOTES */
@@ -384,11 +388,12 @@ img {
   color: var(--text-normal);
   font-weight: 400;
   font-size: 14px;
-  line-height: 23px !important;
+  line-height: 1.4375rem !important;
   /*letter-spacing: 0.025rem;*/
 
-  padding-left: 8% !important;
+  padding-left: 6% !important;
   padding-right: 4% !important;
+  overflow-x: hidden;
 }
 
 .mod-single-child .markdown-preview-view {
@@ -415,6 +420,10 @@ img {
   padding-right: 4% !important;
 }
 
+.frontmatter-container {
+  margin: 0;
+}
+
 /* BOLD */
 
 /* preview */
@@ -435,22 +444,26 @@ strong {
 
 em {
   color: var(--text-em);
+  font-weight: 500;
 }
 
 /* editor */
 
 .cm-em {
   color: var(--text-em);
+  font-weight: 500;
 }
 
 /* HIGHLIGHT */
 
 /* preview */
 
-mark {
-  color: var(--background-primary) !important;
-  background-color: var(--text-mark) !important;
+.markdown-preview-view mark {
+  color: #111 !important;
+  background-color: rgba(243,202,135,0.9);
   padding: 1px 2px 0px 2px;
+  font-weight: 400;
+  /*padding: 0.25rem 0.15rem;*/
 }
 
 /* editor */
@@ -478,37 +491,6 @@ mark > strong {
 }
 
 /* UL, OL, BULLETS, CHECKBOXES & FOLDING ARROWS */
-
-/* task lists */
-
-/*.markdown-preview-view .task-list-item-checkbox {
-  -webkit-appearance: none;
-  top: 1.3px !important;
-  box-sizing: border-box;
-  border: 1px solid var(--accent-2);
-  position: relative;
-  width: 1.25em;
-  height: 1.25em;
-  margin: 0;
-  box-shadow: 0 0 0.1em var(--interactive-accent);
-}
-
-.markdown-preview-view .task-list-item-checkbox:checked::before {
-  content: "✓";
-  position: absolute;
-  color: var(--interactive-accent);
-  font-size: 1em;
-  line-height: 1.25em;
-  width: 1.2em;
-  text-align: center;
-  text-shadow: 0 0 0.5em var(--accent-2);
-}
-
-.markdown-preview-view .task-list-item-checkbox {
-  top: 0px;
-}*/
-
-
 
 /* Dropdown */
 
@@ -568,7 +550,7 @@ mark > strong {
 }
 
 /*----------------------------------------------------------------
-SUGGESTION POPUP */
+SUGGESTIONS & POPOVERS */
 
 .suggestion-item, .suggestion-empty {
   font-size: 15px;
@@ -592,6 +574,44 @@ div.popover.hover-popover, .menu, .suggestion-container {
   -webkit-box-shadow: var(--elevation-stroke),var(--elevation-high);
   box-shadow: var(--elevation-stroke),var(--elevation-high);
 }
+
+/* Bigger popovers */
+div.popover.hover-popover {
+  width: 35rem;
+  max-height: 25rem;
+}
+
+div.popover.hover-popover .markdown-preview-view {
+  font-size: 13px !important;
+}
+
+.popover.hover-popover .markdown-embed {
+  height: 25rem;
+}
+
+div.popover.hover-popover .markdown-preview-view h1 {
+  font-size: 1.375rem;
+}
+
+div.popover.hover-popover .markdown-preview-view h2 {
+  font-size: 1.25rem;
+}
+
+div.popover.hover-popover .markdown-preview-view h3 {
+  font-size: 1.125rem;
+}
+
+div.popover.hover-popover .markdown-preview-view h4 {
+  font-size: 1rem;
+}
+
+div.popover.hover-popover .markdown-preview-view h5,
+div.popover.hover-popover .markdown-preview-view h6 {
+  font-size: 0.875rem;
+}
+
+
+
 
 
 

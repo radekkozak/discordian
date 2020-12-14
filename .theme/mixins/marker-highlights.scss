@@ -1,32 +1,32 @@
 /*----------------------------------------------------------------
-
 CUSTOM TEXT HIGHLIGHTS */
 
 .theme-dark {
-  --text-mark: RGBA(254, 204, 102, 0.8);
-  --text-mark-green: RGBA(153, 204, 102, 0.8);
-  --text-mark-blue: RGBA(153, 204, 255, 0.7);
-  --text-mark-red: RGBA(255, 170, 190, 0.7);
+  /*--text-mark: RGBA(254, 204, 102, 0.8);*/
+  --text-mark: rgba(243,202,135,0.9); /* rgba(229,217,144,0.9); RGBA(245,218,190,0.9)*/
+  --text-mark-green: RGBA(166,198,160,1);/*RGBA(102,193,142,1) rgba(167,199,120,1)*/
+  --text-mark-blue: RGBA(153, 204, 255, 0.8);
+  --text-mark-red: RGBA(243,181,197,0.95); /* RGBA(255, 170, 190, 0.8) */
   --text-mark-grey: RGBA(189, 189, 189, 0.9);
 }
 
-mark {
+.markdown-preview-view mark {
   background-color: var(--text-mark) !important;
 }
 
-mark.red {
+.markdown-preview-view mark.red {
   background-color: var(--text-mark-red) !important;
 }
 
-mark.blue {
+.markdown-preview-view mark.blue {
   background-color: var(--text-mark-blue) !important;
 }
 
-mark.green {
+.markdown-preview-view mark.green {
   background-color: var(--text-mark-green) !important;
 }
 
-mark.grey {
+.markdown-preview-view mark.grey {
   background-color: var(--text-mark-grey) !important;
 }
 
@@ -35,5 +35,5 @@ mark.grey {
 .theme-dark mark.blue,
 .theme-dark mark.green,
 .theme-dark mark.grey {
-  color: #101111 !important;
+  color: #111 !important;
 }
