@@ -17,7 +17,7 @@ function outputDir () {
 
 function obsidian () {
   return gulp.src([
-    '.theme/obsidian-base.css',
+    '.theme/base.css',
     '.theme/hidden.css',
     '.theme/foundation.css',
     '.theme/headings.css',

@@ -3,7 +3,6 @@
 .idea
 
 .DS_Store
-.sass-cache
 
 .obsidian
 config.json
