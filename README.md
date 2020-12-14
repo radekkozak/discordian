@@ -1,4 +1,4 @@
-![](screenshots/discordian-logo.png)
+![](media/discordian-logo.png)
 
 ## beautiful Obsidian dark theme inspired by Discord 
 
@@ -72,35 +72,35 @@ I know I love it that way! If needed one can also revert to defaults via plugin.
 
 based on [Nick Milo](https://github.com/nickmilo) 's [LYT Kit](https://www.linkingyourthinking.com)
 
-![](screenshots/discordian-graph-view.png)
+![](media/discordian-graph-view.png)
 
 ### Discord experience 
 
-![](screenshots/discordian-settings.png)
+![](media/discordian-settings.png)
 
-![](screenshots/discordian-commands.png)
+![](media/discordian-commands.png)
 
-![](screenshots/discordian-tables.png)
+![](media/discordian-tables.png)
 
-![](screenshots/discordian-tasks.png)
+![](media/discordian-tasks.png)
 
 ### Beautiful codeblocks
 
-![](screenshots/discordian-codeblocks.png)
+![](media/discordian-codeblocks.png)
 
 ### Editor in Writer Mode
 
-![](screenshots/discordian-editor-mode.png)
+![](media/discordian-editor-mode.png)
 
 ### Feature showcase in Full Mode
 
-![](screenshots/discordian-full-mode.png)
+![](media/discordian-full-mode.png)
 
 ### Other
 
-![](screenshots/discordian-calendar.png)
+![](media/discordian-calendar.png)
 
-![](screenshots/discordian-preview-popover.png)
+![](media/discordian-preview-popover.png)
 
 ## Contribute
 
