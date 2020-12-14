@@ -2,6 +2,18 @@
 WORKSPACE
 ----------------------------------------------------------------*/
 
+.app-container {
+  border-top: 1px solid var(--background-tertiary);
+}
+
+.view-content {
+  height: calc(100% - 32px);
+}
+
+.titlebar-button-container {
+  top: 0;
+}
+
 .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
   background-color: var(--interactive-accent-alt);
@@ -9,6 +21,8 @@ WORKSPACE
 }
 
 /* straight corners */
+.workspace-split.mod-left-split .workspace-tabs .workspace-leaf,
+.workspace-split.mod-right-split .workspace-tabs .workspace-leaf,
 .workspace-leaf-content {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
@@ -37,7 +51,7 @@ Tabs */
   overflow: hidden;
   padding: 0 0 2rem 0;
   position: relative;
-  margin-right: 30px;
+  /*margin-right: 30px;*/
 }
 
 .workspace-tab-header {
@@ -47,6 +61,11 @@ Tabs */
 
 .workspace-tab-header:hover {
   color: var(--text-normal) !important;
+}
+
+.workspace-tags
+.tag-container {
+  padding: 0;
 }
 
 /*----------------------------------------------------------------
@@ -97,6 +116,10 @@ Split Mode */
 /* no animation for panels - feels more snappier */
 .workspace-split.mod-left-split, .workspace-split.mod-right-split {
   transition: none;
+}
+
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content{
+  padding-right: 0;
 }
 
 /*----------------------------------------------------------------
@@ -172,27 +195,39 @@ Side Dock */
 }
 
 /*----------------------------------------------------------------
-Navigation */
+Navigation & File Explorer */
 
 .nav-header {
-  padding: 12px 20px 4px 20px;
+  padding: 8px 20px 4px 20px;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  cursor: var(--cursor);
+  align-items: baseline;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .nav-file-title {
-  font-size: 14px;
+  padding: 4px 10px 4px 20px;
+  font-family: var(--font-editor);
+  font-size: 13px;
   line-height: 20px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
+
+}
+
+.nav-file-title:hover {
+  color: var(--text-normal) !important;
 }
 
 .nav-folder-title {
   font-size: 15px;
   color: var(--text-normal) !important;
   background-color: var(--background-secondary);
-}
-
-.nav-file-title:hover {
-  color: var(--text-normal) !important;
+  padding: 2px 10px 2px 22px;
 }
 
 .nav-folder-title:hover {
@@ -215,8 +250,18 @@ Navigation */
   word-break: keep-all;
 }
 
-/*----------------------------------------------------------------
-File Explorer */
+.nav-file-title-content {
+  width: 100%;
+}
+
+.nav-file-title-content,
+.nav-folder-title-content {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  padding: 1px 4px;
+}
 
 .nav-files-container {
   overflow-x: hidden !important;
@@ -233,18 +278,6 @@ File Explorer */
   color: #af88e7 !important;
 }
 
-.nav-file-title {
-  font-family: var(--font-editor);
-  font-size: 13px;
-  line-height: 20px;
-}
-
-.nav-file-title,
-.nav-folder-title {
-  padding: 0 14px 0 20px;
-  cursor: var(--cursor);
-}
-
 .nav-folder-children .nav-folder {
   color: #ff0000 !important;
 }
@@ -252,15 +285,14 @@ File Explorer */
 .nav-file.is-active > .nav-file-title,
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
-  border-radius: 2px;
   color: var(--text-accent);
   border-left: 2px solid var(--text-accent);
   /*transition: all 0.2s ease;*/
 }
 
 .nav-file.is-active > .nav-file-title {
-  padding-left: 17px;
-  margin-left: 2px;
+  padding-left: 18px;
+  margin-left: 1px;
   color: var(--text-normal) !important;
 }
 
@@ -393,7 +425,8 @@ Header */
 
 .view-header {
   height: 32px;
-  border-top: 1px solid var(--background-tertiary);
+  border-top: 0;
+  /*border-top: 1px solid var(--background-tertiary);*/
   border-bottom: 0;
   background-color: var(--background-primary);
 }
@@ -432,7 +465,8 @@ Header */
 
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary); /*rgb(51,53,59) */
-  border-bottom: 0;
+  /*border-bottom: 0;*/
+  border-bottom: 2px solid var(--discord-light-yellow);
 }
 
 /* fix the long-title-obscuring shadows */
