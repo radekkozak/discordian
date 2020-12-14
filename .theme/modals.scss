@@ -11,8 +11,8 @@ Settings Modal */
 }
 
 .modal:not(.mod-settings) {
-  -webkit-box-shadow: var(--elevation-stroke),var(--elevation-high);
-  box-shadow: var(--elevation-stroke),var(--elevation-high);
+  -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
+  box-shadow: var(--elevation-stroke), var(--elevation-high);
 
   padding: 0; /* default: 30px 50px */
   border: 0 !important;
@@ -26,7 +26,7 @@ Settings Modal */
 .modal:not(.mod-settings) .modal-title {
   font-size: 22px;
   line-height: 36px;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2rem;
   background-color: var(--background-secondary-alt);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -67,7 +67,7 @@ Settings Modal */
 }
 
 .modal.mod-settings .modal-close-button:hover {
-  background-color: rgba(114,118,125,.3);
+  background-color: rgba(114, 118, 125, .3);
 }
 
 .modal.mod-settings .modal-close-button:before {
@@ -80,7 +80,7 @@ Settings Modal */
   font-weight: 600;
   font-size: 13px;
   text-align: right;
-  width:36px;
+  width: 36px;
   height: 36px;
   margin-top: 4.75rem;
   margin-left: -1rem;
@@ -135,6 +135,10 @@ Settings Modal */
 .modal.mod-settings .setting-item {
   /*margin-right: 26.5rem;*/
   margin-right: 17vw;
+}
+
+.modal.mod-settings .setting-editor-extra-setting-button {
+  margin-right: 1rem;
 }
 
 .modal.mod-settings .vertical-tab-content-container {
@@ -199,13 +203,64 @@ Settings Modal */
   padding: 0 10px 30px 0;
 }
 
+.modal.mod-settings button {
+  margin: 0;
+}
+
+/*----------------------------------------------------------------
+Document Search */
+
+.document-search-container {
+  background-color: var(--background-primary);
+  padding-top: 10px;
+  height: 50px;
+}
+
+.document-search-button {
+  background-color: var(--discord-dark) !important; /* background-secondary-alt */
+  color: var(--text-muted) !important;
+}
+
+.document-search-button:hover {
+  background-color: var(--discord-dark-hover) !important; /* background-primary-alt */
+  color: var(--text-normal) !important;
+}
+
+.document-search-close-button {
+  color: var(--discord-dark);
+}
+
+.document-replace-input {
+  margin-right: 8px;
+}
+
+.document-replace-buttons {
+  margin-right: 4px;
+}
+
+
+.document-search-container.mod-replace-mode {
+  height: 90px;
+}
+
+/*----------------------------------------------------------------
+Modal Confirmations */
+
+.modal-button-container {
+  margin-bottom: 1.5rem;
+}
+
+.modal-button-container buttom {
+  margin: unset;
+}
+
 /*----------------------------------------------------------------
 Prompts - Discord-like */
 
 .prompt {
   background-color: var(--background-secondary);
   border-radius: 8px;
-  padding: 20px 20px 0;
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
 }
 
 input.prompt-input::placeholder {
@@ -250,12 +305,6 @@ input.prompt-input:focus-within {
   margin-right: -12px;
 }
 
-/*.prompt-results .suggestion-hotkey:after {
-  content: ' ';
-  width: 1rem;
-  display: inline-block;
-}*/
-
 .prompt-results .suggestion-item {
   color: var(--interactive-normal);
   height: 2rem;
@@ -277,13 +326,18 @@ input.prompt-input:focus-within {
   border-radius: 0;
   padding-right: 20px;
 }
+
 .prompt-results .suggestion-item.is-selected .suggestion-hotkey,
 .prompt-results .suggestion-item:hover .suggestion-hotkey {
-    margin-right: -12px;
+  margin-right: -12px;
+}
+
+.suggestion-container .prompt-instructions {
+  padding: 0.625rem;
 }
 
 .prompt-instructions {
-  padding: 0.625rem;
+  padding: 0.625rem 0.625rem 0 0.625rem;
   border-top: 1px solid var(--background-modifier-accent);
   opacity: 1;
   color: var(--text-on-accent);
@@ -346,111 +400,14 @@ Community themes panel */
 }
 
 .community-theme-mode-toggle-label {
-  bottom:6px;
+  bottom: 6px;
 }
-
-/*----------------------------------------------------------------
-Settings - Discord */
-
-/*
-.modal.mod-settings .vertical-tab-header {
-  display: grid;
-  grid-template-rows: min-content;
-  flex: 1 0 auto;
-
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: end;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-
-  -webkit-box-flex: 1;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-
-  padding: 3.5rem 0.5rem 3.75rem 1.25rem;
-}
-
-.modal.mod-settings .vertical-tab-header-group {
-  width: 13.625rem;
-  padding: 0;
-}
-
-.modal.mod-settings .vertical-tab-content-container {
-  display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 50rem;
-  flex: 1 1 50rem;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-
-  padding: 0;
-  overflow: auto;
-}
-
-.modal.mod-settings .vertical-tab-content.is-active .setting-item:first-of-type:before {
-  content: 'ESC';
-  font-weight: 600;
-  font-size: 13px;
-  text-align: right;
-  width:36px;
-  height: 36px;
-  cursor: default;
-  pointer-events: none;
-
-  margin-right: -4.5rem;
-  padding-left: 2.25rem;
-}
-
-.modal.mod-settings .vertical-tab-content-container:after {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 36px;
-  flex: 0 0 36px;
-
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 50%;
-  width: 36px;
-  height: 30px;
-  margin-top: 18px;
-  padding-top: 6px;
-}
-
-.modal.mod-settings .modal-close-button {
-  right: 20rem;
-  display: none !important;
-}
-
-.modal.mod-settings .horizontal-tab-content,
-.modal.mod-settings .vertical-tab-content {
-  padding: 3.75rem 2.5rem 5rem;
-
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  max-width: 46rem;
-  min-width: 29rem;
-  min-height: 100%;
-}
-*/
 
 /*----------------------------------------------------------------
 Buttons */
 
 button {
-  margin: 0;
+  /*margin: 0;*/
 }
 
 button.mod-cta {
@@ -465,12 +422,12 @@ button.mod-cta:hover {
   background-color: var(--discord-blue-hover);
 }
 
-.modal button:not(.mod-cta):not(.mod-warning) {
+button:not(.mod-cta):not(.mod-warning) {
   background-color: var(--discord-grey); /* background-secondary-alt */
   color: white;
 }
 
-.modal button:not(.mod-cta):not(.mod-warning):hover {
+button:not(.mod-cta):not(.mod-warning):hover {
   background-color: var(--discord-grey-hover); /* background-primary-alt */
 }
 
@@ -483,6 +440,10 @@ Community Themes Panel */
 
 .community-theme a {
   vertical-align: middle;
+}
+
+.modal.mod-community-theme {
+  max-width: 56rem;
 }
 
 /*.modal.mod-settings button:not(.mod-cta) {
