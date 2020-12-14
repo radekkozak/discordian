@@ -9,15 +9,16 @@ function outputDir () {
     })
   } catch (error) {
     console.log('Using default output dir for merged obsidian.css' +
-      '\nIf you want to override this value for local development' +
-      'please create config.json\n and set your OUTPUT_DIR variable accordingly')
+      '\nIf you want to override this value for local development ' +
+      'please create config.json\nand set your OUTPUT_DIR variable accordingly')
   }
-
+  console.log("Using local output dir of " + process.env.OUTPUT_DIR)
   return process.env.OUTPUT_DIR || './'
 }
 
 function obsidian () {
   return gulp.src([
+    '.theme/hidden.scss',
     '.theme/obsidian-base.scss',
     '.theme/workspace.scss',
     '.theme/scrollbars.scss',
@@ -32,15 +33,17 @@ function obsidian () {
     '.theme/modals.scss',
     '.theme/graph.scss',
     '.theme/folding.scss',
+    '.theme/embeds.scss',
 
     '.theme/mixins/bullet-point-relationship.scss',
     '.theme/mixins/syntax-highlighter-colors.scss',
+    '.theme/mixins/marker-highlights.scss',
 
     '.theme/mixins/hider-plugin.scss',
     '.theme/mixins/calendar-plugin.scss',
     '.theme/mixins/andy-matuschak-mode.scss'
   ])
-    .pipe(concat('obsidian.css'))
+    .pipe(concat('Discordian.css'))
     .pipe(gulp.dest(outputDir()))
 }
 
