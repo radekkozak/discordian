@@ -12,7 +12,6 @@ function outputDir () {
       '\nIf you want to override this value for local development ' +
       'please create config.json\nand set your OUTPUT_DIR variable accordingly')
   }
-  console.log("Using local output dir of " + process.env.OUTPUT_DIR)
   return process.env.OUTPUT_DIR || './'
 }
 
@@ -43,7 +42,7 @@ function obsidian () {
     '.theme/mixins/calendar-plugin.scss',
     '.theme/mixins/andy-matuschak-mode.scss'
   ])
-    .pipe(concat('Discordian.css'))
+    .pipe(concat('obsidian.css'))
     .pipe(gulp.dest(outputDir()))
 }
 
