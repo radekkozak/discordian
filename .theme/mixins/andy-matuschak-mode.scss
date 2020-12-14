@@ -20,6 +20,11 @@ body.plugin-sliding-panes .app-container::before {
   border-left: 1px solid var(--background-tertiary) !important;
 }*/
 
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  border-right: 0 !important;
+  border-left: 0 !important;
+}
+
 /*---- */
 
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
@@ -58,7 +63,7 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 
 body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
-  box-shadow: var(--background-tertiary) -1px 0 !important;
+  /*box-shadow: var(--background-tertiary) -1px 0 !important;*/
 }
 
 /* Comment out to bring back original elevation shadow of title container */
@@ -147,6 +152,21 @@ body.plugin-sliding-panes .workspace-split.mod-right-split > .workspace-leaf-res
   display: none;
 }
 
+body.plugin-sliding-panes.hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.plugin-sliding-panes.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 0 !important;
+}
 
+body.plugin-sliding-panes.hider-ribbon:not(.is-fullscreen) .mod-left-split .workspace-tab-header-container {
+  padding-left: 54px !important;
+}
 
+body.plugin-sliding-panes:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  padding-top: 18px;
+  /*  transition: padding .1s ease;*/
+}
 
+body:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 30px;
+  transition: padding .1s ease;
+}
