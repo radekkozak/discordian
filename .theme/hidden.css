@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------
-HIDDEN (comment out to bring things back)
+HIDDEN (comment to bring things back)
 ----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------
-Title bar */
+Hide main title bar */
 
 .titlebar {
   display: none;
@@ -22,8 +22,15 @@ body {
 }
 
 /*----------------------------------------------------------------
-Status bar */
+Hide status bar */
 
 .status-bar {
+  display: none;
+}
+
+/*----------------------------------------------------------------
+Hide the name of the root folder (vault) */
+
+.nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
   display: none;
 }

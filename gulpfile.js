@@ -17,30 +17,35 @@ function outputDir () {
 
 function obsidian () {
   return gulp.src([
-    '.theme/hidden.scss',
-    '.theme/obsidian-base.scss',
-    '.theme/workspace.scss',
-    '.theme/scrollbars.scss',
-    '.theme/headings.scss',
-    '.theme/lists.scss',
-    '.theme/task-list.scss',
-    '.theme/links.scss',
-    '.theme/tags.scss',
-    '.theme/toggle-switches.scss',
-    '.theme/tables.scss',
-    '.theme/codeblocks.scss',
-    '.theme/modals.scss',
-    '.theme/graph.scss',
-    '.theme/folding.scss',
-    '.theme/embeds.scss',
+    '.theme/obsidian-base.css',
+    '.theme/hidden.css',
+    '.theme/foundation.css',
+    '.theme/headings.css',
+    '.theme/popovers.css',
+    '.theme/suggestions.css',
+    '.theme/scrollbars.css',
+    '.theme/workspace.css',
+    '.theme/lists.css',
+    '.theme/task-list.css',
+    '.theme/links.css',
+    '.theme/tags.css',
+    '.theme/footnotes.css',
+    '.theme/toggle-switches.css',
+    '.theme/tables.css',
+    '.theme/codeblocks.css',
+    '.theme/modals.css',
+    '.theme/buttons.css',
+    '.theme/graph.css',
+    '.theme/folding.css',
+    '.theme/embeds.css',
 
-    '.theme/mixins/bullet-point-relationship.scss',
-    '.theme/mixins/syntax-highlighter-colors.scss',
-    '.theme/mixins/marker-highlights.scss',
+    '.theme/mixins/bullet-point-relationship.css',
+    '.theme/mixins/syntax-highlighter-colors.css',
+    '.theme/mixins/marker-highlights.css',
 
-    '.theme/mixins/hider-plugin.scss',
-    '.theme/mixins/calendar-plugin.scss',
-    '.theme/mixins/andy-matuschak-mode.scss'
+    '.theme/plugins/hider-plugin.css',
+    '.theme/plugins/calendar-plugin.css',
+    '.theme/plugins/andy-mode-plugin.css'
   ])
     .pipe(concat('obsidian.css'))
     .pipe(gulp.dest(outputDir()))

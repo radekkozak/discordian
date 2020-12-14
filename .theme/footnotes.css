@@ -1,0 +1,32 @@
+/*----------------------------------------------------------------
+FOOTNOTES
+----------------------------------------------------------------*/
+
+sup {
+  font-size: 13px;
+  letter-spacing: 0.0rem;
+  padding-left: 0.2rem;
+}
+
+.cm-s-obsidian span.cm-footref {
+  font-size: unset;
+  /*vertical-align: super;*/
+}
+
+.cm-s-obsidian pre.HyperMD-footnote {
+  font-size: 15px;
+  padding-bottom: 0.5rem;
+}
+
+.footnote-link {
+  color: var(--text-a);
+}
+
+.footnote-link:hover {
+  text-decoration: none;
+}
+
+.footnote-backref {
+  color: var(--text-muted);
+  margin-left: 0.2rem;
+}

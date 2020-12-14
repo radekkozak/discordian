@@ -104,7 +104,7 @@ codeblocks - scrollable content without horizontal scrollbar */
   overflow-x: scroll;
 }
 
-.markdown-preview-section > pre::-webkit-scrollbar-track  {
+.markdown-preview-section > pre::-webkit-scrollbar-track {
   border: 0;
   border-radius: 0;
   background-color: var(--background-primary);

@@ -62,7 +62,6 @@ Settings Modal */
   height: 36px;
   padding-top: 2px;
   top: 3.75rem;
-  /*right: 21.5rem;*/
   right: 11vw;
 }
 
@@ -90,19 +89,16 @@ Settings Modal */
 
 .horizontal-tab-content,
 .vertical-tab-content {
-  background-color: var(--background-primary); /* secondary */
-  /*padding: 3.75rem 14.25rem 3.75rem 2.5rem;*/
+  background-color: var(--background-primary);
   padding: 3.75rem 0 5rem 2.5rem;
 }
 
 .vertical-tabs-container {
-  /*padding: 0 0 0 7.5rem;*/
   padding: 0;
 }
 
 .modal.mod-settings .vertical-tab-header {
   padding-top: 2.5rem;
-  /*flex: 0 0 14.25rem;*/
 
   --scrollbar-thin-thumb: transparent;
 
@@ -129,11 +125,9 @@ Settings Modal */
 }
 
 .modal.mod-settings .vertical-tab-header-group {
-  /*width: 13.625rem;*/
 }
 
 .modal.mod-settings .setting-item {
-  /*margin-right: 26.5rem;*/
   margin-right: 17vw;
 }
 
@@ -142,14 +136,12 @@ Settings Modal */
 }
 
 .modal.mod-settings .vertical-tab-content-container {
-  /*padding: 3.25rem 13rem 0 1.25rem;*/
-  /*padding: 0 0 0 1.25rem;*/
   padding: 0;
   flex: 1 1 50rem;
 }
 
 .vertical-tab-header {
-  background-color: var(--background-secondary); /*-alt*/
+  background-color: var(--background-secondary);
 }
 
 .horizontal-tab-nav-item.is-active,
@@ -166,10 +158,9 @@ Settings Modal */
 
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item {
-  background-color: var(--background-secondary); /* -alt */
+  background-color: var(--background-secondary);
   letter-spacing: 0;
   padding: 6px 6px 6px 24px;
-  /*margin: 2px 0;*/
   margin: 0 10px;
   color: var(--interactive-normal);
   border-radius: 3px;
@@ -180,7 +171,6 @@ Settings Modal */
 }
 
 .setting-editor-extra-setting-button {
-  /*margin-top: 8px;*/
 }
 
 .setting-hotkey {
@@ -217,12 +207,12 @@ Document Search */
 }
 
 .document-search-button {
-  background-color: var(--discord-dark) !important; /* background-secondary-alt */
+  background-color: var(--discord-dark) !important;
   color: var(--text-muted) !important;
 }
 
 .document-search-button:hover {
-  background-color: var(--discord-dark-hover) !important; /* background-primary-alt */
+  background-color: var(--discord-dark-hover) !important;
   color: var(--text-normal) !important;
 }
 
@@ -237,7 +227,6 @@ Document Search */
 .document-replace-buttons {
   margin-right: 4px;
 }
-
 
 .document-search-container.mod-replace-mode {
   height: 90px;
@@ -403,37 +392,6 @@ Community themes panel */
   bottom: 6px;
 }
 
-/*----------------------------------------------------------------
-Buttons */
-
-button {
-  /*margin: 0;*/
-}
-
-button.mod-cta {
-  background-color: var(--discord-blue);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.01rem;
-}
-
-button.mod-cta:hover {
-  background-color: var(--discord-blue-hover);
-}
-
-button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--discord-grey); /* background-secondary-alt */
-  color: white;
-}
-
-button:not(.mod-cta):not(.mod-warning):hover {
-  background-color: var(--discord-grey-hover); /* background-primary-alt */
-}
-
-/*----------------------------------------------------------------
-Community Themes Panel */
-
 .community-theme-container button {
   margin-right: 8px;
 }
@@ -445,17 +403,3 @@ Community Themes Panel */
 .modal.mod-community-theme {
   max-width: 56rem;
 }
-
-/*.modal.mod-settings button:not(.mod-cta) {
-    background-color: var(--background-secondary-alt);
-}*/
-
-/*button.community-theme-preview-button {
-    margin-right: 12px;
-    background-color: var(--background-secondary-alt) !important;
-}
-
-button.community-theme-preview-button + button {
-    margin-right: 12px;
-    background-color: var(--background-secondary-alt) !important;
-}*/

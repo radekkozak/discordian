@@ -2,27 +2,8 @@
 CODEBLOCKS & INLINE CODE
 ----------------------------------------------------------------*/
 
-/*pre code {
-    padding: 5px !important;
-    line-height: normal;
-    display: block;
-    background-color: var(--background-primary-alt) !important;
-}
-
-.markdown-preview-view pre {
-    padding: 0px !important;
-}*/
-
-/* in-line code for editor and preview and code block for editor*/
-
 code,
 .cm-inline-code {
-  /*font-size: 1rem;
-  line-height: 1.125rem;*/
-  /*font-size: 14px !important;*/
-  /*background-color: var(--discord-yellow-bg);*/
-  /*color: var(--text-muted) !important;
-  bottom: 0px !important; */
   padding: 2px 1px;
 }
 
@@ -48,9 +29,6 @@ editor */
   font-size: 0.85rem;
   white-space: pre-wrap;
   background-clip: border-box;
-  /*background-color: var(--background-code-preview);*/
-/*  border-left: 1px solid var(--background-tertiary);
-  border-right: 1px solid var(--background-tertiary);*/
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
@@ -63,28 +41,20 @@ editor */
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-end {
-  /*border-bottom: 1px solid var(--background-tertiary);*/
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
 /* Code block left and right padding */
-
 .cm-s-obsidian pre.HyperMD-codeblock {
   padding: 4px 10px !important;
 }
 
 /* Code block left and right border colors */
-
 .cm-s-obsidian div.HyperMD-codeblock-bg {
-  /*border-left: 1px solid var(--background-code-border);
-  border-right: 1px solid var(--background-code-border);*/
 }
 
-/* borders */
-
 .cm-s-obsidian span.cm-inline-code {
-  /*border: 1px solid #525660;*/
   border-radius: 4px;
 }
 
@@ -110,11 +80,6 @@ span.cm-formatting-code.cm-inline-code
 }
 
 
-/*.cm-hmd-frontmatter {
-  color: var(--text-muted);
-  font-size: ;
-}*/
-
 /*----------------------------------------------------------------
 preview */
 
@@ -122,7 +87,6 @@ preview */
 .theme-dark pre[class*="language-"] {
   background-color: var(--background-code-preview);
   text-shadow: unset !important;
-  /*color: var(--text-normal) !important;*/
   padding: 6px 10px;
   margin: 1.5rem 0;
   font-size: 1rem;
@@ -153,11 +117,6 @@ pre.frontmatter[class*="language-"] {
   margin: 0 0 1.5rem 0;
   line-height: 20px;
 }
-
-
-/*code.language-yaml .token.atrule {
-  color: var(--syntax-grey) !important;
-}*/
 
 /*----------------------------------------------------------------
 frontmatter */
@@ -193,4 +152,3 @@ frontmatter */
 
 pre.frontmatter[class*="language-"] .theme-dark .token.atrule {
 }
-

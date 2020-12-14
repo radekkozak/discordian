@@ -8,7 +8,6 @@ th {
 
 thead {
   border-top: 2px solid var(--text-title-h1); /*ff8a00*/
-  /*border-bottom: 2px solid var(--discord-blue);*/
 }
 
 table {
@@ -54,7 +53,6 @@ Editor Mode */
 .CodeMirror pre.HyperMD-table-row {
   font-family: var(--font-monospace);
   font-size: 14px;
-  /*font-size:calc(var(--font-normal) - 1px);*/
 }
 
 .cm-s-obsidian pre.HyperMD-table-row.HyperMD-table-row-0 {

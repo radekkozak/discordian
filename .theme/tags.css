@@ -11,8 +11,8 @@ span:not(.cm-header).cm-hashtag {
   background: rgba(114, 137, 218, 0.1);
   position: relative;
 
-  -webkit-transition: background-color .15s ease-out,color .15s ease-out;
-  transition: background-color .15s ease-out,color .15s ease-out;
+  -webkit-transition: background-color .15s ease-out, color .15s ease-out;
+  transition: background-color .15s ease-out, color .15s ease-out;
 }
 
 span:not(.cm-header).cm-hashtag-begin {
@@ -60,12 +60,7 @@ h5 a.tag:hover,
 h6 a.tag:hover {
   background: unset;
   color: unset;
-  /*background: rgba(114, 137, 218, 0.1);*/
-  /*color: var(--text-title-h1);*/
-  /*color: var(--discord-blue-hover);*/
 }
-
-/* editor .cm-s-obsidian span.cm-hashtag  */
 
 span.cm-hashtag {
   text-decoration: none !important;

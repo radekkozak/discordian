@@ -15,7 +15,6 @@ input[type=checkbox]:focus, input[type=checkbox]:hover {
   border-color: var(--text-faint);
 }
 
-
 input[type=checkbox]:checked {
   background-color: var(--discord-green);
   border: 1px solid var(--discord-green);
@@ -91,7 +90,6 @@ pre.HyperMD-list-line-2 {
 }
 
 .CodeMirror-gutter-wrapper + pre.HyperMD-list-line-1 {
-  /*margin-left: 0.8rem;*/
 }
 
 .cm-formatting-task {
@@ -125,5 +123,3 @@ input[type=checkbox]:checked, .cm-formatting-task.cm-property {
 pre.HyperMD-list-line-1.HyperMD-list-line-2 {
   margin-left: 0 !important;
 }
-
-/*--------------------------------------------------------------*/

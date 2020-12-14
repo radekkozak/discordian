@@ -1,13 +1,13 @@
 /*----------------------------------------------------------------
-CUSTOM TEXT HIGHLIGHTS */
+CUSTOM TEXT HIGHLIGHTS
+----------------------------------------------------------------*/
 
 .theme-dark {
-  /*--text-mark: RGBA(254, 204, 102, 0.8);*/
-  --text-mark: rgba(243,202,135,0.9); /* rgba(229,217,144,0.9); RGBA(245,218,190,0.9)*/
-  --text-mark-green: RGBA(166,198,160,1);/*RGBA(102,193,142,1) rgba(167,199,120,1)*/
-  --text-mark-blue: RGBA(153, 204, 255, 0.8);
-  --text-mark-red: RGBA(243,181,197,0.95); /* RGBA(255, 170, 190, 0.8) */
-  --text-mark-grey: RGBA(189, 189, 189, 0.9);
+  --text-mark: hsla(37, 82%, 74%, 0.9);
+  --text-mark-green: hsla(111, 25%, 70%, 1);
+  --text-mark-blue: hsla(210, 100%, 80%, 0.8);
+  --text-mark-red: hsla(345, 72%, 83%, 0.95);
+  --text-mark-grey: hsla(0, 0%, 74%, 0.9);
 }
 
 .markdown-preview-view mark {

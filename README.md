@@ -9,7 +9,9 @@ to have the same visual experience extended to our beloved app ([see screenshots
 
 Discordian theme, apart from deriving its visuals from Discord app, strives to serve as solid dark theme. An honest default. 
 This means it offers an unobtrusive, minimal and easy on the eyes experience with a hint of subtle changes in 
-Discord's color palette like muting and pastelizing some colors.
+Discord's color palette like muting and pastelizing some colors. Theme uses free fonts that closely resemble those in 
+Discord app. **For best experience possible**, please [download the fonts](media/fonts.zip) and **install them in your 
+system before using the theme.**
 
 Of course, it fully supports [popular Obsidian's community plugins](#plugin-support) but also has its own 
 [Discordian Plugin](https://github.com/radekkozak/discordian-plugin) going on which is very much recommended. 
@@ -20,13 +22,13 @@ line length and other things.
 ## Small Disclaimer
 
 Discordian theme is provided *as is*, meaning it is a product of my own personal experience, and it's the way 
-I use Obsidian app on daily basis on my trusty macOS. Please bear in mind that even though it was created from 
-my personal use i did my best to polish it enough to be used with the latest version of Obsidian but the quirks 
-and some visual discrepancies may occur as I had no means of testing it on other platforms. 
+I use Obsidian app on daily basis on my trusty macOS. Please bear in mind that even though i did my best to polish it 
+enough to be used with the latest version of Obsidian some quirks and visual discrepancies may (or not) occur 
+as I had no means of testing it on other platforms. 
   
 As this theme modifies many parts of Obsidian UI it's given that it might break some things with future 
 app updates or with your own css snippets. I do however plan to earnestly support it so as Obsidian app 
-will progress so it will this Discordian theme. I am also open to any [contributions](#contribute) 
+will progress so it will Discordian theme. I am also open to any [contributions](#contribute) 
 being a simple suggestion, bug report or fix via PR.    
 
 ## Features and goals
@@ -43,7 +45,7 @@ No UI excess necessary.
 - Graceful dark theme audio (styled) in place of ugly default 
 - New and improved code blocks with delightful pastel aesthetics
 
-## Full plugin support
+## Plugin support
 
 - [Sliding Panes](https://github.com/deathau/sliding-panes-obsidian) (aka Andy Mode)
 - [Calendar Plugin](https://github.com/liamcain/obsidian-calendar-plugin)
@@ -72,35 +74,35 @@ I know I love it that way! If needed one can also revert to defaults via plugin.
 
 based on [Nick Milo](https://github.com/nickmilo) 's [LYT Kit](https://www.linkingyourthinking.com)
 
-![](media/discordian-graph-view.png)
+![](media/screenshots/discordian-graph-view.png)
 
 ### Discord experience 
 
-![](media/discordian-settings.png)
+![](media/screenshots/discordian-settings.png)
 
-![](media/discordian-commands.png)
+![](media/screenshots/discordian-commands.png)
 
-![](media/discordian-tables.png)
+![](media/screenshots/discordian-tables.png)
 
-![](media/discordian-tasks.png)
+![](media/screenshots/discordian-tasks.png)
 
-### Beautiful codeblocks
+### Codeblocks
 
-![](media/discordian-codeblocks.png)
+![](media/screenshots/discordian-codeblocks.png)
 
 ### Editor in Writer Mode
 
-![](media/discordian-editor-mode.png)
+![](media/screenshots/discordian-editor-mode.png)
 
 ### Feature showcase in Full Mode
 
-![](media/discordian-full-mode.png)
+![](media/screenshots/discordian-full-mode.png)
 
 ### Other
 
-![](media/discordian-calendar.png)
+![](media/screenshots/discordian-calendar.png)
 
-![](media/discordian-preview-popover.png)
+![](media/screenshots/discordian-preview-popover.png)
 
 ## Contribute
 

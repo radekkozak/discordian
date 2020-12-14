@@ -50,10 +50,8 @@ ol > li::before {
 ul, li & ol colors in editor */
 
 .cm-s-obsidian span.cm-formatting-list {
-  /*color: var(--text-muted);*/
 }
 
 .markdown-preview-section > ul.contains-task-list {
   margin-block-end: 2rem;
 }
-

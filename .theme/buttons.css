@@ -1,0 +1,27 @@
+/*----------------------------------------------------------------
+BUTTONS
+----------------------------------------------------------------*/
+
+button {
+}
+
+button.mod-cta {
+  background-color: var(--discord-blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01rem;
+}
+
+button.mod-cta:hover {
+  background-color: var(--discord-blue-hover);
+}
+
+button:not(.mod-cta):not(.mod-warning) {
+  background-color: var(--discord-grey);
+  color: white;
+}
+
+button:not(.mod-cta):not(.mod-warning):hover {
+  background-color: var(--discord-grey-hover);
+}

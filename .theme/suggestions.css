@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------
+SUGGESTIONS
+----------------------------------------------------------------*/
+
+.suggestion-item, .suggestion-empty {
+  font-size: 15px;
+}
+
+.suggestion .suggestion-item.is-selected {
+  background-color: var(--background-modifier-form-field-highlighted);
+  color: var(--text-on-accent);
+}
+
+.suggestion-highlight {
+  color: var(--interactive-accent) !important;
+}

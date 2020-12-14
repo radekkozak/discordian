@@ -27,12 +27,3 @@ ul.contains-task-list ul::before {
   top: 0.3rem;
   bottom: -0.15rem;
 }
-
-/*
-.cm-hmd-list-indent .cm-tab::before {
-  left: 0;
-  top: -5px;
-  bottom: -4px;
-}*/
-
-

@@ -51,7 +51,6 @@ Tabs */
   overflow: hidden;
   padding: 0 0 2rem 0;
   position: relative;
-  /*margin-right: 30px;*/
 }
 
 .workspace-tab-header {
@@ -63,7 +62,7 @@ Tabs */
   color: var(--text-normal) !important;
 }
 
-.workspace-tags
+.workspace-tags,
 .tag-container {
   padding: 0;
 }
@@ -118,7 +117,7 @@ Split Mode */
   transition: none;
 }
 
-.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content{
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content {
   padding-right: 0;
 }
 
@@ -149,7 +148,7 @@ Side Dock */
 
 .side-dock-panels-container {
   background-color: var(--background-secondary-alt) !important;
-  color: var(background-secondary-alt);
+  color: var(--background-secondary-alt);
 }
 
 .side-dock-ribbon-action {
@@ -197,6 +196,10 @@ Side Dock */
 /*----------------------------------------------------------------
 Navigation & File Explorer */
 
+.nav-action-button svg {
+  width: 15px;
+}
+
 .nav-header {
   padding: 8px 20px 4px 20px;
 }
@@ -216,7 +219,6 @@ Navigation & File Explorer */
   line-height: 20px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
-
 }
 
 .nav-file-title:hover {
@@ -238,10 +240,10 @@ Navigation & File Explorer */
   color: var(--text-normal);
 }
 
-/*
- Condense line spacing on file explorer title list.
- Avoid character-level word breaks
-*/
+/*----------------------------------------------------------------
+Condense line spacing on file explorer title list.
+Avoid character-level word breaks */
+
 .nav-file-title-content,
 .search-result-file-title {
   padding-top: 0 !important;
@@ -408,8 +410,6 @@ Search */
 /* clean up side bar empty state (e.g. unlinked mentions) */
 .search-empty-state {
   width: auto;
-  /*padding-left: 10px;
-  padding-right: 5px;*/
   padding-left: 15px;
   padding-right: 15px;
   line-height: normal;
@@ -426,7 +426,6 @@ Header */
 .view-header {
   height: 32px;
   border-top: 0;
-  /*border-top: 1px solid var(--background-tertiary);*/
   border-bottom: 0;
   background-color: var(--background-primary);
 }
@@ -464,8 +463,7 @@ Header */
 }
 
 .workspace-leaf.mod-active .view-header {
-  background-color: var(--background-primary); /*rgb(51,53,59) */
-  /*border-bottom: 0;*/
+  background-color: var(--background-primary);
   border-bottom: 2px solid var(--discord-light-yellow);
 }
 
@@ -484,7 +482,7 @@ Header */
   background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
-/* Change color of note title active pane - Obsidianite */
+/* Change color of note title active pane */
 .workspace-leaf.mod-active .view-header-title {
   color: var(--text-normal);
 }

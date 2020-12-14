@@ -1,20 +1,6 @@
 /*----------------------------------------------------------------
-
-GRAPH CONTROLS */
-
-.theme-dark {
-  --graph-line: #26798c; /* rgba(189, 189, 189, 0.2); */
-  --graph-line-highlight: #5dbcd2; /*rgba(189, 189, 189, 0.6); */
-
-  --graph-circle-outline: transparent;
-  --graph-circle-fill: #fcf601; /*#fcf601;*/
-  --graph-circle-fill-highlight: #fcf601; /*#fcf601;*/
-  --graph-circle-fill-unresolved: rgb(116, 190, 247);
-
-  --graph-fill-tag: #9e8aff; /* ff9640ba #5dbcd2;*/
-  --graph-fill-attachment: #d669bc;
-  --graph-arrow: #d669bc;
-}
+GRAPH
+----------------------------------------------------------------*/
 
 .theme-dark .graph-controls {
   background-color: var(--background-tertiary);

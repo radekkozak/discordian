@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------
-CALENDAR PLUGIN v 1.4.2
+CALENDAR PLUGIN v1.4.2
 ----------------------------------------------------------------*/
 
 .workspace-leaf-content[data-type='calendar'] .view-content {
@@ -75,5 +75,3 @@ CALENDAR PLUGIN v 1.4.2
 #calendar-container .reset-button:hover {
   color: var(--color-text-title) !important;
 }
-
-
