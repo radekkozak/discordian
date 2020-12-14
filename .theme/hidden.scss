@@ -1,0 +1,29 @@
+/*----------------------------------------------------------------
+HIDDEN (comment out to bring things back)
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+Title bar */
+
+.titlebar {
+  display: none;
+}
+
+body {
+  padding-top: 0 !important;
+}
+
+.workspace-split.mod-left-split .workspace-tab-header-container {
+  padding-left: 24px;
+}
+
+.workspace-leaf:first-of-type:last-of-type .view-header {
+  padding-left: 0;
+}
+
+/*----------------------------------------------------------------
+Status bar */
+
+.status-bar {
+  display: none;
+}
