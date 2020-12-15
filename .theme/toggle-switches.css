@@ -6,7 +6,6 @@ TOGGLE SWITCHES
   background-color: var(--text-faint);
   border: none;
   box-shadow: none;
-  cursor: var(--cursor);
   width: 40px;
   height: 24px;
   -webkit-transition: all .17s;
