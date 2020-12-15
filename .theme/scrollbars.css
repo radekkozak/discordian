@@ -100,17 +100,13 @@ graph controls scrollbars */
 /*----------------------------------------------------------------
 codeblocks - scrollable content without horizontal scrollbar */
 
-.markdown-preview-section > pre {
-  overflow-x: scroll;
-}
-
-.markdown-preview-section > pre::-webkit-scrollbar-track {
+.markdown-preview-section pre::-webkit-scrollbar-track {
   border: 0;
   border-radius: 0;
   background-color: var(--background-primary);
 }
 
-.markdown-preview-section > pre::-webkit-scrollbar-thumb {
+.markdown-preview-section pre::-webkit-scrollbar-thumb {
   background-color: var(--background-primary); /* --scrollbar-thin-thumb to reveal */
   border: 6px solid transparent;
 }
