@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------
-HIDDEN (comment to bring things back)
+HIDDEN (comment in/out to toggle things)
 ----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------
@@ -21,6 +21,11 @@ body {
   padding-left: 0;
 }
 
+body.theme-dark:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
+  top: 0 !important;
+  height: 100vh !important;
+}
+
 /*----------------------------------------------------------------
 Hide status bar */
 
@@ -31,6 +36,6 @@ Hide status bar */
 /*----------------------------------------------------------------
 Hide the name of the root folder (vault) */
 
-.nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
+.nav-folder.mod-root > .nav-folder-title {
   display: none;
 }

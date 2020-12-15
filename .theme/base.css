@@ -52,7 +52,7 @@ THEME BASE
   --text-muted: hsla(218, 5%, 47%, 1);
   --text-faint:	hsla(0, 0%, 61%, 1); /* hsla(225, 2%, 56%, 1) */
   --text-link: hsla(197, 97%, 46%, 1);
-  --text-accent: hsla(265, 66%, 72%, 1);
+  --text-accent: hsl(265, 66%, 72%);
   --text-on-accent: hsla(210, 3%, 87%, 1);
   --text-selection: hsla(212, 34%, 54%, 0.5);
   --text-highlight-bg: hsla(212, 34%, 54%, 1);
@@ -61,7 +61,7 @@ THEME BASE
   --text-em: hsla(62, 31%, 61%, 1);
 
   --text-title-h1: hsla(44, 48%, 48%, 1);
-  --text-title-h2: hsla(233, 45%, 71%, 1); /* hsla(40, 71%, 73%, 1) hsla(311, 20%, 63%, 1) */
+  --text-title-h2: hsl(233, 45%, 71%); /* hsla(40, 71%, 73%, 1) hsla(311, 20%, 63%, 1) */
   --text-title-h3: hsla(311, 20%, 63%, 1); /* hsla(30, 38%, 55%, 1) */
   --text-title-h4: hsla(30, 38%, 55%, 1); /* hsla(50, 42%, 46%, 1) */
   --text-title-h5: hsla(95, 20%, 50%, 1); /* hsla(92, 13%, 53%, 1) hsla(92,28%, 65%, 1) */
@@ -112,4 +112,10 @@ THEME BASE
   --graph-fill-tag: hsla(250, 100%, 77%, 1);
   --graph-fill-attachment: hsla(314, 57%, 63%, 1);
   --graph-arrow: hsla(314, 57%, 63%, 1);
+}
+
+/* HACK for settings panel if title bar is brought back by user */
+body.theme-dark:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
+  top: -22px !important;
+  height: 100vh !important;
 }
