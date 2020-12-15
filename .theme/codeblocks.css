@@ -85,7 +85,7 @@ preview */
 
 .theme-dark :not(pre) > code[class*="language-"],
 .theme-dark pre[class*="language-"] {
-  background-color: var(--background-code-preview);
+  background: var(--background-code-preview);
   text-shadow: unset !important;
   padding: 6px 10px;
   margin: 1.5rem 0;
