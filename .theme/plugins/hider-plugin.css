@@ -25,16 +25,16 @@ HIDER PLUGIN v1.0.5
   padding-left: 0;
 }
 
-.discordian-writer .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header
+.discordian-writer:not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless:not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header
 {
   padding-left: 30px !important;
   transition: padding-left .15s ease;
 }
 
-.discordian-writer.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+.discordian-writer.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 62px !important;
   transition: padding-left .15s ease;
 }
