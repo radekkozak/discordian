@@ -73,11 +73,11 @@ body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
 }
 
-body.plugin-sliding-panes .workspace-split.mod-left-split {
+body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-left-split {
   border-right: 1px solid var(--background-tertiary);
 }
 
-body.plugin-sliding-panes .workspace-split.mod-right-split {
+body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-right-split {
   border-left: 1px solid var(--background-tertiary);
 }
 
@@ -86,11 +86,11 @@ body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > 
 }
 
 body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
-  border-bottom: 2px solid var(--discord-light-yellow);
+  border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
-  border-right: 2px solid var(--discord-light-yellow) !important;
+  border-right: 2px solid var(--discord-yellow-light) !important;
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active:first-of-type:last-of-type > .workspace-leaf-content > .view-header {
