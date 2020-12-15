@@ -121,7 +121,7 @@ p.mod-warning {
 
 /* html tags in editor */
 .cm-tag, .cm-attribute { /* .cm-string*/
-  color: var(--text-mark-text) !important;
+  color: var(--text-muted) !important;
 }
 
 /* horizontal line in preview */
