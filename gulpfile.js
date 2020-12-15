@@ -52,7 +52,7 @@ function obsidian () {
 }
 
 function watch () {
-  gulp.watch('.theme/**/*.scss', gulp.parallel('obsidian'))
+  gulp.watch('.theme/**/*.css', gulp.parallel('obsidian'))
 }
 
 exports.outputDir = outputDir
