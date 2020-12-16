@@ -44,8 +44,7 @@ jobs:
           git config --local user.email "$(git log --format='%ae' HEAD^!)"
           git config --local user.name "$(git log --format='%an' HEAD^!)"
           git add obsidian.css
-          git commit -a -m "Release version ${{ steps.build.outputs.tag_name }}"
-          git status
+          git commit -s -a -m "Release version ${{ steps.build.outputs.tag_name }}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
