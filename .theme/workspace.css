@@ -80,7 +80,7 @@ body.is-translucent {
 }
 
 .workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
-  background-color: var(--discord-light-yellow);
+  background-color: var(--interactive-accent-light);
 }
 
 /*----------------------------------------------------------------
@@ -467,7 +467,7 @@ Header */
 
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary);
-  border-bottom: 2px solid var(--discord-light-yellow);
+  border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 /* fix the long-title-obscuring shadows */
