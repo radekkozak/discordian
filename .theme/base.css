@@ -10,18 +10,19 @@ THEME BASE
   /* discord colors */
   --discord-green: hsla(153, 46%, 49%, 1);
   --discord-yellow: hsla(38, 96%, 54%, 1);
-  --discord-light-yellow: hsla(50, 42%, 48%, 1);
+  --discord-yellow-alt: hsla(37, 65%, 59%, 1);
+  --discord-yellow-light: hsla(50, 42%, 48%, 1);
   --discord-yellow-bg: hsla(38, 96%, 54%, 0.1);
   --discord-orange: hsla(20, 84%, 52%, 1);
   --discord-red: hsla(0, 85%, 61%, 1);
-  --discord-blue: hsl(227, 58%, 65%);
+  --discord-blue: hsla(227, 58%, 65%, 1);
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
   --discord-grey: hsla(214, 10%, 50%, 1);
   --discord-grey-hover: hsla(214, 10%, 45%, 1);
   --discord-dark: hsla(216, 7%, 14%, 1);
   --discord-dark-hover: hsla(216, 7%, 14%, 0.7);
 
-  --elevation-stroke: 0 0 0 1px rgba(4, 4, 5, 0.15);
+  --elevation-stroke: 0 0 0 1px hsla(240, 11%, 2%, 0.15);
   --elevation-low: 0 1px 0 hsla(240, 11%, 2%, 0.2), 0 1.5px 0 hsla(240, 8%, 3%, 0.05), 0 2px 0 hsla(240, 11%, 2%, 0.05);
   --elevation-medium: 0 4px 4px hsla(0, 0%, 0%, 0.16);
   --elevation-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
@@ -50,40 +51,32 @@ THEME BASE
 
   --text-normal: hsl(200, 2.4%, 75.5%);
   --text-muted: hsla(218, 5%, 47%, 1);
-  --text-faint:	hsla(0, 0%, 61%, 1); /* hsla(225, 2%, 56%, 1) */
-  --text-link: hsla(197, 97%, 46%, 1);
+  --text-faint: hsla(0, 0%, 61%, 1);
+  --text-link: hsla(207, 61%, 59%, 1);
   --text-accent: hsl(265, 66%, 72%);
   --text-on-accent: hsla(210, 3%, 87%, 1);
   --text-selection: hsla(212, 34%, 54%, 0.5);
   --text-highlight-bg: hsla(212, 34%, 54%, 1);
 
-  --text-strong: hsla(37, 65%, 59%, 1);
+  --text-strong: var(--discord-yellow-alt);
   --text-em: hsla(62, 31%, 61%, 1);
 
-  --text-title-h1: hsla(44, 48%, 48%, 1);
-  --text-title-h2: hsl(233, 45%, 71%); /* hsla(40, 71%, 73%, 1) hsla(311, 20%, 63%, 1) */
-  --text-title-h3: hsla(311, 20%, 63%, 1); /* hsla(30, 38%, 55%, 1) */
-  --text-title-h4: hsla(30, 38%, 55%, 1); /* hsla(50, 42%, 46%, 1) */
-  --text-title-h5: hsla(95, 20%, 50%, 1); /* hsla(92, 13%, 53%, 1) hsla(92,28%, 65%, 1) */
-  --text-title-h6: hsla(192, 13%, 53%, 1); /* hsla(95, 12%, 53%, 1) */
+  --text-title: hsla(243, 25%, 65%, 1);
+  --text-header: hsla(233, 45%, 71%, 1);
 
-  --markup-code: hsla(34, 89%, 61%, 1);
-  --text-tag: hsla(27, 100%, 63%, 0.73);
-  --text-title-h1: hsla(243, 25%, 65%, 1);
-  --text-title-h2: hsla(233, 45%, 71%, 1);
-  --text-title-h3: hsla(233, 45%, 71%, 1);
-  --text-title-h4: hsla(233, 45%, 71%, 1);
-  --text-title-h5: hsla(233, 45%, 71%, 1);
-  --text-title-h6: hsla(192, 13%, 53%, 1);
+  --text-title-h1: var(--text-title);
+  --text-title-h2: var(--text-header);
+  --text-title-h3: var(--text-header);
+  --text-title-h4: var(--text-header);
+  --text-title-h5: var(--text-header);
+  --text-title-h6: var(--text-header);
 
   --text-a: hsla(322, 65%, 70%, 1);
   --text-a-hover: hsla(327, 100%, 77%, 1);
 
-  --text-mark: hsla(225, 8%, 10%, 1);
-  --text-mark-text: hsla(34, 89%, 61%, 1);
   --interactive-accent: var(--discord-green);
   --interactive-accent-hover: hsla(152, 60%, 43%, 1);
-  --interactive-accent-rgb: hsla(65, 92%, 76%, 1);
+  --interactive-accent-light: hsla(65, 92%, 76%, 1);
 
   --interactive-accent-alt: hsla(220, 7%, 17%, 1);
   --interactive-hover: hsla(210, 3%, 87%, 1);
