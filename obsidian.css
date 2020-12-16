@@ -10,18 +10,19 @@ THEME BASE
   /* discord colors */
   --discord-green: hsla(153, 46%, 49%, 1);
   --discord-yellow: hsla(38, 96%, 54%, 1);
-  --discord-light-yellow: hsla(50, 42%, 48%, 1);
+  --discord-yellow-alt: hsla(37, 65%, 59%, 1);
+  --discord-yellow-light: hsla(50, 42%, 48%, 1);
   --discord-yellow-bg: hsla(38, 96%, 54%, 0.1);
   --discord-orange: hsla(20, 84%, 52%, 1);
   --discord-red: hsla(0, 85%, 61%, 1);
-  --discord-blue: hsl(227, 58%, 65%);
+  --discord-blue: hsla(227, 58%, 65%, 1);
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
   --discord-grey: hsla(214, 10%, 50%, 1);
   --discord-grey-hover: hsla(214, 10%, 45%, 1);
   --discord-dark: hsla(216, 7%, 14%, 1);
   --discord-dark-hover: hsla(216, 7%, 14%, 0.7);
 
-  --elevation-stroke: 0 0 0 1px rgba(4, 4, 5, 0.15);
+  --elevation-stroke: 0 0 0 1px hsla(240, 11%, 2%, 0.15);
   --elevation-low: 0 1px 0 hsla(240, 11%, 2%, 0.2), 0 1.5px 0 hsla(240, 8%, 3%, 0.05), 0 2px 0 hsla(240, 11%, 2%, 0.05);
   --elevation-medium: 0 4px 4px hsla(0, 0%, 0%, 0.16);
   --elevation-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
@@ -50,34 +51,32 @@ THEME BASE
 
   --text-normal: hsl(200, 2.4%, 75.5%);
   --text-muted: hsla(218, 5%, 47%, 1);
-  --text-faint:	hsla(0, 0%, 61%, 1); /* hsla(225, 2%, 56%, 1) */
-  --text-link: hsla(197, 97%, 46%, 1);
+  --text-faint: hsla(0, 0%, 61%, 1);
+  --text-link: hsla(207, 61%, 59%, 1);
   --text-accent: hsl(265, 66%, 72%);
   --text-on-accent: hsla(210, 3%, 87%, 1);
   --text-selection: hsla(212, 34%, 54%, 0.5);
   --text-highlight-bg: hsla(212, 34%, 54%, 1);
 
-  --text-strong: hsla(37, 65%, 59%, 1);
+  --text-strong: var(--discord-yellow-alt);
   --text-em: hsla(62, 31%, 61%, 1);
 
-  --text-title-h1: hsla(44, 48%, 48%, 1);
-  --text-title-h2: hsl(233, 45%, 71%); /* hsla(40, 71%, 73%, 1) hsla(311, 20%, 63%, 1) */
-  --text-title-h3: hsla(311, 20%, 63%, 1); /* hsla(30, 38%, 55%, 1) */
-  --text-title-h4: hsla(30, 38%, 55%, 1); /* hsla(50, 42%, 46%, 1) */
-  --text-title-h5: hsla(95, 20%, 50%, 1); /* hsla(92, 13%, 53%, 1) hsla(92,28%, 65%, 1) */
-  --text-title-h6: hsla(192, 13%, 53%, 1); /* hsla(95, 12%, 53%, 1) */
+  --text-title: hsla(243, 25%, 65%, 1);
+  --text-header: hsla(233, 45%, 71%, 1);
 
-  --markup-code: hsla(34, 89%, 61%, 1);
-  --text-tag: hsla(27, 100%, 63%, 0.73);
+  --text-title-h1: var(--text-title);
+  --text-title-h2: var(--text-header);
+  --text-title-h3: var(--text-header);
+  --text-title-h4: var(--text-header);
+  --text-title-h5: var(--text-header);
+  --text-title-h6: var(--text-header);
 
   --text-a: hsla(322, 65%, 70%, 1);
   --text-a-hover: hsla(327, 100%, 77%, 1);
 
-  --text-mark: hsla(225, 8%, 10%, 1);
-  --text-mark-text: hsla(34, 89%, 61%, 1);
   --interactive-accent: var(--discord-green);
   --interactive-accent-hover: hsla(152, 60%, 43%, 1);
-  --interactive-accent-rgb: hsla(65, 92%, 76%, 1);
+  --interactive-accent-light: hsla(65, 92%, 76%, 1);
 
   --interactive-accent-alt: hsla(220, 7%, 17%, 1);
   --interactive-hover: hsla(210, 3%, 87%, 1);
@@ -265,8 +264,8 @@ input[type='number']:focus-within {
 }
 
 p {
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
+  margin-block-start: 1.4375rem;
+  margin-block-end: 1.4375rem;
 }
 
 p.mod-warning {
@@ -285,7 +284,7 @@ p.mod-warning {
 
 /* html tags in editor */
 .cm-tag, .cm-attribute { /* .cm-string*/
-  color: var(--text-mark-text) !important;
+  color: var(--text-muted) !important;
 }
 
 /* horizontal line in preview */
@@ -293,6 +292,7 @@ p.mod-warning {
   background-color: var(--text-muted);
   border: none;
   height: 1px;
+  margin: 1.4375rem 0
 }
 
 /* internal embedded link rendering in preview */
@@ -390,6 +390,7 @@ Normal text outside of headings and code */
 
   padding-left: 6% !important;
   padding-right: 4% !important;
+  padding-top: 10px;
   overflow-x: hidden;
 }
 
@@ -407,12 +408,16 @@ Normal text outside of headings and code */
   font-size: 0.875rem;
   line-height: 1.4375rem !important;
 
-  padding-left: 4% !important;
+  padding-left: 6% !important;
   padding-right: 4% !important;
 }
 
 .frontmatter-container {
   margin: 0;
+}
+
+.markdown-source-view {
+  padding-left: 0;
 }
 
 /*----------------------------------------------------------------
@@ -523,24 +528,23 @@ HEADINGS
 Preview */
 
 .markdown-preview-view h1 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--text-title-h1);
-  margin-block-end: 1em;
-  /*color: rgb(126,109,216) !important;*/
+  line-height: 1.5 !important;
 }
 
 .markdown-preview-view h2 {
-  font-size: 1.5625rem;
+  font-size: 1.625rem;
   color: var(--text-title-h2);
 }
 
 .markdown-preview-view h3 {
-  font-size: 1.4375rem;
+  font-size: 1.375rem;
   color: var(--text-title-h3);
 }
 
 .markdown-preview-view h4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-title-h4);
 }
 
@@ -562,6 +566,7 @@ Preview */
   font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  line-height: 1.5 !important;
 }
 
 
@@ -569,39 +574,45 @@ Preview */
 Editor */
 
 .cm-header-1 {
-  font-weight: 500;
-  font-size: 1.75rem;
+  font-size:2rem;
   color: var(--text-title-h1);
+  line-height: 1.5 !important;
 }
 
 .cm-header-2 {
-  font-weight: 500;
-  font-size: 1.5625rem;
+  font-size: 1.625rem;
   color: var(--text-title-h2);
 }
 
 .cm-header-3 {
-  font-weight: 500;
-  font-size: 1.4375rem;
+  font-size: 1.375rem;
   color: var(--text-title-h3);
 }
 
 .cm-header-4 {
-  font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-title-h4);
 }
 
 .cm-header-5 {
-  font-weight: 500;
   font-size: 1.125rem;
   color: var(--text-title-h5);
 }
 
 .cm-header-6 {
-  font-weight: 500;
   font-size: 1rem;
   color: var(--text-title-h6);
+}
+
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: 500;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  line-height: 1.5 !important;
 }
 /*----------------------------------------------------------------
 POPOVERS
@@ -868,7 +879,7 @@ body.is-translucent {
 }
 
 .workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
-  background-color: var(--discord-light-yellow);
+  background-color: var(--interactive-accent-light);
 }
 
 /*----------------------------------------------------------------
@@ -1007,6 +1018,7 @@ Navigation & File Explorer */
   line-height: 20px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
+  display: inline-flex;
 }
 
 .nav-file-title:hover {
@@ -1100,6 +1112,7 @@ body:not(.is-grabbing) .nav-folder-title:hover {
 .nav-file-tag {
   background-color: var(--background-secondary-alt);
   top: -1px;
+  margin-left: -8px;
 }
 
 /*----------------------------------------------------------------
@@ -1233,8 +1246,9 @@ Header */
 }
 
 .view-header-title {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 30px;
+  font-family: var(--font-editor) !important;
 }
 
 .view-header-title-container {
@@ -1252,7 +1266,7 @@ Header */
 
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary);
-  border-bottom: 2px solid var(--discord-light-yellow);
+  border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 /* fix the long-title-obscuring shadows */
@@ -1774,7 +1788,7 @@ th {
 }
 
 thead {
-  border-top: 2px solid var(--text-title-h1); /*ff8a00*/
+  border-top: 2px solid var(--discord-yellow-alt); /*ff8a00*/
 }
 
 table {
@@ -2730,8 +2744,7 @@ HIDER PLUGIN v1.0.5
 ----------------------------------------------------------------*/
 
 .hider-frameless:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container,
-.discordian-writer:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container
-{
+.discordian-writer:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 24px;
 }
 
@@ -2752,16 +2765,16 @@ HIDER PLUGIN v1.0.5
   padding-left: 0;
 }
 
-.discordian-writer .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header
-{
+.discordian-writer.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.discordian-writer.discordian-hide-titlebar:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px !important;
   transition: padding-left .15s ease;
 }
 
-.discordian-writer.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-ribbon:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+.discordian-writer.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 62px !important;
   transition: padding-left .15s ease;
 }
@@ -2772,22 +2785,18 @@ HIDER PLUGIN v1.0.5
 }
 
 /* fullscreen mode on macOS */
-body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
+/*body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 0;
-}
+}*/
 
-/* Force-hide titlebar regardless of settings
+/*----------------------------------------------------------------
+Force-hide titlebar regardless of settings
 This is required to make settings modal present like in Discord */
+
 body:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
   top: 0 !important;
   height: 100vh !important;
 }
-
-/*body.discordian-theme:not(.discordian-hide-titlebar):not(.is-fullscreen) .modal-container {
-  top: -22px !important;
-  height: 100vh !important;
-}*/
-
 
 body.discordian-theme.hider-frameless .modal-container,
 body.discordian-theme.discordian-hide-titlebar .modal-container {
@@ -2797,6 +2806,11 @@ body.discordian-theme.discordian-hide-titlebar .modal-container {
 
 body.discordian-theme .modal-container {
   top: -22px !important;
+  height: 100vh !important;
+}
+
+body.discordian-theme.is-fullscreen .modal-container {
+  top: 0 !important;
   height: 100vh !important;
 }
 
@@ -2955,11 +2969,11 @@ body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
 }
 
-body.plugin-sliding-panes .workspace-split.mod-left-split {
+body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-left-split {
   border-right: 1px solid var(--background-tertiary);
 }
 
-body.plugin-sliding-panes .workspace-split.mod-right-split {
+body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-right-split {
   border-left: 1px solid var(--background-tertiary);
 }
 
@@ -2968,11 +2982,11 @@ body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > 
 }
 
 body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
-  border-bottom: 2px solid var(--discord-light-yellow);
+  border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
-  border-right: 2px solid var(--discord-light-yellow) !important;
+  border-right: 2px solid var(--discord-yellow-light) !important;
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active:first-of-type:last-of-type > .workspace-leaf-content > .view-header {
@@ -2985,11 +2999,6 @@ body.plugin-sliding-panes .view-header::after {
 
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   border-right: 0;
-}
-
-body.plugin-sliding-panes.hider-frameless:not(.is-fullscreen) .workspace-split.is-collapsed ~ .workspace-split.mod-root .view-header {
-  padding-top: 16px;
-  transition: padding 100ms ease;
 }
 
 body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
@@ -3021,7 +3030,7 @@ body.plugin-sliding-panes-rotate-header .view-header-icon {
   margin-left: -2px !important;
 }
 
-body.plugin-sliding-panes.is-fullscreen .view-header-icon {
+body.plugin-sliding-panes.is-fullscreen.plugin-sliding-panes-rotate-header .view-header-icon {
   padding-top: 8px;
 }
 
@@ -3040,12 +3049,20 @@ body.plugin-sliding-panes.hider-ribbon:not(.is-fullscreen) .mod-left-split .work
   padding-left: 54px !important;
 }
 
-body.plugin-sliding-panes:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+/* or workspace-leaf:firs-of-type if only padding first header under OSX icons */
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header:not(.is-fullscreen).hider-frameless .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf:first-of-type > .workspace-leaf-content > .view-header,
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header:not(.is-fullscreen).discordian-hide-titlebar .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf:first-of-type > .workspace-leaf-content > .view-header {
   padding-top: 18px;
   /*  transition: padding .1s ease;*/
 }
 
-body:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px;
   transition: padding .1s ease;
+}
+
+body.plugin-sliding-panes.hider-frameless:not(.plugin-sliding-panes-rotate-header):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 30px !important;
 }
