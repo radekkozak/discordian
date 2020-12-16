@@ -3,15 +3,10 @@ CUSTOM TEXT HIGHLIGHTS
 ----------------------------------------------------------------*/
 
 .theme-dark {
-  --text-mark: hsla(37, 82%, 74%, 0.9);
   --text-mark-green: hsla(111, 25%, 70%, 1);
   --text-mark-blue: hsla(210, 100%, 80%, 0.8);
   --text-mark-red: hsla(345, 72%, 83%, 0.95);
   --text-mark-grey: hsla(0, 0%, 74%, 0.9);
-}
-
-.markdown-preview-view mark {
-  background-color: var(--text-mark) !important;
 }
 
 .markdown-preview-view mark.red {
@@ -30,7 +25,6 @@ CUSTOM TEXT HIGHLIGHTS
   background-color: var(--text-mark-grey) !important;
 }
 
-.theme-dark mark,
 .theme-dark mark.red,
 .theme-dark mark.blue,
 .theme-dark mark.green,
