@@ -39,6 +39,18 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
+      - name: Commit obsidian.css
+        run: |
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+          git add obsidian.css
+          git commit -a -m "Release version ${{ steps.build.outputs.tag_name }}"
+          git status
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          branch: master
       - name: Upload zip file
         id: upload-zip
         uses: actions/upload-release-asset@v1
