@@ -58,15 +58,11 @@ a:hover,
   color: var(--text-link);
 }
 
-/* make external links italics to differentiate */
-
 a:not(.internal-link) {
-  /*font-style: italic;*/
   color: var(--text-link);
 }
 
 a:not(.internal-link):hover {
-  /*font-style: italic;*/
   color: var(--text-link);
   text-decoration: underline;
 }
