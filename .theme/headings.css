@@ -8,7 +8,7 @@ Preview */
 .markdown-preview-view h1 {
   font-size: 2rem;
   color: var(--text-title-h1);
-  margin-block-end: 1em;
+  line-height: 1.5 !important;
 }
 
 .markdown-preview-view h2 {
@@ -44,6 +44,7 @@ Preview */
   font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  line-height: 1.5 !important;
 }
 
 
@@ -53,6 +54,7 @@ Editor */
 .cm-header-1 {
   font-size:2rem;
   color: var(--text-title-h1);
+  line-height: 1.5 !important;
 }
 
 .cm-header-2 {
@@ -80,11 +82,13 @@ Editor */
   color: var(--text-title-h6);
 }
 
-.cm-header-1,
 .cm-header-2,
 .cm-header-3,
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
   font-weight: 500;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  line-height: 1.5 !important;
 }

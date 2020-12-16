@@ -101,8 +101,8 @@ input[type='number']:focus-within {
 }
 
 p {
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
+  margin-block-start: 1.4375rem;
+  margin-block-end: 1.4375rem;
 }
 
 p.mod-warning {
@@ -129,6 +129,7 @@ p.mod-warning {
   background-color: var(--text-muted);
   border: none;
   height: 1px;
+  margin: 1.4375rem 0
 }
 
 /* internal embedded link rendering in preview */
@@ -226,6 +227,7 @@ Normal text outside of headings and code */
 
   padding-left: 6% !important;
   padding-right: 4% !important;
+  padding-top: 10px;
   overflow-x: hidden;
 }
 
@@ -243,12 +245,16 @@ Normal text outside of headings and code */
   font-size: 0.875rem;
   line-height: 1.4375rem !important;
 
-  padding-left: 4% !important;
+  padding-left: 6% !important;
   padding-right: 4% !important;
 }
 
 .frontmatter-container {
   margin: 0;
+}
+
+.markdown-source-view {
+  padding-left: 0;
 }
 
 /*----------------------------------------------------------------
