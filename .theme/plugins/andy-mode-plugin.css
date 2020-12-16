@@ -105,11 +105,6 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
   border-right: 0;
 }
 
-body.plugin-sliding-panes.hider-frameless:not(.is-fullscreen) .workspace-split.is-collapsed ~ .workspace-split.mod-root .view-header {
-  padding-top: 16px;
-  transition: padding 100ms ease;
-}
-
 body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 0 !important;
 }
@@ -139,7 +134,7 @@ body.plugin-sliding-panes-rotate-header .view-header-icon {
   margin-left: -2px !important;
 }
 
-body.plugin-sliding-panes.is-fullscreen .view-header-icon {
+body.plugin-sliding-panes.is-fullscreen.plugin-sliding-panes-rotate-header .view-header-icon {
   padding-top: 8px;
 }
 
@@ -158,12 +153,20 @@ body.plugin-sliding-panes.hider-ribbon:not(.is-fullscreen) .mod-left-split .work
   padding-left: 54px !important;
 }
 
-body.plugin-sliding-panes:not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+/* or workspace-leaf:firs-of-type if only padding first header under OSX icons */
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header:not(.is-fullscreen).hider-frameless .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf:first-of-type > .workspace-leaf-content > .view-header,
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header:not(.is-fullscreen).discordian-hide-titlebar .mod-left-split.is-collapsed + div.mod-root > .workspace-leaf:first-of-type > .workspace-leaf-content > .view-header {
   padding-top: 18px;
   /*  transition: padding .1s ease;*/
 }
 
-body:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px;
   transition: padding .1s ease;
+}
+
+body.plugin-sliding-panes.hider-frameless:not(.plugin-sliding-panes-rotate-header):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 30px !important;
 }

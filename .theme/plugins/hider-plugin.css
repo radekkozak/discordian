@@ -3,8 +3,7 @@ HIDER PLUGIN v1.0.5
 ----------------------------------------------------------------*/
 
 .hider-frameless:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container,
-.discordian-writer:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container
-{
+.discordian-writer:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 24px;
 }
 
@@ -25,9 +24,9 @@ HIDER PLUGIN v1.0.5
   padding-left: 0;
 }
 
-.discordian-writer:not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless:not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header
-{
+.discordian-writer.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.discordian-writer.discordian-hide-titlebar:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px !important;
   transition: padding-left .15s ease;
 }
@@ -45,22 +44,18 @@ HIDER PLUGIN v1.0.5
 }
 
 /* fullscreen mode on macOS */
-body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
+/*body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 0;
-}
+}*/
 
-/* Force-hide titlebar regardless of settings
+/*----------------------------------------------------------------
+Force-hide titlebar regardless of settings
 This is required to make settings modal present like in Discord */
+
 body:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
   top: 0 !important;
   height: 100vh !important;
 }
-
-/*body.discordian-theme:not(.discordian-hide-titlebar):not(.is-fullscreen) .modal-container {
-  top: -22px !important;
-  height: 100vh !important;
-}*/
-
 
 body.discordian-theme.hider-frameless .modal-container,
 body.discordian-theme.discordian-hide-titlebar .modal-container {
@@ -70,6 +65,11 @@ body.discordian-theme.discordian-hide-titlebar .modal-container {
 
 body.discordian-theme .modal-container {
   top: -22px !important;
+  height: 100vh !important;
+}
+
+body.discordian-theme.is-fullscreen .modal-container {
+  top: 0 !important;
   height: 100vh !important;
 }
 
