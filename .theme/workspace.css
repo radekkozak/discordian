@@ -447,8 +447,9 @@ Header */
 }
 
 .view-header-title {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 30px;
+  font-family: var(--font-editor) !important;
 }
 
 .view-header-title-container {
