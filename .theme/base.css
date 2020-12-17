@@ -5,7 +5,6 @@ THEME BASE
 :root {
   --default-font: Catamaran, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-editor: CatamaranSS, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-editor-alt: CatamaranSSm, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, iA Writer Mono S, Jetbrains Mono, Menlo, SFMono-Regular, Consolas, "Roboto Mono", Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
 
   /* discord palette */

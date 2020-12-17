@@ -5,11 +5,22 @@ HEADINGS
 /*----------------------------------------------------------------
 Preview */
 
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-weight: 500;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  line-height: 1.5 !important;
+}
+
 .markdown-preview-view h1 {
   font-size: 2rem;
-  font-family: var(--font-editor-alt);
   color: var(--text-title-h1);
-  line-height: 1.5 !important;
+  margin-block-start: 0;
 }
 
 .markdown-preview-view h2 {
@@ -37,26 +48,25 @@ Preview */
   color: var(--text-title-h6);
 }
 
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
-  font-family: var(--font-editor-alt);
+/*----------------------------------------------------------------
+Editor */
+
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
   font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
 }
 
-/*----------------------------------------------------------------
-Editor */
-
 .cm-header-1 {
   font-size: 2rem;
-  font-family: var(--font-editor-alt);
   color: var(--text-title-h1);
-  line-height: 1.5 !important;
+  margin-block-start: 0;
 }
 
 .cm-header-2 {
@@ -82,16 +92,4 @@ Editor */
 .cm-header-6 {
   font-size: 1rem;
   color: var(--text-title-h6);
-}
-
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6 {
-  font-family: var(--font-editor-alt);
-  font-weight: 500;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  line-height: 1.5 !important;
 }

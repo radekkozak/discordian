@@ -247,13 +247,11 @@ Bold */
 
 strong {
   color: var(--discord-yellow);
-  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
 .cm-strong {
   color: var(--discord-yellow);
-  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
@@ -262,13 +260,11 @@ Italics */
 
 em {
   color: var(--text-em);
-  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
 .cm-em {
   color: var(--text-em);
-  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
