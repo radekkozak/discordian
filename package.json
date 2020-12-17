@@ -1,6 +1,6 @@
 {
   "name": "Discordian",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Dark theme for Obsidian inspired by Discord",
   "main": "gulpfile.js",
   "config": {
