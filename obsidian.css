@@ -3,11 +3,12 @@ THEME BASE
 ----------------------------------------------------------------*/
 
 :root {
-  --default-font: Catamaran, Whitney SSm, Whitney Medium, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-editor: Gill Sans Light, Whitney SSm, Whitney Book, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --default-font: Catamaran, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-editor: CatamaranSS, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-editor-alt: CatamaranSSm, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, iA Writer Mono S, Jetbrains Mono, Menlo, SFMono-Regular, Consolas, "Roboto Mono", Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
 
-  /* discord colors */
+  /* discord palette */
   --discord-green: hsla(153, 46%, 49%, 1);
   --discord-yellow: hsla(38, 96%, 54%, 1);
   --discord-yellow-alt: hsla(37, 65%, 59%, 1);
@@ -39,6 +40,10 @@ THEME BASE
 
   --background-accent: hsla(217, 8%, 34%, 1);
 
+  --background-code: hsla(204, 6%, 17%, 1);
+  --background-code-preview: hsla(204, 6%, 17%, 1);
+  --background-code-border: hsla(0, 0%, 16%, 1);
+
   --background-modifier-cover: hsla(220, 8%, 23%, 1);
   --background-modifier-hover: hsla(217, 8%, 34%, 0.16);
   --background-modifier-active: hsla(217, 8%, 34%, 0.24);
@@ -49,8 +54,8 @@ THEME BASE
   --background-modifier-form-field-highlighted: hsla(0, 0%, 0%, 0.2);
   --background-modifier-border: var(--background-secondary-alt);
 
-  --text-normal: hsl(200, 2.4%, 75.5%);
-  --text-muted: hsla(218, 5%, 47%, 1);
+  --text-normal: hsla(210, 3%, 87%, 1); /* hsla(213, 4%, 57%, 1); */
+  --text-muted: hsla(213, 4%, 57%, 1); /* hsla(218, 5%, 47%, 1); */
   --text-faint: hsla(0, 0%, 61%, 1);
   --text-link: hsla(207, 61%, 59%, 1);
   --text-accent: hsl(265, 66%, 72%);
@@ -60,12 +65,14 @@ THEME BASE
 
   --text-strong: var(--discord-yellow-alt);
   --text-em: hsla(62, 31%, 61%, 1);
+  --text-tag: hsla(27, 100%, 63%, 0.73);
+  --text-mark: hsla(37, 82%, 74%, 1);
+
+  --markup-code: hsla(34, 89%, 61%, 1);
 
   --text-title: hsla(243, 25%, 65%, 1);
   --text-header: hsla(233, 45%, 71%, 1);
 
-  --markup-code: hsla(34, 89%, 61%, 1);
-  --text-tag: hsla(27, 100%, 63%, 0.73);
   --text-title-h1: hsla(243, 25%, 65%, 1);
   --text-title-h2: hsla(233, 45%, 71%, 1);
   --text-title-h3: hsla(233, 45%, 71%, 1);
@@ -97,12 +104,7 @@ THEME BASE
   --scrollbar-auto-scrollbar-color-track: hsla(223, 7%, 20%, 1);
 
   --cursor: default;
-
   --opacity-translucency: 1;
-
-  --background-code: hsla(204, 6%, 17%, 1);
-  --background-code-preview: hsla(204, 6%, 17%, 1);
-  --background-code-border: hsla(0, 0%, 16%, 1);
 
   --graph-line: hsla(191, 57%, 35%, 1);
   --graph-line-highlight: hsla(191, 57%, 59%, 1);
@@ -168,7 +170,8 @@ FOUNDATION
 ----------------------------------------------------------------*/
 
 /* font for everything outside of editor/preview panes */
-.app-container, body {
+body,
+.app-container {
   font-size: 16px;
   line-height: 22px !important;
   font-family: var(--default-font);
@@ -176,14 +179,12 @@ FOUNDATION
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
   vertical-align: baseline;
-
   -webkit-font-feature-settings: "tnum";
   -moz-font-feature-settings: "tnum";
   font-feature-settings: "tnum";
   -webkit-font-variant-numeric: tabular-nums;
   -moz-font-variant-numeric: tabular-nums;
   font-variant-numeric: tabular-nums;
-
   margin: 0 !important;
 }
 
@@ -205,13 +206,6 @@ FOUNDATION
   font-weight: normal;
   color: var(--text-muted);
   font-size: 0.85rem;
-}
-
-/*----------------------------------------------------------------
-Editor font: make it thicker so it is like in Preview
-If you remove this - change editor font to regular Catamaran */
-.cm-s-obsidian {
-  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 .CodeMirror-sizer {
@@ -265,6 +259,10 @@ input[type='number']:focus-within {
   color: var(--text-normal);
 }
 
+ul li {
+  margin: 4px 0;
+}
+
 p {
   margin-block-start: 1.4375rem;
   margin-block-end: 1.4375rem;
@@ -285,7 +283,8 @@ p.mod-warning {
 }
 
 /* html tags in editor */
-.cm-tag, .cm-attribute { /* .cm-string*/
+.cm-tag,
+.cm-attribute { /* .cm-string */
   color: var(--text-muted) !important;
 }
 
@@ -294,19 +293,7 @@ p.mod-warning {
   background-color: var(--text-muted);
   border: none;
   height: 1px;
-  margin: 1.4375rem 0
-}
-
-/* internal embedded link rendering in preview */
-.markdown-embed-title {
-  font-weight: 600;
-}
-
-.markdown-embed {
-  padding-left: 8px !important;
-  padding-right: 4px !important;
-  margin-left: 8px !important;
-  margin-right: 4px !important;
+  margin: 1.4375rem 0;
 }
 
 /* internal embedded link rendering in preview */
@@ -354,7 +341,7 @@ blockquote {
   background-color: var(--blockquote-bg);
 }
 
-blockquote:before {
+blockquote::before {
   font: 14px/20px italic Times, serif;
   content: "“";
   font-size: 3em;
@@ -389,7 +376,6 @@ Normal text outside of headings and code */
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.4375rem !important;
-
   padding-left: 6% !important;
   padding-right: 4% !important;
   padding-top: 10px;
@@ -409,9 +395,10 @@ Normal text outside of headings and code */
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.4375rem !important;
-
   padding-left: 6% !important;
   padding-right: 4% !important;
+  /* Editor font: make it thicker so it is like in Preview */
+  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 .frontmatter-container {
@@ -426,11 +413,15 @@ Normal text outside of headings and code */
 Bold */
 
 strong {
-  color: var(--text-strong);
+  color: var(--discord-yellow);
+  font-family: var(--font-editor-alt);
+  font-weight: 500;
 }
 
 .cm-strong {
-  color: var(--text-strong);
+  color: var(--discord-yellow);
+  font-family: var(--font-editor-alt);
+  font-weight: 500;
 }
 
 /*----------------------------------------------------------------
@@ -438,11 +429,13 @@ Italics */
 
 em {
   color: var(--text-em);
+  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
 .cm-em {
   color: var(--text-em);
+  font-family: var(--font-editor-alt);
   font-weight: 500;
 }
 
@@ -483,15 +476,12 @@ Dropdown */
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(32, 34, 37, 0.5) !important;
   border-radius: 6px;
-
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 20 20' focusable='false' stroke-width='px' fill='%23B9BBBE' class='dropdown-svg'%3E%3Cpath d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'%3E%3C/path%3E%3C/svg%3E");
-
   background-repeat: no-repeat, repeat;
   background-position: right 0.7em top 50%, 0 0;
   background-size: 1.2em auto, 100%;
   -webkit-transition: background-color .17s ease, color .17s ease;
   transition: background-color .17s ease, color .17s ease;
-
   outline: 0 !important;
   cursor: pointer;
 }
@@ -504,12 +494,8 @@ Dropdown */
   background-color: var(--background-modifier-form-field-highlighted);
 }
 
-/* --------------- */
-
-.markdown-preview-view mark {
-  color: var(--text-link);
-  background-color: var(--background-primary-alt);
-}
+/*----------------------------------------------------------------
+Selections */
 
 .markdown-preview-view .mod-highlighted {
   background-color: var(--text-selection);
@@ -531,6 +517,7 @@ Preview */
 
 .markdown-preview-view h1 {
   font-size: 2rem;
+  font-family: var(--font-editor-alt);
   color: var(--text-title-h1);
   line-height: 1.5 !important;
 }
@@ -565,18 +552,19 @@ Preview */
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
+  font-family: var(--font-editor-alt);
   font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
 }
 
-
 /*----------------------------------------------------------------
 Editor */
 
 .cm-header-1 {
-  font-size:2rem;
+  font-size: 2rem;
+  font-family: var(--font-editor-alt);
   color: var(--text-title-h1);
   line-height: 1.5 !important;
 }
@@ -611,25 +599,26 @@ Editor */
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
+  font-family: var(--font-editor-alt);
   font-weight: 500;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
 }
+
 /*----------------------------------------------------------------
 POPOVERS
 ----------------------------------------------------------------*/
 
-div.popover.hover-popover, .menu, .suggestion-container {
+.menu,
+div.popover.hover-popover,
+.suggestion-container {
   background-color: var(--background-secondary);
-
   border-radius: 4px;
   border: none !important;
   min-width: 15rem;
-
   font-family: var(--font-editor);
   font-size: 15px !important;
-
   -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
   box-shadow: var(--elevation-stroke), var(--elevation-high);
 }
@@ -673,7 +662,8 @@ div.popover.hover-popover .markdown-preview-view h6 {
 SUGGESTIONS
 ----------------------------------------------------------------*/
 
-.suggestion-item, .suggestion-empty {
+.suggestion-item,
+.suggestion-empty {
   font-size: 15px;
 }
 
@@ -736,6 +726,7 @@ scrollbars in editor & preview */
 
 .mod-root ::-webkit-scrollbar-track {
   background-color: var(--scrollbar-auto-track);
+  border: 4px solid var(--background-primary);
 }
 
 .mod-root ::-webkit-scrollbar-thumb,
@@ -743,10 +734,6 @@ scrollbars in editor & preview */
   border: 4px solid transparent;
   background-clip: padding-box;
   border-radius: 8px;
-}
-
-.mod-root ::-webkit-scrollbar-track {
-  border: 4px solid var(--background-primary);
 }
 
 .mod-root ::-webkit-scrollbar-thumb {
@@ -769,14 +756,14 @@ graph controls scrollbars */
 .mod-root .graph-controls::-webkit-scrollbar-track {
   border-color: var(--background-secondary-alt) !important;
   background-color: var(--background-primary) !important;
-  border: 0px solid var(--scrollbar-thin-track) !important;
-  border-radius: 0px !important;
+  border: 0 solid var(--scrollbar-thin-track) !important;
+  border-radius: 0 !important;
 }
 
 .mod-root .graph-controls::-webkit-scrollbar-thumb {
   background-clip: padding-box !important;
   border: 2px solid transparent !important;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   background-color: var(--scrollbar-thin-thumb);
   min-height: 40px !important;
 }
@@ -875,12 +862,14 @@ body.is-translucent {
   background-color: var(--background-primary);
 }
 
-.workspace-leaf-resize-handle, .is-translucent .workspace-leaf-resize-handle {
+.workspace-leaf-resize-handle,
+.is-translucent .workspace-leaf-resize-handle {
   background-color: var(--background-secondary); /*--background-secondary-alt*/
   margin: 0;
 }
 
-.workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
+.workspace-leaf-resize-handle:hover,
+.is-translucent .workspace-leaf-resize-handle:hover {
   background-color: var(--interactive-accent-light);
 }
 
@@ -901,10 +890,6 @@ Split Mode */
   padding-right: 0;
 }
 
-.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content {
-  padding-right: 2px;
-}
-
 .workspace-split.mod-vertical > .workspace-leaf {
   padding-right: 0;
 }
@@ -914,7 +899,8 @@ Split Mode */
 }
 
 /* no animation for panels - feels more snappier */
-.workspace-split.mod-left-split, .workspace-split.mod-right-split {
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
   transition: none;
 }
 
@@ -923,34 +909,7 @@ Split Mode */
 }
 
 /*----------------------------------------------------------------
-View Actions */
-
-.view-action {
-  color: var(--text-muted) !important;
-  text-decoration: none !important;
-}
-
-.view-action:hover,
-.view-action.is-active {
-  color: var(--text-normal) !important;
-}
-
-/* icons at top of panes */
-.file-view-actions a {
-  color: var(--text-muted) !important;
-}
-
-.file-view-actions a:hover {
-  color: var(--text-muted) !important;
-}
-
-/*----------------------------------------------------------------
 Side Dock */
-
-.side-dock-panels-container {
-  background-color: var(--background-secondary-alt) !important;
-  color: var(--background-secondary-alt);
-}
 
 .side-dock-ribbon-action {
   color: var(--text-muted) !important;
@@ -969,9 +928,10 @@ Side Dock */
   background-color: var(--background-secondary);
 }
 
-/* side dock text, like file names and backlink context */
 .side-dock-panels-container {
   font-size: 13px !important;
+  background-color: var(--background-secondary-alt) !important;
+  color: var(--background-secondary-alt);
 }
 
 /* side dock titles at top */
@@ -1014,28 +974,34 @@ Navigation & File Explorer */
 }
 
 .nav-file-title {
-  padding: 4px 10px 4px 20px;
+  padding: 6px 10px 6px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: var(--font-editor);
-  font-size: 13px;
-  line-height: 20px;
+  font-variant-numeric: tabular-nums !important;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 4px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
   display: inline-flex;
+  -webkit-font-feature-settings: "tnum" !important;
+  -moz-font-feature-settings: "tnum" !important;
+  font-feature-settings: "tnum" !important;
+  -webkit-font-variant-numeric: tabular-nums !important;
+  -moz-font-variant-numeric: tabular-nums !important;
 }
 
-.nav-file-title:hover {
+.nav-file-title:hover,
+.nav-folder-title:hover {
   color: var(--text-normal) !important;
 }
 
 .nav-folder-title {
-  font-size: 15px;
-  color: var(--text-normal) !important;
+  font-size: 1rem;
+  color: var(--interactive-active) !important;
   background-color: var(--background-secondary);
   padding: 2px 10px 2px 22px;
-}
-
-.nav-folder-title:hover {
-  color: var(--text-normal) !important;
 }
 
 .nav-file.is-active .nav-file-tag {
@@ -1054,17 +1020,20 @@ Avoid character-level word breaks */
   word-break: keep-all;
 }
 
-.nav-file-title-content {
-  width: 100%;
-}
-
 .nav-file-title-content,
 .nav-folder-title-content {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
+}
+
+.nav-folder-title-content {
   padding: 1px 4px;
+}
+
+.nav-file-title-content {
+  width: 100%;
 }
 
 .nav-files-container {
@@ -1078,25 +1047,35 @@ Avoid character-level word breaks */
   font-size: 14px;
   font-weight: 600;
   top: 0;
+  letter-spacing: 1px;
   cursor: default;
-  color: #af88e7 !important;
+  color: var(--text-accent) !important;
 }
 
-.nav-folder-children .nav-folder {
-  color: #ff0000 !important;
+.nav-file.is-active > .nav-file-title::before {
+  content: "\204D";
+  font-size: 19px;
+  position: absolute;
+  left: -17px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title::before {
+  content: none;
+}
+
+.nav-file {
+  margin-right: 10px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title {
+  padding: 6px 10px 6px 10px;
+  margin-left: 0 !important;
+  margin-right: 10px;
 }
 
 .nav-file.is-active > .nav-file-title,
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
-  color: var(--text-accent);
-  border-left: 2px solid var(--text-accent);
-  /*transition: all 0.2s ease;*/
-}
-
-.nav-file.is-active > .nav-file-title {
-  padding-left: 18px;
-  margin-left: 1px;
   color: var(--text-normal) !important;
 }
 
@@ -1142,7 +1121,7 @@ Search */
   border-bottom: 0;
 }
 
-.search-result-file-match:before {
+.search-result-file-match::before {
   display: none;
 }
 
@@ -1257,23 +1236,14 @@ Header */
   position: relative;
 }
 
-.view-action {
-  top: 0;
-}
-
-.view-actions {
-  padding: 5px 10px;
-  margin-left: auto;
-}
-
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary);
   border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 /* fix the long-title-obscuring shadows */
-.workspace-leaf.mod-active .view-header-title-container:after,
-.view-header-title-container:after {
+.workspace-leaf.mod-active .view-header-title-container::after,
+.view-header-title-container::after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -1282,7 +1252,7 @@ Header */
   background: linear-gradient(to right, transparent, var(--background-primary)) !important; /* rgb(51,53,59) */
 }
 
-.view-header-title-container:after {
+.view-header-title-container::after {
   background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
@@ -1291,12 +1261,41 @@ Header */
   color: var(--text-normal);
 }
 
-.workspace-leaf-content .view-content, .workspace-leaf-content[data-type='tag'] {
+.workspace-leaf-content .view-content,
+.workspace-leaf-content[data-type='tag'] {
   padding: 10px;
 }
 
 .view-header-icon {
   top: 0 !important;
+}
+
+/*----------------------------------------------------------------
+View Actions */
+
+.view-action {
+  top: 0;
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+}
+
+.view-action:hover,
+.view-action.is-active {
+  color: var(--text-normal) !important;
+}
+
+.view-actions {
+  padding: 5px 10px;
+  margin-left: auto;
+}
+
+/* icons at top of panes */
+.file-view-actions a {
+  color: var(--text-muted) !important;
+}
+
+.file-view-actions a:hover {
+  color: var(--text-muted) !important;
 }
 
 /*.workspace-leaf.mod-active .view-header-icon {
@@ -1363,37 +1362,43 @@ LISTS
 ----------------------------------------------------------------*/
 
 ul {
-  padding-inline-start:2em;
-  list-style:none;
+  padding-inline-start: 2em;
+  list-style: none;
 }
 
-ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
-  list-style:none;
+ul ul,
+ol ul,
+ol ol ul,
+ol ul ul,
+ul ol ul,
+ul ul ul {
+  list-style: none;
 }
 
 ul > li:not(.task-list-item)::before {
-  content:"\2022";
-  color:var(--text-faint);
-  font-weight:400;
-  display:inline-block;
-  width:1em;
-  margin-left:-1em;
+  content: "\2022";
+  color: var(--text-faint);
+  font-weight: 400;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
-ul li p, ol li p {
-  display:inline;
+ul li p,
+ol li p {
+  display: inline;
 }
 
 ol {
-  padding-inline-start:1em;
-  margin-left:1em;
-  list-style:none;
-  counter-reset:counter;
-  position:relative;
+  padding-inline-start: 1em;
+  margin-left: 1em;
+  list-style: none;
+  counter-reset: counter;
+  position: relative;
 }
 
 ol > li {
-  counter-increment:counter;
+  counter-increment: counter;
   margin: 0.3rem 0 0.3rem 0;
 }
 
@@ -1409,9 +1414,6 @@ ol > li::before {
 /*----------------------------------------------------------------
 ul, li & ol colors in editor */
 
-.cm-s-obsidian span.cm-formatting-list {
-}
-
 .markdown-preview-section > ul.contains-task-list {
   margin-block-end: 2rem;
 }
@@ -1426,31 +1428,23 @@ input[type=checkbox] {
   padding: 0;
   cursor: pointer;
   background-color: var(--background-primary);
+  border: 1px solid var(--text-faint);
+  border-radius: 3px;
 }
 
-input[type=checkbox]:focus, input[type=checkbox]:hover {
+input[type=checkbox]:focus,
+input[type=checkbox]:hover {
   outline: 0;
   border-color: var(--text-faint);
 }
 
 input[type=checkbox]:checked {
-  background-color: var(--discord-green);
-  border: 1px solid var(--discord-green);
+  background-color: var(--discord-blue) !important;
+  border: 1px solid var(--discord-blue);
   background-position: center;
   background-size: 70%;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cpath d='M0 11l2-2l5 5L18 3l2 2L7 18z' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-input[type=checkbox] {
-  border: 1px solid var(--text-faint);
-  border-radius: 3px;
-  padding: 0;
-}
-
-input[type=checkbox]:checked {
-  background-color: var(--discord-blue) !important;
-  border: 1px solid var(--discord-blue);
 }
 
 /*----------------------------------------------------------------
@@ -1500,14 +1494,10 @@ pre.HyperMD-list-line-2 {
   white-space: pre;
   text-align: center;
   color: transparent;
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   background-color: var(--background-primary);
   font-family: var(--default-font);
-
   margin-left: -0.6rem;
-}
-
-.CodeMirror-gutter-wrapper + pre.HyperMD-list-line-1 {
 }
 
 .cm-formatting-task {
@@ -1522,7 +1512,8 @@ pre.HyperMD-list-line-2 {
   color: transparent;
 }
 
-input[type=checkbox]:checked, .cm-formatting-task.cm-property {
+input[type=checkbox]:checked,
+.cm-formatting-task.cm-property {
   background-color: var(--discord-blue) !important;
   border: 1px solid var(--discord-blue);
 }
@@ -1628,7 +1619,6 @@ span:not(.cm-header).cm-hashtag {
   color: var(--discord-blue);
   background: rgba(114, 137, 218, 0.1);
   position: relative;
-
   -webkit-transition: background-color .15s ease-out, color .15s ease-out;
   transition: background-color .15s ease-out, color .15s ease-out;
 }
@@ -1690,7 +1680,7 @@ FOOTNOTES
 
 sup {
   font-size: 13px;
-  letter-spacing: 0.0rem;
+  letter-spacing: 0;
   padding-left: 0.2rem;
 }
 
@@ -1735,11 +1725,12 @@ TOGGLE SWITCHES
   background-color: var(--interactive-accent);
 }
 
-.checkbox-container:before, .checkbox-container:after {
+.checkbox-container::before,
+.checkbox-container::after {
   color: var(--text-muted);
 }
 
-.checkbox-container:before {
+.checkbox-container::before {
   content: '\2A2f';
   font-size: 26px;
   font-weight: 200;
@@ -1747,10 +1738,10 @@ TOGGLE SWITCHES
   position: absolute;
   opacity: 0.8;
   z-index: 1;
-  transform: translate3d(-21px, -1px, 0)
+  transform: translate3d(-21px, -1px, 0);
 }
 
-.checkbox-container.is-enabled:before {
+.checkbox-container.is-enabled::before {
   content: '\2143';
   color: var(--interactive-accent);
   font-size: 13px;
@@ -1758,22 +1749,22 @@ TOGGLE SWITCHES
   transform: translate3d(-7px, -9px, 0) rotate(38deg);
 }
 
-.checkbox-container.is-enabled:after {
+.checkbox-container.is-enabled::after {
   transform: translate3d(15px, 0, 0);
 }
 
-.checkbox-container:after {
+.checkbox-container::after {
   box-shadow: none !important;
   width: 18px;
   height: 18px;
   transform: translate3d(1px, 0, 0);
 }
 
-.community-theme-container .checkbox-container.is-enabled:before {
+.community-theme-container .checkbox-container.is-enabled::before {
   transform: translate3d(18px, 10px, 0) rotate(38deg);
 }
 
-.community-theme-container .checkbox-container:before {
+.community-theme-container .checkbox-container::before {
   transform: translate3d(7px, -1px, 0);
 }
 
@@ -1800,7 +1791,8 @@ Preview Mode */
   margin: 2rem 0;
 }
 
-.markdown-preview-view td, .markdown-preview-view th {
+.markdown-preview-view td,
+.markdown-preview-view th {
   border: none;
 }
 
@@ -1822,7 +1814,8 @@ Preview Mode */
   border-left: 1px solid var(--background-accent);
 }
 
-.markdown-preview-view tr > td:first-of-type, tr > th:first-of-type {
+.markdown-preview-view tr > td:first-of-type,
+tr > th:first-of-type {
   border-left: 0;
 }
 
@@ -1863,8 +1856,8 @@ editor */
   padding: 0.2rem 0;
 }
 
-/* Code Block Markdown */
 .cm-s-obsidian pre.HyperMD-codeblock {
+  padding: 4px 10px !important;
   color: var(--text-normal);
   font-size: 0.85rem;
   white-space: pre-wrap;
@@ -1885,15 +1878,6 @@ editor */
   border-bottom-right-radius: 4px;
 }
 
-/* Code block left and right padding */
-.cm-s-obsidian pre.HyperMD-codeblock {
-  padding: 4px 10px !important;
-}
-
-/* Code block left and right border colors */
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-}
-
 .cm-s-obsidian span.cm-inline-code {
   border-radius: 4px;
 }
@@ -1910,15 +1894,11 @@ editor */
   border-radius: 0;
 }
 
-.cm-s-obsidian
-span.cm-formatting-code.cm-inline-code
-+ span.cm-inline-code
-+ span.cm-formatting-code.cm-inline-code {
+.cm-s-obsidian span.cm-formatting-code.cm-inline-code + span.cm-inline-code + span.cm-formatting-code.cm-inline-code {
   border-left-width: 0;
   border-right-width: 1px;
   border-radius: 0 4px 4px 0;
 }
-
 
 /*----------------------------------------------------------------
 preview */
@@ -1933,7 +1913,7 @@ preview */
 }
 
 .markdown-preview-view pre {
-  background-color: var(--background-code-preview) ;
+  background-color: var(--background-code-preview);
   margin: 2rem 0;
 }
 
@@ -1976,7 +1956,7 @@ frontmatter */
   display: inline-flex;
 }
 
-.frontmatter-container .frontmatter-section-label:after {
+.frontmatter-container .frontmatter-section-label::after {
   content: ':';
   display: inline-block;
 }
@@ -2008,7 +1988,6 @@ Settings Modal */
 .modal:not(.mod-settings) {
   -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
   box-shadow: var(--elevation-stroke), var(--elevation-high);
-
   padding: 0; /* default: 30px 50px */
   border: 0 !important;
 }
@@ -2034,10 +2013,6 @@ Settings Modal */
   max-height: 100%;
 }
 
-.modal.mod-settings .vertical-tab-content-container {
-  background-color: var(--background-primary);
-}
-
 .modal.mod-settings .modal-close-button {
   display: flex;
   -webkit-box-pack: center;
@@ -2049,7 +2024,6 @@ Settings Modal */
   -webkit-box-flex: 0;
   -ms-flex: 0 0 36px;
   flex: 0 0 36px;
-
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
@@ -2064,11 +2038,11 @@ Settings Modal */
   background-color: rgba(114, 118, 125, .3);
 }
 
-.modal.mod-settings .modal-close-button:before {
+.modal.mod-settings .modal-close-button::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.modal.mod-settings .modal-close-button:after {
+.modal.mod-settings .modal-close-button::after {
   position: absolute;
   content: 'ESC';
   font-weight: 600;
@@ -2100,11 +2074,9 @@ Settings Modal */
   flex: 1 0 auto;
   display: grid;
   grid-template-rows: min-content;
-
   -webkit-box-flex: 1;
   -webkit-box-pack: end;
   justify-content: flex-end;
-
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -2119,9 +2091,6 @@ Settings Modal */
   --scrollbar-thin-thumb: unset;
 }
 
-.modal.mod-settings .vertical-tab-header-group {
-}
-
 .modal.mod-settings .setting-item {
   margin-right: 17vw;
 }
@@ -2131,6 +2100,7 @@ Settings Modal */
 }
 
 .modal.mod-settings .vertical-tab-content-container {
+  background-color: var(--background-primary);
   padding: 0;
   flex: 1 1 50rem;
 }
@@ -2165,9 +2135,6 @@ Settings Modal */
   border-top: thin solid var(--background-modifier-accent);
 }
 
-.setting-editor-extra-setting-button {
-}
-
 .setting-hotkey {
   min-height: unset;
 }
@@ -2184,7 +2151,8 @@ Settings Modal */
   padding-left: 2px;
 }
 
-.community-theme-filters-container, .hotkey-search-container {
+.community-theme-filters-container,
+.hotkey-search-container {
   padding: 0 10px 30px 0;
 }
 
@@ -2234,7 +2202,7 @@ Modal Confirmations */
   margin-bottom: 1.5rem;
 }
 
-.modal-button-container buttom {
+.modal-button-container button {
   margin: unset;
 }
 
@@ -2333,7 +2301,7 @@ input.prompt-input:focus-within {
   opacity: 0.6;
 }
 
-.prompt-instruction:first-of-type:before {
+.prompt-instruction:first-of-type::before {
   content: 'tips:';
   text-transform: uppercase;
   color: var(--interactive-accent);
@@ -2398,6 +2366,7 @@ Community themes panel */
 .modal.mod-community-theme {
   max-width: 56rem;
 }
+
 /*----------------------------------------------------------------
 BUTTONS
 ----------------------------------------------------------------*/
@@ -2501,19 +2470,19 @@ FOLDING
 /* preview */
 .markdown-preview-view .collapse-indicator,
 .markdown-preview-view .collapse-indicator:hover {
-  color: var(--text-faint)
+  color: var(--text-faint);
 }
 
 /* subtler folding gutter arrows */
-.CodeMirror-foldgutter-folded:after,
-.CodeMirror-foldgutter-open:after {
+.CodeMirror-foldgutter-folded::after,
+.CodeMirror-foldgutter-open::after {
   font-size: 50%;
   width: 22px;
   height: 10px;
   color: var(--text-faint);
 }
 
-.CodeMirror-foldgutter-folded:after {
+.CodeMirror-foldgutter-folded::after {
   content: "\25C0";
   position: absolute;
   right: 0;
@@ -2522,7 +2491,7 @@ FOLDING
   transform: rotate(180deg);
 }
 
-.CodeMirror-foldgutter-open:after {
+.CodeMirror-foldgutter-open::after {
   content: "\25C0";
   position: absolute;
   right: 0;
@@ -2583,7 +2552,8 @@ Seamless notes transclusions */
 /*----------------------------------------------------------------
 Audio embed */
 
-audio, .theme-dark audio {
+audio,
+.theme-dark audio {
   filter: unset !important;
 }
 
@@ -2699,20 +2669,16 @@ SYNTAX HIGHLIGHTER COLORS
 .theme-dark .token.cdata {
   color: var(--syntax-grey);
 }
+
 /*----------------------------------------------------------------
 CUSTOM TEXT HIGHLIGHTS
 ----------------------------------------------------------------*/
 
 .theme-dark {
-  --text-mark: hsla(37, 82%, 74%, 0.9);
   --text-mark-green: hsla(111, 25%, 70%, 1);
   --text-mark-blue: hsla(210, 100%, 80%, 0.8);
   --text-mark-red: hsla(345, 72%, 83%, 0.95);
   --text-mark-grey: hsla(0, 0%, 74%, 0.9);
-}
-
-.markdown-preview-view mark {
-  background-color: var(--text-mark) !important;
 }
 
 .markdown-preview-view mark.red {
@@ -2731,7 +2697,6 @@ CUSTOM TEXT HIGHLIGHTS
   background-color: var(--text-mark-grey) !important;
 }
 
-.theme-dark mark,
 .theme-dark mark.red,
 .theme-dark mark.blue,
 .theme-dark mark.green,
@@ -2814,8 +2779,6 @@ body.discordian-theme.is-fullscreen .modal-container {
   height: 100vh !important;
 }
 
-
-
 /*----------------------------------------------------------------
 CALENDAR PLUGIN v1.4.4
 ----------------------------------------------------------------*/
@@ -2828,6 +2791,7 @@ CALENDAR PLUGIN v1.4.4
   padding: 5px 15px;
   font-family: var(--font-editor);
   font-size: 15px;
+  
   --color-background-day-empty: var(--background-secondary-alt);
   --color-background-day-active: var(--background-tertiary);
   --color-background-day-hover: var(--background-tertiary);
@@ -2901,6 +2865,8 @@ Andy's Mode Sliding Panes v3.2.1 (death_au's plugin)
 /* fill title container for better visual separation */
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   background-color: var(--background-secondary);
+  border-right: 0 !important;
+  border-left: 0 !important;
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .app-container {
@@ -2916,13 +2882,10 @@ body.plugin-sliding-panes .app-container::before {
   border-left: 1px solid var(--background-tertiary) !important;
 }*/
 
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  border-right: 0 !important;
-  border-left: 0 !important;
-}
-
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   border-left: 0;
+  box-shadow: none !important;
+  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
 }
 
 body.plugin-sliding-panes .view-header::before,
@@ -2930,14 +2893,9 @@ body.plugin-sliding-panes .workspace-leaf.mod-active .view-header::before {
   display: none;
 }
 
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  box-shadow: none !important;
-  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
-}
-
 /* remove long-title-obscuring gradient in normal mode */
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::before,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container::before {
   content: none;
 }
 
@@ -2979,9 +2937,6 @@ body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-right-spl
 
 body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   border-right: none;
-}
-
-body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   border-bottom: 2px solid var(--discord-yellow-light);
 }
 
@@ -2995,10 +2950,6 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-r
 
 body.plugin-sliding-panes .view-header::after {
   content: none;
-}
-
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  border-right: 0;
 }
 
 body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
