@@ -13,7 +13,6 @@ Settings Modal */
 .modal:not(.mod-settings) {
   -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
   box-shadow: var(--elevation-stroke), var(--elevation-high);
-
   padding: 0; /* default: 30px 50px */
   border: 0 !important;
 }
@@ -39,10 +38,6 @@ Settings Modal */
   max-height: 100%;
 }
 
-.modal.mod-settings .vertical-tab-content-container {
-  background-color: var(--background-primary);
-}
-
 .modal.mod-settings .modal-close-button {
   display: flex;
   -webkit-box-pack: center;
@@ -54,7 +49,6 @@ Settings Modal */
   -webkit-box-flex: 0;
   -ms-flex: 0 0 36px;
   flex: 0 0 36px;
-
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
@@ -69,11 +63,11 @@ Settings Modal */
   background-color: rgba(114, 118, 125, .3);
 }
 
-.modal.mod-settings .modal-close-button:before {
+.modal.mod-settings .modal-close-button::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23dcddde' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.modal.mod-settings .modal-close-button:after {
+.modal.mod-settings .modal-close-button::after {
   position: absolute;
   content: 'ESC';
   font-weight: 600;
@@ -105,11 +99,9 @@ Settings Modal */
   flex: 1 0 auto;
   display: grid;
   grid-template-rows: min-content;
-
   -webkit-box-flex: 1;
   -webkit-box-pack: end;
   justify-content: flex-end;
-
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -124,9 +116,6 @@ Settings Modal */
   --scrollbar-thin-thumb: unset;
 }
 
-.modal.mod-settings .vertical-tab-header-group {
-}
-
 .modal.mod-settings .setting-item {
   margin-right: 17vw;
 }
@@ -136,6 +125,7 @@ Settings Modal */
 }
 
 .modal.mod-settings .vertical-tab-content-container {
+  background-color: var(--background-primary);
   padding: 0;
   flex: 1 1 50rem;
 }
@@ -170,9 +160,6 @@ Settings Modal */
   border-top: thin solid var(--background-modifier-accent);
 }
 
-.setting-editor-extra-setting-button {
-}
-
 .setting-hotkey {
   min-height: unset;
 }
@@ -189,7 +176,8 @@ Settings Modal */
   padding-left: 2px;
 }
 
-.community-theme-filters-container, .hotkey-search-container {
+.community-theme-filters-container,
+.hotkey-search-container {
   padding: 0 10px 30px 0;
 }
 
@@ -239,7 +227,7 @@ Modal Confirmations */
   margin-bottom: 1.5rem;
 }
 
-.modal-button-container buttom {
+.modal-button-container button {
   margin: unset;
 }
 
@@ -338,7 +326,7 @@ input.prompt-input:focus-within {
   opacity: 0.6;
 }
 
-.prompt-instruction:first-of-type:before {
+.prompt-instruction:first-of-type::before {
   content: 'tips:';
   text-transform: uppercase;
   color: var(--interactive-accent);

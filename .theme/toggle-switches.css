@@ -16,11 +16,12 @@ TOGGLE SWITCHES
   background-color: var(--interactive-accent);
 }
 
-.checkbox-container:before, .checkbox-container:after {
+.checkbox-container::before,
+.checkbox-container::after {
   color: var(--text-muted);
 }
 
-.checkbox-container:before {
+.checkbox-container::before {
   content: '\2A2f';
   font-size: 26px;
   font-weight: 200;
@@ -28,10 +29,10 @@ TOGGLE SWITCHES
   position: absolute;
   opacity: 0.8;
   z-index: 1;
-  transform: translate3d(-21px, -1px, 0)
+  transform: translate3d(-21px, -1px, 0);
 }
 
-.checkbox-container.is-enabled:before {
+.checkbox-container.is-enabled::before {
   content: '\2143';
   color: var(--interactive-accent);
   font-size: 13px;
@@ -39,21 +40,21 @@ TOGGLE SWITCHES
   transform: translate3d(-7px, -9px, 0) rotate(38deg);
 }
 
-.checkbox-container.is-enabled:after {
+.checkbox-container.is-enabled::after {
   transform: translate3d(15px, 0, 0);
 }
 
-.checkbox-container:after {
+.checkbox-container::after {
   box-shadow: none !important;
   width: 18px;
   height: 18px;
   transform: translate3d(1px, 0, 0);
 }
 
-.community-theme-container .checkbox-container.is-enabled:before {
+.community-theme-container .checkbox-container.is-enabled::before {
   transform: translate3d(18px, 10px, 0) rotate(38deg);
 }
 
-.community-theme-container .checkbox-container:before {
+.community-theme-container .checkbox-container::before {
   transform: translate3d(7px, -1px, 0);
 }

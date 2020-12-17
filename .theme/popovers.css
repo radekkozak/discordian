@@ -2,16 +2,15 @@
 POPOVERS
 ----------------------------------------------------------------*/
 
-div.popover.hover-popover, .menu, .suggestion-container {
+.menu,
+div.popover.hover-popover,
+.suggestion-container {
   background-color: var(--background-secondary);
-
   border-radius: 4px;
   border: none !important;
   min-width: 15rem;
-
   font-family: var(--font-editor);
   font-size: 15px !important;
-
   -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
   box-shadow: var(--elevation-stroke), var(--elevation-high);
 }

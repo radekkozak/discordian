@@ -74,12 +74,14 @@ body.is-translucent {
   background-color: var(--background-primary);
 }
 
-.workspace-leaf-resize-handle, .is-translucent .workspace-leaf-resize-handle {
+.workspace-leaf-resize-handle,
+.is-translucent .workspace-leaf-resize-handle {
   background-color: var(--background-secondary); /*--background-secondary-alt*/
   margin: 0;
 }
 
-.workspace-leaf-resize-handle:hover, .is-translucent .workspace-leaf-resize-handle:hover {
+.workspace-leaf-resize-handle:hover,
+.is-translucent .workspace-leaf-resize-handle:hover {
   background-color: var(--interactive-accent-light);
 }
 
@@ -100,10 +102,6 @@ Split Mode */
   padding-right: 0;
 }
 
-.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content .view-content {
-  padding-right: 2px;
-}
-
 .workspace-split.mod-vertical > .workspace-leaf {
   padding-right: 0;
 }
@@ -113,7 +111,8 @@ Split Mode */
 }
 
 /* no animation for panels - feels more snappier */
-.workspace-split.mod-left-split, .workspace-split.mod-right-split {
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
   transition: none;
 }
 
@@ -122,34 +121,7 @@ Split Mode */
 }
 
 /*----------------------------------------------------------------
-View Actions */
-
-.view-action {
-  color: var(--text-muted) !important;
-  text-decoration: none !important;
-}
-
-.view-action:hover,
-.view-action.is-active {
-  color: var(--text-normal) !important;
-}
-
-/* icons at top of panes */
-.file-view-actions a {
-  color: var(--text-muted) !important;
-}
-
-.file-view-actions a:hover {
-  color: var(--text-muted) !important;
-}
-
-/*----------------------------------------------------------------
 Side Dock */
-
-.side-dock-panels-container {
-  background-color: var(--background-secondary-alt) !important;
-  color: var(--background-secondary-alt);
-}
 
 .side-dock-ribbon-action {
   color: var(--text-muted) !important;
@@ -168,9 +140,10 @@ Side Dock */
   background-color: var(--background-secondary);
 }
 
-/* side dock text, like file names and backlink context */
 .side-dock-panels-container {
   font-size: 13px !important;
+  background-color: var(--background-secondary-alt) !important;
+  color: var(--background-secondary-alt);
 }
 
 /* side dock titles at top */
@@ -217,12 +190,18 @@ Navigation & File Explorer */
   margin-left: 10px;
   margin-right: 10px;
   font-family: var(--font-editor);
+  font-variant-numeric: tabular-nums !important;
   font-size: 0.875rem;
   line-height: 1.25rem;
   border-radius: 4px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
   display: inline-flex;
+  -webkit-font-feature-settings: "tnum" !important;
+  -moz-font-feature-settings: "tnum" !important;
+  font-feature-settings: "tnum" !important;
+  -webkit-font-variant-numeric: tabular-nums !important;
+  -moz-font-variant-numeric: tabular-nums !important;
 }
 
 .nav-file-title:hover,
@@ -285,14 +264,14 @@ Avoid character-level word breaks */
   color: var(--text-accent) !important;
 }
 
-.nav-file.is-active > .nav-file-title:before {
+.nav-file.is-active > .nav-file-title::before {
   content: "\204D";
   font-size: 19px;
   position: absolute;
   left: -17px;
 }
 
-.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title:before {
+.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title::before {
   content: none;
 }
 
@@ -354,7 +333,7 @@ Search */
   border-bottom: 0;
 }
 
-.search-result-file-match:before {
+.search-result-file-match::before {
   display: none;
 }
 
@@ -469,23 +448,14 @@ Header */
   position: relative;
 }
 
-.view-action {
-  top: 0;
-}
-
-.view-actions {
-  padding: 5px 10px;
-  margin-left: auto;
-}
-
 .workspace-leaf.mod-active .view-header {
   background-color: var(--background-primary);
   border-bottom: 2px solid var(--discord-yellow-light);
 }
 
 /* fix the long-title-obscuring shadows */
-.workspace-leaf.mod-active .view-header-title-container:after,
-.view-header-title-container:after {
+.workspace-leaf.mod-active .view-header-title-container::after,
+.view-header-title-container::after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -494,7 +464,7 @@ Header */
   background: linear-gradient(to right, transparent, var(--background-primary)) !important; /* rgb(51,53,59) */
 }
 
-.view-header-title-container:after {
+.view-header-title-container::after {
   background: linear-gradient(to right, transparent, var(--background-primary)) !important;
 }
 
@@ -503,12 +473,41 @@ Header */
   color: var(--text-normal);
 }
 
-.workspace-leaf-content .view-content, .workspace-leaf-content[data-type='tag'] {
+.workspace-leaf-content .view-content,
+.workspace-leaf-content[data-type='tag'] {
   padding: 10px;
 }
 
 .view-header-icon {
   top: 0 !important;
+}
+
+/*----------------------------------------------------------------
+View Actions */
+
+.view-action {
+  top: 0;
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+}
+
+.view-action:hover,
+.view-action.is-active {
+  color: var(--text-normal) !important;
+}
+
+.view-actions {
+  padding: 5px 10px;
+  margin-left: auto;
+}
+
+/* icons at top of panes */
+.file-view-actions a {
+  color: var(--text-muted) !important;
+}
+
+.file-view-actions a:hover {
+  color: var(--text-muted) !important;
 }
 
 /*.workspace-leaf.mod-active .view-header-icon {

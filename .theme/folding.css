@@ -5,19 +5,19 @@ FOLDING
 /* preview */
 .markdown-preview-view .collapse-indicator,
 .markdown-preview-view .collapse-indicator:hover {
-  color: var(--text-faint)
+  color: var(--text-faint);
 }
 
 /* subtler folding gutter arrows */
-.CodeMirror-foldgutter-folded:after,
-.CodeMirror-foldgutter-open:after {
+.CodeMirror-foldgutter-folded::after,
+.CodeMirror-foldgutter-open::after {
   font-size: 50%;
   width: 22px;
   height: 10px;
   color: var(--text-faint);
 }
 
-.CodeMirror-foldgutter-folded:after {
+.CodeMirror-foldgutter-folded::after {
   content: "\25C0";
   position: absolute;
   right: 0;
@@ -26,7 +26,7 @@ FOLDING
   transform: rotate(180deg);
 }
 
-.CodeMirror-foldgutter-open:after {
+.CodeMirror-foldgutter-open::after {
   content: "\25C0";
   position: absolute;
   right: 0;

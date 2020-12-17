@@ -10,6 +10,7 @@ CALENDAR PLUGIN v1.4.4
   padding: 5px 15px;
   font-family: var(--font-editor);
   font-size: 15px;
+  
   --color-background-day-empty: var(--background-secondary-alt);
   --color-background-day-active: var(--background-tertiary);
   --color-background-day-hover: var(--background-tertiary);

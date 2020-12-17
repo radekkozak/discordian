@@ -8,7 +8,7 @@ THEME BASE
   --font-editor-alt: CatamaranSSm, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, iA Writer Mono S, Jetbrains Mono, Menlo, SFMono-Regular, Consolas, "Roboto Mono", Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
 
-  /* discord colors */
+  /* discord palette */
   --discord-green: hsla(153, 46%, 49%, 1);
   --discord-yellow: hsla(38, 96%, 54%, 1);
   --discord-yellow-alt: hsla(37, 65%, 59%, 1);
@@ -40,6 +40,10 @@ THEME BASE
 
   --background-accent: hsla(217, 8%, 34%, 1);
 
+  --background-code: hsla(204, 6%, 17%, 1);
+  --background-code-preview: hsla(204, 6%, 17%, 1);
+  --background-code-border: hsla(0, 0%, 16%, 1);
+
   --background-modifier-cover: hsla(220, 8%, 23%, 1);
   --background-modifier-hover: hsla(217, 8%, 34%, 0.16);
   --background-modifier-active: hsla(217, 8%, 34%, 0.24);
@@ -50,8 +54,8 @@ THEME BASE
   --background-modifier-form-field-highlighted: hsla(0, 0%, 0%, 0.2);
   --background-modifier-border: var(--background-secondary-alt);
 
-  --text-normal: hsl(200, 2.4%, 75.5%);
-  --text-muted: hsla(218, 5%, 47%, 1);
+  --text-normal: hsla(210, 3%, 87%, 1); /* hsla(213, 4%, 57%, 1); */
+  --text-muted: hsla(213, 4%, 57%, 1); /* hsla(218, 5%, 47%, 1); */
   --text-faint: hsla(0, 0%, 61%, 1);
   --text-link: hsla(207, 61%, 59%, 1);
   --text-accent: hsl(265, 66%, 72%);
@@ -61,12 +65,14 @@ THEME BASE
 
   --text-strong: var(--discord-yellow-alt);
   --text-em: hsla(62, 31%, 61%, 1);
+  --text-tag: hsla(27, 100%, 63%, 0.73);
+  --text-mark: hsla(37, 82%, 74%, 1);
+
+  --markup-code: hsla(34, 89%, 61%, 1);
 
   --text-title: hsla(243, 25%, 65%, 1);
   --text-header: hsla(233, 45%, 71%, 1);
 
-  --markup-code: hsla(34, 89%, 61%, 1);
-  --text-tag: hsla(27, 100%, 63%, 0.73);
   --text-title-h1: hsla(243, 25%, 65%, 1);
   --text-title-h2: hsla(233, 45%, 71%, 1);
   --text-title-h3: hsla(233, 45%, 71%, 1);
@@ -98,12 +104,7 @@ THEME BASE
   --scrollbar-auto-scrollbar-color-track: hsla(223, 7%, 20%, 1);
 
   --cursor: default;
-
   --opacity-translucency: 1;
-
-  --background-code: hsla(204, 6%, 17%, 1);
-  --background-code-preview: hsla(204, 6%, 17%, 1);
-  --background-code-border: hsla(0, 0%, 16%, 1);
 
   --graph-line: hsla(191, 57%, 35%, 1);
   --graph-line-highlight: hsla(191, 57%, 59%, 1);

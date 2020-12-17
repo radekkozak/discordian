@@ -48,6 +48,7 @@ scrollbars in editor & preview */
 
 .mod-root ::-webkit-scrollbar-track {
   background-color: var(--scrollbar-auto-track);
+  border: 4px solid var(--background-primary);
 }
 
 .mod-root ::-webkit-scrollbar-thumb,
@@ -55,10 +56,6 @@ scrollbars in editor & preview */
   border: 4px solid transparent;
   background-clip: padding-box;
   border-radius: 8px;
-}
-
-.mod-root ::-webkit-scrollbar-track {
-  border: 4px solid var(--background-primary);
 }
 
 .mod-root ::-webkit-scrollbar-thumb {
@@ -81,14 +78,14 @@ graph controls scrollbars */
 .mod-root .graph-controls::-webkit-scrollbar-track {
   border-color: var(--background-secondary-alt) !important;
   background-color: var(--background-primary) !important;
-  border: 0px solid var(--scrollbar-thin-track) !important;
-  border-radius: 0px !important;
+  border: 0 solid var(--scrollbar-thin-track) !important;
+  border-radius: 0 !important;
 }
 
 .mod-root .graph-controls::-webkit-scrollbar-thumb {
   background-clip: padding-box !important;
   border: 2px solid transparent !important;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   background-color: var(--scrollbar-thin-thumb);
   min-height: 40px !important;
 }

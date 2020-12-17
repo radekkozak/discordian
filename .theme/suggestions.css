@@ -2,7 +2,8 @@
 SUGGESTIONS
 ----------------------------------------------------------------*/
 
-.suggestion-item, .suggestion-empty {
+.suggestion-item,
+.suggestion-empty {
   font-size: 15px;
 }
 

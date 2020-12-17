@@ -3,37 +3,43 @@ LISTS
 ----------------------------------------------------------------*/
 
 ul {
-  padding-inline-start:2em;
-  list-style:none;
+  padding-inline-start: 2em;
+  list-style: none;
 }
 
-ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
-  list-style:none;
+ul ul,
+ol ul,
+ol ol ul,
+ol ul ul,
+ul ol ul,
+ul ul ul {
+  list-style: none;
 }
 
 ul > li:not(.task-list-item)::before {
-  content:"\2022";
-  color:var(--text-faint);
-  font-weight:400;
-  display:inline-block;
-  width:1em;
-  margin-left:-1em;
+  content: "\2022";
+  color: var(--text-faint);
+  font-weight: 400;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
-ul li p, ol li p {
-  display:inline;
+ul li p,
+ol li p {
+  display: inline;
 }
 
 ol {
-  padding-inline-start:1em;
-  margin-left:1em;
-  list-style:none;
-  counter-reset:counter;
-  position:relative;
+  padding-inline-start: 1em;
+  margin-left: 1em;
+  list-style: none;
+  counter-reset: counter;
+  position: relative;
 }
 
 ol > li {
-  counter-increment:counter;
+  counter-increment: counter;
   margin: 0.3rem 0 0.3rem 0;
 }
 
@@ -48,9 +54,6 @@ ol > li::before {
 
 /*----------------------------------------------------------------
 ul, li & ol colors in editor */
-
-.cm-s-obsidian span.cm-formatting-list {
-}
 
 .markdown-preview-section > ul.contains-task-list {
   margin-block-end: 2rem;

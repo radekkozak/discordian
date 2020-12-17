@@ -5,6 +5,8 @@ Andy's Mode Sliding Panes v3.2.1 (death_au's plugin)
 /* fill title container for better visual separation */
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   background-color: var(--background-secondary);
+  border-right: 0 !important;
+  border-left: 0 !important;
 }
 
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .app-container {
@@ -20,13 +22,10 @@ body.plugin-sliding-panes .app-container::before {
   border-left: 1px solid var(--background-tertiary) !important;
 }*/
 
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  border-right: 0 !important;
-  border-left: 0 !important;
-}
-
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   border-left: 0;
+  box-shadow: none !important;
+  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
 }
 
 body.plugin-sliding-panes .view-header::before,
@@ -34,14 +33,9 @@ body.plugin-sliding-panes .workspace-leaf.mod-active .view-header::before {
   display: none;
 }
 
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  box-shadow: none !important;
-  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
-}
-
 /* remove long-title-obscuring gradient in normal mode */
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::before,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container::before {
   content: none;
 }
 
@@ -83,9 +77,6 @@ body.plugin-sliding-panes:not(.discordian-writer) .workspace-split.mod-right-spl
 
 body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   border-right: none;
-}
-
-body.plugin-sliding-panes:not(.plugin-sliding-panes-rotate-header) .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   border-bottom: 2px solid var(--discord-yellow-light);
 }
 
@@ -99,10 +90,6 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .workspace > .mod-r
 
 body.plugin-sliding-panes .view-header::after {
   content: none;
-}
-
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
-  border-right: 0;
 }
 
 body.plugin-sliding-panes.hider-frameless .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {

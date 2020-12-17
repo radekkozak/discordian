@@ -10,7 +10,6 @@ span:not(.cm-header).cm-hashtag {
   color: var(--discord-blue);
   background: rgba(114, 137, 218, 0.1);
   position: relative;
-
   -webkit-transition: background-color .15s ease-out, color .15s ease-out;
   transition: background-color .15s ease-out, color .15s ease-out;
 }

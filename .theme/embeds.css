@@ -52,7 +52,8 @@ Seamless notes transclusions */
 /*----------------------------------------------------------------
 Audio embed */
 
-audio, .theme-dark audio {
+audio,
+.theme-dark audio {
   filter: unset !important;
 }
 

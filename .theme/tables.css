@@ -21,7 +21,8 @@ Preview Mode */
   margin: 2rem 0;
 }
 
-.markdown-preview-view td, .markdown-preview-view th {
+.markdown-preview-view td,
+.markdown-preview-view th {
   border: none;
 }
 
@@ -43,7 +44,8 @@ Preview Mode */
   border-left: 1px solid var(--background-accent);
 }
 
-.markdown-preview-view tr > td:first-of-type, tr > th:first-of-type {
+.markdown-preview-view tr > td:first-of-type,
+tr > th:first-of-type {
   border-left: 0;
 }
 

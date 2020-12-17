@@ -18,27 +18,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+      - name: Configure
+        id: configure
+        run: |
+          npm install
+      - name: Pretest
+        id: test
+        run: |
+          npm run lint --if-present
       - name: Build
         id: build
         run: |
-          npm install
           npm run build --if-present
           mkdir ${{ env.THEME_NAME }}
           cp obsidian.css ${{ env.THEME_NAME }}
           zip -r ${{ env.THEME_NAME }}.zip ${{ env.THEME_NAME }}
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          VERSION: ${{ github.ref }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
       - name: Commit obsidian.css
         run: |
           git config --local user.email "$(git log --format='%ae' HEAD^!)"
@@ -50,6 +46,17 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           branch: master
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          VERSION: ${{ github.ref }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
       - name: Upload zip file
         id: upload-zip
         uses: actions/upload-release-asset@v1
