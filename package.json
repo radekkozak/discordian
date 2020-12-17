@@ -7,8 +7,8 @@
     "dest": "./"
   },
   "scripts": {
-    "dev": "gulp dev",
-    "build": "gulp",
+    "dev": "NODE_ENV=dev gulp dev",
+    "build": "gulp build",
     "lint": "gulp lint"
   },
   "repository": {

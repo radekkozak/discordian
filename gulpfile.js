@@ -14,16 +14,19 @@ function lint () {
 }
 
 function outputDir () {
-  try {
-    env({
-      file: 'config.json'
-    })
-  } catch (error) {
-    console.log('Using default output dir for merged obsidian.css' +
-      '\nIf you want to override this value for local development ' +
-      'please create config.json\nand set your OUTPUT_DIR variable accordingly')
+  if (process.env.NODE_ENV === 'dev') {
+    try {
+      env({
+        file: 'config.json'
+      })
+    } catch (error) {
+      console.log('WARNING: Before development please setup config.json per instructions ' +
+        '\nand use OUTPUT_DIR variable with local folder path you want to create obsidian.css in.')
+    }
+    return process.env.OUTPUT_DIR || false
+  } else {
+    return './'
   }
-  return process.env.OUTPUT_DIR || './'
 }
 
 function obsidian () {
