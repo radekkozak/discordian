@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp"
+    "build": "gulp",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,11 @@
   },
   "keywords": [
     "obsidian",
+    "obsidian-md",
+    "obsidian-theme",
     "css",
-    "theme"
+    "theme",
+    "discord"
   ],
   "author": "@radekkozak",
   "license": "MIT",
@@ -25,9 +29,25 @@
     "url": "https://github.com/radekkozak/discordian/issues"
   },
   "homepage": "https://github.com/radekkozak/discordian#readme",
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "no-descending-specificity": null,
+      "number-leading-zero": null,
+      "no-eol-whitespace": null,
+      "comment-whitespace-inside": null,
+      "comment-empty-line-before": null,
+      "block-no-empty": null,
+      "value-keyword-case": null,
+      "custom-property-empty-line-before": null
+    }
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-env": "^0.4.0"
+    "gulp-env": "^0.4.0",
+    "gulp-stylelint": "^13.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }

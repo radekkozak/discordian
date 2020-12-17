@@ -1,6 +1,17 @@
 const gulp = require('gulp')
 const concat = require('gulp-concat')
 const env = require('gulp-env')
+const stylelint = require('gulp-stylelint')
+
+function lint () {
+  return gulp.src('.theme/**/*.css')
+    .pipe(stylelint({
+      failAfterError: true,
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+    }))
+}
 
 function outputDir () {
   try {
@@ -59,5 +70,6 @@ exports.outputDir = outputDir
 exports.obsidian = obsidian
 exports.build = obsidian
 exports.dev = watch
+exports.lint = lint
 
 exports.default = obsidian
