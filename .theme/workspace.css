@@ -213,28 +213,28 @@ Navigation & File Explorer */
 }
 
 .nav-file-title {
-  padding: 4px 10px 4px 20px;
+  padding: 6px 10px 6px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: var(--font-editor);
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 4px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
   display: inline-flex;
 }
 
-.nav-file-title:hover {
+.nav-file-title:hover,
+.nav-folder-title:hover {
   color: var(--text-normal) !important;
 }
 
 .nav-folder-title {
-  font-size: 15px;
-  color: var(--text-normal) !important;
+  font-size: 1rem;
+  color: var(--interactive-active) !important;
   background-color: var(--background-secondary);
   padding: 2px 10px 2px 22px;
-}
-
-.nav-folder-title:hover {
-  color: var(--text-normal) !important;
 }
 
 .nav-file.is-active .nav-file-tag {
@@ -253,17 +253,20 @@ Avoid character-level word breaks */
   word-break: keep-all;
 }
 
-.nav-file-title-content {
-  width: 100%;
-}
-
 .nav-file-title-content,
 .nav-folder-title-content {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
+}
+
+.nav-folder-title-content {
   padding: 1px 4px;
+}
+
+.nav-file-title-content {
+  width: 100%;
 }
 
 .nav-files-container {
@@ -277,25 +280,35 @@ Avoid character-level word breaks */
   font-size: 14px;
   font-weight: 600;
   top: 0;
+  letter-spacing: 1px;
   cursor: default;
-  color: #af88e7 !important;
+  color: var(--text-accent) !important;
 }
 
-.nav-folder-children .nav-folder {
-  color: #ff0000 !important;
+.nav-file.is-active > .nav-file-title:before {
+  content: "\204D";
+  font-size: 19px;
+  position: absolute;
+  left: -17px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title:before {
+  content: none;
+}
+
+.nav-file {
+  margin-right: 10px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title {
+  padding: 6px 10px 6px 10px;
+  margin-left: 0 !important;
+  margin-right: 10px;
 }
 
 .nav-file.is-active > .nav-file-title,
 .nav-file.is-active > .nav-file-title:hover {
   background-color: var(--background-primary);
-  color: var(--text-accent);
-  border-left: 2px solid var(--text-accent);
-  /*transition: all 0.2s ease;*/
-}
-
-.nav-file.is-active > .nav-file-title {
-  padding-left: 18px;
-  margin-left: 1px;
   color: var(--text-normal) !important;
 }
 
