@@ -5,6 +5,7 @@
 .DS_Store
 
 .obsidian
+obsidian.css
 config.json
 
 # npm
