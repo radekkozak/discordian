@@ -52,6 +52,7 @@ a:hover,
 
 .external-link {
   background-image: unset;
+  padding-right: 0;
 }
 
 .markdown-preview-view .external-link {
