@@ -29,6 +29,9 @@ THEME BASE
   --elevation-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
 
   --readable-line-length: 45rem;
+  --font-size-notes: 0.875rem;
+  --font-size-file-explorer: 0.875rem;
+  --letter-spacing-notes: -0.2px;
 }
 
 .theme-dark {
