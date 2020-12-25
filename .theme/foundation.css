@@ -274,21 +274,22 @@ em {
 Highlights */
 
 .markdown-preview-view mark {
-  color: #111 !important;
-  background-color: rgba(243, 202, 135, 0.9);
-  padding: 1px 2px 0 2px;
-  font-weight: 400;
+  background-color: transparent !important;
+  -webkit-box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  padding-bottom: 4px;
 }
 
 .cm-highlight {
-  color: var(--background-primary) !important;
-  background-color: var(--text-mark) !important;
-  padding: 1px 2px;
+  background-color: transparent !important;
+  -webkit-box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  padding-bottom: 4px;
 }
 
 mark > strong {
-  color: #101111 !important;
-  font-weight: 600;
+  color: var(--discord-yellow-alt) !important;
+  font-weight: 500;
   padding: 0 2px;
 }
 

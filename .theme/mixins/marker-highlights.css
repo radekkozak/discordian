@@ -3,31 +3,32 @@ CUSTOM TEXT HIGHLIGHTS
 ----------------------------------------------------------------*/
 
 .theme-dark {
-  --text-mark-green: hsla(111, 25%, 70%, 1);
-  --text-mark-blue: hsla(210, 100%, 80%, 0.8);
-  --text-mark-red: hsla(345, 72%, 83%, 0.95);
-  --text-mark-grey: hsla(0, 0%, 74%, 0.9);
+  --text-mark-green: hsla(110, 25%, 50%,1);
+  --text-mark-blue: hsla(195, 40%, 50%, 1);
+  --text-mark-red: hsla(345, 35%, 50%, 1);
+  --text-mark-grey: hsla(0, 0%, 50%, 1);
 }
 
 .markdown-preview-view mark.red {
-  background-color: var(--text-mark-red) !important;
+  -webkit-box-shadow: inset 0 -2px var(--text-mark-red);
+  box-shadow: inset 0 -2px var(--text-mark-red);
+  padding-bottom: 4px;
 }
 
 .markdown-preview-view mark.blue {
-  background-color: var(--text-mark-blue) !important;
+  -webkit-box-shadow: inset 0 -2px var(--text-mark-blue);
+  box-shadow: inset 0 -2px var(--text-mark-blue);
+  padding-bottom: 4px;
 }
 
 .markdown-preview-view mark.green {
-  background-color: var(--text-mark-green) !important;
+  -webkit-box-shadow: inset 0 -2px var(--text-mark-green);
+  box-shadow: inset 0 -2px var(--text-mark-green);
+  padding-bottom: 4px;
 }
 
 .markdown-preview-view mark.grey {
-  background-color: var(--text-mark-grey) !important;
-}
-
-.theme-dark mark.red,
-.theme-dark mark.blue,
-.theme-dark mark.green,
-.theme-dark mark.grey {
-  color: #111 !important;
+  -webkit-box-shadow: inset 0 -2px var(--text-mark-grey);
+  box-shadow: inset 0 -2px var(--text-mark-grey);
+  padding-bottom: 4px;
 }
