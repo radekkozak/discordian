@@ -49,6 +49,13 @@ HIDER PLUGIN v1.0.5
 }*/
 
 /*----------------------------------------------------------------
+HIDE STATUS BAR */
+
+/*body.hider-status .status-bar {
+  display: none !important;
+}*/
+
+/*----------------------------------------------------------------
 Force-hide titlebar regardless of settings
 This is required to make settings modal present like in Discord */
 
