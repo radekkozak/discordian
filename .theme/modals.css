@@ -13,7 +13,7 @@ Settings Modal */
 .modal:not(.mod-settings) {
   -webkit-box-shadow: var(--elevation-stroke), var(--elevation-high);
   box-shadow: var(--elevation-stroke), var(--elevation-high);
-  padding: 0; /* default: 30px 50px */
+  padding: 0;
   border: 0 !important;
 }
 
@@ -25,7 +25,7 @@ Settings Modal */
 .modal:not(.mod-settings) .modal-title {
   font-size: 22px;
   line-height: 36px;
-  padding: 1.25rem 2rem;
+  padding: 1rem 2rem;
   background-color: var(--background-secondary-alt);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -160,6 +160,10 @@ Settings Modal */
   border-top: thin solid var(--background-modifier-accent);
 }
 
+.setting-item-control button {
+  padding: 5px 16px;
+}
+
 .setting-hotkey {
   min-height: unset;
 }
@@ -224,11 +228,8 @@ Document Search */
 Modal Confirmations */
 
 .modal-button-container {
+  margin-top: 0;
   margin-bottom: 1.5rem;
-}
-
-.modal-button-container button {
-  margin: unset;
 }
 
 /*----------------------------------------------------------------
