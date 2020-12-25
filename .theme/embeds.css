@@ -70,3 +70,10 @@ audio::-webkit-media-controls-enclosure {
   border-radius: 6px;
   height: 20px;
 }
+
+
+.markdown-preview-view img:not([width]),
+.markdown-preview-view audio,
+.markdown-preview-view video {
+  margin: 0 auto;
+}
