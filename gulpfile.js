@@ -55,7 +55,6 @@ function obsidian () {
 
     '.theme/mixins/bullet-point-relationship.css',
     '.theme/mixins/syntax-highlighter-colors.css',
-    '.theme/mixins/marker-highlights.css',
 
     '.theme/plugins/hider-plugin.css',
     '.theme/plugins/calendar-plugin.css',
