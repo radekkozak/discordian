@@ -16,6 +16,7 @@ THEME BASE
   --discord-orange: hsla(20, 84%, 52%, 1);
   --discord-orange-light: hsla(24, 90%, 61%, 1);
   --discord-red: hsla(0, 85%, 61%, 1);
+  --discord-red-hover: hsla(0, 66%, 55%, 1);
   --discord-blue: hsla(227, 58%, 65%, 1);
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
   --discord-grey: hsla(214, 10%, 50%, 1);
@@ -53,6 +54,7 @@ THEME BASE
   --background-modifier-selected: hsla(217, 8%, 34%, 0.32);
   --background-modifier-accent: hsla(0, 0%, 100%, 0.06);
   --background-modifier-error: var(--discord-red);
+  --background-modifier-error-hover: var(--discord-red-hover);
   --background-modifier-form-field: hsla(0, 0%, 0%, 0.2);
   --background-modifier-form-field-highlighted: hsla(0, 0%, 0%, 0.2);
   --background-modifier-border: var(--background-secondary-alt);

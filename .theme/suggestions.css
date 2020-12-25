@@ -8,7 +8,7 @@ SUGGESTIONS
 }
 
 .suggestion .suggestion-item.is-selected {
-  background-color: var(--background-modifier-form-field-highlighted);
+  background-color: var(--background-primary);
   color: var(--text-on-accent);
 }
 
