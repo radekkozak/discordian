@@ -173,11 +173,9 @@ BLOCKQUOTES */
 
 blockquote {
   color: var(--interactive-accent) !important;
-  /*font-style: italic;*/
   border: none;
   border-left: 3px solid var(--blockquote-border) !important;
   border-radius: 4px !important;
-  /*margin-left: 4rem;*/
   margin: 1.5rem 1.5rem 1.5rem 4rem;
   background-color: var(--blockquote-bg);
 }
