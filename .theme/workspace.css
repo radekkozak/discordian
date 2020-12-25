@@ -217,10 +217,6 @@ Navigation & File Explorer */
   line-height: 1.25;
 }
 
-.nav-file.is-active .nav-file-tag {
-  color: var(--text-normal);
-}
-
 /*----------------------------------------------------------------
 Condense line spacing on file explorer title list.
 Avoid character-level word breaks */
@@ -265,17 +261,6 @@ Avoid character-level word breaks */
   color: var(--text-accent) !important;
 }
 
-.nav-file.is-active > .nav-file-title::before {
-  content: "\204D";
-  font-size: 19px;
-  position: absolute;
-  left: -17px;
-}
-
-.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title::before {
-  content: none;
-}
-
 .nav-file {
   margin-right: 10px;
 }
@@ -286,8 +271,33 @@ Avoid character-level word breaks */
   margin-right: 10px;
 }
 
-.nav-file.is-active > .nav-file-title,
-.nav-file.is-active > .nav-file-title:hover {
+/*----------------------------------------------------------------
+Files & folders: active & hover */
+
+.nav-file.is-active .nav-file-tag {
+  color: var(--text-normal);
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-primary);
+}
+
+.nav-file-title.is-active::before {
+  content: "\204D";
+  font-size: 19px;
+  position: absolute;
+  left: -17px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title.is-active::before {
+  content: none;
+}
+
+.nav-file-title.is-active,
+.nav-file-title.is-active:hover {
   background-color: var(--background-primary);
   color: var(--text-normal) !important;
 }
@@ -296,7 +306,7 @@ body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-primary);
   border-radius: 2px;
-  /*transition: all 0.2s ease;*/
+  transition: all 0.2s ease;
 }
 
 .nav-folder-collapse-indicator {
