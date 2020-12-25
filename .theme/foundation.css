@@ -38,11 +38,19 @@ body,
   font-family: var(--font-monospace);
   font-weight: normal;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 
 .CodeMirror-sizer {
   border-right: 0;
+}
+
+.CodeMirror-scroll {
+  margin-right: 40px;
+}
+
+.cm-s-obsidian .CodeMirror-code {
+  padding-right: 0;
 }
 
 .markdown-source-view.is-readable-line-width .CodeMirror {
@@ -207,17 +215,13 @@ Normal text outside of headings and code */
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.4375rem !important;
+  font-size: var(--font-size-notes);
+  letter-spacing: var(--letter-spacing-notes);
+  line-height: 1.65 !important;
   padding-left: 6% !important;
   padding-right: 4% !important;
-  padding-top: 10px;
+  padding-top: 20px;
   overflow-x: hidden;
-}
-
-.mod-single-child .markdown-preview-view {
-  padding-left: 10% !important;
-  padding-right: 10% !important;
 }
 
 /* editor */
@@ -226,32 +230,30 @@ Normal text outside of headings and code */
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.4375rem !important;
-  padding-left: 6% !important;
-  padding-right: 4% !important;
+  font-size: var(--font-size-notes);
+  letter-spacing: var(--letter-spacing-notes);
+  line-height: 1.65 !important;
+
   /* Editor font: make it thicker so it is like in Preview */
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
-.frontmatter-container {
-  margin: 0;
-}
-
 .markdown-source-view {
-  padding-left: 0;
+  padding-left: 6% !important;
+  padding-right: 4% !important;
 }
 
 /*----------------------------------------------------------------
 Bold */
 
 strong {
-  color: var(--discord-yellow);
+  color: var(--discord-yellow-alt);
   font-weight: 500;
+
 }
 
 .cm-strong {
-  color: var(--discord-yellow);
+  color: var(--discord-yellow-alt);
   font-weight: 500;
 }
 

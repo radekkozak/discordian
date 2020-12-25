@@ -11,7 +11,7 @@ Preview */
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-  font-weight: 500;
+  font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
@@ -21,6 +21,8 @@ Preview */
   font-size: 2rem;
   color: var(--text-title-h1);
   margin-block-start: 0;
+  margin-block-end: 0;
+  margin-top: 0;
 }
 
 .markdown-preview-view h2 {
@@ -57,7 +59,7 @@ Editor */
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
-  font-weight: 500;
+  font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
