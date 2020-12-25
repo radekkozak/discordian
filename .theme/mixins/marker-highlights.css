@@ -3,7 +3,7 @@ CUSTOM TEXT HIGHLIGHTS
 ----------------------------------------------------------------*/
 
 .theme-dark {
-  --text-mark-green: hsla(110, 25%, 50%,1);
+  --text-mark-green: hsla(110, 25%, 50%, 1);
   --text-mark-blue: hsla(195, 40%, 50%, 1);
   --text-mark-red: hsla(345, 35%, 50%, 1);
   --text-mark-grey: hsla(0, 0%, 50%, 1);
