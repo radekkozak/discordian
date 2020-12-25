@@ -4,16 +4,17 @@ THEME BASE
 
 :root {
   --default-font: Catamaran, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-editor: CatamaranSS, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-editor: Catamaran SSm, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-monospace: Source Code Pro, iA Writer Mono S, Jetbrains Mono, Menlo, SFMono-Regular, Consolas, "Roboto Mono", Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
 
   /* discord palette */
   --discord-green: hsla(153, 46%, 49%, 1);
   --discord-yellow: hsla(38, 96%, 54%, 1);
-  --discord-yellow-alt: hsla(37, 65%, 59%, 1);
+  --discord-yellow-alt: hsla(37, 65%, 63%, 1);
   --discord-yellow-light: hsla(50, 42%, 48%, 1);
   --discord-yellow-bg: hsla(38, 96%, 54%, 0.1);
   --discord-orange: hsla(20, 84%, 52%, 1);
+  --discord-orange-light: hsla(24, 90%, 61%, 1);
   --discord-red: hsla(0, 85%, 61%, 1);
   --discord-blue: hsla(227, 58%, 65%, 1);
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
@@ -28,6 +29,9 @@ THEME BASE
   --elevation-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);
 
   --readable-line-length: 45rem;
+  --font-size-notes: 0.875rem;
+  --font-size-file-explorer: 0.875rem;
+  --letter-spacing-notes: -0.2px;
 }
 
 .theme-dark {
@@ -53,11 +57,11 @@ THEME BASE
   --background-modifier-form-field-highlighted: hsla(0, 0%, 0%, 0.2);
   --background-modifier-border: var(--background-secondary-alt);
 
-  --text-normal: hsla(210, 3%, 87%, 1); /* hsla(213, 4%, 57%, 1); */
-  --text-muted: hsla(213, 4%, 57%, 1); /* hsla(218, 5%, 47%, 1); */
+  --text-normal: hsla(213, 3%, 82%, 1);
+  --text-muted: hsla(213, 4%, 57%, 1);
   --text-faint: hsla(0, 0%, 61%, 1);
-  --text-link: hsla(207, 61%, 59%, 1);
-  --text-accent: hsl(265, 66%, 72%);
+  --text-link: hsla(197, 100%, 48%, 1);
+  --text-accent: hsla(265, 66%, 72%, 1);
   --text-on-accent: hsla(210, 3%, 87%, 1);
   --text-selection: hsla(212, 34%, 54%, 0.5);
   --text-highlight-bg: hsla(212, 34%, 54%, 1);
@@ -69,14 +73,13 @@ THEME BASE
 
   --markup-code: hsla(34, 89%, 61%, 1);
 
-  --text-title: hsla(243, 25%, 65%, 1);
-  --text-header: hsla(233, 45%, 71%, 1);
+  --text-header: hsla(233, 45%, 69%, 1);
 
-  --text-title-h1: hsla(243, 25%, 65%, 1);
-  --text-title-h2: hsla(233, 45%, 71%, 1);
-  --text-title-h3: hsla(233, 45%, 71%, 1);
-  --text-title-h4: hsla(233, 45%, 71%, 1);
-  --text-title-h5: hsla(233, 45%, 71%, 1);
+  --text-title-h1: hsla(243, 35%, 65%, 1);
+  --text-title-h2: var(--text-header);
+  --text-title-h3: var(--text-header);
+  --text-title-h4: var(--text-header);
+  --text-title-h5: var(--text-header);
   --text-title-h6: hsla(192, 13%, 53%, 1);
 
   --text-a: hsla(322, 65%, 70%, 1);
@@ -95,6 +98,7 @@ THEME BASE
   --blockquote-border: hsla(286, 22%, 66%, 1);
   --blockquote-bg: hsla(240, 11%, 2%, 0.07);
 
+  --scrollbar-bg: transparent;
   --scrollbar-thin-thumb: hsla(216, 7%, 14%, 1);
   --scrollbar-thin-track: transparent;
   --scrollbar-auto-thumb: hsla(216, 7%, 14%, 1);
@@ -204,11 +208,19 @@ body,
   font-family: var(--font-monospace);
   font-weight: normal;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 
 .CodeMirror-sizer {
   border-right: 0;
+}
+
+.CodeMirror-scroll {
+  margin-right: 40px;
+}
+
+.cm-s-obsidian .CodeMirror-code {
+  padding-right: 0;
 }
 
 .markdown-source-view.is-readable-line-width .CodeMirror {
@@ -331,11 +343,9 @@ BLOCKQUOTES */
 
 blockquote {
   color: var(--interactive-accent) !important;
-  /*font-style: italic;*/
   border: none;
   border-left: 3px solid var(--blockquote-border) !important;
   border-radius: 4px !important;
-  /*margin-left: 4rem;*/
   margin: 1.5rem 1.5rem 1.5rem 4rem;
   background-color: var(--blockquote-bg);
 }
@@ -373,17 +383,13 @@ Normal text outside of headings and code */
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.4375rem !important;
+  font-size: var(--font-size-notes);
+  letter-spacing: var(--letter-spacing-notes);
+  line-height: 1.65 !important;
   padding-left: 6% !important;
   padding-right: 4% !important;
-  padding-top: 10px;
+  padding-top: 20px;
   overflow-x: hidden;
-}
-
-.mod-single-child .markdown-preview-view {
-  padding-left: 10% !important;
-  padding-right: 10% !important;
 }
 
 /* editor */
@@ -392,32 +398,29 @@ Normal text outside of headings and code */
   font-family: var(--font-editor);
   color: var(--text-normal);
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.4375rem !important;
-  padding-left: 6% !important;
-  padding-right: 4% !important;
+  font-size: var(--font-size-notes);
+  letter-spacing: var(--letter-spacing-notes);
+  line-height: 1.65 !important;
+
   /* Editor font: make it thicker so it is like in Preview */
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
-.frontmatter-container {
-  margin: 0;
-}
-
 .markdown-source-view {
-  padding-left: 0;
+  padding-left: 6% !important;
+  padding-right: 4% !important;
 }
 
 /*----------------------------------------------------------------
 Bold */
 
 strong {
-  color: var(--discord-yellow);
+  color: var(--discord-yellow-alt);
   font-weight: 500;
 }
 
 .cm-strong {
-  color: var(--discord-yellow);
+  color: var(--discord-yellow-alt);
   font-weight: 500;
 }
 
@@ -438,21 +441,22 @@ em {
 Highlights */
 
 .markdown-preview-view mark {
-  color: #111 !important;
-  background-color: rgba(243, 202, 135, 0.9);
-  padding: 1px 2px 0 2px;
-  font-weight: 400;
+  background-color: transparent !important;
+  -webkit-box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  padding-bottom: 4px;
 }
 
 .cm-highlight {
-  color: var(--background-primary) !important;
-  background-color: var(--text-mark) !important;
-  padding: 1px 2px;
+  background-color: transparent !important;
+  -webkit-box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  box-shadow: inset 0 -2px var(--discord-yellow-alt);
+  padding-bottom: 4px;
 }
 
 mark > strong {
-  color: #101111 !important;
-  font-weight: 600;
+  color: var(--discord-yellow-alt) !important;
+  font-weight: 500;
   padding: 0 2px;
 }
 
@@ -516,7 +520,7 @@ Preview */
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-  font-weight: 500;
+  font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
@@ -526,6 +530,8 @@ Preview */
   font-size: 2rem;
   color: var(--text-title-h1);
   margin-block-start: 0;
+  margin-block-end: 0;
+  margin-top: 0;
 }
 
 .markdown-preview-view h2 {
@@ -562,7 +568,7 @@ Editor */
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
-  font-weight: 500;
+  font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
   line-height: 1.5 !important;
@@ -972,7 +978,7 @@ Navigation & File Explorer */
   margin-right: 10px;
   font-family: var(--font-editor);
   font-variant-numeric: tabular-nums !important;
-  font-size: 0.875rem;
+  font-size: var(--font-size-file-explorer);
   line-height: 1.25rem;
   border-radius: 4px;
   color: var(--text-muted) !important;
@@ -991,14 +997,11 @@ Navigation & File Explorer */
 }
 
 .nav-folder-title {
-  font-size: 1rem;
+  font-size: calc(var(--font-size-file-explorer) + 0.125rem);
   color: var(--interactive-active) !important;
   background-color: var(--background-secondary);
   padding: 2px 10px 2px 22px;
-}
-
-.nav-file.is-active .nav-file-tag {
-  color: var(--text-normal);
+  line-height: 1.25;
 }
 
 /*----------------------------------------------------------------
@@ -1045,17 +1048,6 @@ Avoid character-level word breaks */
   color: var(--text-accent) !important;
 }
 
-.nav-file.is-active > .nav-file-title::before {
-  content: "\204D";
-  font-size: 19px;
-  position: absolute;
-  left: -17px;
-}
-
-.nav-folder-children .nav-folder-children > .nav-file.is-active > .nav-file-title::before {
-  content: none;
-}
-
 .nav-file {
   margin-right: 10px;
 }
@@ -1066,8 +1058,33 @@ Avoid character-level word breaks */
   margin-right: 10px;
 }
 
-.nav-file.is-active > .nav-file-title,
-.nav-file.is-active > .nav-file-title:hover {
+/*----------------------------------------------------------------
+Files & folders: active & hover */
+
+.nav-file.is-active .nav-file-tag {
+  color: var(--text-normal);
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-primary);
+}
+
+.nav-file-title.is-active::before {
+  content: "\204D";
+  font-size: 19px;
+  position: absolute;
+  left: -17px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title.is-active::before {
+  content: none;
+}
+
+.nav-file-title.is-active,
+.nav-file-title.is-active:hover {
   background-color: var(--background-primary);
   color: var(--text-normal) !important;
 }
@@ -1076,7 +1093,7 @@ body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-primary);
   border-radius: 2px;
-  /*transition: all 0.2s ease;*/
+  transition: all 0.2s ease;
 }
 
 .nav-folder-collapse-indicator {
@@ -1086,7 +1103,7 @@ body:not(.is-grabbing) .nav-folder-title:hover {
 .nav-file-tag {
   background-color: var(--background-secondary-alt);
   top: -1px;
-  margin-left: -8px;
+  margin-left: 0;
 }
 
 /*----------------------------------------------------------------
@@ -1943,6 +1960,7 @@ frontmatter */
 .frontmatter-container {
   background-color: var(--background-secondary-alt);
   border: 0;
+  margin: 0 0 1rem 0;
 }
 
 .frontmatter-container .frontmatter-section-label {
@@ -2565,6 +2583,12 @@ audio::-webkit-media-controls-enclosure {
   height: 20px;
 }
 
+.markdown-preview-view img:not([width]),
+.markdown-preview-view audio,
+.markdown-preview-view video {
+  margin: 0 auto;
+}
+
 /*----------------------------------------------------------------
 BULLET POINT RELATIONSHIP LINES
 ----------------------------------------------------------------*/
@@ -2665,40 +2689,6 @@ SYNTAX HIGHLIGHTER COLORS
 }
 
 /*----------------------------------------------------------------
-CUSTOM TEXT HIGHLIGHTS
-----------------------------------------------------------------*/
-
-.theme-dark {
-  --text-mark-green: hsla(111, 25%, 70%, 1);
-  --text-mark-blue: hsla(210, 100%, 80%, 0.8);
-  --text-mark-red: hsla(345, 72%, 83%, 0.95);
-  --text-mark-grey: hsla(0, 0%, 74%, 0.9);
-}
-
-.markdown-preview-view mark.red {
-  background-color: var(--text-mark-red) !important;
-}
-
-.markdown-preview-view mark.blue {
-  background-color: var(--text-mark-blue) !important;
-}
-
-.markdown-preview-view mark.green {
-  background-color: var(--text-mark-green) !important;
-}
-
-.markdown-preview-view mark.grey {
-  background-color: var(--text-mark-grey) !important;
-}
-
-.theme-dark mark.red,
-.theme-dark mark.blue,
-.theme-dark mark.green,
-.theme-dark mark.grey {
-  color: #111 !important;
-}
-
-/*----------------------------------------------------------------
 HIDER PLUGIN v1.0.5
 ----------------------------------------------------------------*/
 
@@ -2746,6 +2736,13 @@ HIDER PLUGIN v1.0.5
 /* fullscreen mode on macOS */
 /*body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 0;
+}*/
+
+/*----------------------------------------------------------------
+HIDE STATUS BAR */
+
+/*body.hider-status .status-bar {
+  display: none !important;
 }*/
 
 /*----------------------------------------------------------------
