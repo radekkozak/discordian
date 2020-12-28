@@ -21,7 +21,7 @@ function outputDir () {
       })
     } catch (error) {
       console.log('WARNING: Before development please setup config.json per instructions ' +
-        '\nand use OUTPUT_DIR variable with local folder path you want to create obsidian.css in.')
+        '\nand use OUTPUT_DIR variable with local folder path where you want to create obsidian.css')
     }
     return process.env.OUTPUT_DIR || false
   } else {
