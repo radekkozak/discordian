@@ -43,6 +43,10 @@ HIDER PLUGIN v1.0.5
   border-bottom: none;
 }
 
+.hider-frameless .app-container {
+  border-top: 0;
+}
+
 /* fullscreen mode on macOS */
 /*body.is-fullscreen .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 0;
@@ -57,7 +61,7 @@ HIDE STATUS BAR */
 
 /*----------------------------------------------------------------
 Force-hide titlebar regardless of settings
-This is required to make settings modal present like in Discord */
+This is required to make settings modal like in Discord */
 
 body:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
   top: 0 !important;
