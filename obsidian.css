@@ -89,7 +89,7 @@ THEME BASE
 
   --interactive-accent: var(--discord-green);
   --interactive-accent-hover: hsla(152, 60%, 43%, 1);
-  --interactive-accent-light: hsla(65, 92%, 76%, 1);
+  --interactive-accent-light: var(--discord-yellow-light);
 
   --interactive-accent-alt: hsla(220, 7%, 17%, 1);
   --interactive-hover: hsla(210, 3%, 87%, 1);
@@ -326,7 +326,7 @@ p.mod-warning {
 /* NO FILE OPEN page */
 
 .empty-state-title {
-  color: var(--text-title-h1) !important;
+  color: var(--discord-yellow-alt) !important;
 }
 
 .empty-state-action {
@@ -691,7 +691,7 @@ SUGGESTIONS
 }
 
 .suggestion .suggestion-item.is-selected {
-  background-color: var(--background-primary);
+  background-color: var(--background-modifier-form-field-highlighted);
   color: var(--text-on-accent);
 }
 
@@ -2785,7 +2785,7 @@ body.discordian-theme.is-fullscreen .modal-container {
 }
 
 /*----------------------------------------------------------------
-CALENDAR PLUGIN v1.4.4
+CALENDAR PLUGIN v1.4.11
 ----------------------------------------------------------------*/
 
 .workspace-leaf-content[data-type='calendar'] .view-content {
@@ -2808,7 +2808,7 @@ CALENDAR PLUGIN v1.4.4
   --color-arrow: var(--text-faint);
   --color-arrow-hover: var(--text-normal);
   --interactive-hover: var(--background-secondary-alt);
-  --interactive-accent: var(--discord-blue);
+  --interactive-accent: var(--discord-blue-hover);
   --interactive-accent-hover: var(--discord-blue-hover);
 }
 
