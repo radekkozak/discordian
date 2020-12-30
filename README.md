@@ -10,16 +10,18 @@ back in Obsidian** is the keyword here. We, Obsidianites, PKM & Zettelkasten lov
 almost logical to have the same visual experience extended to our beloved app ([see screenshots](#screenshots))   
 
 Theme, apart from deriving its visuals from Discord app, strives to serve as solid dark theme. An honest default
-. This means it offers an unobtrusive, minimal and easy on the eyes experience with a hint of subtle changes in
-Discord's color palette like muting and pastelizing some colors. Theme uses free fonts that closely resemble those
-in Discord app. **For best experience possible**, please [download the fonts](https://github.com/radekkozak
-/discordian/raw/master/media/fonts.zip) and **install them in your system before using the theme.**
+. This means it offers an unobtrusive, minimal and easy-on-the-eyes experience with a hint of subtle changes in
+ Discord's color palette. 
 
 Discordian, of course, fully supports [popular Obsidian's community plugins](#plugin-support) but also has its own
 [Discordian Plugin](https://github.com/radekkozak/discordian-plugin) going on which is very much recommended. If you
 like to have more fine-grained control over some aspects of the theme go ahead and download it. You will be so much
 happier with the **additions of Writer Mode, Paragraph Focus, Flat Andy's Mode**, controllable line length, fonts and
 other things.
+
+**IMPORTANT**: For best experience possible, **please** [download the fonts](https://github.com/radekkozak/discordian/raw/master/media/fonts.zip) 
+**and install them in your system before using the theme.** Provided fonts closely resemble those in Discord app and
+are sort of required here. 
 
 ## Disclaimer
 
@@ -75,8 +77,6 @@ love it that way!
 ## Screenshots
 
 ![](media/screenshots/discordian-graph-view.png)
-<p align="center">based on [Nick Milo](https://github.com/nickmilo) 's [LYT Kit](https://www.linkingyourthinking.com
-)</p>
 
 ### Discord experience 
 
