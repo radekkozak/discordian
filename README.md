@@ -75,10 +75,8 @@ love it that way!
 ## Screenshots
 
 ![](media/screenshots/discordian-graph-view.png)
-
-<p align="center">based on [Nick Milo](https://github.com/nickmilo) 's [LYT Kit](https://www
-.linkingyourthinking
-.com)</p>
+<p align="center">based on [Nick Milo](https://github.com/nickmilo) 's [LYT Kit](https://www.linkingyourthinking.com
+)</p>
 
 ### Discord experience 
 
