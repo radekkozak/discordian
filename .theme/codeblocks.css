@@ -119,6 +119,10 @@ frontmatter */
   margin: 0 0 1rem 0;
 }
 
+.frontmatter-container .frontmatter-collapse-indicator {
+  margin-top: 4px;
+}
+
 .frontmatter-container .frontmatter-section-label {
   text-transform: lowercase;
   display: inline-flex;
@@ -136,7 +140,4 @@ frontmatter */
 
 .frontmatter-container .frontmatter-alias {
   padding: 1px 4px !important;
-}
-
-pre.frontmatter[class*="language-"] .theme-dark .token.atrule {
 }
