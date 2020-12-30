@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------
-CALENDAR PLUGIN v1.4.4
+CALENDAR PLUGIN v1.4.11
 ----------------------------------------------------------------*/
 
 .workspace-leaf-content[data-type='calendar'] .view-content {
@@ -22,7 +22,7 @@ CALENDAR PLUGIN v1.4.4
   --color-arrow: var(--text-faint);
   --color-arrow-hover: var(--text-normal);
   --interactive-hover: var(--background-secondary-alt);
-  --interactive-accent: var(--discord-blue);
+  --interactive-accent: var(--discord-blue-hover);
   --interactive-accent-hover: var(--discord-blue-hover);
 }
 
