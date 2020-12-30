@@ -153,7 +153,7 @@ p.mod-warning {
 /* NO FILE OPEN page */
 
 .empty-state-title {
-  color: var(--text-title-h1) !important;
+  color: var(--discord-yellow-alt) !important;
 }
 
 .empty-state-action {

@@ -89,7 +89,7 @@ THEME BASE
 
   --interactive-accent: var(--discord-green);
   --interactive-accent-hover: hsla(152, 60%, 43%, 1);
-  --interactive-accent-light: hsla(65, 92%, 76%, 1);
+  --interactive-accent-light: var(--discord-yellow-light);
 
   --interactive-accent-alt: hsla(220, 7%, 17%, 1);
   --interactive-hover: hsla(210, 3%, 87%, 1);
