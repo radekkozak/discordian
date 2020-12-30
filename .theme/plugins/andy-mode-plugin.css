@@ -17,15 +17,9 @@ body.plugin-sliding-panes .app-container::before {
   content: none;
 }
 
-/* ---- separators in andy mode */
-/*body.plugin-sliding-panes .workspace-leaf-content > .view-header {
-  border-left: 1px solid var(--background-tertiary) !important;
-}*/
-
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
   border-left: 0;
   box-shadow: none !important;
-  /*box-shadow: 1px 0px 0 rgba(4,4,5,0.2),1px 0px 0 rgba(6,6,7,0.05),1px 0px 0 rgba(4,4,5,0.05) !important;*/
 }
 
 body.plugin-sliding-panes .view-header::before,
@@ -51,17 +45,6 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
   height: 26px;
   background: linear-gradient(to bottom, transparent, var(--background-secondary)) !important;
 }
-
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
-  /*box-shadow: var(--background-tertiary) -1px 0 !important;*/
-}
-
-/* Comment out to bring back original elevation shadow of title container */
-/*body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
-  box-shadow: var(--background-modifier-border) 0 0 !important;
-}*/
 
 body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
@@ -117,10 +100,6 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-actions {
   bottom: 0;
 }
 
-body.plugin-sliding-panes-rotate-header .view-header-icon {
-  margin-left: -2px !important;
-}
-
 body.plugin-sliding-panes.is-fullscreen.plugin-sliding-panes-rotate-header .view-header-icon {
   padding-top: 8px;
 }
@@ -147,13 +126,13 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header:not(.is-fullscreen)
   /*  transition: padding .1s ease;*/
 }
 
-body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-body.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-body.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
-  padding-left: 30px;
-  transition: padding .1s ease;
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.hider-ribbon):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.hider-frameless:not(.is-fullscreen):not(.hider-ribbon):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+body.discordian-hide-titlebar:not(.is-fullscreen):not(.hider-ribbon):not(.plugin-sliding-panes-rotate-header) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 30px !important;
+  transition: padding .15s ease;
 }
 
-body.plugin-sliding-panes.hider-frameless:not(.plugin-sliding-panes-rotate-header):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+body.plugin-sliding-panes.hider-frameless:not(.hider-ribbon):not(.plugin-sliding-panes-rotate-header):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px !important;
 }

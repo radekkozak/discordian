@@ -24,7 +24,7 @@ THEME BASE
   --discord-dark: hsla(216, 7%, 14%, 1);
   --discord-dark-hover: hsla(216, 7%, 14%, 0.7);
 
-  --elevation-stroke: 0 0 0 1px hsla(240, 11%, 2%, 0.15);
+  --elevation-stroke: 0 1px 0 1px hsla(240, 11%, 2%, 0.1);
   --elevation-low: 0 1px 0 hsla(240, 11%, 2%, 0.2), 0 1.5px 0 hsla(240, 8%, 3%, 0.05), 0 2px 0 hsla(240, 11%, 2%, 0.05);
   --elevation-medium: 0 4px 4px hsla(0, 0%, 0%, 0.16);
   --elevation-high: 0 8px 16px hsla(0, 0%, 0%, 0.24);

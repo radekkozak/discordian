@@ -3,7 +3,7 @@ WORKSPACE
 ----------------------------------------------------------------*/
 
 .app-container {
-  border-top: 1px solid var(--background-tertiary);
+  border-top: 1px solid var(--background-tertiary) !important;
 }
 
 .view-content {
@@ -49,7 +49,7 @@ Tabs */
 .workspace-tabs {
   background-color: var(--background-secondary);
   overflow: hidden;
-  padding: 0 0 2rem 0;
+  padding: 0 0 1rem 0;
   position: relative;
 }
 
@@ -278,13 +278,6 @@ Files & folders: active & hover */
   color: var(--text-normal);
 }
 
-.nav-file-title.is-active,
-.nav-folder-title.is-active,
-body:not(.is-grabbing) .nav-file-title:hover,
-body:not(.is-grabbing) .nav-folder-title:hover {
-  background-color: var(--background-primary);
-}
-
 .nav-file-title.is-active::before {
   content: "\204D";
   font-size: 19px;
@@ -302,11 +295,12 @@ body:not(.is-grabbing) .nav-folder-title:hover {
   color: var(--text-normal) !important;
 }
 
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-primary);
-  border-radius: 2px;
-  transition: all 0.2s ease;
+  border-radius: 3px;
 }
 
 .nav-folder-collapse-indicator {
@@ -429,7 +423,7 @@ Header */
 }
 
 .view-header {
-  height: 32px;
+  height: 30px;
   border-top: 0;
   border-bottom: 0;
   background-color: var(--background-primary);

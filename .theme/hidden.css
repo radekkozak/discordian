@@ -13,12 +13,13 @@ body {
   padding-top: 0 !important;
 }
 
-.workspace-split.mod-left-split .workspace-tab-header-container {
+.mod-left-split .workspace-tab-header-container {
   padding-left: 24px;
 }
 
-.workspace-leaf:first-of-type:last-of-type .view-header {
-  padding-left: 0;
+body:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 30px;
+  transition: padding-left .15s ease;
 }
 
 body.theme-dark:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
