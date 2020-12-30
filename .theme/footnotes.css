@@ -3,19 +3,21 @@ FOOTNOTES
 ----------------------------------------------------------------*/
 
 sup {
-  font-size: 13px;
   letter-spacing: 0;
   padding-left: 0.2rem;
 }
 
-.cm-s-obsidian span.cm-footref {
-  font-size: unset;
-  /*vertical-align: super;*/
+.cm-s-obsidian span.cm-footref,
+.cm-s-obsidian span.cm-blockid {
+  vertical-align: super;
+  margin-top: 0;
+  font-size: small;
 }
 
 .cm-s-obsidian pre.HyperMD-footnote {
-  font-size: 15px;
+  padding-left: 3rem;
   padding-bottom: 0.5rem;
+  font-size: small;
 }
 
 .footnote-link {

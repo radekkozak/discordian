@@ -61,7 +61,6 @@ Editor */
 .cm-header-6 {
   font-weight: 600;
   margin-block-start: 1em;
-  margin-block-end: 1em;
   line-height: 1.5 !important;
 }
 
@@ -94,4 +93,26 @@ Editor */
 .cm-header-6 {
   font-size: 1rem;
   color: var(--text-title-h6);
+}
+
+.cm-s-obsidian span.cm-header-1.cm-footref,
+.cm-s-obsidian span.cm-header-1.cm-blockid,
+.cm-s-obsidian span.cm-header-2.cm-footref,
+.cm-s-obsidian span.cm-header-2.cm-blockid,
+.cm-s-obsidian span.cm-header-3.cm-footref,
+.cm-s-obsidian span.cm-header-3.cm-blockid {
+  font-size: 1rem;
+  vertical-align: text-top;
+  margin-top: -1rem;
+}
+
+.cm-s-obsidian span.cm-header-4.cm-footref,
+.cm-s-obsidian span.cm-header-4.cm-blockid,
+.cm-s-obsidian span.cm-header-5.cm-footref,
+.cm-s-obsidian span.cm-header-5.cm-blockid,
+.cm-s-obsidian span.cm-header-6.cm-footref,
+.cm-s-obsidian span.cm-header-6.cm-blockid {
+  font-size: 0.75rem;
+  vertical-align: text-top;
+  margin-top: -0.75rem;
 }
