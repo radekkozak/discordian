@@ -282,7 +282,7 @@ Files & folders: active & hover */
   content: "\204D";
   font-size: 19px;
   position: absolute;
-  left: -17px;
+  left: -7px;
 }
 
 .nav-folder-children .nav-folder-children > .nav-file > .nav-file-title.is-active::before {
