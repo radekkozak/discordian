@@ -183,6 +183,7 @@ Navigation & File Explorer */
   align-items: baseline;
   width: 100%;
   vertical-align: middle;
+  line-height: 1.25;
 }
 
 .nav-file-title {
@@ -192,7 +193,6 @@ Navigation & File Explorer */
   font-family: var(--font-editor);
   font-variant-numeric: tabular-nums !important;
   font-size: var(--font-size-file-explorer);
-  line-height: 1.25rem;
   border-radius: 4px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
@@ -214,7 +214,6 @@ Navigation & File Explorer */
   color: var(--interactive-active) !important;
   background-color: var(--background-secondary);
   padding: 2px 10px 2px 22px;
-  line-height: 1.25;
 }
 
 /*----------------------------------------------------------------
@@ -256,6 +255,7 @@ Avoid character-level word breaks */
   font-size: 14px;
   font-weight: 600;
   top: 0;
+  text-transform: uppercase;
   letter-spacing: 1px;
   cursor: default;
   color: var(--text-accent) !important;
@@ -269,6 +269,10 @@ Avoid character-level word breaks */
   padding: 6px 10px 6px 10px;
   margin-left: 0 !important;
   margin-right: 10px;
+}
+
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title > .nav-file-title-content {
+  padding: 2px 0;
 }
 
 /*----------------------------------------------------------------
@@ -300,17 +304,25 @@ Files & folders: active & hover */
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-primary);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .nav-folder-collapse-indicator {
   background-color: transparent !important;
 }
 
+.collapse-icon svg {
+  height: 12px;
+}
+
 .nav-file-tag {
   background-color: var(--background-secondary-alt);
   top: -1px;
   margin-left: 0;
+}
+
+.nav-file-tag + .nav-file-title-content {
+  margin-left: 4px;
 }
 
 /*----------------------------------------------------------------
