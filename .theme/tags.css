@@ -17,15 +17,17 @@ span:not(.cm-header).cm-hashtag {
 span:not(.cm-header).cm-hashtag-begin {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  padding-left: 2px;
 }
 
 span:not(.cm-header).cm-hashtag-end {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  padding: 3px 2px 1px 0;
 }
 
 a.tag {
-  padding: 1px 4px !important;
+  padding: 3px 4px 1px 4px !important;
   border-radius: 3px;
 }
 
