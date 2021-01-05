@@ -14,8 +14,7 @@ WORKSPACE
   top: 0;
 }
 
-.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
-.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+.nav-action-button.is-active {
   background-color: var(--interactive-accent-alt);
   color: var(--text-on-accent);
 }
@@ -336,7 +335,6 @@ Search */
   color: var(--text-a) !important;
   background-color: var(--background-secondary);
   font-weight: 400;
-  padding: 4px 40px 4px 20px;
 }
 
 .search-result-file-title:hover {
@@ -380,33 +378,56 @@ Search */
 }
 
 .search-result-file-match-replace-button {
-  color: #fff;
+  color: var(--text-on-accent);
   top: 3px;
   right: 8px;
   opacity: 0.8;
   font-size: .625rem;
   text-transform: uppercase;
-  background-color: #7289da !important;
+  background-color: var(--interactive-accent) !important;
   height: .9375rem;
   padding: 0 .275rem;
   margin-top: .075em;
   border-radius: .1875rem;
+  letter-spacing: 1px;
+}
+
+.tree-item-self .collapse-icon {
+  margin-top: -1px;
+}
+
+.tree-item-flair {
+  background-color: unset;
+}
+
+.tree-item-self .tree-item-flair {
+  font-family: var(--font-editor);
+  font-size: 0.6875rem;
+}
+
+.tree-item-self:hover .tree-item-flair {
+  background-color: unset;
+}
+
+.backlink-pane .tree-item-inner {
+  font-size: 0.875rem;
+}
+
+.backlink-pane > .tree-item-self:hover .tree-item-flair {
+  color: var(--text-normal);
+}
+
+.tree-item-self:hover .tree-item-flair {
+  color: var(--text-a);
+}
+
+.tag-container .tree-item-self:hover .tree-item-flair {
+  color: var(--text-normal);
 }
 
 /* search count boxes */
 .search-result-count {
   font-family: var(--font-monospace);
-}
-
-.pane-list-item-ending-flair {
-  top: 6px;
-  padding-top: 2px;
-  right: 5px;
-}
-
-.pane-list-item:hover .pane-list-item-ending-flair {
-  background-color: var(--discord-blue);
-  color: #fff;
 }
 
 .search-result-file-title .pane-list-item-ending-flair {
@@ -424,6 +445,8 @@ Search */
   padding-left: 15px;
   padding-right: 15px;
   line-height: normal;
+  font-size: 0.875rem;
+  color: var(--discord-red-hover);
 }
 
 /*----------------------------------------------------------------
