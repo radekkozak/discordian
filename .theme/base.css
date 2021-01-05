@@ -21,6 +21,7 @@ THEME BASE
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
   --discord-grey: hsla(214, 10%, 50%, 1);
   --discord-grey-hover: hsla(214, 10%, 45%, 1);
+  --discord-grey-toggle: hsla(218, 5%, 47%, 1);
   --discord-dark: hsla(216, 7%, 14%, 1);
   --discord-dark-hover: hsla(216, 7%, 14%, 0.7);
 

@@ -3,7 +3,7 @@ TOGGLE SWITCHES
 ----------------------------------------------------------------*/
 
 .checkbox-container {
-  background-color: var(--text-faint);
+  background-color: var(--discord-grey-toggle);
   border: none;
   box-shadow: none;
   width: 40px;
@@ -18,26 +18,21 @@ TOGGLE SWITCHES
 
 .checkbox-container::before,
 .checkbox-container::after {
-  color: var(--text-muted);
+  color: var(--discord-grey-toggle);
 }
 
 .checkbox-container::before {
-  content: '\2A2f';
-  font-size: 26px;
-  font-weight: 200;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 20' preserveAspectRatio='xMinYMid meet'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(114, 118, 125, 1)' d='M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z'%3E%3C/path%3E%3Cpath fill='rgba(114, 118, 125, 1)' d='M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z'%3E%3C/path%3E%3C/svg%3E%3C/svg%3E");
   display: block;
   position: absolute;
-  opacity: 0.8;
+  opacity: 1;
   z-index: 1;
-  transform: translate3d(-21px, -1px, 0);
+  transform: translate3d(-7px, 3px, 0);
 }
 
 .checkbox-container.is-enabled::before {
-  content: '\2143';
-  color: var(--interactive-accent);
-  font-size: 13px;
-  font-weight: 600;
-  transform: translate3d(-7px, -9px, 0) rotate(38deg);
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 20' preserveAspectRatio='xMinYMid meet'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(67, 181, 129, 1)' d='M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z'%3E%3C/path%3E%3Cpath fill='rgba(67, 181, 129, 1)' d='M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z'%3E%3C/path%3E%3C/svg%3E%3C/svg%3E");
+  transform: translate3d(7px, 3px, 0);
 }
 
 .checkbox-container.is-enabled::after {
@@ -49,12 +44,4 @@ TOGGLE SWITCHES
   width: 18px;
   height: 18px;
   transform: translate3d(1px, 0, 0);
-}
-
-.community-theme-container .checkbox-container.is-enabled::before {
-  transform: translate3d(18px, 10px, 0) rotate(38deg);
-}
-
-.community-theme-container .checkbox-container::before {
-  transform: translate3d(7px, -1px, 0);
 }
