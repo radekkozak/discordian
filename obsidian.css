@@ -21,6 +21,7 @@ THEME BASE
   --discord-blue-hover: hsla(227, 44%, 59%, 1);
   --discord-grey: hsla(214, 10%, 50%, 1);
   --discord-grey-hover: hsla(214, 10%, 45%, 1);
+  --discord-grey-toggle: hsla(218, 5%, 47%, 1);
   --discord-dark: hsla(216, 7%, 14%, 1);
   --discord-dark-hover: hsla(216, 7%, 14%, 0.7);
 
@@ -218,8 +219,17 @@ body,
   border-right: 0;
 }
 
+.CodeMirror-lines {
+  padding: 0 0 20px 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0;
+}
+
 .CodeMirror-scroll {
-  margin-right: 40px;
+  margin-right: 25px;
 }
 
 .cm-s-obsidian .CodeMirror-code {
@@ -288,6 +298,10 @@ p.mod-warning {
 
 .search-input-container {
   width: calc(100% - 18px);
+}
+
+.search-result-file-match::after {
+  background-color: var(--background-tertiary);
 }
 
 /* Discord-like tooltip  */
@@ -412,6 +426,7 @@ Normal text outside of headings and code */
 .markdown-source-view {
   padding-left: 6% !important;
   padding-right: 4% !important;
+  padding-top: 20px;
 }
 
 /*----------------------------------------------------------------
@@ -526,7 +541,7 @@ Preview */
   font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  line-height: 1.5 !important;
+  line-height: 125% !important;
 }
 
 .markdown-preview-view h1 {
@@ -573,7 +588,7 @@ Editor */
 .cm-header-6 {
   font-weight: 600;
   margin-block-start: 1em;
-  line-height: 1.5 !important;
+  line-height: 125% !important;
 }
 
 .cm-header-1 {
@@ -627,6 +642,11 @@ Editor */
   font-size: 0.75rem;
   vertical-align: text-top;
   margin-top: -0.75rem;
+}
+
+.cm-s-obsidian pre.HyperMD-header {
+  padding-bottom: 0;
+  padding-left: 0 !important;
 }
 
 /*----------------------------------------------------------------
@@ -825,8 +845,7 @@ WORKSPACE
   top: 0;
 }
 
-.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
-.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+.nav-action-button.is-active {
   background-color: var(--interactive-accent-alt);
   color: var(--text-on-accent);
 }
@@ -994,6 +1013,7 @@ Navigation & File Explorer */
   align-items: baseline;
   width: 100%;
   vertical-align: middle;
+  line-height: 1.25;
 }
 
 .nav-file-title {
@@ -1003,7 +1023,6 @@ Navigation & File Explorer */
   font-family: var(--font-editor);
   font-variant-numeric: tabular-nums !important;
   font-size: var(--font-size-file-explorer);
-  line-height: 1.25rem;
   border-radius: 4px;
   color: var(--text-muted) !important;
   background-color: var(--background-secondary);
@@ -1025,7 +1044,6 @@ Navigation & File Explorer */
   color: var(--interactive-active) !important;
   background-color: var(--background-secondary);
   padding: 2px 10px 2px 22px;
-  line-height: 1.25;
 }
 
 /*----------------------------------------------------------------
@@ -1067,6 +1085,7 @@ Avoid character-level word breaks */
   font-size: 14px;
   font-weight: 600;
   top: 0;
+  text-transform: uppercase;
   letter-spacing: 1px;
   cursor: default;
   color: var(--text-accent) !important;
@@ -1082,6 +1101,10 @@ Avoid character-level word breaks */
   margin-right: 10px;
 }
 
+.nav-folder-children .nav-folder-children > .nav-file > .nav-file-title > .nav-file-title-content {
+  padding: 2px 0;
+}
+
 /*----------------------------------------------------------------
 Files & folders: active & hover */
 
@@ -1093,7 +1116,7 @@ Files & folders: active & hover */
   content: "\204D";
   font-size: 19px;
   position: absolute;
-  left: -17px;
+  left: -7px;
 }
 
 .nav-folder-children .nav-folder-children > .nav-file > .nav-file-title.is-active::before {
@@ -1111,17 +1134,25 @@ Files & folders: active & hover */
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
   background-color: var(--background-primary);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .nav-folder-collapse-indicator {
   background-color: transparent !important;
 }
 
+.collapse-icon svg {
+  height: 12px;
+}
+
 .nav-file-tag {
   background-color: var(--background-secondary-alt);
   top: -1px;
   margin-left: 0;
+}
+
+.nav-file-tag + .nav-file-title-content {
+  margin-left: 4px;
 }
 
 /*----------------------------------------------------------------
@@ -1135,7 +1166,6 @@ Search */
   color: var(--text-a) !important;
   background-color: var(--background-secondary);
   font-weight: 400;
-  padding: 4px 40px 4px 20px;
 }
 
 .search-result-file-title:hover {
@@ -1179,33 +1209,57 @@ Search */
 }
 
 .search-result-file-match-replace-button {
-  color: #fff;
+  color: var(--text-on-accent);
   top: 3px;
   right: 8px;
   opacity: 0.8;
   font-size: .625rem;
   text-transform: uppercase;
-  background-color: #7289da !important;
+  background-color: var(--interactive-accent) !important;
   height: .9375rem;
   padding: 0 .275rem;
   margin-top: .075em;
   border-radius: .1875rem;
+  letter-spacing: 1px;
+}
+
+.tree-item-self .collapse-icon {
+  margin-top: -1px;
+}
+
+.tree-item-flair {
+  background-color: unset;
+}
+
+.tree-item-self .tree-item-flair {
+  font-family: var(--font-editor);
+  font-size: 0.6875rem;
+}
+
+.tree-item-self:hover .tree-item-flair {
+  background-color: unset;
+  color: var(--text-a);
+}
+
+.backlink-pane .tree-item-inner {
+  font-size: 0.875rem;
+}
+
+.backlink-pane > .tree-item-self:hover .tree-item-flair {
+  color: var(--text-normal);
+}
+
+.tag-container .tree-item-self:hover .tree-item-flair {
+  color: var(--text-normal);
+}
+
+.tree-item-children {
+  margin-left: 15px;
 }
 
 /* search count boxes */
 .search-result-count {
   font-family: var(--font-monospace);
-}
-
-.pane-list-item-ending-flair {
-  top: 6px;
-  padding-top: 2px;
-  right: 5px;
-}
-
-.pane-list-item:hover .pane-list-item-ending-flair {
-  background-color: var(--discord-blue);
-  color: #fff;
 }
 
 .search-result-file-title .pane-list-item-ending-flair {
@@ -1223,6 +1277,8 @@ Search */
   padding-left: 15px;
   padding-right: 15px;
   line-height: normal;
+  font-size: 0.875rem;
+  color: var(--discord-red-hover);
 }
 
 /*----------------------------------------------------------------
@@ -1492,11 +1548,6 @@ ul.contains-task-list li > div.list-collapse-indicator {
   margin-top: 0.5rem;
 }
 
-.CodeMirror-gutter-elt {
-  top: 0.25rem;
-  margin-left: -0.1rem;
-}
-
 /*----------------------------------------------------------------
 Smart Visual Task Lists ALSO in Editor Mode ! (HACKISH)
 
@@ -1507,15 +1558,16 @@ Best combined with "Toggle checklist status" command shortcut.
 FOR DEFAULT BEHAVIOUR PLEASE REMOVE THIS WHOLE SECTION */
 
 .cm-s-obsidian span.cm-formatting-list {
-  margin: 0 0 0 -0.2rem;
+  margin: 0;
 }
 
-pre.HyperMD-list-line-2 {
+pre.HyperMD-list-line-2:not(.HyperMD-list-line-1) {
   padding-left: 3.5rem !important;
 }
 
 .cm-s-obsidian pre.HyperMD-list-line {
   padding-bottom: 0.1rem;
+  padding-top: 0;
 }
 
 .cm-s-obsidian span.cm-formatting-task {
@@ -1655,15 +1707,17 @@ span:not(.cm-header).cm-hashtag {
 span:not(.cm-header).cm-hashtag-begin {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  padding-left: 2px;
 }
 
 span:not(.cm-header).cm-hashtag-end {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  padding: 3px 2px 1px 0;
 }
 
 a.tag {
-  padding: 1px 4px !important;
+  padding: 3px 4px 1px 4px !important;
   border-radius: 3px;
 }
 
@@ -1743,7 +1797,7 @@ TOGGLE SWITCHES
 ----------------------------------------------------------------*/
 
 .checkbox-container {
-  background-color: var(--text-faint);
+  background-color: var(--discord-grey-toggle);
   border: none;
   box-shadow: none;
   width: 40px;
@@ -1758,26 +1812,21 @@ TOGGLE SWITCHES
 
 .checkbox-container::before,
 .checkbox-container::after {
-  color: var(--text-muted);
+  color: var(--discord-grey-toggle);
 }
 
 .checkbox-container::before {
-  content: '\2A2f';
-  font-size: 26px;
-  font-weight: 200;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 20' preserveAspectRatio='xMinYMid meet'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(114, 118, 125, 1)' d='M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z'%3E%3C/path%3E%3Cpath fill='rgba(114, 118, 125, 1)' d='M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z'%3E%3C/path%3E%3C/svg%3E%3C/svg%3E");
   display: block;
   position: absolute;
-  opacity: 0.8;
+  opacity: 1;
   z-index: 1;
-  transform: translate3d(-21px, -1px, 0);
+  transform: translate3d(-7px, 3px, 0);
 }
 
 .checkbox-container.is-enabled::before {
-  content: '\2143';
-  color: var(--interactive-accent);
-  font-size: 13px;
-  font-weight: 600;
-  transform: translate3d(-7px, -9px, 0) rotate(38deg);
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 20' preserveAspectRatio='xMinYMid meet'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(67, 181, 129, 1)' d='M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z'%3E%3C/path%3E%3Cpath fill='rgba(67, 181, 129, 1)' d='M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z'%3E%3C/path%3E%3C/svg%3E%3C/svg%3E");
+  transform: translate3d(7px, 3px, 0);
 }
 
 .checkbox-container.is-enabled::after {
@@ -1789,14 +1838,6 @@ TOGGLE SWITCHES
   width: 18px;
   height: 18px;
   transform: translate3d(1px, 0, 0);
-}
-
-.community-theme-container .checkbox-container.is-enabled::before {
-  transform: translate3d(18px, 10px, 0) rotate(38deg);
-}
-
-.community-theme-container .checkbox-container::before {
-  transform: translate3d(7px, -1px, 0);
 }
 
 /*----------------------------------------------------------------
@@ -2505,14 +2546,17 @@ FOLDING
 .markdown-preview-view .collapse-indicator,
 .markdown-preview-view .collapse-indicator:hover {
   color: var(--text-faint);
+  font-size: unset;
+}
+
+.markdown-preview-view .collapse-indicator svg {
+  vertical-align: text-top !important;
 }
 
 /* subtler folding gutter arrows */
 .CodeMirror-foldgutter-folded::after,
 .CodeMirror-foldgutter-open::after {
   font-size: 50%;
-  width: 22px;
-  height: 10px;
   color: var(--text-faint);
 }
 
@@ -2520,8 +2564,12 @@ FOLDING
   content: "\25C0";
   position: absolute;
   right: 0;
-  top: 11px;
-  left: -13px;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  width: 10px;
+  height: 10px;
   transform: rotate(180deg);
 }
 
@@ -2529,7 +2577,17 @@ FOLDING
   content: "\25C0";
   position: absolute;
   right: 0;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
   transform: rotate(-90deg);
+  width: 10px;
+  height: 10px;
+}
+
+.CodeMirror-gutter-elt {
+  top: 0.35rem;
 }
 
 /*----------------------------------------------------------------
@@ -2609,6 +2667,75 @@ audio::-webkit-media-controls-enclosure {
 .markdown-preview-view audio,
 .markdown-preview-view video {
   margin: 0 auto;
+}
+
+/*----------------------------------------------------------------
+Internal Queries */
+
+.markdown-preview-view .internal-query.is-embed {
+  border-top: 0;
+  border-bottom: 0;
+  background-color: var(--background-code-preview);
+  border-radius: 4px;
+  cursor: default !important;
+}
+
+.markdown-preview-view .internal-query.is-embed .internal-query-header-title::before,
+.markdown-preview-view .internal-query.is-embed .internal-query-header-title::after {
+  content: "";
+}
+
+/* Seamless internal queries - no scrollbar */
+.markdown-preview-view .internal-query.is-embed .search-results-children {
+  max-height: none !important;
+  padding: 0;
+}
+
+.internal-query .search-result-file-matches {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.internal-query .search-result-file-title {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.internal-query .search-result-file-title:hover {
+  color: var(--text-a-hover) !important;
+  opacity: 1;
+}
+
+.internal-query .tree-item-self.is-clickable:hover {
+  background-color: transparent;
+}
+
+.internal-query .tree-item.search-result {
+  padding: 10px;
+}
+
+.internal-query .tree-item.search-result.is-collapsed:hover {
+  background-color: var(--background-modifier-border);
+  cursor: pointer;
+}
+
+.internal-query .search-result-file-matched-text {
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.internal-query .search-result-file-match {
+  opacity: 1;
+  padding: 6px 0 6px 10px !important;
+}
+
+.internal-query .search-result-file-match:hover {
+  background-color: var(--background-modifier-cover);
+}
+
+.internal-query .search-result-file-match::after {
+  background-color: transparent;
 }
 
 /*----------------------------------------------------------------
