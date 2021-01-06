@@ -117,6 +117,10 @@ p.mod-warning {
   width: calc(100% - 18px);
 }
 
+.search-result-file-match::after {
+  background-color: var(--background-tertiary);
+}
+
 /* Discord-like tooltip  */
 .tooltip {
   font-size: 1rem;

@@ -407,6 +407,7 @@ Search */
 
 .tree-item-self:hover .tree-item-flair {
   background-color: unset;
+  color: var(--text-a);
 }
 
 .backlink-pane .tree-item-inner {
@@ -417,12 +418,12 @@ Search */
   color: var(--text-normal);
 }
 
-.tree-item-self:hover .tree-item-flair {
-  color: var(--text-a);
-}
-
 .tag-container .tree-item-self:hover .tree-item-flair {
   color: var(--text-normal);
+}
+
+.tree-item-children {
+  margin-left: 15px;
 }
 
 /* search count boxes */
