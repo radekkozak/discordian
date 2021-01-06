@@ -76,3 +76,72 @@ audio::-webkit-media-controls-enclosure {
 .markdown-preview-view video {
   margin: 0 auto;
 }
+
+/*----------------------------------------------------------------
+Internal Queries */
+
+.markdown-preview-view .internal-query.is-embed {
+  border-top: 0;
+  border-bottom: 0;
+  background-color: var(--background-code-preview);
+  border-radius: 4px;
+  cursor: default !important;
+}
+
+.markdown-preview-view .internal-query.is-embed .internal-query-header-title::before,
+.markdown-preview-view .internal-query.is-embed .internal-query-header-title::after {
+  content: "";
+}
+
+/* Seamless internal queries - no scrollbar */
+.markdown-preview-view .internal-query.is-embed .search-results-children {
+  max-height: none !important;
+  padding: 0;
+}
+
+.internal-query .search-result-file-matches {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.internal-query .search-result-file-title {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.internal-query .search-result-file-title:hover {
+  color: var(--text-a-hover) !important;
+  opacity: 1;
+}
+
+.internal-query .tree-item-self.is-clickable:hover {
+  background-color: transparent;
+}
+
+.internal-query .tree-item.search-result {
+  padding: 10px;
+}
+
+.internal-query .tree-item.search-result.is-collapsed:hover {
+  background-color: var(--background-modifier-border);
+  cursor: pointer;
+}
+
+.internal-query .search-result-file-matched-text {
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.internal-query .search-result-file-match {
+  opacity: 1;
+  padding: 6px 0 6px 10px !important;
+}
+
+.internal-query .search-result-file-match:hover {
+  background-color: var(--background-modifier-cover);
+}
+
+.internal-query .search-result-file-match::after {
+  background-color: transparent;
+}
