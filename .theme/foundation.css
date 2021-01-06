@@ -45,8 +45,17 @@ body,
   border-right: 0;
 }
 
+.CodeMirror-lines {
+  padding: 0 0 20px 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0;
+}
+
 .CodeMirror-scroll {
-  margin-right: 40px;
+  margin-right: 25px;
 }
 
 .cm-s-obsidian .CodeMirror-code {
@@ -243,6 +252,7 @@ Normal text outside of headings and code */
 .markdown-source-view {
   padding-left: 6% !important;
   padding-right: 4% !important;
+  padding-top: 20px;
 }
 
 /*----------------------------------------------------------------

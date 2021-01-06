@@ -6,14 +6,17 @@ FOLDING
 .markdown-preview-view .collapse-indicator,
 .markdown-preview-view .collapse-indicator:hover {
   color: var(--text-faint);
+  font-size: unset;
+}
+
+.markdown-preview-view .collapse-indicator svg {
+  vertical-align: text-top !important;
 }
 
 /* subtler folding gutter arrows */
 .CodeMirror-foldgutter-folded::after,
 .CodeMirror-foldgutter-open::after {
   font-size: 50%;
-  width: 22px;
-  height: 10px;
   color: var(--text-faint);
 }
 
@@ -21,8 +24,12 @@ FOLDING
   content: "\25C0";
   position: absolute;
   right: 0;
-  top: 11px;
-  left: -13px;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  width: 10px;
+  height: 10px;
   transform: rotate(180deg);
 }
 
@@ -30,5 +37,15 @@ FOLDING
   content: "\25C0";
   position: absolute;
   right: 0;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
   transform: rotate(-90deg);
+  width: 10px;
+  height: 10px;
+}
+
+.CodeMirror-gutter-elt {
+  top: 0.35rem;
 }

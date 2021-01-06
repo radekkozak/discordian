@@ -14,7 +14,7 @@ Preview */
   font-weight: 600;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  line-height: 1.5 !important;
+  line-height: 125% !important;
 }
 
 .markdown-preview-view h1 {
@@ -61,7 +61,7 @@ Editor */
 .cm-header-6 {
   font-weight: 600;
   margin-block-start: 1em;
-  line-height: 1.5 !important;
+  line-height: 125% !important;
 }
 
 .cm-header-1 {
@@ -115,4 +115,9 @@ Editor */
   font-size: 0.75rem;
   vertical-align: text-top;
   margin-top: -0.75rem;
+}
+
+.cm-s-obsidian pre.HyperMD-header {
+  padding-bottom: 0;
+  padding-left: 0 !important;
 }

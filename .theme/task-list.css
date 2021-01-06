@@ -44,11 +44,6 @@ ul.contains-task-list li > div.list-collapse-indicator {
   margin-top: 0.5rem;
 }
 
-.CodeMirror-gutter-elt {
-  top: 0.25rem;
-  margin-left: -0.1rem;
-}
-
 /*----------------------------------------------------------------
 Smart Visual Task Lists ALSO in Editor Mode ! (HACKISH)
 
@@ -59,15 +54,16 @@ Best combined with "Toggle checklist status" command shortcut.
 FOR DEFAULT BEHAVIOUR PLEASE REMOVE THIS WHOLE SECTION */
 
 .cm-s-obsidian span.cm-formatting-list {
-  margin: 0 0 0 -0.2rem;
+  margin: 0;
 }
 
-pre.HyperMD-list-line-2 {
+pre.HyperMD-list-line-2:not(.HyperMD-list-line-1) {
   padding-left: 3.5rem !important;
 }
 
 .cm-s-obsidian pre.HyperMD-list-line {
   padding-bottom: 0.1rem;
+  padding-top: 0;
 }
 
 .cm-s-obsidian span.cm-formatting-task {
