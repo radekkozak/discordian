@@ -168,6 +168,10 @@ Side Dock */
 /*----------------------------------------------------------------
 Navigation & File Explorer */
 
+.nav-action-button {
+  margin-bottom: 5px;
+}
+
 .nav-action-button svg {
   width: 15px;
 }
