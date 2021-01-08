@@ -282,10 +282,9 @@ Files & folders: active & hover */
 }
 
 .nav-file-title.is-active::before {
-  content: "\204D";
-  font-size: 19px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='8'%3E%3Ccircle cx='4' cy='4' r='4' stroke='white' stroke-width='0' fill='white'/%3E%3C/svg%3E");
   position: absolute;
-  left: -7px;
+  left: -4px;
 }
 
 .nav-folder-children .nav-folder-children > .nav-file > .nav-file-title.is-active::before {
