@@ -122,10 +122,6 @@ p.mod-warning {
   color: var(--discord-red);
 }
 
-.search-input-container {
-  width: calc(100% - 18px);
-}
-
 .search-result-file-match::after {
   background-color: var(--background-tertiary);
 }
