@@ -121,3 +121,9 @@ Editor */
   padding-bottom: 0;
   padding-left: 0 !important;
 }
+
+.vertical-tab-content h1:first-child,
+.vertical-tab-content h2:first-child,
+.vertical-tab-content h3:first-child {
+  margin-block-start: 0;
+}
