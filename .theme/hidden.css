@@ -13,16 +13,24 @@ body {
   padding-top: 0 !important;
 }
 
-.mod-left-split .workspace-tab-header-container {
-  padding-left: 24px;
+body:not(.mod-windows):not(.discordian-theme) .mod-left-split .workspace-tab-header-container {
+  padding-left: 24px !important;
 }
 
-body:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+body:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px;
   transition: padding-left .15s ease;
 }
 
-body.theme-dark:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container {
+body.hider-ribbon:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+  padding-left: 62px;
+  transition: padding-left .15s ease;
+}
+
+body.theme-dark:not(.hider-frameless):not(.discordian-writer):not(.discordian-theme) .modal-container,
+body.theme-dark:not(.hider-frameless) .modal-container,
+body.theme-dark:not(.discordian-writer) .modal-container,
+body.theme-dark:not(.discordian-theme) .modal-container {
   top: 0 !important;
   height: 100vh !important;
 }

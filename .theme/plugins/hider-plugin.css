@@ -2,15 +2,23 @@
 HIDER PLUGIN v1.0.5
 ----------------------------------------------------------------*/
 
-.hider-frameless:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container,
-.discordian-writer-mode:not(.hider-ribbon) .workspace-split.mod-left-split .workspace-tab-header-container {
+.hider-ribbon .workspace-split.mod-left-split .nav-files-container {
+  margin-left: 0;
+}
+
+.hider-frameless:not(.hider-ribbon):not(.mod-windows) .workspace-split.mod-left-split .workspace-tab-header-container,
+.discordian-writer-mode:not(.hider-ribbon):not(.mod-windows) .workspace-split.mod-left-split .workspace-tab-header-container {
   padding-left: 24px;
 }
 
-.discordian-writer-mode.hider-ribbon .mod-left-split .workspace-tab-header-container,
-.hider-frameless.hider-ribbon .mod-left-split .workspace-tab-header-container,
-.hider-ribbon .mod-left-split .workspace-tab-header-container {
+.discordian-writer-mode.hider-ribbon:not(.mod-windows) .mod-left-split .workspace-tab-header-container,
+.hider-frameless.hider-ribbon:not(.mod-windows) .mod-left-split .workspace-tab-header-container,
+.hider-ribbon:not(.mod-windows) .mod-left-split .workspace-tab-header-container {
   padding-left: 54px;
+}
+
+body:not(.mod-windows):not(.discordian-theme).hider-ribbon .mod-left-split .workspace-tab-header-container {
+  padding-left: 54px !important;
 }
 
 .discordian-writer-mode .workspace-split.mod-left-split > .workspace-tabs {
@@ -21,22 +29,24 @@ HIDER PLUGIN v1.0.5
   padding-top: 0 !important;
 }
 
-body.discordian-theme:not(.is-fullscreen):not(.plugin-sliding-panes) .workspace-leaf:first-of-type:last-of-type .view-header,
-body.discordian-theme:not(.is-fullscreen):not(.plugin-sliding-panes) .workspace-leaf:first-of-type .view-header {
+body.discordian-theme:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .workspace-leaf:first-of-type:last-of-type .view-header,
+body.discordian-theme:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .workspace-leaf:first-of-type .view-header {
   padding-left: 0 !important;
 }
 
-.discordian-writer-mode:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.discordian-writer-mode.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.discordian-writer-mode.discordian-hide-titlebar:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+.discordian-writer-mode:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.discordian-writer-mode.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.discordian-writer-mode.discordian-hide-titlebar:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless:not(.plugin-sliding-panes):not(.is-fullscreen):not(.mod-windows).discordian-theme .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 30px !important;
   transition: padding-left .15s ease;
 }
 
-.discordian-writer-mode.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-frameless.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
-.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
+.discordian-writer-mode.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-frameless.hider-ribbon:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-ribbon.discordian-hide-titlebar:not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
+.hider-ribbon.discordian-theme.discordian-hide-titlebar:not(.hider-frameless):not(.is-fullscreen):not(.plugin-sliding-panes):not(.mod-windows) .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 62px !important;
   transition: padding-left .15s ease;
 }
@@ -50,7 +60,7 @@ body.discordian-theme:not(.is-fullscreen):not(.plugin-sliding-panes) .workspace-
 Force-hide titlebar regardless of settings
 This is required to make settings modal like in Discord */
 
-body:not(.hider-frameless):not(.discordian-writer-mode):not(.discordian-theme) .modal-container {
+body:not(.hider-frameless):not(.discordian-writer-mode) .modal-container {
   top: 0 !important;
   height: 100vh !important;
 }
@@ -62,7 +72,7 @@ body.discordian-theme.discordian-hide-titlebar .modal-container {
   height: 100vh !important;
 }
 
-body.discordian-theme .modal-container {
+body.discordian-theme:not(.discordian-hide-titlebar):not(.hider-frameless):not(.discordian-writer-mode) .modal-container {
   top: -22px !important;
   height: 100vh !important;
 }
