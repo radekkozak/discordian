@@ -166,6 +166,7 @@ Settings Modal */
 
 .setting-hotkey {
   min-height: unset;
+  padding: 0 0 0 10px;
 }
 
 .setting-delete-hotkey {
@@ -174,10 +175,17 @@ Settings Modal */
   right: 0;
   height: unset;
   border-radius: 0;
+  margin-left: 5px;
+}
+
+.setting-add-hotkey-button:hover,
+.setting-restore-hotkey-button:hover {
+  background-color: unset;
 }
 
 .hotkey-list-container {
   padding-left: 2px;
+  padding-right: 0;
 }
 
 .community-theme-filters-container,

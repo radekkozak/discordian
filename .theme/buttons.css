@@ -25,3 +25,16 @@ button:not(.mod-cta):not(.mod-warning),
 button:not(.mod-cta):not(.mod-warning):hover {
   background-color: var(--discord-grey-hover);
 }
+
+button.mod-cta a {
+  font-family: var(--default-font);
+}
+
+button.mod-cta a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal.mod-settings a > button {
+  margin-right: 8px;
+}
