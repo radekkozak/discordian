@@ -120,6 +120,10 @@ Settings Modal */
   margin-right: 17vw;
 }
 
+.modal.mod-settings .vertical-tab-content > div:not(.setting-item):not(.plugin-list-plugins):not(.loader-cube):not(.hotkey-settings-container) {
+  margin-right: 17vw;
+}
+
 .modal.mod-settings .setting-editor-extra-setting-button {
   margin-right: 1rem;
 }
