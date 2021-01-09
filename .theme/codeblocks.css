@@ -119,13 +119,18 @@ frontmatter */
   margin: 0 0 1rem 0;
 }
 
+.frontmatter-container .frontmatter-section {
+  margin: 0;
+}
+
 .frontmatter-container .frontmatter-collapse-indicator {
-  margin-top: 4px;
+  margin-top: -1px;
 }
 
 .frontmatter-container .frontmatter-section-label {
   text-transform: lowercase;
   display: inline-flex;
+  margin-top: 2px;
 }
 
 .frontmatter-container .frontmatter-section-label::after {
@@ -136,6 +141,8 @@ frontmatter */
 .frontmatter-container .tag,
 .frontmatter-container .frontmatter-alias {
   border-radius: 3px !important;
+  margin: 0 4px;
+  line-height: 0.9em;
 }
 
 .frontmatter-container .frontmatter-alias {
