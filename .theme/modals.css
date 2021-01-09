@@ -297,17 +297,16 @@ input.prompt-input:focus-within {
 
 .prompt-results .suggestion-item {
   color: var(--interactive-normal);
-  height: 2rem;
   padding: 0 10px;
   line-height: 2rem;
   font-weight: 500;
   border-radius: 3px;
+  width: calc(100% - 12px);
 }
 
 .prompt-results .suggestion-item.is-selected,
 .prompt-results .suggestion-item:hover {
   background-color: var(--background-modifier-selected);
-  width: calc(100% - 12px);
 }
 
 .prompt-results .suggestion-hotkey {
