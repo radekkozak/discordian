@@ -71,6 +71,7 @@ FOR DEFAULT BEHAVIOUR PLEASE REMOVE THIS WHOLE SECTION TILL END */
   background-color: var(--background-primary);
   font-family: var(--default-font);
   margin-left: -0.8rem;
+  padding-bottom: 0.1rem;
 }
 
 .cm-formatting-task {
@@ -98,7 +99,7 @@ input[type=checkbox]:checked,
 
 .cm-formatting-task + span {
   padding-left: 0.3rem;
-  vertical-align: middle;
+  vertical-align: sub;
 }
 
 /*----------------------------------------------------------------
