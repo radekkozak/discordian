@@ -2,6 +2,10 @@
 TAGS
 ----------------------------------------------------------------*/
 
+.cm-s-obsidian .cm-formatting-hashtag {
+  font-family: var(--font-editor);
+}
+
 a.tag,
 span:not(.cm-header).cm-hashtag {
   font-weight: 400;
@@ -17,18 +21,22 @@ span:not(.cm-header).cm-hashtag {
 span:not(.cm-header).cm-hashtag-begin {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  padding-left: 2px;
+  padding-left: 4px;
+  padding-top: 3px;
+  padding-bottom: 1px;
 }
 
 span:not(.cm-header).cm-hashtag-end {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  padding: 3px 2px 1px 0;
+  padding: 3px 3px 1px 0;
+  margin-right: 2px;
 }
 
 a.tag {
   padding: 3px 4px 1px 4px !important;
   border-radius: 3px;
+  margin-right: 2px;
 }
 
 span:not(.cm-header).cm-hashtag {
