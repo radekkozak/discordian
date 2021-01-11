@@ -38,7 +38,8 @@ body,
   font-family: var(--font-monospace);
   font-weight: normal;
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 100%;
+  letter-spacing: 0;
 }
 
 .CodeMirror-sizer {
@@ -176,29 +177,21 @@ p.mod-warning {
 /*----------------------------------------------------------------
 BLOCKQUOTES */
 
-.cm-quote {
-  color: var(--interactive-accent) !important;
+.cm-s-obsidian span.cm-quote {
+  color: var(--interactive-accent);
 }
 
-blockquote {
+.cm-hmd-indent-in-quote {
+  padding-left: 4px;
+}
+
+.markdown-preview-view blockquote {
   color: var(--interactive-accent) !important;
   border: none;
   border-left: 3px solid var(--blockquote-border) !important;
   border-radius: 4px !important;
-  margin: 1.5rem 1.5rem 1.5rem 4rem;
+  margin: 1.5rem 1.5rem 1.5rem 3.5rem;
   background-color: var(--blockquote-bg);
-}
-
-blockquote::before {
-  font: 14px/20px italic Times, serif;
-  content: "“";
-  font-size: 3em;
-  line-height: 0.1em;
-  vertical-align: -0.4em;
-}
-
-.markdown-preview-view blockquote {
-  border: 0 solid var(--background-modifier-border);
 }
 
 blockquote p {
@@ -269,12 +262,18 @@ Italics */
 
 em {
   color: var(--text-em);
-  font-weight: 500;
 }
 
 .cm-em {
   color: var(--text-em);
-  font-weight: 500;
+}
+
+.cm-formatting-em {
+  font-style: normal;
+}
+
+.cm-em:not(.cm-formatting-em) {
+  margin-left: -1px;
 }
 
 /*----------------------------------------------------------------

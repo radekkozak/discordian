@@ -432,6 +432,7 @@ Search */
 /* search count boxes */
 .search-result-count {
   font-family: var(--font-monospace);
+  letter-spacing: 0;
 }
 
 .search-result-file-title .pane-list-item-ending-flair {

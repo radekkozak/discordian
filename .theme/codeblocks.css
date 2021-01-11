@@ -10,43 +10,26 @@ code,
 /*----------------------------------------------------------------
 editor */
 
-.CodeMirror-code span.cm-inline-code {
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
   color: var(--markup-code);
-  font-size: 14px;
-  background-color: var(--discord-yellow-bg) !important;
+  font-size: 100%;
+  background-color: var(--discord-yellow-bg);
 }
 
-.CodeMirror-code span.cm-inline-code.cm-hmd-indented-code,
+.cm-s-obsidian span.cm-inline-code {
+  color: var(--markup-code);
+  font-size: 100%;
+  background-color: var(--discord-yellow-bg);
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-bottom: 1px;
+}
+
+span.cm-inline-code.cm-hmd-indented-code,
 .cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
   background-color: unset !important;
   color: var(--text-normal);
   padding: 0.2rem 0;
-}
-
-.cm-s-obsidian pre.HyperMD-codeblock {
-  padding: 4px 10px !important;
-  color: var(--text-normal);
-  font-size: 0.85rem;
-  white-space: pre-wrap;
-  background-clip: border-box;
-}
-
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-  background-color: var(--background-code-preview);
-}
-
-.cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-begin {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-end {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.cm-s-obsidian span.cm-inline-code {
-  border-radius: 4px;
 }
 
 .cm-s-obsidian span.cm-formatting-code.cm-inline-code {
@@ -64,7 +47,31 @@ editor */
 .cm-s-obsidian span.cm-formatting-code.cm-inline-code + span.cm-inline-code + span.cm-formatting-code.cm-inline-code {
   border-left-width: 0;
   border-right-width: 1px;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock {
+  padding: 0.25rem 0.5rem;
+  color: var(--interactive-normal);
+  font-size: 100%;
+  white-space: pre-wrap;
+  background-clip: border-box;
+  line-height: 1.3;
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--background-code-preview);
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-begin {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding-top: 0.5rem;
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock.HyperMD-codeblock-end {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 /*----------------------------------------------------------------
@@ -76,7 +83,6 @@ preview */
   text-shadow: unset !important;
   padding: 6px 10px;
   margin: 1.5rem 0;
-  font-size: 1rem;
 }
 
 .markdown-preview-view pre {
@@ -88,12 +94,15 @@ preview */
   text-shadow: unset !important;
   color: var(--markup-code) !important;
   background-color: var(--discord-yellow-bg);
-  font-size: 0.85rem;
+  font-size: 100%;
+  padding-top: 4px;
+  padding-bottom: 1px;
 }
 
 .markdown-preview-view pre code {
   color: var(--text-normal) !important;
   background-color: unset !important;
+  font-size: 100%;
 }
 
 pre.frontmatter[class*="language-"] {
