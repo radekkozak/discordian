@@ -54,7 +54,8 @@ Editor Mode */
 
 .CodeMirror pre.HyperMD-table-row {
   font-family: var(--font-monospace);
-  font-size: 14px;
+  font-size: 100%;
+  letter-spacing: 0;
 }
 
 .cm-s-obsidian pre.HyperMD-table-row.HyperMD-table-row-0 {
