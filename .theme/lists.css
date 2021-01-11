@@ -47,9 +47,9 @@ ol > li::before {
   content: counter(counter) ". ";
   color: var(--text-faint);
   position: absolute;
-  text-align: left;
-  left: 0;
-  width: 1em;
+  text-align: right;
+  left: -1.25rem;
+  width: 2rem;
 }
 
 /*----------------------------------------------------------------
