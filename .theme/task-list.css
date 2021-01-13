@@ -105,6 +105,10 @@ input[type=checkbox]:checked,
   vertical-align: sub;
 }
 
+.cm-formatting-task ~ span {
+  vertical-align: sub !important;
+}
+
 /*----------------------------------------------------------------
 Adjust nested level task lists when collapsed
 Order matters here - from top level supported (7) down to first */
