@@ -34,13 +34,17 @@ Preview Mode */
   top: 8px;
   width: calc(var(--font-size-notes) + 0.375rem);
   height: calc(var(--font-size-notes) + 0.375rem);
-  margin-left: -0.2em;
+  margin-left: -0.2rem;
   margin-right: 0.5rem;
   filter: none;
 }
 
 ul.contains-task-list li > div.list-collapse-indicator {
   margin-top: 0.5rem;
+}
+
+ul.contains-task-list li {
+  margin: 0;
 }
 
 /*----------------------------------------------------------------

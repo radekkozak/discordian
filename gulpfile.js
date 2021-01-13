@@ -54,7 +54,7 @@ function obsidian () {
     '.theme/folding.css',
     '.theme/embeds.css',
 
-    '.theme/mixins/bullet-point-relationship.css',
+    '.theme/mixins/relationship-lines.css',
     '.theme/mixins/syntax-highlighter-colors.css',
 
     '.theme/plugins/hider-plugin.css',
