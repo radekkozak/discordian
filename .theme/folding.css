@@ -1,51 +1,118 @@
 /*----------------------------------------------------------------
-FOLDING
+FOLDING (credits to @mgmeyers for svg icons)
 ----------------------------------------------------------------*/
 
-/* preview */
-.markdown-preview-view .collapse-indicator,
-.markdown-preview-view .collapse-indicator:hover {
-  color: var(--text-faint);
+.markdown-preview-view .collapse-indicator {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  float: none;
+  padding-left: 0;
+  display: inline-block;
+  line-height: inherit;
   font-size: unset;
+  width: 0;
+  height: 0.5em;
 }
 
-.markdown-preview-view .collapse-indicator svg {
-  vertical-align: text-top !important;
+.markdown-preview-view .collapse-indicator > svg {
+  display: none;
 }
 
-/* subtler folding gutter arrows */
-.CodeMirror-foldgutter-folded::after,
+.markdown-preview-view .collapse-indicator::before {
+  position: absolute;
+  left: -2.5rem;
+  top: calc(-0.5em - 3px);
+}
+
+.markdown-preview-view .heading-collapse-indicator {
+  margin-left: 0;
+  padding: 0;
+}
+
+.markdown-preview-view .heading-collapse-indicator::before {
+  left: -2rem;
+}
+
+.markdown-preview-view .frontmatter-collapse-indicator::before {
+  left: -2.9rem;
+}
+
+.markdown-preview-view .collapse-indicator::before,
 .CodeMirror-foldgutter-open::after {
-  font-size: 50%;
-  color: var(--text-faint);
+  display: block;
+  width: 18px;
+  opacity: 0.3;
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0);"><path d="M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414 17.707 10.707z"></path></svg>');
 }
 
+.theme-dark .markdown-preview-view .collapse-indicator::before,
+.theme-dark .CodeMirror-foldgutter-open::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgba(204,204,204);"><path d="M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414 17.707 10.707z"></path></svg>');
+}
+
+.theme-dark .markdown-preview-view .collapse-indicator::before {
+  margin-left: 0;
+}
+
+.theme-dark .markdown-preview-view ul li .collapse-indicator::before {
+  margin-left: calc(1rem - var(--font-size-notes) + 0.125rem);
+  margin-top: 2px;
+}
+
+.theme-dark .markdown-preview-view ol li .collapse-indicator::before {
+  margin-left: calc(1rem - var(--font-size-notes));
+  margin-top: 2px;
+}
+
+.theme-dark .markdown-preview-view ul.contains-task-list li .collapse-indicator::before {
+  margin-left: 18px;
+  margin-top: 0;
+}
+
+.markdown-preview-view .is-collapsed .collapse-indicator::before,
 .CodeMirror-foldgutter-folded::after {
-  content: "\25C0";
-  position: absolute;
-  right: 0;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  width: 10px;
-  height: 10px;
-  transform: rotate(180deg);
+  display: block;
+  width: 18px;
+  opacity: 0.3;
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgb(0, 0, 0);"><path d="M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"></path></svg>');
 }
 
-.CodeMirror-foldgutter-open::after {
-  content: "\25C0";
-  position: absolute;
-  right: 0;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  width: 10px;
-  height: 10px;
+.theme-dark .markdown-preview-view .is-collapsed .collapse-indicator::before,
+.theme-dark .CodeMirror-foldgutter-folded::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgb(204,204,204);"><path d="M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"></path></svg>');
+}
+
+.CodeMirror-gutter-wrapper {
+  padding: 0;
+  height: 100%;
+  width: 18px;
+  left: -2rem !important;
+  display: flex;
 }
 
 .CodeMirror-gutter-elt {
-  top: 0.35rem;
+  width: unset !important;
+  position: static;
+  height: 100%;
+}
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  color: var(--text-faint);
+  display: flex;
+  height: 100%;
+  align-items: center;
+  transition: color 100ms ease;
+}
+
+.cm-s-obsidian .CodeMirror-gutters {
+  width: 1rem;
+  left: -8px !important;
+  padding-right: 0;
+  transform: translateX(2rem);
+}
+
+.CodeMirror-foldgutter {
+  width: 18px;
 }

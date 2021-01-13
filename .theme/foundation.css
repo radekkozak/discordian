@@ -42,35 +42,6 @@ body,
   letter-spacing: 0;
 }
 
-.CodeMirror-sizer {
-  border-right: 0;
-}
-
-.CodeMirror-lines {
-  padding: 0 0 20px 0;
-}
-
-.CodeMirror pre.CodeMirror-line,
-.CodeMirror pre.CodeMirror-line-like {
-  padding: 0;
-}
-
-.CodeMirror-scroll {
-  margin-right: 25px;
-}
-
-.cm-s-obsidian .CodeMirror-code {
-  padding-right: 0;
-}
-
-.markdown-source-view.is-readable-line-width .CodeMirror {
-  max-width: var(--readable-line-length);
-}
-
-.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
-  max-width: var(--readable-line-length);
-}
-
 button,
 input[type="text"],
 input[type="email"],
@@ -117,6 +88,10 @@ ul li {
 p {
   margin-block-start: 1.4375rem;
   margin-block-end: 1.4375rem;
+}
+
+.markdown-preview-pusher + div > p {
+  margin-block-start: 0;
 }
 
 p.mod-warning {
@@ -210,7 +185,6 @@ img {
 Normal text outside of headings and code */
 
 /* preview */
-
 .markdown-preview-view {
   font-family: var(--font-editor);
   color: var(--text-normal);
@@ -218,14 +192,10 @@ Normal text outside of headings and code */
   font-size: var(--font-size-notes);
   letter-spacing: var(--letter-spacing-notes);
   line-height: 1.65 !important;
-  padding-left: 6% !important;
-  padding-right: 4% !important;
-  padding-top: 20px;
   overflow-x: hidden;
 }
 
 /* editor */
-
 .cm-s-obsidian {
   font-family: var(--font-editor);
   color: var(--text-normal);
@@ -236,12 +206,6 @@ Normal text outside of headings and code */
 
   /* Editor font: make it thicker so it is like in Preview */
   -webkit-font-smoothing: subpixel-antialiased !important;
-}
-
-.markdown-source-view {
-  padding-left: 6% !important;
-  padding-right: 4% !important;
-  padding-top: 20px;
 }
 
 /*----------------------------------------------------------------

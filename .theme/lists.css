@@ -31,8 +31,8 @@ ol li p {
 }
 
 ol {
-  padding-inline-start: 1em;
-  margin-left: 1em;
+  padding-inline-start: 1rem;
+  margin-left: 1rem;
   list-style: none;
   counter-reset: counter;
   position: relative;

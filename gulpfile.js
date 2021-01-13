@@ -34,6 +34,7 @@ function obsidian () {
     '.theme/base.css',
     '.theme/hidden.css',
     '.theme/foundation.css',
+    '.theme/wysiwyg.css',
     '.theme/headings.css',
     '.theme/popovers.css',
     '.theme/suggestions.css',

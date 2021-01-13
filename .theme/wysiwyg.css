@@ -1,0 +1,80 @@
+/*----------------------------------------------------------------
+WYSIWYG
+
+This make switching between Editor and Preview seamless
+but mostly in terms of size / width / margins and visual shifts
+----------------------------------------------------------------*/
+
+.CodeMirror-lines {
+  padding: 0 0 20px 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0;
+}
+
+.cm-s-obsidian .CodeMirror-code {
+  padding-right: 0;
+}
+
+.markdown-source-view,
+.markdown-preview-view {
+  padding: 1.5rem 0 0 0;
+}
+
+.CodeMirror,
+.markdown-source-view.is-readable-line-width .CodeMirror,
+.markdown-preview-section {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------------------
+Editor */
+
+/* to be concise between Editor and Preview we need to account for scrollbar */
+.markdown-source-view.is-readable-line-width .CodeMirror,
+.CodeMirror {
+  max-width: 100%;
+}
+
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  width: calc(var(--readable-line-length) + 16px);
+}
+
+.CodeMirror-scroll {
+  padding-left: 3.5rem;
+  padding-right: 4.5rem;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.CodeMirror-sizer {
+  margin-left: 0 !important;
+  border-right-width: 0 !important;
+}
+
+/*----------------------------------------------------------------
+Preview */
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: 100%;
+}
+
+.markdown-preview-section > div {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  margin: 0 auto 0 auto;
+  max-width: 100%;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section {
+  max-width: 100%;
+  width: var(--readable-line-length);
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section > div {
+  width: var(--readable-line-length);
+}
