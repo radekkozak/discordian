@@ -16,6 +16,15 @@ Seamless notes transclusions */
   max-height: none !important;
 }
 
+.markdown-embed-content .markdown-preview-section {
+  min-height: unset !important;
+}
+
+.markdown-embed-content .markdown-preview-section > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Hide frontmatters in embeds */
 .markdown-preview-view .markdown-embed-content .frontmatter {
   display: none;
