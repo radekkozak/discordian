@@ -123,13 +123,21 @@ frontmatter */
 }
 
 .frontmatter-container {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-code-preview);
   border: 0;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .frontmatter-container .frontmatter-section {
   margin: 0;
+}
+
+.frontmatter-container .tag, .frontmatter-container .frontmatter-alias {
+  background-color: var(--background-code-preview);
+}
+
+.frontmatter-container .frontmatter-container-header {
+  border-bottom: 0;
 }
 
 .frontmatter-container .frontmatter-collapse-indicator {
@@ -152,6 +160,10 @@ frontmatter */
   border-radius: 3px !important;
   margin: 0 4px;
   line-height: 0.9em;
+}
+
+.frontmatter-container .tag:hover {
+  border: 1px solid transparent;
 }
 
 .frontmatter-container .frontmatter-alias {
