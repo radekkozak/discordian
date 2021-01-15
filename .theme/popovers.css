@@ -25,6 +25,10 @@ div.popover.hover-popover .markdown-preview-view {
   font-size: 13px !important;
 }
 
+div.popover.hover-popover .markdown-embed-content .markdown-preview-section {
+  padding: 1.5rem;
+}
+
 .popover.hover-popover .markdown-embed {
   height: 25rem;
 }
