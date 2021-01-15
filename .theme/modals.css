@@ -353,6 +353,11 @@ input.prompt-input:focus-within {
 /*----------------------------------------------------------------
 Community plugins panel */
 
+.community-plugin-details {
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
 .community-plugin-search {
   background-color: var(--background-secondary);
   padding: 20px 0 0 0;
@@ -364,6 +369,15 @@ Community plugins panel */
 
 .community-plugin-readme {
   overflow-x: hidden;
+  padding: 40px 30px 20px 30px;
+}
+
+.community-plugin-readme img {
+  margin: unset !important;
+}
+
+.flair {
+  padding: 0 4px;
 }
 
 /*----------------------------------------------------------------
