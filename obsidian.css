@@ -224,35 +224,6 @@ body,
   letter-spacing: 0;
 }
 
-.CodeMirror-sizer {
-  border-right: 0;
-}
-
-.CodeMirror-lines {
-  padding: 0 0 20px 0;
-}
-
-.CodeMirror pre.CodeMirror-line,
-.CodeMirror pre.CodeMirror-line-like {
-  padding: 0;
-}
-
-.CodeMirror-scroll {
-  margin-right: 25px;
-}
-
-.cm-s-obsidian .CodeMirror-code {
-  padding-right: 0;
-}
-
-.markdown-source-view.is-readable-line-width .CodeMirror {
-  max-width: var(--readable-line-length);
-}
-
-.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
-  max-width: var(--readable-line-length);
-}
-
 button,
 input[type="text"],
 input[type="email"],
@@ -299,6 +270,10 @@ ul li {
 p {
   margin-block-start: 1.4375rem;
   margin-block-end: 1.4375rem;
+}
+
+.markdown-preview-pusher + div > p {
+  margin-block-start: 0;
 }
 
 p.mod-warning {
@@ -392,7 +367,6 @@ img {
 Normal text outside of headings and code */
 
 /* preview */
-
 .markdown-preview-view {
   font-family: var(--font-editor);
   color: var(--text-normal);
@@ -400,14 +374,10 @@ Normal text outside of headings and code */
   font-size: var(--font-size-notes);
   letter-spacing: var(--letter-spacing-notes);
   line-height: 1.65 !important;
-  padding-left: 6% !important;
-  padding-right: 4% !important;
-  padding-top: 20px;
   overflow-x: hidden;
 }
 
 /* editor */
-
 .cm-s-obsidian {
   font-family: var(--font-editor);
   color: var(--text-normal);
@@ -418,12 +388,6 @@ Normal text outside of headings and code */
 
   /* Editor font: make it thicker so it is like in Preview */
   -webkit-font-smoothing: subpixel-antialiased !important;
-}
-
-.markdown-source-view {
-  padding-left: 6% !important;
-  padding-right: 4% !important;
-  padding-top: 20px;
 }
 
 /*----------------------------------------------------------------
@@ -526,6 +490,87 @@ Selections */
 .is-flashing {
   background-color: var(--text-highlight-bg);
   transition: all 0.7s ease-in !important;
+}
+
+/*----------------------------------------------------------------
+WYSIWYG
+
+This make switching between Editor and Preview seamless
+but mostly in terms of size / width / margins and visual shifts
+----------------------------------------------------------------*/
+
+.CodeMirror-lines {
+  padding: 0 0 20px 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0;
+}
+
+.cm-s-obsidian .CodeMirror-code {
+  padding-right: 0;
+}
+
+.markdown-source-view,
+.markdown-preview-view {
+  padding: 1.5rem 0 0 0;
+}
+
+.CodeMirror,
+.markdown-source-view.is-readable-line-width .CodeMirror,
+.markdown-preview-section {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------------------
+Editor */
+
+/* to be concise between Editor and Preview we need to account for scrollbar */
+.markdown-source-view.is-readable-line-width .CodeMirror,
+.CodeMirror {
+  max-width: 100%;
+}
+
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  width: calc(var(--readable-line-length) + 16px);
+}
+
+.CodeMirror-scroll {
+  padding-left: 3.5rem;
+  padding-right: 4.5rem;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.CodeMirror-sizer {
+  margin-left: 0 !important;
+  border-right-width: 0 !important;
+}
+
+/*----------------------------------------------------------------
+Preview */
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: 100%;
+}
+
+.markdown-preview-section > div {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  margin: 0 auto 0 auto;
+  max-width: 100%;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section {
+  max-width: 100%;
+  width: var(--readable-line-length);
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section > div {
+  width: var(--readable-line-length);
 }
 
 /*----------------------------------------------------------------
@@ -683,6 +728,10 @@ div.popover.hover-popover {
 
 div.popover.hover-popover .markdown-preview-view {
   font-size: 13px !important;
+}
+
+div.popover.hover-popover .markdown-embed-content .markdown-preview-section {
+  padding: 1.5rem;
 }
 
 .popover.hover-popover .markdown-embed {
@@ -1027,10 +1076,11 @@ Navigation & File Explorer */
   width: 100%;
   vertical-align: middle;
   line-height: 1.25;
+  border: 1px solid var(--background-secondary);
 }
 
 .nav-file-title {
-  padding: 6px 10px 6px 10px;
+  padding: 8px 10px 6px 10px;
   margin-left: 10px;
   margin-right: 10px;
   font-family: var(--font-editor);
@@ -1136,17 +1186,30 @@ Files & folders: active & hover */
 }
 
 .nav-file-title.is-active,
-.nav-file-title.is-active:hover {
-  background-color: var(--background-primary);
-  color: var(--text-normal) !important;
-}
-
-.nav-file-title.is-active,
 .nav-folder-title.is-active,
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
-  background-color: var(--background-primary);
   border-radius: 4px;
+}
+
+body:not(.is-grabbing) .nav-folder-title:hover {
+  color: var(--interactive-active) !important;
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background-color: var(--background-primary);
+}
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active,
+body:not(.is-grabbing) .nav-file-title.is-active:hover {
+  background-color: var(--background-primary);
+  color: var(--text-normal) !important;
 }
 
 .nav-folder-collapse-indicator {
@@ -1487,8 +1550,8 @@ ol li p {
 }
 
 ol {
-  padding-inline-start: 1em;
-  margin-left: 1em;
+  padding-inline-start: 1rem;
+  margin-left: 1rem;
   list-style: none;
   counter-reset: counter;
   position: relative;
@@ -1503,9 +1566,9 @@ ol > li::before {
   content: counter(counter) ". ";
   color: var(--text-faint);
   position: absolute;
-  text-align: left;
-  left: 0;
-  width: 1em;
+  text-align: right;
+  left: -1.25rem;
+  width: 2rem;
 }
 
 /*----------------------------------------------------------------
@@ -1551,14 +1614,17 @@ Preview Mode */
   top: 8px;
   width: calc(var(--font-size-notes) + 0.375rem);
   height: calc(var(--font-size-notes) + 0.375rem);
-  margin-left: -0.2em;
+  margin-left: -0.2rem;
   margin-right: 0.5rem;
   filter: none;
 }
 
 ul.contains-task-list li > div.list-collapse-indicator {
-  margin-left: -3.5rem;
   margin-top: 0.5rem;
+}
+
+ul.contains-task-list li {
+  margin: 0;
 }
 
 /*----------------------------------------------------------------
@@ -1617,6 +1683,10 @@ input[type=checkbox]:checked,
 .cm-formatting-task + span {
   padding-left: 0.3rem;
   vertical-align: sub;
+}
+
+.cm-formatting-task ~ span {
+  vertical-align: sub !important;
 }
 
 /*----------------------------------------------------------------
@@ -2071,13 +2141,17 @@ frontmatter */
 }
 
 .frontmatter-container {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-code-preview);
   border: 0;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .frontmatter-container .frontmatter-section {
   margin: 0;
+}
+
+.frontmatter-container .frontmatter-container-header {
+  border-bottom: 0;
 }
 
 .frontmatter-container .frontmatter-collapse-indicator {
@@ -2097,9 +2171,14 @@ frontmatter */
 
 .frontmatter-container .tag,
 .frontmatter-container .frontmatter-alias {
+  background-color: var(--background-code-preview);
   border-radius: 3px !important;
   margin: 0 4px;
   line-height: 0.9em;
+}
+
+.frontmatter-container .tag:hover {
+  border: 1px solid transparent;
 }
 
 .frontmatter-container .frontmatter-alias {
@@ -2461,6 +2540,11 @@ input.prompt-input:focus-within {
 /*----------------------------------------------------------------
 Community plugins panel */
 
+.community-plugin-details {
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
 .community-plugin-search {
   background-color: var(--background-secondary);
   padding: 20px 0 0 0;
@@ -2472,6 +2556,15 @@ Community plugins panel */
 
 .community-plugin-readme {
   overflow-x: hidden;
+  padding: 40px 30px 20px 30px;
+}
+
+.community-plugin-readme img {
+  margin: unset !important;
+}
+
+.flair {
+  padding: 0 4px;
 }
 
 /*----------------------------------------------------------------
@@ -2622,55 +2715,122 @@ Graph controls */
 }
 
 /*----------------------------------------------------------------
-FOLDING
+FOLDING (credits to @mgmeyers for svg icons)
 ----------------------------------------------------------------*/
 
-/* preview */
-.markdown-preview-view .collapse-indicator,
-.markdown-preview-view .collapse-indicator:hover {
-  color: var(--text-faint);
+.markdown-preview-view .collapse-indicator {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  float: none;
+  padding-left: 0;
+  display: inline-block;
+  line-height: inherit;
   font-size: unset;
+  width: 0;
+  height: 0.5em;
 }
 
-.markdown-preview-view .collapse-indicator svg {
-  vertical-align: text-top !important;
+.markdown-preview-view .collapse-indicator > svg {
+  display: none;
 }
 
-/* subtler folding gutter arrows */
-.CodeMirror-foldgutter-folded::after,
+.markdown-preview-view .collapse-indicator::before {
+  position: absolute;
+  left: -2.5rem;
+  top: calc(-0.5em - 3px);
+}
+
+.markdown-preview-view .heading-collapse-indicator {
+  margin-left: 0;
+  padding: 0;
+}
+
+.markdown-preview-view .heading-collapse-indicator::before {
+  left: -2rem;
+}
+
+.markdown-preview-view .frontmatter-collapse-indicator::before {
+  left: -2.9rem;
+}
+
+.markdown-preview-view .collapse-indicator::before,
 .CodeMirror-foldgutter-open::after {
-  font-size: 50%;
-  color: var(--text-faint);
+  display: block;
+  width: 18px;
+  opacity: 0.3;
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0);"><path d="M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414 17.707 10.707z"></path></svg>');
 }
 
+.theme-dark .markdown-preview-view .collapse-indicator::before,
+.theme-dark .CodeMirror-foldgutter-open::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgba(204,204,204);"><path d="M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414 17.707 10.707z"></path></svg>');
+}
+
+.theme-dark .markdown-preview-view .collapse-indicator::before {
+  margin-left: 0;
+}
+
+.theme-dark .markdown-preview-view ul li .collapse-indicator::before {
+  margin-left: calc(1rem - var(--font-size-notes) + 0.125rem);
+  margin-top: 2px;
+}
+
+.theme-dark .markdown-preview-view ol li .collapse-indicator::before {
+  margin-left: calc(1rem - var(--font-size-notes));
+  margin-top: 2px;
+}
+
+.theme-dark .markdown-preview-view ul.contains-task-list li .collapse-indicator::before {
+  margin-left: 18px;
+  margin-top: 0;
+}
+
+.markdown-preview-view .is-collapsed .collapse-indicator::before,
 .CodeMirror-foldgutter-folded::after {
-  content: "\25C0";
-  position: absolute;
-  right: 0;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  width: 10px;
-  height: 10px;
-  transform: rotate(180deg);
+  display: block;
+  width: 18px;
+  opacity: 0.3;
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgb(0, 0, 0);"><path d="M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"></path></svg>');
 }
 
-.CodeMirror-foldgutter-open::after {
-  content: "\25C0";
-  position: absolute;
-  right: 0;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  width: 10px;
-  height: 10px;
+.theme-dark .markdown-preview-view .is-collapsed .collapse-indicator::before,
+.theme-dark .CodeMirror-foldgutter-folded::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill:rgb(204,204,204);"><path d="M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"></path></svg>');
+}
+
+.CodeMirror-gutter-wrapper {
+  padding: 0;
+  height: 100%;
+  width: 18px;
+  left: -2rem !important;
+  display: flex;
 }
 
 .CodeMirror-gutter-elt {
-  top: 0.35rem;
+  width: unset !important;
+  position: static;
+  height: 100%;
+}
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  color: var(--text-faint);
+  display: flex;
+  height: 100%;
+  align-items: center;
+  transition: color 100ms ease;
+}
+
+.cm-s-obsidian .CodeMirror-gutters {
+  width: 1rem;
+  left: -8px !important;
+  padding-right: 0;
+  transform: translateX(2rem);
+}
+
+.CodeMirror-foldgutter {
+  width: 18px;
 }
 
 /*----------------------------------------------------------------
@@ -2689,6 +2849,15 @@ Seamless notes transclusions */
 
 .markdown-preview-view .markdown-embed-content {
   max-height: none !important;
+}
+
+.markdown-embed-content .markdown-preview-section {
+  min-height: unset !important;
+}
+
+.markdown-embed-content .markdown-preview-section > div {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Hide frontmatters in embeds */
@@ -2822,33 +2991,31 @@ Internal Queries */
 }
 
 /*----------------------------------------------------------------
-BULLET POINT RELATIONSHIP LINES
+RELATIONSHIP LINES
 ----------------------------------------------------------------*/
 
-.cm-hmd-list-indent .cm-tab,
-ul ul {
+body.discordian-theme.discordian-rel-preview .markdown-preview-view ul ul,
+body:not(.discordian-theme) .markdown-preview-view ul ul {
   position: relative;
 }
 
-.cm-hmd-list-indent .cm-tab::before,
-ul ul::before {
+body.discordian-theme.discordian-rel-preview .markdown-preview-view ul ul::before,
+body:not(.discordian-theme) .markdown-preview-view ul ul::before {
   content: "";
   border-left: 1px solid var(--text-muted);
-  /*color: #92CDD6;*/
+  opacity: 0.2;
   position: absolute;
-  margin-left: -0.75rem;
-}
-
-ul ul::before {
+  margin-left: -0.8em;
   left: 0;
   top: 0;
   bottom: 0;
 }
 
-ul.contains-task-list ul::before {
-  left: -0.1rem;
-  top: 0.3rem;
-  bottom: -0.15rem;
+body.discordian-theme.discordian-rel-preview .markdown-preview-view ul.contains-task-list ul::before,
+body:not(.discordian-theme) .markdown-preview-view ul.contains-task-list ul::before {
+  left: -0.2em;
+  top: 0.3em;
+  bottom: -0.3em;
 }
 
 /*----------------------------------------------------------------
