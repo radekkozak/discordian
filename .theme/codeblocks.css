@@ -132,10 +132,6 @@ frontmatter */
   margin: 0;
 }
 
-.frontmatter-container .tag, .frontmatter-container .frontmatter-alias {
-  background-color: var(--background-code-preview);
-}
-
 .frontmatter-container .frontmatter-container-header {
   border-bottom: 0;
 }
@@ -157,6 +153,7 @@ frontmatter */
 
 .frontmatter-container .tag,
 .frontmatter-container .frontmatter-alias {
+  background-color: var(--background-code-preview);
   border-radius: 3px !important;
   margin: 0 4px;
   line-height: 0.9em;
