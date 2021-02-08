@@ -307,6 +307,10 @@ body:not(.is-grabbing) .nav-folder-title:hover {
   color: var(--interactive-active) !important;
 }
 
+.nav-folder.mod-root > .nav-folder-title:hover {
+  color: var(--text-accent) !important
+}
+
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
   background-color: var(--background-primary);
@@ -558,6 +562,10 @@ View Actions */
 .view-actions {
   padding: 5px 10px;
   margin-left: auto;
+}
+
+.view-action.mod-close-leaf > svg {
+  margin-top: 1px;
 }
 
 /* icons at top of panes */
