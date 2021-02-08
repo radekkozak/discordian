@@ -213,12 +213,12 @@ Bold */
 
 strong {
   color: var(--discord-yellow-alt);
-  font-weight: 500;
+  font-weight: 600;
 }
 
-.cm-strong {
+.cm-s-obsidian .cm-strong {
   color: var(--discord-yellow-alt);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /*----------------------------------------------------------------
