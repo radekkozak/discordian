@@ -107,3 +107,32 @@ codeblocks - scrollable content without horizontal scrollbar */
   background-color: var(--background-primary); /* --scrollbar-thin-thumb to reveal */
   border: 6px solid transparent;
 }
+
+/*----------------------------------------------------------------
+tables - scrollable content without horizontal scrollbar */
+
+.CodeMirror-hscrollbar::-webkit-scrollbar-track {
+  border: 0;
+  border-radius: 0;
+  background-color: var(--background-primary);
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--background-primary); /* --scrollbar-thin-thumb to reveal */
+  border: 6px solid transparent;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section {
+  overflow-x: auto;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section::-webkit-scrollbar-track {
+  border: 0;
+  border-radius: 0;
+  background-color: var(--background-primary);
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-section::-webkit-scrollbar-thumb {
+  background-color: var(--background-primary); /* --scrollbar-thin-thumb to reveal */
+  border: 6px solid transparent;
+}
