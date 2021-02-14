@@ -68,6 +68,8 @@ THEME BASE
   --text-on-accent: hsla(210, 3%, 87%, 1);
   --text-selection: hsla(212, 34%, 54%, 0.5);
   --text-highlight-bg: hsla(212, 34%, 54%, 1);
+  --text-linenumber: hsla(216, 3%, 32%, 0.85);
+  --text-linenumber-active: hsla(0, 0%, 61%, 0.85);
 
   --text-strong: var(--discord-yellow-alt);
   --text-em: hsla(62, 31%, 61%, 1);
