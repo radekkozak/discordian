@@ -127,3 +127,80 @@ Editor */
 .vertical-tab-content h3:first-child {
   margin-block-start: 0;
 }
+
+/*----------------------------------------------------------------
+Links in headers should be visually the same as normal headers
+This is purely for visual aesthetics but makes sense when using
+Bryan Jenks (@tallguyjenks) idea of self-correcting titles
+*/
+
+/*----------------------------------------------------------------
+Preview */
+
+.markdown-preview-view h1 a.internal-link {
+  color: var(--text-title-h1);
+}
+
+.markdown-preview-view h2 a.internal-link {
+  color: var(--text-title-h2);
+}
+
+.markdown-preview-view h3 a.internal-link {
+  color: var(--text-title-h3);
+}
+
+.markdown-preview-view h4 a.internal-link {
+  color: var(--text-title-h4);
+}
+
+.markdown-preview-view h5 a.internal-link {
+  color: var(--text-title-h5);
+}
+
+/*----------------------------------------------------------------
+Editor */
+
+.cm-s-obsidian span.cm-formatting-link.cm-header-1,
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-1 {
+  color: var(--text-title-h1);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-1:hover {
+  color: var(--text-title-h1);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-header-2,
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-2 {
+  color: var(--text-title-h2);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-2:hover {
+  color: var(--text-title-h2);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-header-3,
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-3 {
+  color: var(--text-title-h3);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-3:hover {
+  color: var(--text-title-h3);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-header-4,
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-4 {
+  color: var(--text-title-h4);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-4:hover {
+  color: var(--text-title-h4);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-header-5,
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-5 {
+  color: var(--text-title-h5);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link.cm-header-5:hover {
+  color: var(--text-title-h5);
+}
