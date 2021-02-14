@@ -56,16 +56,16 @@ Best combined with "Toggle checklist status" command shortcut.
 
 FOR DEFAULT BEHAVIOUR PLEASE REMOVE THIS WHOLE SECTION TILL END */
 
-.cm-s-obsidian span.cm-formatting-list {
+.discordian-pretty-tasks-editor .cm-s-obsidian span.cm-formatting-list {
   margin: 0;
 }
 
-.cm-s-obsidian pre.HyperMD-list-line {
+.discordian-pretty-tasks-editor .cm-s-obsidian pre.HyperMD-list-line {
   padding-bottom: 0.1rem;
   padding-top: 0;
 }
 
-.cm-s-obsidian span.cm-formatting-task {
+.discordian-pretty-tasks-editor .cm-s-obsidian span.cm-formatting-task {
   white-space: pre;
   text-align: center;
   color: transparent;
@@ -77,35 +77,35 @@ FOR DEFAULT BEHAVIOUR PLEASE REMOVE THIS WHOLE SECTION TILL END */
   padding-bottom: 0.1rem;
 }
 
-.cm-formatting-task {
+.discordian-pretty-tasks-editor .cm-formatting-task {
   border: 1px solid var(--text-faint);
   border-radius: 3px;
   padding: 0;
 }
 
 /* HACK: makes unchecked task same size as checked one */
-.cm-s-obsidian span.cm-formatting-task::after {
+.discordian-pretty-tasks-editor .cm-s-obsidian span.cm-formatting-task::after {
   content: '\0020\0020\0020\0020';
   color: transparent;
 }
 
-input[type=checkbox]:checked,
-.cm-formatting-task.cm-property {
+.discordian-pretty-tasks-editor input[type=checkbox]:checked,
+.discordian-pretty-tasks-editor .cm-formatting-task.cm-property {
   background-color: var(--discord-blue) !important;
   border: 1px solid var(--discord-blue);
 }
 
-.cm-formatting-task.cm-property::after {
+.discordian-pretty-tasks-editor .cm-formatting-task.cm-property::after {
   content: '\0020\0020\0020' !important;
   color: transparent !important;
 }
 
-.cm-formatting-task + span {
+.discordian-pretty-tasks-editor .cm-formatting-task + span {
   padding-left: 0.3rem;
   vertical-align: sub;
 }
 
-.cm-formatting-task ~ span {
+.discordian-pretty-tasks-editor .cm-formatting-task ~ span {
   vertical-align: sub !important;
 }
 
@@ -113,26 +113,26 @@ input[type=checkbox]:checked,
 Adjust nested level task lists when collapsed
 Order matters here - from top level supported (7) down to first */
 
-pre.HyperMD-list-line-7 {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-7 {
   padding-left: calc(12.25 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
 
-pre.HyperMD-list-line-6 {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-6 {
   padding-left: calc(10.5 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
 
-pre.HyperMD-list-line-5 {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-5 {
   padding-left: calc(8.75 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
 
-pre.HyperMD-list-line-4 {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-4 {
   padding-left: calc(7 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
 
-pre.HyperMD-list-line-3 {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-3 {
   padding-left: calc(5.25 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
 
-pre.HyperMD-list-line-2:not(.HyperMD-list-line-1) {
+.discordian-pretty-tasks-editor pre.HyperMD-list-line-2:not(.HyperMD-list-line-1) {
   padding-left: calc(3.5 * calc(var(--font-size-notes) + 0.125rem)) !important;
 }
