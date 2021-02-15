@@ -541,6 +541,10 @@ Header */
   padding: 10px;
 }
 
+.item-list {
+  overflow-x: hidden;
+}
+
 .view-header-icon {
   top: 0 !important;
 }
