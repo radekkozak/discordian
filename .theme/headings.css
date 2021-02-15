@@ -204,3 +204,38 @@ Editor */
 .cm-s-obsidian span.cm-hmd-internal-link.cm-header-5:hover {
   color: var(--text-title-h5);
 }
+
+/*----------------------------------------------------------------
+Inline code in headers should respect header size
+*/
+
+.cm-s-obsidian span.cm-inline-code.cm-header-1:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-1 {
+  font-size: 2rem;
+}
+
+.cm-s-obsidian span.cm-inline-code.cm-header-2:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-2 {
+  font-size: 1.625rem;
+}
+
+.cm-s-obsidian span.cm-inline-code.cm-header-3:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-3 {
+  font-size: 1.375rem;
+}
+
+.cm-s-obsidian span.cm-inline-code.cm-header-4:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-4,
+.cm-s-obsidian span.cm-inline-code.cm-header-5:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-5 {
+  font-size: 1.125rem;
+}
+
+.cm-s-obsidian span.cm-inline-code.cm-header-6:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code.cm-header-6 {
+  font-size: 1rem;
+}
+
+.cm-s-obsidian span.cm-inline-code {
+  padding-bottom: 0;
+}
