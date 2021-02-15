@@ -308,7 +308,7 @@ body:not(.is-grabbing) .nav-folder-title:hover {
 }
 
 .nav-folder.mod-root > .nav-folder-title:hover {
-  color: var(--text-accent) !important
+  color: var(--text-accent) !important;
 }
 
 .nav-file-title.is-active,
