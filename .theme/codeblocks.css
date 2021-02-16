@@ -51,12 +51,12 @@ span.cm-inline-code.cm-hmd-indented-code,
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock {
-  padding: 0.25rem 0.5rem;
+  padding: 0 0.5rem;
   color: var(--interactive-normal);
+  font-family: var(--font-monospace);
   font-size: 100%;
   white-space: pre-wrap;
   background-clip: border-box;
-  line-height: 1.3;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
