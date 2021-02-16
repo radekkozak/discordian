@@ -20,6 +20,10 @@ sup {
   font-size: small;
 }
 
+.footnotes {
+  font-size: small;
+}
+
 .footnote-link {
   color: var(--text-a);
 }
