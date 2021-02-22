@@ -376,6 +376,14 @@ Community plugins panel */
   margin: unset !important;
 }
 
+.community-plugin-search .setting-item-info {
+  display: none;
+}
+
+.community-plugin-search .search-input-container {
+  width: 70%;
+}
+
 .flair {
   padding: 0 4px;
 }
