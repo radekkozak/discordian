@@ -104,12 +104,6 @@ body.plugin-sliding-panes.is-fullscreen.plugin-sliding-panes-rotate-header .view
   padding-top: 8px;
 }
 
-body.plugin-sliding-panes .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-body.plugin-sliding-panes .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-body.plugin-sliding-panes .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-  display: none;
-}
-
 body.plugin-sliding-panes.hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
 body.plugin-sliding-panes.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header {
   padding-left: 0 !important;
