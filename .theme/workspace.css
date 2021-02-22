@@ -572,6 +572,10 @@ View Actions */
   margin-top: 1px;
 }
 
+.view-action.mod-pin-leaf > svg {
+  height: 15px;
+}
+
 /* icons at top of panes */
 .file-view-actions a {
   color: var(--text-muted) !important;
@@ -580,18 +584,6 @@ View Actions */
 .file-view-actions a:hover {
   color: var(--text-muted) !important;
 }
-
-/*.workspace-leaf.mod-active .view-header-icon {
-  color: var(--text-normal);
-}*/
-
-/*.view-actions {
-  opacity: 0.2;
-}
-
-.view-actions:hover {
-  opacity: 1;
-}*/
 
 /*----------------------------------------------------------------
 Top Window Frame */
