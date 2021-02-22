@@ -57,6 +57,7 @@ Settings Modal */
   padding-top: 2px;
   top: 3.75rem;
   right: 11vw;
+  content: none !important;
 }
 
 .modal.mod-settings .modal-close-button:hover {
