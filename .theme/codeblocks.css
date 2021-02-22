@@ -25,6 +25,10 @@ editor */
   padding-bottom: 1px;
 }
 
+.cm-s-obsidian span.cm-inline-code.cm-inline-code {
+  margin-left: 0;
+}
+
 span.cm-inline-code.cm-hmd-indented-code,
 .cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
   background-color: unset !important;
