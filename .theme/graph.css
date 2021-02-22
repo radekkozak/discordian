@@ -65,3 +65,34 @@ Graph controls */
   top: 20px;
   left: 30px;
 }
+
+.graph-controls .setting-item {
+  border: 0;
+}
+
+.graph-control-section:not(:last-child) .tree-item-children {
+  border-bottom: thin solid var(--background-modifier-accent);
+}
+
+.graph-control-section:not(:last-child) .tree-item-children > .setting-item:last-child {
+  padding-bottom: 20px;
+}
+
+.graph-controls .setting-item.mod-search-setting .setting-item-control .search-input-container {
+  width: 100%;
+}
+
+.graph-controls .clickable-icon[aria-label="Delete group"] > svg {
+  margin-top: -2px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%238D9196' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+.graph-controls .graph-color-button-container {
+  margin: 15px 0 20px 0;
+  text-align: center;
+}
+
+.graph-controls .graph-color-button-container > button {
+  padding: 1px 6px;
+  font-size: 0.75rem;
+}
