@@ -1614,6 +1614,10 @@ View Actions */
   margin-top: 1px;
 }
 
+.view-action.mod-pin-leaf > svg {
+  height: 15px;
+}
+
 /* icons at top of panes */
 .file-view-actions a {
   color: var(--text-muted) !important;
@@ -1622,18 +1626,6 @@ View Actions */
 .file-view-actions a:hover {
   color: var(--text-muted) !important;
 }
-
-/*.workspace-leaf.mod-active .view-header-icon {
-  color: var(--text-normal);
-}*/
-
-/*.view-actions {
-  opacity: 0.2;
-}
-
-.view-actions:hover {
-  opacity: 1;
-}*/
 
 /*----------------------------------------------------------------
 Top Window Frame */
@@ -2056,6 +2048,10 @@ sup {
   font-size: small;
 }
 
+.footnotes {
+  font-size: small;
+}
+
 .footnote-link {
   color: var(--text-a);
 }
@@ -2208,6 +2204,10 @@ editor */
   padding-bottom: 1px;
 }
 
+.cm-s-obsidian span.cm-inline-code.cm-inline-code {
+  margin-left: 0;
+}
+
 span.cm-inline-code.cm-hmd-indented-code,
 .cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
   background-color: unset !important;
@@ -2234,12 +2234,12 @@ span.cm-inline-code.cm-hmd-indented-code,
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock {
-  padding: 0.25rem 0.5rem;
+  padding: 0 0.5rem;
   color: var(--interactive-normal);
+  font-family: var(--font-monospace);
   font-size: 100%;
   white-space: pre-wrap;
   background-clip: border-box;
-  line-height: 1.3;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-bg {
@@ -2416,6 +2416,7 @@ Settings Modal */
   padding-top: 2px;
   top: 3.75rem;
   right: 11vw;
+  content: none !important;
 }
 
 .modal.mod-settings .modal-close-button:hover {
@@ -2735,6 +2736,14 @@ Community plugins panel */
   margin: unset !important;
 }
 
+.community-plugin-search .setting-item-info {
+  display: none;
+}
+
+.community-plugin-search .search-input-container {
+  width: 70%;
+}
+
 .flair {
   padding: 0 4px;
 }
@@ -2818,6 +2827,26 @@ button.mod-cta a:hover {
   margin-right: 8px;
 }
 
+.modal-close-button::before {
+  content: none;
+}
+
+.modal-close-button {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%238D9196' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.search-input-clear-button {
+  top: 6px;
+}
+
+.search-input-clear-button::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%238D9196' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.clickable-icon[aria-label="Delete workspace"] {
+  margin-top: 4px;
+}
+
 /*----------------------------------------------------------------
 GRAPH
 ----------------------------------------------------------------*/
@@ -2884,6 +2913,37 @@ Graph controls */
 .mod-root .graph-controls {
   top: 20px;
   left: 30px;
+}
+
+.graph-controls .setting-item {
+  border: 0;
+}
+
+.graph-control-section:not(:last-child) .tree-item-children {
+  border-bottom: thin solid var(--background-modifier-accent);
+}
+
+.graph-control-section:not(:last-child) .tree-item-children > .setting-item:last-child {
+  padding-bottom: 20px;
+}
+
+.graph-controls .setting-item.mod-search-setting .setting-item-control .search-input-container {
+  width: 100%;
+}
+
+.graph-controls .clickable-icon[aria-label="Delete group"] > svg {
+  margin-top: -2px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%238D9196' d='M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+.graph-controls .graph-color-button-container {
+  margin: 15px 0 20px 0;
+  text-align: center;
+}
+
+.graph-controls .graph-color-button-container > button {
+  padding: 1px 6px;
+  font-size: 0.75rem;
 }
 
 /*----------------------------------------------------------------
@@ -3553,12 +3613,6 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-actions {
 
 body.plugin-sliding-panes.is-fullscreen.plugin-sliding-panes-rotate-header .view-header-icon {
   padding-top: 8px;
-}
-
-body.plugin-sliding-panes .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-body.plugin-sliding-panes .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-body.plugin-sliding-panes .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-  display: none;
 }
 
 body.plugin-sliding-panes.hider-frameless.hider-ribbon .mod-left-split.is-collapsed + div.mod-root .workspace-leaf:first-of-type .view-header,
