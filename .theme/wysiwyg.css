@@ -34,6 +34,11 @@ but mostly in terms of size / width / margins and visual shifts
 /*----------------------------------------------------------------
 Editor */
 
+.markdown-source-view.mod-cm5 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* to be concise between Editor and Preview we need to account for scrollbar */
 .markdown-source-view.is-readable-line-width .CodeMirror,
 .CodeMirror {
