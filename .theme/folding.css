@@ -86,7 +86,6 @@ FOLDING (credits to @mgmeyers for svg icons)
 
 .CodeMirror-gutter-wrapper {
   padding: 0;
-  height: 100%;
   width: 18px;
   left: -2rem !important;
   display: flex;
