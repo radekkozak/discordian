@@ -45,6 +45,7 @@ fix via PR.
 - **Beautiful graph view**
 - **Seamless transclusions**
 - Snappy performance (stripped out many animations)
+- [**Images enhancements**](#images-enhancements) : **image grids, zooms, floating images with captions !!**
 - Bullet points relationship lines extravaganza as default
 - Graceful dark theme audio in place of ugly default
 - New and improved **codeblocks with delightful aesthetics**
@@ -73,6 +74,41 @@ The way the fancy task lists works in editor mode is via quite **hackish** means
 `Smart indent list` option enabled in Obsidian. From my own experience I would also recommend having `Toggle
 checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze. I know I
 love it that way!
+
+### Images enhancements
+
+#### Floating images - now with captions !!
+
+Have your images the way you want: full in center (*default*) or floating left or right with your text wrapped around them. **No messing around with HTML markups**, no polluting your markdown. **Fully using current Obsidian image embeds syntax** along with image resizing.
+
+`![[filename.png#position|caption|size]]`
+
+**options**
+- position: `left` or `right` (omitting assumes default which is center)
+- caption: simply your caption (**note**: no markdown within caption)
+- size: `width x height` as explained here [https://publish.obsidian.md/help/How+to/Embed+files#Resize+images](https://publish.obsidian.md/help/How+to/Embed+files#Resize+images)
+
+Example: `discordian.png#left|This image should float to the left|200`
+
+#### Image grids (compatible with @kepano solution of using cssclass)
+
+Using Obsidian's new `cssclass` directive in YAML you can achieve image grids like this
+
+```md
+---
+cssclass: img-grid
+---
+```
+
+More explanation how it works: [https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet](https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet)
+
+But as always better seen than explained
+
+![](media/screenshots/discordian-img-grid.gif)
+
+#### Image zooms
+
+![](media/screenshots/discordian-img-grid-zoom.gif)
 
 ## Screenshots
 
