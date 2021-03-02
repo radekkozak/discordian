@@ -53,6 +53,10 @@ Preview */
 /*----------------------------------------------------------------
 Editor */
 
+.cm-formatting.cm-formatting-header.cm-header {
+  font-weight: 400;
+}
+
 .cm-header-1,
 .cm-header-2,
 .cm-header-3,
