@@ -250,11 +250,17 @@ Highlights */
   padding-bottom: 4px;
 }
 
-.cm-highlight {
-  background-color: transparent !important;
-  -webkit-box-shadow: inset 0 -2px var(--discord-yellow-alt);
-  box-shadow: inset 0 -2px var(--discord-yellow-alt);
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: unset;
+  -webkit-box-shadow: var(--discord-yellow-alt) 0 -2px 0 0 inset;
+  box-shadow: var(--discord-yellow-alt) 0 -2px 0 0 inset;
+  margin: 4px 0;
   padding-bottom: 4px;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight {
+  color: var(--text-muted);
 }
 
 mark > strong {
