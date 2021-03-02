@@ -5,6 +5,7 @@ LISTS
 ul {
   padding-inline-start: 2em;
   list-style: none;
+  list-style-type: none;
 }
 
 ul ul,
@@ -14,6 +15,7 @@ ol ul ul,
 ul ol ul,
 ul ul ul {
   list-style: none;
+  list-style-type: none;
 }
 
 ul > li:not(.task-list-item)::before {
@@ -51,9 +53,6 @@ ol > li::before {
   left: -1.25rem;
   width: 2rem;
 }
-
-/*----------------------------------------------------------------
-ul, li & ol colors in editor */
 
 .markdown-preview-section > ul.contains-task-list {
   margin-block-end: 2rem;
