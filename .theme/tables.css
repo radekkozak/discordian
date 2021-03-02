@@ -58,6 +58,10 @@ Editor Mode */
   letter-spacing: 0;
 }
 
+.CodeMirror pre.HyperMD-table-row span.cm-formatting-link {
+  padding: 0;
+}
+
 .cm-s-obsidian pre.HyperMD-table-row.HyperMD-table-row-0 {
   margin-top: 0.15rem;
 }

@@ -12,7 +12,6 @@ a,
 .cm-s-obsidian span.cm-hmd-internal-link {
   color: var(--text-a);
   text-decoration: none;
-  font-family: var(--font-editor);
 }
 
 a:hover,
