@@ -12,7 +12,7 @@ Floating images with captions by @radekkozak */
   width: fit-content;
 }
 
-.markdown-preview-view:not(.img-grid) .image-embed:not([src$="left"]):not([src$="right"])::after {
+.markdown-preview-view.img-captions:not(.img-grid) .image-embed:not([src$="left"]):not([src$="right"])::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
@@ -33,7 +33,7 @@ Floating images with captions by @radekkozak */
   width: fit-content;
 }
 
-.markdown-preview-view:not(.img-grid) .image-embed[src$="left"]::after {
+.markdown-preview-view:not(.img-grid).img-captions .image-embed[src$="left"]::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
@@ -54,7 +54,7 @@ Floating images with captions by @radekkozak */
   width: fit-content;
 }
 
-.markdown-preview-view:not(.img-grid) .image-embed[src$="right"]::after {
+.markdown-preview-view:not(.img-grid).img-captions .image-embed[src$="right"]::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
