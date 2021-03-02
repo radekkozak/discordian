@@ -49,6 +49,10 @@ Editor */
   width: calc(var(--readable-line-length) + 16px);
 }
 
+.discordian-writer-mode .markdown-source-view.is-readable-line-width .CodeMirror {
+  width: calc(var(--readable-line-length) + 0px);
+}
+
 .CodeMirror-scroll {
   padding-left: 4.5rem;
   padding-right: 4.5rem;
@@ -58,7 +62,7 @@ Editor */
 
 .CodeMirror-sizer {
   margin-left: 0 !important;
-  border-right-width: 0 !important;
+  border-right: 0 !important;
 }
 
 /*----------------------------------------------------------------
