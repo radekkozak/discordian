@@ -167,6 +167,7 @@ BLOCKQUOTES */
   border-radius: 4px !important;
   margin: 1.5rem 1.5rem 1.5rem 3.5rem;
   background-color: var(--blockquote-bg);
+  display: flex;
 }
 
 blockquote p {
