@@ -56,6 +56,7 @@ function obsidian () {
 
     '.theme/mixins/relationship-lines.css',
     '.theme/mixins/syntax-highlighter-colors.css',
+    '.theme/mixins/images-addons.css',
 
     '.theme/plugins/hider-plugin.css',
     '.theme/plugins/calendar-plugin.css',

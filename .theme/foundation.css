@@ -179,7 +179,7 @@ IMAGES */
 
 img {
   display: block;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 /*----------------------------------------------------------------
