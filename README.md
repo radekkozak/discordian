@@ -72,8 +72,7 @@ simplifying UI even more. Discordian of course, as mentioned before, is fully co
 
 The way the fancy task lists works in editor mode is via quite **hackish** means. Therefore, it's mandatory to have
 `Smart indent list` option enabled in Obsidian. From my own experience I would also recommend having `Toggle
-checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze. I know I
-love it that way!
+checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze. I know I love it that way!
 
 ### Images enhancements
 
@@ -81,18 +80,35 @@ love it that way!
 
 Have your images the way you want: full in center (*default*) or floating left or right with your text wrapped around them. **No messing around with HTML markups**, no polluting your markdown. **Fully using current Obsidian image embeds syntax** along with image resizing.
 
+Using Obsidian's new cssclass directive in YAML you can have properly looking captions by
+
+```md
+---
+cssclass: img-captions
+---
+```
+
+and then in your note you can do
+
 `![[filename.png#position|caption|size]]`
 
-**options**
-- position: `left` or `right` (omitting assumes default which is center)
-- caption: simply your caption (**note**: no markdown within caption)
-- size: `width x height` as explained here [https://publish.obsidian.md/help/How+to/Embed+files#Resize+images](https://publish.obsidian.md/help/How+to/Embed+files#Resize+images)
+_options_
+- **position**: `left` or `right` (omitting assumes default which is center)
+- **caption**: simply your caption (**note**: no markdown within caption)
+- **size**: `width x height` as explained in [Obsidian Help](https://publish.obsidian.md/help/How+to/Embed+files#Resize+images)
 
-Example: `discordian.png#left|This image should float to the left|200`
+_NOTE_: **positioning** `left` or `right` **and resizing** is working _EVEN WITHOUT YAML_ directive. `cssclass` is
+ only for still allowing simple embeds without polluted captions (Obsidian fills image `alt` with filename by default)
+
+![](media/screenshots/discordian-floating-imgs.jpg)
+
+![](media/screenshots/discordian-floating-imgs-same-paragraph.jpg)
+
+---
 
 #### Image grids (compatible with @kepano solution of using cssclass)
 
-Using Obsidian's new `cssclass` directive in YAML you can achieve image grids like this
+Using Obsidian's new `cssclass` directive in YAML you can achieve image grids like below with
 
 ```md
 ---
@@ -100,9 +116,7 @@ cssclass: img-grid
 ---
 ```
 
-More explanation how it works: [https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet](https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet)
-
-But as always better seen than explained
+Here's more explanation [how it works](https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet) but as always it's better seen than explained
 
 ![](media/screenshots/discordian-img-grid.gif)
 
