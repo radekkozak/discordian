@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------
-THEME BASE
+DISCORDIAN THEME version 0.8.2
 ----------------------------------------------------------------*/
 
 :root {
@@ -351,10 +351,6 @@ BLOCKQUOTES */
   border-radius: 4px !important;
   margin: 1.5rem 1.5rem 1.5rem 3.5rem;
   background-color: var(--blockquote-bg);
-  display: grid;
-}
-
-blockquote p {
   display: grid;
 }
 
