@@ -170,10 +170,6 @@ BLOCKQUOTES */
   display: grid;
 }
 
-blockquote p {
-  display: grid;
-}
-
 /*----------------------------------------------------------------
 IMAGES */
 
