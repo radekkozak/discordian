@@ -61,6 +61,8 @@ function obsidian () {
     '.theme/plugins/hider-plugin.css',
     '.theme/plugins/calendar-plugin.css',
     '.theme/plugins/andy-mode-plugin.css',
+    '.theme/plugins/advanced-tables-plugin.css',
+    '.theme/plugins/emoji-toolbar-plugin.css',
     '.theme/plugins/discordian-plugin.css'
   ])
     .pipe(concat('obsidian.css'))
