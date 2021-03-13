@@ -3787,6 +3787,18 @@ body.plugin-sliding-panes.hider-frameless:not(.hider-ribbon):not(.plugin-sliding
 }
 
 /*----------------------------------------------------------------
+ADVANCED TABLES v0.11.0
+----------------------------------------------------------------*/
+
+.workspace-leaf-content[data-type="advanced-tables-toolbar"] .nav-action-button svg.widget-icon {
+  width: 20px;
+}
+
+img.emoji {
+  display: inline-block;
+}
+
+/*----------------------------------------------------------------
 HIDE VAULT */
 
 body.discordian-hide-vault .nav-folder.mod-root > .nav-folder-title {
