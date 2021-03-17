@@ -19,8 +19,9 @@ but mostly in terms of size / width / margins and visual shifts
 }
 
 .markdown-source-view,
-.markdown-preview-view {
-  padding: 1.5rem 0 0 0;
+.markdown-preview-view,
+.markdown-source-view.mod-cm5 {
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 .CodeMirror,
@@ -33,11 +34,6 @@ but mostly in terms of size / width / margins and visual shifts
 
 /*----------------------------------------------------------------
 Editor */
-
-.markdown-source-view.mod-cm5 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 
 /* to be concise between Editor and Preview we need to account for scrollbar */
 .markdown-source-view.is-readable-line-width .CodeMirror,
@@ -73,8 +69,8 @@ Preview */
 }
 
 .markdown-preview-section > div {
-  padding-left: 4.5rem;
-  padding-right: 3.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   margin: 0 auto 0 auto;
   max-width: 100%;
 }
