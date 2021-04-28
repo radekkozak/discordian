@@ -41,6 +41,7 @@ Preview Mode */
 
 ul.contains-task-list li > div.list-collapse-indicator {
   margin-top: 0.5rem;
+  padding: 0;
 }
 
 ul.contains-task-list li {
