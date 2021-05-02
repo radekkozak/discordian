@@ -5,24 +5,24 @@ IMAGES RELATED ADD-ONS
 /*----------------------------------------------------------------
 Floating images with captions by @radekkozak */
 
-.markdown-preview-view:not(.img-grid) .image-embed:not([src$="left"]):not([src$="right"]) {
+.markdown-preview-view .image-embed:not([src$="left"]):not([src$="right"]),
+.markdown-preview-view .image-embed[src$="center"] {
   clear: both;
-  display: table;
   margin: 1rem auto;
   width: fit-content;
 }
 
-.markdown-preview-view.img-captions:not(.img-grid) .image-embed:not([src$="left"]):not([src$="right"])::after {
+.markdown-preview-view.img-captions .image-embed:not([src$="left"]):not([src$="right"])::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
-  display: table-caption;
+  display: block;
   caption-side: bottom;
   text-align: center;
   font-size: 0.8125rem;
 }
 
-.markdown-preview-view:not(.img-grid) .image-embed[src$="left"] {
+.markdown-preview-view .image-embed[src$="left"] {
   position: relative;
   float: left;
   margin-right: 2rem;
@@ -33,7 +33,7 @@ Floating images with captions by @radekkozak */
   width: fit-content;
 }
 
-.markdown-preview-view:not(.img-grid).img-captions .image-embed[src$="left"]::after {
+.markdown-preview-view.img-captions .image-embed[src$="left"]::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
@@ -43,7 +43,7 @@ Floating images with captions by @radekkozak */
   font-size: 0.8125rem;
 }
 
-.markdown-preview-view:not(.img-grid) .image-embed[src$="right"] {
+.markdown-preview-view .image-embed[src$="right"] {
   position: relative;
   float: right;
   margin-top: 1rem;
@@ -54,7 +54,7 @@ Floating images with captions by @radekkozak */
   width: fit-content;
 }
 
-.markdown-preview-view:not(.img-grid).img-captions .image-embed[src$="right"]::after {
+.markdown-preview-view.img-captions .image-embed[src$="right"]::after {
   content: attr(alt);
   padding: 0 1rem 0 1rem;
   margin-top: 1rem;
@@ -66,35 +66,37 @@ Floating images with captions by @radekkozak */
 
 /*----------------------------------------------------------------
 Modified masonry-like gallery (image grids)
-Credits to @kepano */
+Original credits to @kepano */
 
-.img-grid .markdown-preview-section img:not([width]),
-.img-grid .markdown-preview-section video {
-  width: 100%;
-}
-
-.img-grid .markdown-preview-section > div > p {
-  display: flex;
-}
-
-.img-grid .markdown-preview-section > div > p > .image-embed {
-  flex: 1;
-  margin-left: -0.75rem;
+.img-grid .markdown-preview-section > div > p > .image-embed[alt*="."] {
   padding: 0 0.75rem 0 0.75rem;
 }
 
-.img-grid .markdown-preview-section > div > p > .image-embed:last-child {
+.img-grid .markdown-preview-section > div > p > .image-embed[alt*="."]:last-child {
   padding-right: 0;
+}
+
+.img-grid .markdown-preview-section > div > p > .image-embed[alt*="."]:first-child {
+  padding-left: 0;
 }
 
 .img-grid .markdown-preview-section > div hr {
   width: 100%;
 }
 
-/* These lines make every image the same height */
-.img-grid .markdown-preview-section > div > p > .image-embed img:not(:active) {
+/* Hotfix by @Lithou (due to Obsidian v0.11.3 changes for grouped images)
+
+Explanation is this:
+When no alt pipe is used by the user, Obsidian will add alt text in the form of "filename.ext" by default.
+This rule targets any image embeds with a period in it (BE AWARE) to make image grids possible */
+
+.img-grid span.image-embed[alt*="."] {
+  display: table-cell;
+}
+
+.img-grid img[alt*="."] {
+  max-height: 33vh;
   object-fit: cover;
-  height: 100%;
 }
 
 /*----------------------------------------------------------------
