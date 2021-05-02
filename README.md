@@ -55,14 +55,15 @@ fix via PR.
 - [Sliding Panes](https://github.com/deathau/sliding-panes-obsidian) (aka Andy Mode)
 - [Calendar Plugin](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Hider Plugin](https://github.com/kepano/obsidian-hider)
+- [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian)
+- [Emoji Toolbar](https://github.com/oliveryh/obsidian-emoji-toolbar)
 
 ## Some additional remarks
 
 ### Hidden things
 
 To provide simple and clean UI that mimics Discord app Discordian theme hides top title bar and status bar as default
-. **You can however enable them and bring them back via accompanying** [Discordian plugin](https://github.com/radekkozak/discordian-plugin)
-(this is preferred way) or, if you decide to go solo, by commenting appropriate parts of CSS.
+. **You can however enable them and bring them back via accompanying** [Discordian plugin](https://github.com/radekkozak/discordian-plugin) (this is preferred way) or, if you decide to go solo, by commenting appropriate parts of CSS.
 
 I could provide more user-controllable elements for hiding if requested but to not reinvent the wheel i sincerely
 recommend excellent [Hider Plugin](https://github.com/kepano/obsidian-hider) by @kepano - I use it myself for
@@ -72,15 +73,48 @@ simplifying UI even more. Discordian of course, as mentioned before, is fully co
 
 The way the fancy task lists works in editor mode is via quite **hackish** means. Therefore, it's mandatory to have
 `Smart indent list` option enabled in Obsidian. From my own experience I would also recommend having `Toggle
-checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze. I know I love it that way!
+checklist status` under some hotkey. This would definitely make working with tasks / checklist list a blaze. I know I
+ love it that way!
 
 ### Images enhancements
 
-#### Floating images - now with captions !!
+**NOTICE: as of version 0.11.3 Obsidian changed the way images are grouped which made the flexbox approach provided
+by Discordian's image grids no longer possible**.
 
-Have your images the way you want: full in center (*default*) or floating left or right with your text wrapped around them. **No messing around with HTML markups**, no polluting your markdown. **Fully using current Obsidian image embeds syntax** along with image resizing.
+Not wanting to deprecate this feature which everyone seems to really like i decided to use @Lithou idea and hackishly
+  make it work again with the theme - **some restrictions apply**. Unfortunately with new version of Obsidian there is
+   no way to make the grid images on the same line of same height (like before). **Although current solution may look
+   similar or even the same depending on images, it will now look and behave more like masonry-ish grid**.
 
-Using Obsidian's new cssclass directive in YAML you can have properly looking captions by
+#### Image grids
+
+Using Obsidian's new `cssclass` directive in YAML you can achieve image grids like below with
+
+```md
+---
+cssclass: img-grid
+---
+```
+
+![](media/screenshots/discordian-img-grid.gif)
+
+**RESTRICTIONS**: This works with images if
+
+1. no pipe is used when calling an image i.e. `![[example.jpg]]` - **recommended default and simplest way**
+2. or if your alt text in pipe contains a period `.` i.e `![[example.jpg|Figure 1. Some caption]]` (it will not
+display the caption though if using `cssclass: img-grid` alone)
+
+**EXPLANATION:** when no pipe is used (meaning no custom alt attribute is added by the user, Obsidian will made the
+alt attribute equal to the `filename.ext`. **Image grids feature targets exactly those image embeds with an alt
+attribute that has a period in it - ANY SUCH IMAGE**. This is the only possible solution for now after Obsidian 0.11.3 changes.
+
+#### Floating images - with captions !! (work as before)
+
+Have your images the way you want: full in center (*default*) or floating left or right with your text wrapped around
+ them. **No messing around with HTML markups**, no polluting your markdown. **Fully using current Obsidian image
+ embeds syntax** along with image resizing.
+
+Using Obsidian's new cssclass directive in YAML you can have properly looking captions
 
 ```md
 ---
@@ -94,7 +128,7 @@ and then in your note you can do
 
 _options_
 - **position**: `left` or `right` (omitting assumes default which is center)
-- **caption**: simply your caption (**note**: no markdown within caption)
+- **caption**: simply your caption (**note**: no markdown within caption and **no period**)
 - **size**: `width x height` as explained in [Obsidian Help](https://publish.obsidian.md/help/How+to/Embed+files#Resize+images)
 
 _NOTE_: **positioning** `left` or `right` **and resizing** is working _EVEN WITHOUT YAML_ directive. `cssclass` is
@@ -104,21 +138,39 @@ _NOTE_: **positioning** `left` or `right` **and resizing** is working _EVEN WITH
 
 ![](media/screenshots/discordian-floating-imgs-same-paragraph.jpg)
 
----
+#### Image grids AND image captions IN ONE NOTE (Discordian v0.8.6+)
 
-#### Image grids (compatible with @kepano solution of using cssclass)
+![](media/screenshots/discordian-img-grid-captions.jpg)
 
-Using Obsidian's new `cssclass` directive in YAML you can achieve image grids like below with
+Before version 0.8.6 (and prior to Obsidian 0.11.3 changes) i advised everyone to use `img-grid` or `img-captions`
+separately as CSS in those features is applied globally to all images in the note.
+
+**From version 0.8.6 of Discordian theme** - with some restrictions - **you can have both image grids and image
+captions in one note** - BUT please consider this feature more or less experimental.
 
 ```md
 ---
-cssclass: img-grid
+cssclass: img-grid, img-captions
 ---
 ```
 
-Here's more explanation [how it works](https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet) but as always it's better seen than explained
+**RESTRICTIONS** (only for both features together):
 
-![](media/screenshots/discordian-img-grid.gif)
+1. Images with image captions in the same note cannot have period in it (see how [**Image grids**](#image-grids) work
+ now)
+2. Images within image grids with no piped caption text from user will display `filename.ext` per Obsidian's default
+behaviour).
+3. If you want your images within image grids with your custom captions then use your piped caption WITH period `.`
+in it. You can simply make it the end of your sentence or sth like this
+
+```md
+![[example.jpg|Figure 1. Example caption]]
+```
+
+**NOTE**: I still advise using these image features in your notes separately. It will make your life easier and save
+your from headache of remembering the inner workings.
+
+---
 
 #### Image zooms
 
