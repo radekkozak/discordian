@@ -5,7 +5,7 @@ HIDDEN (comment in/out to toggle things)
 /*----------------------------------------------------------------
 Hide main title bar */
 
-.titlebar {
+.titlebar .titlebar-inner {
   display: none;
 }
 
