@@ -2414,4 +2414,124 @@ View Actions */
 .file-view-actions a:hover {
   color: var(--text-muted) !important;
 }
+
+
+
+
+
+
+/* Fading Status Bar and Note Controls (from MAGMA theme) */
+.status-bar:hover .status-bar-item {
+    opacity: 1;
+    transition: opacity .1s ease-in-out;
+}
+.status-bar:not(:hover) .status-bar-item {
+    opacity: 0.25;
+    transition: opacity .25s ease-in-out;
+}
+.view-header:hover .view-actions {
+    opacity: 1;
+    transition: opacity .1s ease-in-out;
+}
+.view-header:not(:hover) .view-actions {
+    opacity: 0.25;
+    transition: opacity .25s ease-in-out;
+}
+
+/*file explorer folder icons */
+.nav-folder-collapse-indicator {
+	display: none;
+}
+.nav-folder:not(.mod-root) .nav-folder-title-content::before {
+        display: inline-block;
+        content: "";
+        margin-right: 5px;
+        vertical-align: middle;
+        height: 16px;
+        width: 16px;
+        background-color: currentColor;
+}
+.nav-folder:not(.mod-root):not(.is-collapsed) .nav-folder-title-content::before {
+        -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-open'%3E%3Cpath d='m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+        mask-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+}
+.nav-folder:not(.mod-root).is-collapsed .nav-folder-title-content::before {
+        -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+        mask-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+}
+
+
+
+/*accented settings side headings*/
+.vertical-tab-header-group-title {
+        color: var(--color-accent);
+}
+
+
+/*command palette styling*/
+.suggestion-item.is-selected {
+        background-color: hsla(var(--interactive-accent-hsl), 0.8);
+        border-radius: 6px;
+}
+      
+.prompt {
+        border-radius: 8px;
+}
+      
+.suggestion-highlight {
+        color: var(--text-accent);
+}
+      
+.suggestion-item.is-selected .suggestion-highlight {
+        color: white !important;
+}
+      
+input.prompt-input {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px !important;
+}
+
+
+
+
+/*unorder + nested list styling*/
+:is(.cm-formatting-list-ul, .markdown-rendered ul > li) > .list-bullet::after {
+        border: 1px solid var(--list-marker-color);
+}
+:is(
+        ul:not(li > ul) > li > ul > li,
+        ul:not(li > ul) > li > ul > li > ul > li > ul > li,
+        ul:not(li > ul) > li > ul > li > ul > li > ul > li > ul > li > ul > li,
+        ul:not(li > ul)
+                > li
+                > ul
+                > li
+                > ul
+                > li
+                > ul
+                > li
+                > ul
+                > li
+                > ul
+                > li
+                ul
+                > li
+                > ul
+                > li
+        )
+        > .list-bullet::after,
+:is(
+        .HyperMD-list-line-2,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-8
+        )
+        .cm-formatting-list-ul
+        > .list-bullet::after {
+        background-color: transparent;
+}
+
   
