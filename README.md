@@ -1,7 +1,10 @@
 small tweaks by caezium
+
 made it useable in Obsidian 1.x
+
 kept original feel and colors
 
+to use: just download obsidian.css and add it to your snippets folder
 
 ![](media/discordian-logo.png)
 
