@@ -1,10 +1,12 @@
-small tweaks by caezium
-made it useable in Obsidian 1.x
-removed the custom settings styling
+small tweaks by me, kept original feel and colors, but removed a lot of stuff, such as the settings styling, to my own liking
 
-kept original feel and colors
+but now it is useable in Obsidian 1.x
 
 to use: just download obsidian.css and add it to your snippets folder
+
+
+
+---
 
 ![](media/discordian-logo.png)
 
