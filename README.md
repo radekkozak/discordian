@@ -1,6 +1,6 @@
 small tweaks by caezium
-
 made it useable in Obsidian 1.x
+removed the custom settings styling
 
 kept original feel and colors
 
