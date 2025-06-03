@@ -50,6 +50,45 @@ fix via PR.
 - Graceful dark theme audio in place of ugly default
 - New and improved **codeblocks with delightful aesthetics**
 
+## Installation
+
+### 1. Install Recommended Fonts
+Before applying the theme, install the recommended fonts to match Discord’s aesthetic:
+- [Catamaran](https://fonts.google.com/specimen/Catamaran)
+- [Catamaran SSm](https://www.fontsquirrel.com/fonts/catamaran)
+
+Once installed, set **Catamaran** as the font in `Settings > Appearance > Font`.
+
+### 2. Install via Obsidian Community Themes
+1. Open **Obsidian** and navigate to `Settings > Appearance > Community Themes`.
+2. Search for **Discordian**.
+3. Click **Install**, then **Use** to apply the theme.
+
+### 3. Manual Installation (GitHub)
+If you prefer manual installation:
+1. Download the latest **Discordian** theme from the [GitHub repository](https://github.com/radekkozak/discordian).
+2. Extract the files into your Obsidian vault under `.obsidian/themes/discordian/`.
+3. Open `Settings > Appearance`, and select **Discordian**.
+
+### 4. Install the Provided CSS File
+For full styling, install the `obsidian.css` file included with the theme:
+1. Locate the `obsidian.css` file in the downloaded Discordian theme folder.
+2. Move it to your Obsidian vault’s `.obsidian/themes/discordian/` directory.
+3. Open **Obsidian**, go to `Settings > Appearance > Themes`, and select **Discordian**.
+4. Restart Obsidian to apply the CSS changes.
+
+### 5. Configure Optional Plugins
+For additional customization:
+- **Discordian Plugin**:
+  1. Navigate to `Settings > Community Plugins`.
+  2. Search for **Discordian Plugin**, install, and enable it.
+  3. Explore features like **Writer Mode, Flat Andy Mode, and Paragraph Focus**.
+
+### 6. Adjust the Frame to "Discordian"
+- Go to `Settings > Appearance > Frame`.
+- Ensure the frame is set to **Discordian** instead of the default Obsidian styling.
+
+
 ## Plugin support
 
 - [Sliding Panes](https://github.com/deathau/sliding-panes-obsidian) (aka Andy Mode)
